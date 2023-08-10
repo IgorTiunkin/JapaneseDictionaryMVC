@@ -4,18 +4,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Setter
+@Getter
 
 public class Request {
     private String word;
+    private RequestType requestType;
 
     public Request() {
-    }
-
-    public String getWord() {
-        return word;
-    }
-
-    public void setWord(String word) {
-        this.word = word;
+        this.requestType = RequestType.DEFAULT;
     }
 }

@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Base dictionary</title>
+    <style>
+        ul#menu li {display:inline;}
+    </style>
 </head>
 <body>
 <p>Приветствуем в нашем мини-словаре</p>
@@ -17,6 +20,13 @@
     <label for="request">Введите слово или его часть </label>
     <input type="text" th:field = "*{word}" id = "request"/>
     <input type="submit" value="Поиск">
+    <ul id="menu">
+        <li th:each="type : ${types}">
+            <input type="radio"  checked="checked" id = "${type}" name="type" th:field="*{requestType}" th:value="${type}" />
+            <label for="${type}" th:text="${type.getText()}"></label>
+        </li>
+    </ul>
+
 </form>
 
 </body>

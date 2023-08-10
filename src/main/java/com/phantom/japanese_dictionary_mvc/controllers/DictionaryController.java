@@ -3,6 +3,7 @@ package com.phantom.japanese_dictionary_mvc.controllers;
 
 import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.models.Request;
+import com.phantom.japanese_dictionary_mvc.models.RequestType;
 import com.phantom.japanese_dictionary_mvc.util.ReplyConverter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,13 +27,15 @@ public class DictionaryController {
     @GetMapping
     public String index (Model model) {
         model.addAttribute("request", new Request());
+        model.addAttribute("types", RequestType.values());
         return "dictionaries/index";
     }
 
     @GetMapping("/show")
     public String show (@ModelAttribute ("request") Request request, Model model) {
-        List<Note> notes = replyConverter.getReplies(request.getWord());
+        List<Note> notes = replyConverter.getReplies(request);
         model.addAttribute("notes", notes);
         return "dictionaries/multishow";
     }
+
 }

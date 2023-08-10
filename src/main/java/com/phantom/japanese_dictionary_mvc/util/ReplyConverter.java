@@ -4,6 +4,7 @@ package com.phantom.japanese_dictionary_mvc.util;
 import com.phantom.japanese_dictionary_mvc.finders.Finder;
 import com.phantom.japanese_dictionary_mvc.finders.FinderFactory;
 import com.phantom.japanese_dictionary_mvc.models.Note;
+import com.phantom.japanese_dictionary_mvc.models.Request;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -18,10 +19,10 @@ public class ReplyConverter {
         this.finderFactory = finderFactory;
     }
 
-    public List <Note> getReplies(String wordToFind) { // take input message - return all replies
+    public List <Note> getReplies(Request request) { // take input message - return all replies
 
-        Finder finder = finderFactory.getInstance(wordToFind); //choose finder
-        List<Note> searchResult = finder.getNotesFromRepository(wordToFind); //get mixed (full+partial) result
+        Finder finder = finderFactory.getInstance(request); //choose finder
+        List<Note> searchResult = finder.getNotesFromRepository(request.getWord()); //get mixed (full+partial) result
 
         return searchResult;
 

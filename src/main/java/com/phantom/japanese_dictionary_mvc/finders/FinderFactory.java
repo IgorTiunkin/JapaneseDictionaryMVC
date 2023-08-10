@@ -1,5 +1,7 @@
 package com.phantom.japanese_dictionary_mvc.finders;
 
+import com.phantom.japanese_dictionary_mvc.models.Request;
+import com.phantom.japanese_dictionary_mvc.models.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,7 +15,12 @@ public class FinderFactory {
         this.noteService = noteService;
     }
 
-    public Finder getInstance(String wordToFind) {
+    public Finder getInstance(Request request) {
+        if (request.getRequestType() == RequestType.KANA) return new KanaWordFinder(noteService);
+        if (request.getRequestType() == RequestType.KANJI) return new KanjiWordFinder(noteService);
+        if (request.getRequestType() == RequestType.TRANSLATION) return new RussianWordFinder(noteService);
+        if (request.getRequestType() == RequestType.SPELLING) return new RomajiWordFinder(noteService);
+        String wordToFind = request.getWord();
         if (wordToFind.matches("[A-Za-z]+")) return new RomajiWordFinder(noteService);
         if (wordToFind.matches(".*\\p{script=Han}+.*")) return new KanjiWordFinder(noteService);
         if (wordToFind.matches(".*\\p{script=Hiragana}+.*") ||
