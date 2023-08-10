@@ -1,0 +1,36 @@
+package com.phantom.japanese_dictionary_mvc.services;
+
+import com.phantom.japanese_dictionary_mvc.models.Note;
+import com.phantom.japanese_dictionary_mvc.repositories.NoteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class NoteService {
+    private final NoteRepository noteRepository;
+
+    @Autowired
+    public NoteService(NoteRepository noteRepository) {
+        this.noteRepository = noteRepository;
+    }
+
+    public List<Note> findFragmentByRussianText(String text) {
+        return noteRepository.findAllByTranslationContains(text);
+    }
+
+    public List<Note> findFragmentByEnglishText(String text) {
+        return noteRepository.findAllByRomadjiContains(text);
+    }
+
+    public List <Note> findFragmentByKanaText(String text) {
+        return noteRepository.findAllByHiraganaContains(text);
+    }
+
+    public List <Note> findFragmentByKanjiText(String text) {
+        return noteRepository.findAllByKanjiContains(text);
+    }
+
+
+}

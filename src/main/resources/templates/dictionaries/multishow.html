@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Multi dictionary result</title>
+</head>
+<body>
+<p th:each="note : ${notes}" th:text="${note.getKanji() + ' ' + note.getHiragana() + ' ' + note.getTranslation() + ' ' + note.getRomadji()}"></p>
+</body>
+</html>
