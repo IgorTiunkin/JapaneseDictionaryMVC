@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -35,7 +36,10 @@ public class DictionaryController {
     public String show (@ModelAttribute ("request") Request request, Model model) {
         List<Note> fullMatchNotes = replyConverter.getFullReplies(request);
         model.addAttribute("fullMatchNotes", fullMatchNotes);
-        List<Note> partialMatchNotes = replyConverter.getPartialReplies(request);
+        List<Note> partialMatchNotes = new ArrayList<>();
+        if (!request.isOnlyFullMatch()) {
+            partialMatchNotes = replyConverter.getPartialReplies(request);
+        }
         model.addAttribute("partialMatchNotes", partialMatchNotes);
         return "dictionaries/multishow";
     }

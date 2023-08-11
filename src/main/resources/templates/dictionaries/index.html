@@ -17,8 +17,8 @@
 Запрос с использованием каны - поиск по транслитерации на кану</p>
 
 <form th:method="GET" th:action="@{/dictionary/show}" th:object="${request}">
-    <label for="request">Введите слово или его часть </label>
-    <input type="text" th:field = "*{word}" id = "request"/>
+    <label for="word">Введите слово или его часть </label>
+    <input type="text" th:field = "*{word}" id = "word"/>
     <input type="submit" value="Поиск">
     <ul id="menu">
         <li th:each="type : ${types}">
@@ -26,6 +26,8 @@
             <label for="${type}" th:text="${type.getText()}"></label>
         </li>
     </ul>
+    <label for="full" th:text="'Только полные совпадения'">  </label>
+    <input type="checkbox" th:field = "*{onlyFullMatch}" id = "full"/>
 </form>
 
 </body>

@@ -10,8 +10,10 @@ import lombok.Setter;
 public class Request {
     private String word;
     private RequestType requestType;
+    private boolean onlyFullMatch;
 
     public Request() {
         this.requestType = RequestType.DEFAULT;
+        this.onlyFullMatch = false;
     }
 }
