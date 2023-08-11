@@ -5,11 +5,50 @@
     <title>Multi dictionary result</title>
 </head>
 <body>
-<p th:if="${fullMatchNotes.isEmpty() && partialMatchNotes.isEmpty()}" th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос или фильтр'"></p>
-<p th:if="${!fullMatchNotes.isEmpty()}" th:text = "'Число полных совпадений в моей базе - ' + ${fullMatchNotes.size()}"></p>
-<p th:each="note : ${fullMatchNotes}" th:text="${note.getKanji() + ' ' + note.getHiragana() + ' ' + note.getTranslation() + ' ' + note.getRomadji()}"></p>
+
+<p th:if="${fullMatchNotes.isEmpty() && partialMatchNotes.isEmpty()}"
+   th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос или фильтр.'"></p>
+<p th:if="${!fullMatchNotes.isEmpty()}"
+   th:text = "'Число полных совпадений в моей базе - ' + ${fullMatchNotes.size()}"></p>
+<table th:each="note : ${fullMatchNotes}" >
+    <tbody >
+    <tr>
+        <td th:text="${note.getKanji()}"></td>
+    </tr>
+    <tr>
+        <td th:text="${note.getHiragana()}"></td>
+    </tr>
+    <tr>
+        <td th:text="${note.getTranslation()}"></td>
+    </tr>
+    <tr>
+        <td th:text="${note.getRomadji()}"></td>
+    </tr>
+    </tbody>
+    <hr>
+</table>
 <hr>
-<p th:if="${!partialMatchNotes.isEmpty()}" th:text = "'Число частичных совпадений в моей базе - ' + ${partialMatchNotes.size()}"></p>
-<p th:each="note : ${partialMatchNotes}" th:text="${note.getKanji() + ' ' + note.getHiragana() + ' ' + note.getTranslation() + ' ' + note.getRomadji()}"></p>
+
+<p th:if="${!partialMatchNotes.isEmpty()}"
+   th:text = "'Число частичных совпадений в моей базе - ' + ${partialMatchNotes.size()}"></p>
+
+<table>
+    <tbody th:each="note : ${partialMatchNotes}">
+    <tr>
+        <td th:text="${note.getKanji()}"></td>
+    </tr>
+    <tr>
+        <td th:text="${note.getHiragana()}"></td>
+    </tr>
+    <tr>
+        <td th:text="${note.getTranslation()}"></td>
+    </tr>
+    <tr>
+        <td th:text="${note.getRomadji()}"></td>
+    </tr>
+    <tr></tr>
+    </tbody>
+</table>
+
 </body>
 </html>
