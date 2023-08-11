@@ -5,7 +5,7 @@
     <title>Multi dictionary result</title>
 </head>
 <body>
-
+<a th:href="@{/dictionary}" th:text="'На главную'"></a>
 <p th:if="${fullMatchNotes.isEmpty() && partialMatchNotes.isEmpty()}"
    th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос или фильтр.'"></p>
 <p th:if="${!fullMatchNotes.isEmpty()}"
@@ -32,8 +32,8 @@
 <p th:if="${!partialMatchNotes.isEmpty()}"
    th:text = "'Число частичных совпадений в моей базе - ' + ${partialMatchNotes.size()}"></p>
 
-<table>
-    <tbody th:each="note : ${partialMatchNotes}">
+<table th:each="note : ${partialMatchNotes}" >
+    <tbody >
     <tr>
         <td th:text="${note.getKanji()}"></td>
     </tr>
@@ -46,8 +46,8 @@
     <tr>
         <td th:text="${note.getRomadji()}"></td>
     </tr>
-    <tr></tr>
     </tbody>
+    <hr>
 </table>
 
 </body>

@@ -7,10 +7,12 @@ import com.phantom.japanese_dictionary_mvc.models.RequestType;
 import com.phantom.japanese_dictionary_mvc.util.ReplyConverter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +35,12 @@ public class DictionaryController {
     }
 
     @GetMapping("/show")
-    public String show (@ModelAttribute ("request") Request request, Model model) {
+    public String show (@ModelAttribute ("request") @Valid Request request, BindingResult bindingResult
+            , Model model) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("types", RequestType.values());
+            return "dictionaries/index";
+        }
         List<Note> fullMatchNotes = replyConverter.getFullReplies(request);
         model.addAttribute("fullMatchNotes", fullMatchNotes);
         List<Note> partialMatchNotes = new ArrayList<>();
