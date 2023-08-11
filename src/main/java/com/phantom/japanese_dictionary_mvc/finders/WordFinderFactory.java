@@ -7,15 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class FinderFactory {
+public class WordFinderFactory {
     private final NoteService noteService;
 
     @Autowired
-    public FinderFactory(NoteService noteService) {
+    public WordFinderFactory(NoteService noteService) {
         this.noteService = noteService;
     }
 
-    public Finder getInstance(Request request) {
+    public WordFinder getInstance(Request request) {
         if (request.getRequestType() == RequestType.KANA) return new KanaWordFinder(noteService);
         if (request.getRequestType() == RequestType.KANJI) return new KanjiWordFinder(noteService);
         if (request.getRequestType() == RequestType.TRANSLATION) return new RussianWordFinder(noteService);

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Grammar</title>
+</head>
+<body>
+<p>Раздел грамматики</p>
+<p>Укажите часть грамматичкской конструкции, а мы постараемся подобрать аналог из нашей базы</p>
+<p>Автоматическая настройка будет определять поле по следующему принципу:<br>
+    Запрос на русском языке - поиск по переводу.<br>
+    Запрос на английском языке - поиск по транслитерации.<br>
+    Запрос с использованием иероглифов - поиск по иероглифам.<br>
+    Запрос с использованием каны - поиск по транслитерации на кану.</p>
+
+<form th:method="GET" th:action="@{/grammar/show}" th:object="${request}">
+    <label for="word">Введите слово или его часть </label>
+    <input type="text" th:field = "*{word}" id = "word"/>
+    <input type="submit" value="Поиск">
+    <div style="color:red" th:if="${#fields.hasErrors('word')}" th:errors="*{word}"></div>
+</form>
+</body>
+</html>

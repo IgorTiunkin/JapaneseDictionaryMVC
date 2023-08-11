@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Grammar show</title>
+</head>
+<body>
+<a th:href="@{/dictionary}" th:text="'На главную'"></a>
+<p th:if="${notes.isEmpty()}"
+   th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос.'"></p>
+<p th:if="${!notes.isEmpty()}"
+   th:text = "'Число полных совпадений в моей базе - ' + ${notes.size()}"></p>
+<table th:each="grammarnote : ${notes}" >
+    <tbody >
+    <tr>
+        <td th:text="${grammarnote.getRule()}"></td>
+    </tr>
+    <tr>
+        <td th:text="${grammarnote.getExplanation()}"></td>
+    </tr>
+    <tr>
+        <td th:text="${grammarnote.getExample()}"></td>
+    </tr>
+    <tr>
+        <td th:text="${grammarnote.getSource()}"></td>
+    </tr>
+    </tbody>
+    <hr>
+</table>
+<hr>
+</body>
+</html>

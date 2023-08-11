@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class KanaWordFinder implements Finder{
+public class KanaWordFinder implements WordFinder {
 
     private final NoteService noteService;
 
