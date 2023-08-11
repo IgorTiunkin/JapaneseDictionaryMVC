@@ -33,8 +33,10 @@ public class DictionaryController {
 
     @GetMapping("/show")
     public String show (@ModelAttribute ("request") Request request, Model model) {
-        List<Note> notes = replyConverter.getReplies(request);
-        model.addAttribute("notes", notes);
+        List<Note> fullMatchNotes = replyConverter.getFullReplies(request);
+        model.addAttribute("fullMatchNotes", fullMatchNotes);
+        List<Note> partialMatchNotes = replyConverter.getPartialReplies(request);
+        model.addAttribute("partialMatchNotes", partialMatchNotes);
         return "dictionaries/multishow";
     }
 
