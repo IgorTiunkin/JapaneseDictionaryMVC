@@ -4,19 +4,35 @@
     <meta charset="UTF-8">
     <title>Grammar show</title>
 </head>
-<body>
-<a th:href="@{/dictionary}" th:text="'На главную'"></a>
+<body style="background: bisque">
+<div>
+    <div style="width: 50%;  margin: 0 auto">
+        <nav>
+            <a th:href="@{/dictionary}" th:text="'Основной словарь'"></a> |
+            <a th:href="@{/grammar}" th:text="'Грамматический словарь'"></a>
+        </nav> <br>
+        <nav>
+            <a th:href="@{/grammar}" th:text="'Поиск по грамматике'"></a>
+        </nav>
+    </div>
+</div>
+<h1 style="text-align: center">Результат поиска</h1>
+<div>
+    <div style="width: 50%;  margin: 0 auto">
 <p th:if="${notes.isEmpty()}"
-   th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос.'"></p>
+   th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос.'"
+   style="font-size: 18px"></p>
 <p th:if="${!notes.isEmpty()}"
-   th:text = "'Число полных совпадений в моей базе - ' + ${notes.size()}"></p>
+   th:text = "'Число полных совпадений в моей базе - ' + ${notes.size()}"
+   style="font-size: 18px"></p>
 <table th:each="grammarnote : ${notes}" >
     <tbody >
     <tr>
         <td th:text="${grammarnote.getRule()}"></td>
     </tr>
     <tr>
-        <td th:text="${grammarnote.getExplanation()}"></td>
+        <td th:text="${grammarnote.getExplanation()}"
+        style="color: green"></td>
     </tr>
     <tr>
         <td th:text="${grammarnote.getExample()}"></td>
@@ -28,5 +44,7 @@
     <hr>
 </table>
 <hr>
+ </div>
+</div>
 </body>
 </html>

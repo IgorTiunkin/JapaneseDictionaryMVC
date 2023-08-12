@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <title>Grammar</title>
 </head>
-<body>
-<p>Раздел грамматики</p>
+<body style="background: bisque">
+<div>
+    <div style="width: 50%;  margin: 0 auto">
+        <nav>
+            <a th:href="@{/dictionary}" th:text="'Основной словарь'"></a> |
+            <a th:href="@{/grammar}" th:text="'Грамматический словарь'"></a>
+        </nav> <br>
+        <nav>
+            <a th:href="@{/grammar}" th:text="'Поиск по грамматике'"></a>
+        </nav>
+    </div>
+</div>
+<h1 style="text-align: center">Раздел грамматики</h1>
+<div>
+    <div style="width: 50%;  margin: 0 auto">
 <p>Укажите часть грамматичкской конструкции, а мы постараемся подобрать аналог из нашей базы</p>
 <p>Автоматическая настройка будет определять поле по следующему принципу:<br>
     Запрос на русском языке - поиск по переводу.<br>
@@ -19,5 +32,7 @@
     <input type="submit" value="Поиск">
     <div style="color:red" th:if="${#fields.hasErrors('word')}" th:errors="*{word}"></div>
 </form>
+    </div>
+</div>
 </body>
 </html>

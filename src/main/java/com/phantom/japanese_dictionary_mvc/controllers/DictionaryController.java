@@ -92,7 +92,7 @@ public class DictionaryController {
                     note.setTranslation(String.valueOf(currentCell.getNumericCellValue()));
                 }
                 System.out.println(note);
-                //noteService.saveNote(note);
+                noteService.saveNote(note);
             }
         }
         return "redirect:/dictionary";

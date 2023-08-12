@@ -5,10 +5,29 @@
     <title>Import grammar</title>
 </head>
 <body style="background: bisque">
-
-<form th:action="@{/grammar/import}" method="post" enctype="multipart/form-data">
-    <input type="file" th:name="file" />
-    <input th:type="submit" value="Import" />
-</form>
+<div>
+    <div style="width: 50%;  margin: 0 auto">
+        <nav>
+            <a th:href="@{/dictionary}" th:text="'Основной словарь'"></a> |
+            <a th:href="@{/grammar}" th:text="'Грамматический словарь'"></a>
+        </nav> <br>
+        <nav>
+            <a th:href="@{/grammar}" th:text="'Поиск по грамматике'"></a>
+        </nav>
+    </div>
+</div>
+<h1 style="text-align: center">Импорт данных в грамматический словарь. Делайте на свой страх и риск.</h1>
+<div>
+    <div style="width: 50%;  margin: 0 auto">
+        <p> Допустимый формат файлов - xls. <br>
+            Файл должен содержать четыре колонки - источник, структура правила, описание правила, пример. <br>
+            Можете воспользоваться приложенной формой или сами сделать файл. Первую строку не заполнять. <br>
+            Допустимы только текстовые значения. Максимальный размер - 10 мегабайт</p>
+        <form th:action="@{/grammar/import}" method="post" enctype="multipart/form-data">
+            <input type="file" th:name="file" />
+            <input th:type="submit" value="Import" />
+        </form>
+    </div>
+</div>
 </body>
 </html>

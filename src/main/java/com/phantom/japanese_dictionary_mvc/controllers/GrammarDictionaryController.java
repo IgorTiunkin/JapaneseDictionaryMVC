@@ -43,7 +43,6 @@ public class GrammarDictionaryController {
     public String show (@ModelAttribute("request") @Valid Request request, BindingResult bindingResult
             , Model model) {
         if (bindingResult.hasErrors()) {
-            model.addAttribute("request", new Request());
             return "grammar/index";
         }
         GrammarFinder grammarFinder = grammarFinderFactory.getInstance(request);
@@ -78,6 +77,7 @@ public class GrammarDictionaryController {
                 if (currentCell!=null) grammarNote.setExplanation(currentCell.getStringCellValue());
                 currentCell = row.getCell(3);
                 if (currentCell!=null) grammarNote.setExample(currentCell.getStringCellValue());
+                System.out.println(grammarNote);
                 grammarNoteService.saveGrammarNote(grammarNote);
             }
         }
