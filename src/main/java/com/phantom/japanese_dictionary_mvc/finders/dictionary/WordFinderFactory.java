@@ -1,4 +1,4 @@
-package com.phantom.japanese_dictionary_mvc.finders;
+package com.phantom.japanese_dictionary_mvc.finders.dictionary;
 
 import com.phantom.japanese_dictionary_mvc.models.Request;
 import com.phantom.japanese_dictionary_mvc.models.RequestType;

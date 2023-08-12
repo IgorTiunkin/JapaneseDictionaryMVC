@@ -1,8 +1,8 @@
 package com.phantom.japanese_dictionary_mvc.util;
 
 
-import com.phantom.japanese_dictionary_mvc.finders.WordFinder;
-import com.phantom.japanese_dictionary_mvc.finders.WordFinderFactory;
+import com.phantom.japanese_dictionary_mvc.finders.dictionary.WordFinder;
+import com.phantom.japanese_dictionary_mvc.finders.dictionary.WordFinderFactory;
 import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.models.Request;
 import org.springframework.stereotype.Component;

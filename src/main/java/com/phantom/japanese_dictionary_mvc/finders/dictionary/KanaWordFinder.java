@@ -1,4 +1,4 @@
-package com.phantom.japanese_dictionary_mvc.finders;
+package com.phantom.japanese_dictionary_mvc.finders.dictionary;
 
 import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
@@ -8,20 +8,22 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class RomajiWordFinder implements WordFinder {
+public class KanaWordFinder implements WordFinder {
+
     private final NoteService noteService;
 
     @Autowired
-    public RomajiWordFinder(NoteService noteService) {
+    public KanaWordFinder(NoteService noteService) {
         this.noteService = noteService;
     }
+
     @Override
     public boolean checkFullMatch(String wordToFind, Note note) {
-        return (note.getRomadji().trim().matches(".*\\b"+wordToFind+"\\b.*"));
+        return note.getHiragana().trim().equals(wordToFind);
     }
 
     @Override
     public List<Note> getNotesFromRepository(String wordToFind) {
-        return noteService.findFragmentByEnglishText(wordToFind);
+        return noteService.findFragmentByKanaText(wordToFind);
     }
 }
