@@ -4,6 +4,7 @@ import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.repositories.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -32,5 +33,9 @@ public class NoteService {
         return noteRepository.findAllByKanjiContains(text);
     }
 
+    @Transactional
+    public void saveNote (Note note) {
+        noteRepository.save(note);
+    }
 
 }

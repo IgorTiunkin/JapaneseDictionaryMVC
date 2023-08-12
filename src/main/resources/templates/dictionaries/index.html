@@ -3,33 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Base dictionary</title>
-    <style>
-        ul#menu li {display:inline;}
-    </style>
 </head>
-<body>
-<p>Приветствуем в нашем мини-словаре</p>
-<p>Вы можете сами выбрать, по какому из полей искать или воспользоваться автоматической настройкой поиска</p>
+<body style="background: bisque">
+<div>
+<div style="width: 50%;  margin: 0 auto">
+    <nav>
+    <a th:href="@{/dictionary}" th:text="'Основной словарь'"></a> |
+    <a th:href="@{/grammar}" th:text="'Грамматический словарь'"></a>
+    </nav> <br>
+    <nav>
+    <a th:href="@{/dictionary}" th:text="'Поиск'"></a>
+    </nav>
+</div>
+</div>
+<h1 style="text-align: center">Приветствуем в нашем мини-словаре</h1>
+<div>
+    <div style="width: 50%;  margin: 0 auto">
+<p>Вы можете сами выбрать, по какому из полей искать, или воспользоваться автоматической настройкой поиска</p>
 <p>Автоматическая настройка будет определять поле по следующему принципу:<br>
 Запрос на русском языке - поиск по переводу.<br>
 Запрос на английском языке - поиск по транслитерации.<br>
 Запрос с использованием иероглифов - поиск по иероглифам.<br>
 Запрос с использованием каны - поиск по транслитерации на кану.</p>
+    </div>
+</div>
 
+<div>
+<div style="width: 50%;  margin: 0 auto">
 <form th:method="GET" th:action="@{/dictionary/show}" th:object="${request}">
     <label for="word">Введите слово или его часть </label>
-    <input type="text" th:field = "*{word}" id = "word"/>
+    <input style="width: 400px" type="text" th:field = "*{word}" id = "word"/>
     <input type="submit" value="Поиск">
     <div style="color:red" th:if="${#fields.hasErrors('word')}" th:errors="*{word}"></div>
-    <ul id="menu">
-        <li th:each="type : ${types}">
-            <input type="radio"  checked="checked" id = "${type}" name="type" th:field="*{requestType}" th:value="${type}" />
+    <ul style="padding-left: 0px">
+        <li style="display: inline" th:each="type : ${types}">
+            <input type="radio"  checked="checked" id = "${type}" name="type"
+                   th:field="*{requestType}" th:value="${type}"/>
             <label for="${type}" th:text="${type.getText()}"></label>
         </li>
     </ul>
+    <input type="checkbox" th:field = "*{onlyFullMatch}"
+           style="vertical-align: middle; position: relative" id = "full"/>
     <label for="full" th:text="'Только полные совпадения'">  </label>
-    <input type="checkbox" th:field = "*{onlyFullMatch}" id = "full"/>
 </form>
-
+</div>
+</div>
 </body>
 </html>

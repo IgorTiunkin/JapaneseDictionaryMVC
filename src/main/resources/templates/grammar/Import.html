@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Import grammar</title>
+</head>
+<body style="background: bisque">
+
+<form th:action="@{/grammar/import}" method="post" enctype="multipart/form-data">
+    <input type="file" th:name="file" />
+    <input th:type="submit" value="Import" />
+</form>
+</body>
+</html>
