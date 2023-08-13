@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.*;
 
 @Service
 public class NoteService {
@@ -36,6 +36,16 @@ public class NoteService {
     @Transactional
     public void saveNote (Note note) {
         noteRepository.save(note);
+    }
+
+    @Transactional(readOnly = true)
+    public List <Note> writePractice(int quantity) {
+        Random random = new Random();
+        Set<Note> setForPractice = new HashSet<>();
+        while (setForPractice.size()<quantity) { //method need ids start from 1
+            setForPractice.add(noteRepository.getById(1+random.nextInt((int) noteRepository.count())));
+        }
+        return new ArrayList<>(setForPractice);
     }
 
 }

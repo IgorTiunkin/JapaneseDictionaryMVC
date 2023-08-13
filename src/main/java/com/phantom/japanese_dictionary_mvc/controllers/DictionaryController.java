@@ -2,8 +2,8 @@ package com.phantom.japanese_dictionary_mvc.controllers;
 
 
 import com.phantom.japanese_dictionary_mvc.models.Note;
-import com.phantom.japanese_dictionary_mvc.models.Request;
-import com.phantom.japanese_dictionary_mvc.models.RequestType;
+import com.phantom.japanese_dictionary_mvc.requests.Request;
+import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
 import com.phantom.japanese_dictionary_mvc.util.ReplyConverter;
 import org.apache.poi.ss.usermodel.CellType;

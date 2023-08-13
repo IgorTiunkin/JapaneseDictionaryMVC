@@ -3,7 +3,7 @@ package com.phantom.japanese_dictionary_mvc.controllers;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinderFactory;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
-import com.phantom.japanese_dictionary_mvc.models.Request;
+import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.services.GrammarNoteService;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;

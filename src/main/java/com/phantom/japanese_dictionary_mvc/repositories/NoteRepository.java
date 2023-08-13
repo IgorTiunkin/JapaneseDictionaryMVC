@@ -17,4 +17,5 @@ public interface NoteRepository extends JpaRepository<Note, Integer> {
 
     List <Note> findAllByKanjiContains(String text);
 
+
 }

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Write practice</title>
+    <style>
+        .wordhidden{
+            color: black; background: black;
+        }
+        .wordhidden:hover {background: bisque;}
+        .word {
+
+        }
+    </style>
+</head>
+<body style="background: bisque">
+<div>
+<div style="width: 50%;  margin: 0 auto">
+    <nav>
+    <a th:href="@{/dictionary}" th:text="'Основной словарь'"></a> |
+    <a th:href="@{/grammar}" th:text="'Грамматический словарь'"></a> |
+     <a th:href="@{/write-test}" th:text="'Письменная практика'"></a>
+    </nav> <br>
+    <nav>
+    <a th:href="@{/write-test}" th:text="'Выбор параметров письменной практики'"></a>
+    </nav>
+</div>
+</div>
+<h1 style="text-align: center">Начинаем письменную практику</h1>
+<div>
+    <div style="width: 50%;  margin: 0 auto">
+        <p>Чтобы увидеть ответ, наведите мышкой.</p>
+<p   th:text="'Количество выбранных задач ' + ${writePracticeList.size()}"
+    style="font-size: 18px"></p>
+
+<table th:each="note : ${writePracticeList}" >
+    <tbody >
+    <tr th:class="'word'+
+    ${writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).KANJI ?
+    'hidden' : ''}">
+        <td th:text="${note.getKanji()}" style="font-size: 25px"></td>
+    </tr>
+    <tr th:class="'word'+
+            ${writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).KANA ?
+             'hidden' : ''}">
+        <td th:text="${note.getHiragana()}" style="font-size: 20px"></td>
+    </tr>
+    <tr th:class="'word'+
+            ${writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).TRANSLATION ?
+             'hidden' : ''}">
+        <td th:text="${note.getTranslation()}" style="font-size: 18px"></td>
+    </tr>
+    <tr th:class="'word'+
+            ${(writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).SPELLING) &&
+             (writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).DEFAULT)?
+             'hidden' : ''}">
+        <td th:text="${note.getRomadji()}" style="font-size: 18px"></td>
+    </tr>
+    </tbody>
+    <hr>
+</table>
+<hr>
+<br>
+
+</div>
+</div>
+</body>
+</html>

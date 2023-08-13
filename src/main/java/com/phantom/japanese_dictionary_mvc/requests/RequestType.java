@@ -1,4 +1,4 @@
-package com.phantom.japanese_dictionary_mvc.models;
+package com.phantom.japanese_dictionary_mvc.requests;
 
 public enum RequestType {
     TRANSLATION ("Перевод"), SPELLING ("Транслитерация"), KANJI("Иероглифы"), KANA ("Кана"),

@@ -1,8 +1,6 @@
 package com.phantom.japanese_dictionary_mvc.finders.grammar;
 
-import com.phantom.japanese_dictionary_mvc.finders.*;
-import com.phantom.japanese_dictionary_mvc.models.Request;
-import com.phantom.japanese_dictionary_mvc.models.RequestType;
+import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.services.GrammarNoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
