@@ -5,17 +5,8 @@
     <title>Grammar</title>
 </head>
 <body style="background: bisque">
-<div>
-    <div style="width: 50%;  margin: 0 auto">
-        <nav>
-            <a th:href="@{/dictionary}" th:text="'Основной словарь'"></a> |
-            <a th:href="@{/grammar}" th:text="'Грамматический словарь'"></a>
-        </nav> <br>
-        <nav>
-            <a th:href="@{/grammar}" th:text="'Поиск по грамматике'"></a>
-        </nav>
-    </div>
-</div>
+<div th:replace="/allheader::top_header"></div>
+<div th:replace="/allheader::grammar_subheader"></div>
 <h1 style="text-align: center">Раздел грамматики</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">

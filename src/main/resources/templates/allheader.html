@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="top_header" class="">
+    <div>
+        <div style="width: 50%;  margin: 0 auto">
+            <nav>
+                <a th:href="@{/dictionary}" th:text="'Основной словарь'"></a> |
+                <a th:href="@{/grammar}" th:text="'Грамматический словарь'"></a> |
+                <a th:href="@{/write-test}" th:text="'Письменная практика'"></a>
+            </nav> <br>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="grammar_subheader" class="">
+    <div>
+        <div style="width: 50%;  margin: 0 auto">
+            <nav>
+                <a th:href="@{/grammar}" th:text="'Поиск по грамматике'"></a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="dictionary_subheader" class="">
+    <div>
+        <div style="width: 50%;  margin: 0 auto">
+            <nav>
+                <a th:href="@{/dictionary}" th:text="'Поиск по словарю'"></a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="writepractice_subheader" class="">
+    <div>
+        <div style="width: 50%;  margin: 0 auto">
+            <nav>
+                <a th:href="@{/write-test}" th:text="'Выбор параметров письменной практики'"></a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
