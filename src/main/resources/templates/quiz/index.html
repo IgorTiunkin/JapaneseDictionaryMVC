@@ -6,7 +6,7 @@
 </head>
 <body style="background: bisque">
 <div th:replace="/allheader::top_header"></div>
-<div th:replace="/allheader::writepractice_subheader"></div>
+<div th:replace="/allheader::quiz_subheader"></div>
 <h1 style="text-align: center">Квиз</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">
@@ -17,12 +17,14 @@
 
 
 <form th:method="GET" th:action="@{/quiz/show}" th:object="${quizrequest}">
-    <label for="numberOfTasks">Введите количество заданий </label>
-    <input style="width: 400px" type="text" th:field = "*{numberOfTasks}" id = "numberOfTasks"/>
+    <span>Введите количество заданий </span>
     <br>
-    <label for="numberOfOptions">Введите количество вариантов </label>
-    <input style="width: 400px" type="text" th:field = "*{numberOfOptions}" id = "numberOfOptions"/>
-    <input type="submit" value="Выбор">
+    <input style="width: 150px" type="text" th:field = "*{numberOfTasks}" id = "numberOfTasks"/>
+    <br>
+    <span>Введите количество вариантов </span>
+    <br>
+    <input style="width: 150px" type="text" th:field = "*{numberOfOptions}" id = "numberOfOptions"/>
+    <br>
     <div style="color:red" th:if="${#fields.hasErrors('numberOfTasks')}" th:errors="*{numberOfTasks}"></div>
     <div style="color:red" th:if="${#fields.hasErrors('numberOfOptions')}" th:errors="*{numberOfOptions}"></div>
     <ul style="padding-left: 0px">
@@ -32,6 +34,7 @@
             <label for="${type}" th:text="${type.getText()}"></label>
         </li>
     </ul>
+    <input type="submit" value="Выбор">
 </form>
     </div>
 </div>

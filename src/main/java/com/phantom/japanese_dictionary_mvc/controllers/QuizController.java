@@ -18,7 +18,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/quiz")
-@SessionAttributes("quiztasks")
+@SessionAttributes({"quiztasks"})
 public class QuizController {
     private final NoteService noteService;
     private final QuizConverter quizConverter;
@@ -55,7 +55,7 @@ public class QuizController {
         return "quiz/multishow";
     }
 
-    @PostMapping("/check")
+    @GetMapping("/check")
     public String checkAnswer(@ModelAttribute ("answer_form") AnswerDto form,
                               @ModelAttribute ("quiztasks") List <QuizTask> quizTasks,
                               Model model) {

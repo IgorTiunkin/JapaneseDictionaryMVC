@@ -11,7 +11,8 @@
             <nav>
                 <a th:href="@{/dictionary}" th:text="'Основной словарь'"></a> |
                 <a th:href="@{/grammar}" th:text="'Грамматический словарь'"></a> |
-                <a th:href="@{/write-test}" th:text="'Письменная практика'"></a>
+                <a th:href="@{/write-test}" th:text="'Письменная практика'"></a> |
+                <a th:href="@{/quiz}" th:text="'Квиз'"></a>
             </nav> <br>
         </div>
     </div>
@@ -42,6 +43,16 @@
         <div style="width: 50%;  margin: 0 auto">
             <nav>
                 <a th:href="@{/write-test}" th:text="'Выбор параметров письменной практики'"></a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="quiz_subheader" class="">
+    <div>
+        <div style="width: 50%;  margin: 0 auto">
+            <nav>
+                <a th:href="@{/quiz}" th:text="'Старт квиза'"></a>
             </nav>
         </div>
     </div>

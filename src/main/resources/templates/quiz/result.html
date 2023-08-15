@@ -3,20 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Quiz result</title>
+    <style>
+        .answeruser {
+            background: orangered;
+        }
+        .answerright{
+            background: greenyellow;
+        }
+        .answeruserright{
+            background: greenyellow;
+        }
+        .answer{
+
+        }
+    </style>
 </head>
 <body style="background: bisque">
 <div th:replace="/allheader::top_header"></div>
-<div th:replace="/allheader::writepractice_subheader"></div>
+<div th:replace="/allheader::quiz_subheader"></div>
 <h1 style="text-align: center">Ваши результаты</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">
-        <p th:text="'Число правильных ответов = ' + ${result}"></p>
-        <p th:each="quiztask : ${quiztasks}">
-            <span th:text="${quiztask.getQuestion()}"></span>
-            <br>
-            <span th:text="${quiztask.getRightAnswer()}"></span>
-            <br>
-        </p>
+        <p th:text="'Число правильных ответов = ' + ${result} + '/' + ${quiztasks.size()}" style="font-size: 20px"></p>
+        <ul style="padding-left: 0px">
+            <li th:each="quiztask, itemStat : *{quiztasks}">
+                <ul style="padding-left: 0px">
+                    <p th:text="${quiztasks.get(__${itemStat.index}__).getQuestion()}" style="font-size: 18px"></p>
+                    <li th:each="option : ${quiztasks.get(__${itemStat.index}__).getOptions()}"
+                    th:text="${option}"
+                    th:class="'answer'+
+                    ${option.equals(user_answers.get(__${itemStat.index}__).getAnswer()) ?
+                    'user' : ''} +
+                    ${option.equals(quiztasks.get(__${itemStat.index}__).getRightAnswer()) ?
+                    'right' : ''}">
+                    </li>
+                </ul>
+            </li>
+        </ul>
      </div>
 </div>
 
