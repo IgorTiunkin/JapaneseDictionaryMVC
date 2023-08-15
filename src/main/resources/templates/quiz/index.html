@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+</head>
+<body style="background: bisque">
+<div th:replace="/allheader::top_header"></div>
+<div th:replace="/allheader::writepractice_subheader"></div>
+<h1 style="text-align: center">Квиз</h1>
+<div>
+    <div style="width: 50%;  margin: 0 auto">
+<p>Выберите один из двух вариантов: <br>
+- по переводу - определить иероглифы <br>
+- по иероглифам - перевод <br>
+Также укажите число заданий (не более 20) и число вариантов (не более 10).</p>
+
+
+<form th:method="GET" th:action="@{/quiz/show}" th:object="${quizrequest}">
+    <label for="numberOfTasks">Введите количество заданий </label>
+    <input style="width: 400px" type="text" th:field = "*{numberOfTasks}" id = "numberOfTasks"/>
+    <br>
+    <label for="numberOfOptions">Введите количество вариантов </label>
+    <input style="width: 400px" type="text" th:field = "*{numberOfOptions}" id = "numberOfOptions"/>
+    <input type="submit" value="Выбор">
+    <div style="color:red" th:if="${#fields.hasErrors('numberOfTasks')}" th:errors="*{numberOfTasks}"></div>
+    <div style="color:red" th:if="${#fields.hasErrors('numberOfOptions')}" th:errors="*{numberOfOptions}"></div>
+    <ul style="padding-left: 0px">
+        <li style="display: inline" th:each="type : ${types}">
+            <input type="radio"  checked="checked" id = "${type}" name="type"
+                   th:field="*{requestType}" th:value="${type}"/>
+            <label for="${type}" th:text="${type.getText()}"></label>
+        </li>
+    </ul>
+</form>
+    </div>
+</div>
+<div th:replace="/allfooter::footer"></div>
+</body>
+</html>

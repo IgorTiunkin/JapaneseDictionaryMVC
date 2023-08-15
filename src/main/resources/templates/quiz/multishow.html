@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+</head>
+<body style="background: bisque">
+<div th:replace="/allheader::top_header"></div>
+<div th:replace="/allheader::grammar_subheader"></div>
+<h1 style="text-align: center">Ваши задания</h1>
+
+<div>
+    <div style="width: 50%;  margin: 0 auto">
+<form th:method="POST" th:action="@{/quiz/check}" th:object="${answer_form}">
+            <ul style="padding-left: 0px">
+                <li th:each="book, itemStat : *{answers}">
+                    <ul style="padding-left: 0px">
+                        <p th:text="${quiztasks.get(__${itemStat.index}__).getQuestion()}"></p>
+                        <li th:each="option : ${quiztasks.get(__${itemStat.index}__).getOptions()}">
+                            <input type="radio" th:field="*{answers[__${itemStat.index}__].answer}" th:value="${option}"
+                            id="${option}"/>
+                            <label for="${option}" th:text="${option}"> </label>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <input type="submit" id="submitButton" th:value="Отослать">
+
+</form>
+
+    </div>
+</div>
+<div th:replace="/allfooter::footer"></div>
+</body>
+</html>

@@ -4,7 +4,6 @@ import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.requests.WritePracticeRequest;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
-import org.apache.poi.sl.usermodel.Notes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,7 +40,7 @@ public class WritePracticeController {
             model.addAttribute("types", RequestType.values());
             return "writepractice/index";
         }
-        List<Note> writePracticeList = noteService.writePractice(writePracticeRequest.getQuantity());
+        List<Note> writePracticeList = noteService.getRandomVariants(writePracticeRequest.getQuantity());
         model.addAttribute("writePracticeList", writePracticeList);
         return "writepractice/multishow";
     }

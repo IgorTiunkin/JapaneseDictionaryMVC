@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz result</title>
+</head>
+<body style="background: bisque">
+<div th:replace="/allheader::top_header"></div>
+<div th:replace="/allheader::writepractice_subheader"></div>
+<h1 style="text-align: center">Ваши результаты</h1>
+<div>
+    <div style="width: 50%;  margin: 0 auto">
+        <p th:text="'Число правильных ответов = ' + ${result}"></p>
+        <p th:each="quiztask : ${quiztasks}">
+            <span th:text="${quiztask.getQuestion()}"></span>
+            <br>
+            <span th:text="${quiztask.getRightAnswer()}"></span>
+            <br>
+        </p>
+     </div>
+</div>
+
+<div th:replace="/allfooter::footer"></div>
+</body>
+</html>
