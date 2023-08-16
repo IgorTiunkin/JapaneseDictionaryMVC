@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Random;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 class JapaneseDictionaryMvcApplicationTests {
     private final WordFinderFactory wordFinderFactory;
     private final GrammarFinderFactory grammarFinderFactory;
