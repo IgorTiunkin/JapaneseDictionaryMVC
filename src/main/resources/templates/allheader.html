@@ -8,11 +8,16 @@
 <div th:fragment="top_header" class="">
     <div>
         <div style="width: 50%;  margin: 0 auto">
+            <span>Навигация по разделам</span>
             <nav>
                 <a th:href="@{/dictionary}" th:text="'Основной словарь'"></a> |
                 <a th:href="@{/grammar}" th:text="'Грамматический словарь'"></a> |
                 <a th:href="@{/write-test}" th:text="'Письменная практика'"></a> |
                 <a th:href="@{/quiz}" th:text="'Квиз'"></a>
+            </nav> <br>
+            <span>Действия пользователя</span>
+            <nav>
+                <a th:href="@{/logout}" th:text="'Выход'"></a>
             </nav> <br>
         </div>
     </div>
