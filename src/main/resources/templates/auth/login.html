@@ -8,14 +8,20 @@
 <h1 style="text-align: center">Приветствуем вас на нашем сайте.</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto" >
+        <p>Вы можете использовать дефолтный аккаунт (достаточно нажать login). <br>
+        Но в таком случае функционал будет ограничен.</p>
+     </div>
+</div>
+<div>
+    <div style="width: 50%;  margin: 0 auto" >
 <form name="f" method="post" action="/process_login" >
     <label for="username" >Введите имя пользователя: </label>
     <br>
-    <input type="text" name="username" id="username"/>
+    <input type="text" name="username" id="username" th:value="'user'"/>
     <br>
     <label for="password" >Введите пароль: </label>
     <br>
-    <input type="password" name="password" id="password" />
+    <input type="password" name="password" id="password" th:value="'user'"/>
     <br>
     <input type="submit" value="Login"/>
     <div th:if="${param.error}" style="color: red">
