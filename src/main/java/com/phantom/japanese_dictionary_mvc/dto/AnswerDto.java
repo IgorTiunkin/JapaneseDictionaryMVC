@@ -1,5 +1,7 @@
-package com.phantom.japanese_dictionary_mvc.util;
+package com.phantom.japanese_dictionary_mvc.dto;
 
+
+import com.phantom.japanese_dictionary_mvc.models.Answer;
 
 import java.util.ArrayList;
 import java.util.List;

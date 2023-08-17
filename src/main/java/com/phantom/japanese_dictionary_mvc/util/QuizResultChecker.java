@@ -1,7 +1,8 @@
 package com.phantom.japanese_dictionary_mvc.util;
 
+import com.phantom.japanese_dictionary_mvc.dto.AnswerDto;
+import com.phantom.japanese_dictionary_mvc.models.Answer;
 import com.phantom.japanese_dictionary_mvc.models.QuizTask;
-import com.phantom.japanese_dictionary_mvc.requests.QuizRequest;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

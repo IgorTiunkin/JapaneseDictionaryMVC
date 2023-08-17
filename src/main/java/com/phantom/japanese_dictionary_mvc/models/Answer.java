@@ -1,4 +1,4 @@
-package com.phantom.japanese_dictionary_mvc.util;
+package com.phantom.japanese_dictionary_mvc.models;
 
 public class Answer {
         private String answer;

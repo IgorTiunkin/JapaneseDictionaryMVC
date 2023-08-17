@@ -12,10 +12,10 @@
     <div style="width: 50%;  margin: 0 auto">
 <p th:if="${notes.isEmpty()}"
    th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос.'"
-   style="font-size: 18px"></p>
+   style="font-size: 18px;color: red"></p>
 <p th:if="${!notes.isEmpty()}"
    th:text = "'Число полных совпадений в моей базе - ' + ${notes.size()}"
-   style="font-size: 18px"></p>
+   style="font-size: 18px; color: blue"></p>
 <table th:each="grammarnote : ${notes}" >
     <tbody >
     <tr>

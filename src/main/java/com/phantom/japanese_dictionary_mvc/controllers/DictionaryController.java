@@ -1,6 +1,7 @@
 package com.phantom.japanese_dictionary_mvc.controllers;
 
 
+import com.phantom.japanese_dictionary_mvc.dto.NoteDTO;
 import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
@@ -11,6 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -28,10 +30,12 @@ public class DictionaryController {
 
     private final ReplyConverter replyConverter;
     private final NoteService noteService;
+    private final ModelMapper modelMapper;
 
-    public DictionaryController(ReplyConverter replyConverter, NoteService noteService) {
+    public DictionaryController(ReplyConverter replyConverter, NoteService noteService, ModelMapper modelMapper) {
         this.replyConverter = replyConverter;
         this.noteService = noteService;
+        this.modelMapper = modelMapper;
     }
 
 
@@ -50,12 +54,14 @@ public class DictionaryController {
             return "dictionaries/index";
         }
         List<Note> fullMatchNotes = replyConverter.getFullReplies(request);
-        model.addAttribute("fullMatchNotes", fullMatchNotes);
+        List <NoteDTO> fullMatchNoteDTOS = convertNoteToNoteDTO(fullMatchNotes);
+        model.addAttribute("fullMatchNotes", fullMatchNoteDTOS);
         List<Note> partialMatchNotes = new ArrayList<>();
         if (!request.isOnlyFullMatch()) {
             partialMatchNotes = replyConverter.getPartialReplies(request);
         }
-        model.addAttribute("partialMatchNotes", partialMatchNotes);
+        List <NoteDTO> partialMatchNoteDTOS = convertNoteToNoteDTO(partialMatchNotes);
+        model.addAttribute("partialMatchNotes", partialMatchNoteDTOS);
         return "dictionaries/multishow";
     }
 
@@ -96,6 +102,12 @@ public class DictionaryController {
             }
         }
         return "redirect:/dictionary";
+    }
+
+    private List <NoteDTO> convertNoteToNoteDTO(List <Note> notes) {
+        List <NoteDTO> noteDTOS = new ArrayList<>();
+        for (Note note: notes) noteDTOS.add(modelMapper.map(note, NoteDTO.class));
+        return noteDTOS;
     }
 
 }

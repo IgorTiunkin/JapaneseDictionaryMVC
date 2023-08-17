@@ -1,14 +1,18 @@
 package com.phantom.japanese_dictionary_mvc.controllers;
 
+import com.phantom.japanese_dictionary_mvc.dto.GrammarNoteDTO;
+import com.phantom.japanese_dictionary_mvc.dto.NoteDTO;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinderFactory;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
+import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.services.GrammarNoteService;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -26,11 +31,13 @@ public class GrammarDictionaryController {
 
     private final GrammarFinderFactory grammarFinderFactory;
     private final GrammarNoteService grammarNoteService;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    public GrammarDictionaryController(GrammarFinderFactory grammarFinderFactory, GrammarNoteService grammarNoteService) {
+    public GrammarDictionaryController(GrammarFinderFactory grammarFinderFactory, GrammarNoteService grammarNoteService, ModelMapper modelMapper) {
         this.grammarFinderFactory = grammarFinderFactory;
         this.grammarNoteService = grammarNoteService;
+        this.modelMapper = modelMapper;
     }
 
     @GetMapping
@@ -47,7 +54,8 @@ public class GrammarDictionaryController {
         }
         GrammarFinder grammarFinder = grammarFinderFactory.getInstance(request);
         List<GrammarNote> notesFromRepository = grammarFinder.getNotesFromRepository(request.getWord());
-        model.addAttribute("notes", notesFromRepository);
+        List<GrammarNoteDTO> grammarNoteDTOS = convertGrammarNoteToGrammarNoteDTO(notesFromRepository);
+        model.addAttribute("notes", grammarNoteDTOS);
         return "grammar/multishow";
     }
 
@@ -82,5 +90,11 @@ public class GrammarDictionaryController {
             }
         }
         return "redirect:/grammar";
+    }
+
+    private List <GrammarNoteDTO> convertGrammarNoteToGrammarNoteDTO(List <GrammarNote> grammarNotes) {
+        List <GrammarNoteDTO> grammarNoteDTO = new ArrayList<>();
+        for (GrammarNote grammarNote: grammarNotes) grammarNoteDTO.add(modelMapper.map(grammarNote, GrammarNoteDTO.class));
+        return grammarNoteDTO;
     }
 }
