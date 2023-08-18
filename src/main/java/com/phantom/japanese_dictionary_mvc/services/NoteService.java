@@ -43,8 +43,9 @@ public class NoteService {
     public List <Note> getRandomVariants(int quantity) {
         Random random = new Random();
         Set<Note> setForPractice = new HashSet<>();
+        int count = (int) noteRepository.count();
         while (setForPractice.size()<quantity) { //method need ids start from 1
-            setForPractice.add(noteRepository.getById(1+random.nextInt((int) noteRepository.count())));
+            setForPractice.add(noteRepository.getById(1+random.nextInt(count)));
         }
         return new ArrayList<>(setForPractice);
     }

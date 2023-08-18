@@ -35,8 +35,6 @@ public class QuizConverter {
                 for (int j = i; j < i+numberOfOptions; j++) {
                     quizTask.getOptions().add(randomVariants.get(j).getKanji());
                 }
-                Collections.shuffle(quizTask.getOptions());
-                //add all options and shuffle
             } else{
                 quizTask.setQuestion(randomVariants.get(i).getKanji());
                 quizTask.setRightAnswer(randomVariants.get(i).getTranslation());
@@ -44,9 +42,9 @@ public class QuizConverter {
                 for (int j = i; j < i+numberOfOptions; j++) {
                     quizTask.getOptions().add(randomVariants.get(j).getTranslation());
                 }
-                Collections.shuffle(quizTask.getOptions());
-                //add all options and shuffle
             }
+            Collections.shuffle(quizTask.getOptions());
+            //add all options and shuffle
             taskList.add(quizTask);
         }
         return taskList;

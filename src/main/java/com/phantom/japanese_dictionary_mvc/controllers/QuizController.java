@@ -8,6 +8,8 @@ import com.phantom.japanese_dictionary_mvc.models.Answer;
 import com.phantom.japanese_dictionary_mvc.dto.AnswerDto;
 import com.phantom.japanese_dictionary_mvc.util.QuizConverter;
 import com.phantom.japanese_dictionary_mvc.util.QuizResultChecker;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,12 +22,12 @@ import java.util.List;
 @RequestMapping("/quiz")
 @SessionAttributes({"quiztasks"})
 public class QuizController {
-    private final NoteService noteService;
     private final QuizConverter quizConverter;
     private final QuizResultChecker quizResultChecker;
+    private final static Logger LOGGER = LoggerFactory.getLogger(QuizController.class);
 
-    public QuizController(NoteService noteService, QuizConverter quizConverter, QuizResultChecker quizResultChecker) {
-        this.noteService = noteService;
+
+    public QuizController (QuizConverter quizConverter, QuizResultChecker quizResultChecker) {
         this.quizConverter = quizConverter;
         this.quizResultChecker = quizResultChecker;
     }
@@ -41,6 +43,8 @@ public class QuizController {
     @GetMapping("/show")
     public String showQuiz(@ModelAttribute ("quizrequest") @Valid QuizRequest quizRequest,
                            BindingResult bindingResult, Model model) {
+        LOGGER.trace("Accepted quiz request: request type = {}; number of tasks = {}; number of options = {}",
+                quizRequest.getRequestType(),quizRequest.getNumberOfTasks(), quizRequest.getNumberOfOptions());
         if (bindingResult.hasErrors()) {
             return "quiz/index";
         }
@@ -59,8 +63,6 @@ public class QuizController {
     public String checkAnswer(@ModelAttribute ("answer_form") AnswerDto form,
                               @ModelAttribute ("quiztasks") List <QuizTask> quizTasks,
                               Model model) {
-        System.out.println(form.getAnswers());
-        System.out.println(quizTasks);
         int result = quizResultChecker.getNumberOfRightAnswers(form, quizTasks);
         model.addAttribute("result", result);
         model.addAttribute("user_answers", form.getAnswers());

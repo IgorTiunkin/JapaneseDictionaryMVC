@@ -13,6 +13,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,6 +34,7 @@ public class GrammarDictionaryController {
     private final GrammarFinderFactory grammarFinderFactory;
     private final GrammarNoteService grammarNoteService;
     private final ModelMapper modelMapper;
+    private final static Logger LOGGER = LoggerFactory.getLogger(GrammarDictionaryController.class);
 
     @Autowired
     public GrammarDictionaryController(GrammarFinderFactory grammarFinderFactory, GrammarNoteService grammarNoteService, ModelMapper modelMapper) {
@@ -49,6 +52,8 @@ public class GrammarDictionaryController {
     @GetMapping("/show")
     public String show (@ModelAttribute("request") @Valid Request request, BindingResult bindingResult
             , Model model) {
+        LOGGER.trace("Accepted grammar request: requesttype = {}; word to find = {}",
+                request.getRequestType(), request.getWord());
         if (bindingResult.hasErrors()) {
             return "grammar/index";
         }

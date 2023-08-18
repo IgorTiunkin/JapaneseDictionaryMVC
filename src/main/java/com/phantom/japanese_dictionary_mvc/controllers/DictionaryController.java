@@ -13,6 +13,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -33,6 +35,7 @@ public class DictionaryController {
     private final ReplyConverter replyConverter;
     private final NoteService noteService;
     private final ModelMapper modelMapper;
+    private final static Logger LOGGER = LoggerFactory.getLogger(DictionaryController.class);
 
     public DictionaryController(ReplyConverter replyConverter, NoteService noteService, ModelMapper modelMapper) {
         this.replyConverter = replyConverter;
@@ -51,13 +54,17 @@ public class DictionaryController {
     @GetMapping("/show")
     public String show (@ModelAttribute ("request") @Valid Request request, BindingResult bindingResult
             , Model model) {
+        LOGGER.trace("Accepted dictionary request: request type = {}; word to find = {}; match = {}",
+                request.getRequestType(), request.getWord(), request.isOnlyFullMatch());
         if (bindingResult.hasErrors()) {
             model.addAttribute("types", RequestType.values());
             return "dictionaries/index";
         }
+
         List<Note> fullMatchNotes = replyConverter.getFullReplies(request);
         List <NoteDTO> fullMatchNoteDTOS = convertNoteToNoteDTO(fullMatchNotes);
         model.addAttribute("fullMatchNotes", fullMatchNoteDTOS);
+
         List<Note> partialMatchNotes = new ArrayList<>();
         if (!request.isOnlyFullMatch()) {
             partialMatchNotes = replyConverter.getPartialReplies(request);
@@ -72,6 +79,12 @@ public class DictionaryController {
         return "dictionaries/import";
     }
 
+
+    private List <NoteDTO> convertNoteToNoteDTO(List <Note> notes) {
+        List <NoteDTO> noteDTOS = new ArrayList<>();
+        for (Note note: notes) noteDTOS.add(modelMapper.map(note, NoteDTO.class));
+        return noteDTOS;
+    }
 
     @PostMapping("/import")
     public String loadExcelFileToDb(@RequestParam("file") MultipartFile multipartFile) throws IOException {
@@ -104,12 +117,6 @@ public class DictionaryController {
             }
         }
         return "redirect:/dictionary";
-    }
-
-    private List <NoteDTO> convertNoteToNoteDTO(List <Note> notes) {
-        List <NoteDTO> noteDTOS = new ArrayList<>();
-        for (Note note: notes) noteDTOS.add(modelMapper.map(note, NoteDTO.class));
-        return noteDTOS;
     }
 
 }
