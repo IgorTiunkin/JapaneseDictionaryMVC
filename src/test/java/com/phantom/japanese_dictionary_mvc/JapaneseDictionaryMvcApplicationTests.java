@@ -1,28 +1,38 @@
 package com.phantom.japanese_dictionary_mvc;
 
+import com.phantom.japanese_dictionary_mvc.dto.AnswerDto;
 import com.phantom.japanese_dictionary_mvc.finders.dictionary.*;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinderFactory;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.KanaGrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.RomajiGrammarFinder;
+import com.phantom.japanese_dictionary_mvc.models.Answer;
+import com.phantom.japanese_dictionary_mvc.models.QuizTask;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
+import com.phantom.japanese_dictionary_mvc.util.QuizResultChecker;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 class JapaneseDictionaryMvcApplicationTests {
     private final WordFinderFactory wordFinderFactory;
     private final GrammarFinderFactory grammarFinderFactory;
+    private final QuizResultChecker quizResultChecker;
     private Random random = new Random();
 
     @Autowired
-    JapaneseDictionaryMvcApplicationTests(WordFinderFactory wordFinderFactory, GrammarFinderFactory grammarFinderFactory) {
+    JapaneseDictionaryMvcApplicationTests(WordFinderFactory wordFinderFactory, GrammarFinderFactory grammarFinderFactory, QuizResultChecker quizResultChecker) {
         this.wordFinderFactory = wordFinderFactory;
         this.grammarFinderFactory = grammarFinderFactory;
+        this.quizResultChecker = quizResultChecker;
     }
 
 
@@ -103,6 +113,35 @@ class JapaneseDictionaryMvcApplicationTests {
         request.setWord(stringBuilder.toString());
         GrammarFinder grammarFinder = grammarFinderFactory.getInstance(request);
         Assertions.assertTrue(grammarFinder instanceof KanaGrammarFinder);
+    }
+
+    @Test
+    public void whenUserAnswersNull_thenDefaultCollection () {
+        List <QuizTask> mockTask = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            QuizTask quizTask = new QuizTask();
+            quizTask.setRightAnswer("1");
+            mockTask.add(quizTask);
+        }
+        Assertions.assertEquals(10, quizResultChecker.getNumberOfRightAnswers(new AnswerDto(), mockTask));
+    }
+
+    @Test
+    public void whenPartialList_thenNoExceptions () {
+        List <QuizTask> mockTask = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            QuizTask quizTask = new QuizTask();
+            quizTask.setRightAnswer("1");
+            mockTask.add(quizTask);
+        }
+        AnswerDto answerDto = new AnswerDto();
+        answerDto.addAnswer(null);
+        answerDto.addAnswer(new Answer("2"));
+        answerDto.addAnswer(null);
+        answerDto.addAnswer(new Answer("3"));
+        answerDto.addAnswer(null);
+        answerDto.addAnswer(new Answer("4"));
+        Assertions.assertEquals(7, quizResultChecker.getNumberOfRightAnswers(answerDto, mockTask));
     }
 
 }

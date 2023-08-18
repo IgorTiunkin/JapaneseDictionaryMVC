@@ -21,6 +21,8 @@ public class ReplyConverter {
 
     public List <Note> getFullReplies(Request request) { // take input message - return all replies
 
+        //todo
+        //use both of objects = find way to extract
         WordFinder wordFinder = wordFinderFactory.getInstance(request); //choose finder
         List<Note> mixSearchResult = wordFinder.getNotesFromRepository(request.getWord()); //get mixed (full+partial) result
 

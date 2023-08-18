@@ -16,8 +16,8 @@ public class AnswerDto {
         this.answers = answers;
     }
 
-    public void addAnswer(Answer book) {
-        this.answers.add(book);
+    public void addAnswer(Answer answer) {
+        this.answers.add(answer);
     }
 
 
