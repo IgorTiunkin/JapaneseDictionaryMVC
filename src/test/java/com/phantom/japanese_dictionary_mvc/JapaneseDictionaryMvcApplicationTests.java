@@ -120,10 +120,14 @@ class JapaneseDictionaryMvcApplicationTests {
         List <QuizTask> mockTask = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             QuizTask quizTask = new QuizTask();
-            quizTask.setRightAnswer("1");
+            quizTask.setRightAnswer("-1");
             mockTask.add(quizTask);
         }
-        Assertions.assertEquals(10, quizResultChecker.getNumberOfRightAnswers(new AnswerDto(), mockTask));
+        List <Answer> answers = quizResultChecker.createUserAnswersForCheck(mockTask, null);
+        for (int i = 0; i < 10;i++) {
+            Assertions.assertEquals("-1", answers.get(i).getAnswer());
+        }
+
     }
 
     @Test
@@ -131,17 +135,29 @@ class JapaneseDictionaryMvcApplicationTests {
         List <QuizTask> mockTask = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             QuizTask quizTask = new QuizTask();
-            quizTask.setRightAnswer("1");
+            quizTask.setRightAnswer("-1");
             mockTask.add(quizTask);
         }
-        AnswerDto answerDto = new AnswerDto();
-        answerDto.addAnswer(null);
-        answerDto.addAnswer(new Answer("2"));
-        answerDto.addAnswer(null);
-        answerDto.addAnswer(new Answer("3"));
-        answerDto.addAnswer(null);
-        answerDto.addAnswer(new Answer("4"));
-        Assertions.assertEquals(7, quizResultChecker.getNumberOfRightAnswers(answerDto, mockTask));
+        List <Answer> list = new ArrayList<>();
+        list.add(null);
+        list.add(new Answer("2"));
+        list.add(null);
+        list.add(new Answer("3"));
+        list.add(null);
+        list.add(new Answer("4"));
+        List <Answer> answers = quizResultChecker.createUserAnswersForCheck(mockTask, list);
+        Assertions.assertEquals("-1",answers.get(0).getAnswer());
+        Assertions.assertEquals("2",answers.get(1).getAnswer());
+        Assertions.assertEquals("-1",answers.get(2).getAnswer());
+        Assertions.assertEquals("3",answers.get(3).getAnswer());
+        Assertions.assertEquals("-1",answers.get(4).getAnswer());
+        Assertions.assertEquals("4",answers.get(5).getAnswer());
+        Assertions.assertEquals("-1",answers.get(6).getAnswer());
+        Assertions.assertEquals("-1",answers.get(7).getAnswer());
+        Assertions.assertEquals("-1",answers.get(8).getAnswer());
+        Assertions.assertEquals("-1",answers.get(9).getAnswer());
+
+
     }
 
 }

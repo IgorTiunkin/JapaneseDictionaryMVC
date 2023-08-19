@@ -63,7 +63,11 @@ public class QuizController {
     public String checkAnswer(@ModelAttribute ("answer_form") AnswerDto form,
                               @ModelAttribute ("quiztasks") List <QuizTask> quizTasks,
                               Model model) {
-        int result = quizResultChecker.getNumberOfRightAnswers(form, quizTasks);
+        //User is not always fill all fields - as result we can get null, list of less size or null values
+        // for view we need to create full size list with stub values instead of null
+        List<Answer> userAnswersForCheck = quizResultChecker.createUserAnswersForCheck(quizTasks, form.getAnswers());
+        form.setAnswers(userAnswersForCheck);
+        int result = quizResultChecker.getNumberOfRightAnswers(userAnswersForCheck, quizTasks);
         model.addAttribute("result", result);
         model.addAttribute("user_answers", form.getAnswers());
         return "quiz/result";

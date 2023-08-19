@@ -1,22 +1,14 @@
 package com.phantom.japanese_dictionary_mvc.models;
 
+import lombok.*;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
 public class Answer {
-        private String answer;
-
-        public Answer() {
-        }
-
-        public Answer(String answer) {
-            this.answer = answer;
-        }
-
-        public String getAnswer() {
-            return answer;
-        }
-
-        public void setAnswer(String answer) {
-            this.answer = answer;
-        }
+    private String answer;
 
     @Override
     public String toString() {
