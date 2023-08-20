@@ -74,16 +74,16 @@ public class DictionaryController {
         return "dictionaries/multishow";
     }
 
-    @GetMapping ("/import")
-    public String excelFile () {
-        return "dictionaries/import";
-    }
-
 
     private List <NoteDTO> convertNoteToNoteDTO(List <Note> notes) {
         List <NoteDTO> noteDTOS = new ArrayList<>();
         for (Note note: notes) noteDTOS.add(modelMapper.map(note, NoteDTO.class));
         return noteDTOS;
+    }
+
+    @GetMapping ("/import")
+    public String excelFile () {
+        return "dictionaries/import";
     }
 
     @PostMapping("/import")

@@ -1,9 +1,6 @@
 package com.phantom.japanese_dictionary_mvc.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Japan")
@@ -11,6 +8,7 @@ public class Note {
 
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //todo check influence
     @Column(name = "id")
     private int id;
 
