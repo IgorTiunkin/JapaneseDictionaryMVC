@@ -10,18 +10,19 @@
 <h1 style="text-align: center">Раздел грамматики</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">
-<p>Укажите часть грамматичекской конструкции, а мы постараемся подобрать аналог из нашей базы</p>
-<p>Автоматическая настройка будет определять поле по следующему принципу:<br>
-    Запрос на английском языке - поиск по правилу или примеру.<br>
-    Запрос с использованием каны - поиск по правилу.<br>
-Рекомендуется применять запрос с английской транслитерацией (как можно проще)</p>
+    <p>Укажите часть грамматической конструкции, а мы постараемся подобрать аналог из нашей базы</p>
 
-<form th:method="GET" th:action="@{/grammar/show}" th:object="${request}">
-    <label for="word">Введите слово или его часть </label>
-    <input type="text" th:field = "*{word}" id = "word"/>
-    <input type="submit" value="Поиск">
-    <div style="color:red" th:if="${#fields.hasErrors('word')}" th:errors="*{word}"></div>
-</form>
+    <form th:method="GET" th:action="@{/grammar/show}" th:object="${request}">
+        <label for="word">Введите слово или его часть </label>
+        <input type="text" th:field = "*{word}" id = "word"/>
+        <input type="submit" value="Поиск">
+        <div style="color:red" th:if="${#fields.hasErrors('word')}" th:errors="*{word}"></div>
+    </form>
+        <p>Автоматическая настройка будет определять поле по следующему принципу:<br>
+            Запрос на английском языке - поиск по правилу или примеру.<br>
+            Запрос с использованием каны - поиск по правилу.<br>
+            Рекомендуется применять запрос с английской транслитерацией (как можно проще)
+        </p>
     </div>
 </div>
 <div th:replace="allfooter::footer"></div>

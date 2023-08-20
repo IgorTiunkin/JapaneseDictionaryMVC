@@ -11,9 +11,10 @@ import javax.validation.constraints.*;
 public class WritePracticeRequest {
     private RequestType requestType;
 
-    @NotNull(message = "Значение не должно быть пустым.")
-    @Min(value = 0, message = "Значение должно быть больше ноля.")
-    @Max(value = 20, message = "Значение должно быть менее 21")
+    @NotNull(message = "Поле должно быть заполнено")
+    //@Digits (integer = 3, fraction = 0, message = "Нужно ввести число")
+    @Min(value = 1, message = "Количество заданий должно быть больше нуля. Вы же хотите хотя бы одно задание:)")
+    @Max(value = 20, message = "Количество заданий должно быть не больше 20")
     private Integer quantity;
 
     public WritePracticeRequest() {

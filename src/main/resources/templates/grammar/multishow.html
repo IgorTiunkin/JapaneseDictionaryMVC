@@ -10,32 +10,32 @@
 <h1 style="text-align: center">Результат поиска</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">
-<p th:if="${notes.isEmpty()}"
-   th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос.'"
-   style="font-size: 18px;color: red"></p>
-<p th:if="${!notes.isEmpty()}"
-   th:text = "'Число совпадений в моей базе - ' + ${notes.size()}"
-   style="font-size: 18px; color: blue"></p>
-<table th:each="grammarnote : ${notes}" >
-    <tbody >
-    <tr>
-        <td th:text="${grammarnote.getRule()}"></td>
-    </tr>
-    <tr>
-        <td th:text="${grammarnote.getExplanation()}"
-        style="color: green"></td>
-    </tr>
-    <tr>
-        <td th:text="${grammarnote.getExample()}"></td>
-    </tr>
-    <tr>
-        <td th:text="${grammarnote.getSource()}"></td>
-    </tr>
-    </tbody>
-    <hr>
-</table>
-<hr>
- </div>
+        <p th:if="${notes.isEmpty()}"
+           th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос.'"
+           style="font-size: 18px;color: red"></p>
+        <p th:if="${!notes.isEmpty()}"
+           th:text = "'Число совпадений в моей базе - ' + ${notes.size()}"
+           style="font-size: 18px; color: blue"></p>
+        <table th:each="grammarnote : ${notes}" >
+            <tbody >
+            <tr>
+                <td th:text="${grammarnote.getRule()}"></td>
+            </tr>
+            <tr>
+                <td th:text="${grammarnote.getExplanation()}"
+                style="color: green"></td>
+            </tr>
+            <tr>
+                <td th:text="${grammarnote.getExample()}"></td>
+            </tr>
+            <tr>
+                <td th:text="${grammarnote.getSource()}"></td>
+            </tr>
+            </tbody>
+            <hr>
+        </table>
+        <hr>
+     </div>
 </div>
 <div th:replace="allfooter::footer"></div>
 </body>

@@ -10,34 +10,40 @@
 <h1 style="text-align: center">Приветствуем в нашем мини-словаре</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">
-<p>Вы можете сами выбрать, по какому из полей искать, или воспользоваться автоматической настройкой поиска</p>
-<p>Автоматическая настройка будет определять поле по следующему принципу:<br>
-Запрос на русском языке - поиск по переводу.<br>
-Запрос на английском языке - поиск по транслитерации.<br>
-Запрос с использованием иероглифов - поиск по иероглифам.<br>
-Запрос с использованием каны - поиск по транслитерации на кану.</p>
-    </div>
-</div>
+        <p>Вы можете сами выбрать, по какому из полей искать, или воспользоваться автоматической настройкой поиска</p>
 
-<div>
-<div style="width: 50%;  margin: 0 auto">
-<form th:method="GET" th:action="@{/dictionary/show}" th:object="${request}">
-    <label for="word">Введите слово или его часть </label>
-    <input style="width: 400px" type="text" th:field = "*{word}" id = "word"/>
-    <input type="submit" value="Поиск">
-    <div style="color:red" th:if="${#fields.hasErrors('word')}" th:errors="*{word}"></div>
-    <ul style="padding-left: 0px">
-        <li style="display: inline" th:each="type : ${types}">
-            <input type="radio"  checked="checked" id = "${type}" name="type"
-                   th:field="*{requestType}" th:value="${type}"/>
-            <label for="${type}" th:text="${type.getText()}"></label>
-        </li>
-    </ul>
-    <input type="checkbox" th:field = "*{onlyFullMatch}"
-           style="vertical-align: middle; position: relative" id = "full"/>
-    <label for="full" th:text="'Только полные совпадения'">  </label>
-</form>
-</div>
+        <form th:method="GET" th:action="@{/dictionary/show}" th:object="${request}">
+            <label for="word">Введите слово или его часть </label>
+            <input style="width: 400px" type="text" th:field = "*{word}" id = "word"/>
+            <input type="submit" value="Поиск">
+            <div style="color:red" th:if="${#fields.hasErrors('word')}" th:errors="*{word}"></div>
+            <ul style="padding-left: 0px">
+                <li style="display: inline" th:each="type : ${types}">
+                    <input type="radio"  checked="checked" id = "${type}" name="type"
+                           th:field="*{requestType}" th:value="${type}"/>
+                    <label for="${type}" th:text="${type.getText()}"></label>
+                </li>
+            </ul>
+            <input type="checkbox" th:field = "*{onlyFullMatch}"
+                   style="vertical-align: middle; position: relative" id = "full"/>
+            <label for="full" th:text="'Только полные совпадения'">  </label>
+        </form>
+        <br>
+        <p>Автоматическая настройка будет определять поле по следующему принципу:<br>
+            Запрос на русском языке - поиск по переводу.<br>
+            Запрос на английском языке - поиск по транслитерации.<br>
+            Запрос с использованием иероглифов - поиск по иероглифам.<br>
+            Запрос с использованием каны - поиск по транслитерации на кану. <br>
+            Не смешивайте разные языки (за исключением иероглифов и каны) - таких записей все равно нет.<br>
+            Знаки препинания и пробелы тоже используйте аккуратно - не забывайте, что в японском языке они специфичны.
+        </p>
+        <p>
+            Правила определения опции "Только полные совпадения": <br>
+            Для иероглифов и каны - будет выдана только запись с данным словом.<br>
+            Для транслитерации - будут выданы записи, где данное слово встречается изолированно. <br>
+            Для перевода - будут выданы записи, где данное слово встречается изолированно именно в запрошенной форме.
+        </p>
+    </div>
 </div>
 <div th:replace="allfooter::footer"></div>
 </body>

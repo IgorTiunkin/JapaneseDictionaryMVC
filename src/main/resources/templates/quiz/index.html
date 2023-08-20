@@ -10,32 +10,31 @@
 <h1 style="text-align: center">Квиз</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">
-<p>Выберите один из двух вариантов: <br>
-- "Иероглифы" : вам будет дана запись на японском, вы должны определить перевод на русский <br>
-- "Перевод" : вам будет дана запись на русском, вы должны определить перевод на японский <br>
-Также укажите число заданий (не более 20) и число вариантов (не более 10).</p>
+        <p>Выберите один из двух вариантов: <br>
+        - "Иероглифы" : вам будет дана запись на японском, вы должны определить перевод на русский. <br>
+        - "Перевод" : вам будет дана запись на русском, вы должны определить перевод на японский. </p>
 
 
-<form th:method="GET" th:action="@{/quiz/show}" th:object="${quizrequest}">
-    <span>Введите количество заданий </span>
-    <br>
-    <input style="width: 150px" type="text" th:field = "*{numberOfTasks}" id = "numberOfTasks"/>
-    <br>
-    <span>Введите количество вариантов </span>
-    <br>
-    <input style="width: 150px" type="text" th:field = "*{numberOfOptions}" id = "numberOfOptions"/>
-    <br>
-    <div style="color:red" th:if="${#fields.hasErrors('numberOfTasks')}" th:errors="*{numberOfTasks}"></div>
-    <div style="color:red" th:if="${#fields.hasErrors('numberOfOptions')}" th:errors="*{numberOfOptions}"></div>
-    <ul style="padding-left: 0px">
-        <li style="display: inline" th:each="type : ${types}">
-            <input type="radio"  checked="checked" id = "${type}" name="type"
-                   th:field="*{requestType}" th:value="${type}"/>
-            <label for="${type}" th:text="${type.getText()}"></label>
-        </li>
-    </ul>
-    <input type="submit" value="Выбор">
-</form>
+        <form th:method="GET" th:action="@{/quiz/show}" th:object="${quizrequest}">
+            <span>Введите количество заданий (не более 20)</span>
+            <br>
+            <input style="width: 150px" type="text" th:field = "*{numberOfTasks}" id = "numberOfTasks"/>
+            <br>
+            <span>Введите количество вариантов (от 2 до 10)</span>
+            <br>
+            <input style="width: 150px" type="text" th:field = "*{numberOfOptions}" id = "numberOfOptions"/>
+            <br>
+            <div style="color:red" th:if="${#fields.hasErrors('numberOfTasks')}" th:errors="*{numberOfTasks}"></div>
+            <div style="color:red" th:if="${#fields.hasErrors('numberOfOptions')}" th:errors="*{numberOfOptions}"></div>
+            <ul style="padding-left: 0px">
+                <li style="display: inline" th:each="type : ${types}">
+                    <input type="radio"  checked="checked" id = "${type}" name="type"
+                           th:field="*{requestType}" th:value="${type}"/>
+                    <label for="${type}" th:text="${type.getText()}"></label>
+                </li>
+            </ul>
+            <input type="submit" value="Выбор">
+        </form>
     </div>
 </div>
 <div th:replace="allfooter::footer"></div>

@@ -16,6 +16,6 @@ public class LanguageDefiner {
             return LanguageType.KANA;
         }
         if (wordToDefine.matches("[А-Яа-я]+")) return LanguageType.RUSSIAN;
-        return LanguageType.UNKNOWN;
+        return LanguageType.RUSSIAN;
     }
 }

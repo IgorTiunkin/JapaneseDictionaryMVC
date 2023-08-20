@@ -10,26 +10,26 @@
 <h1 style="text-align: center">Раздел письменной практики</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">
-<p>Этот раздел посвящен самостоятельной практике <br>
-Выберите, какую часть записи будете видеть и количество записей. Дефолтное значение - транслитерация. <br>
-Мы подберем для вас случайный набор записей, в которых будет открыта только выбранная графа.<br>
-Остальные графы будут скрыты. Попробуйте самостоятельно от руки записать ответы на листочке.<br>
-Ежедневная практика прописи от руки очень важна для совершенствования. Проверка на вашей совести:)</p>
+        <p>Этот раздел посвящен самостоятельной практике <br>
+        Выберите, какую часть записи будете видеть и количество записей. Дефолтное значение - транслитерация. <br>
+        Мы подберем для вас случайный набор записей, в которых будет открыта только выбранная графа.<br>
+        Остальные графы будут скрыты. Попробуйте самостоятельно от руки записать ответы на листочке.<br>
+        Ежедневная практика прописи от руки очень важна для совершенствования. Проверка на вашей совести:)</p>
 
 
-<form th:method="GET" th:action="@{/write-test/show}" th:object="${writePracticeRequest}">
-    <label for="quantity">Введите количество заданий (не менее 0 и не более 20). </label>
-    <input style="width: 400px" type="text" th:field = "*{quantity}" id = "quantity"/>
-    <input type="submit" value="Выбор">
-    <div style="color:red" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></div>
-    <ul style="padding-left: 0px">
-        <li style="display: inline" th:each="type : ${types}">
-            <input type="radio"  checked="checked" id = "${type}" name="type"
-                   th:field="*{requestType}" th:value="${type}"/>
-            <label for="${type}" th:text="${type.getText()}"></label>
-        </li>
-    </ul>
-</form>
+        <form th:method="GET" th:action="@{/write-test/show}" th:object="${writePracticeRequest}">
+            <label for="quantity">Введите количество заданий (не более 20). </label>
+            <input style="width: 100px" type="text" th:field = "*{quantity}" id = "quantity"/>
+            <input type="submit" value="Выбор">
+            <div style="color:red" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></div>
+            <ul style="padding-left: 0px">
+                <li style="display: inline" th:each="type : ${types}">
+                    <input type="radio"  checked="checked" id = "${type}" name="type"
+                           th:field="*{requestType}" th:value="${type}"/>
+                    <label for="${type}" th:text="${type.getText()}"></label>
+                </li>
+            </ul>
+        </form>
     </div>
 </div>
 <div th:replace="allfooter::footer"></div>

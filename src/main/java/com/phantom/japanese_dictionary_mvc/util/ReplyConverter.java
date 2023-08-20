@@ -24,11 +24,11 @@ public class ReplyConverter {
         //todo
         //use both of objects = find way to extract
         WordFinder wordFinder = wordFinderFactory.getInstance(request); //choose finder
-        List<Note> mixSearchResult = wordFinder.getNotesFromRepository(request.getWord()); //get mixed (full+partial) result
+        List<Note> mixSearchResult = wordFinder.getNotesFromRepository(request.getWord().trim()); //get mixed (full+partial) result
 
         List <Note> fullMatch = new ArrayList<>();
         for (Note note : mixSearchResult) {
-            if (wordFinder.checkFullMatch(request.getWord(), note)) { //check full match
+            if (wordFinder.checkFullMatch(request.getWord().trim(), note)) { //check full match
                     fullMatch.add(note);
                 }
             }
@@ -38,11 +38,11 @@ public class ReplyConverter {
     public List <Note> getPartialReplies(Request request) {
 
         WordFinder wordFinder = wordFinderFactory.getInstance(request); //choose finder
-        List<Note> mixSearchResult = wordFinder.getNotesFromRepository(request.getWord()); //get mixed (full+partial) result
+        List<Note> mixSearchResult = wordFinder.getNotesFromRepository(request.getWord().trim()); //get mixed (full+partial) result
 
         List <Note> partialMatch = new ArrayList<>();
         for (Note note : mixSearchResult) {
-            if (!wordFinder.checkFullMatch(request.getWord(), note)) { //check partial match
+            if (!wordFinder.checkFullMatch(request.getWord().trim(), note)) { //check partial match
                 partialMatch.add(note);
             }
         }

@@ -20,39 +20,39 @@
 <div>
     <div style="width: 50%;  margin: 0 auto">
         <p>Чтобы увидеть ответ, наведите мышкой.</p>
-<p   th:text="'Количество выбранных задач - ' + ${writePracticeList.size()}"
-    style="font-size: 18px"></p>
+        <p th:text="'Количество выбранных задач - ' + ${writePracticeList.size()}"
+            style="font-size: 18px"></p>
 
-<table th:each="note : ${writePracticeList}" >
-    <tbody >
-    <tr th:class="'word'+
-    ${writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).KANJI ?
-    'hidden' : ''}">
-        <td th:text="${note.getKanji()}" style="font-size: 25px"></td>
-    </tr>
-    <tr th:class="'word'+
-            ${writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).KANA ?
-             'hidden' : ''}">
-        <td th:text="${note.getHiragana()}" style="font-size: 20px"></td>
-    </tr>
-    <tr th:class="'word'+
-            ${writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).TRANSLATION ?
-             'hidden' : ''}">
-        <td th:text="${note.getTranslation()}" style="font-size: 18px"></td>
-    </tr>
-    <tr th:class="'word'+
-            ${(writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).SPELLING) &&
-             (writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).DEFAULT)?
-             'hidden' : ''}">
-        <td th:text="${note.getRomadji()}" style="font-size: 18px"></td>
-    </tr>
-    </tbody>
-    <hr>
-</table>
-<hr>
-<br>
+        <table th:each="note : ${writePracticeList}" >
+            <tbody >
+            <tr th:class="'word'+
+            ${writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).KANJI ?
+            'hidden' : ''}">
+                <td th:text="${note.getKanji()}" style="font-size: 25px"></td>
+            </tr>
+            <tr th:class="'word'+
+                    ${writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).KANA ?
+                     'hidden' : ''}">
+                <td th:text="${note.getHiragana()}" style="font-size: 20px"></td>
+            </tr>
+            <tr th:class="'word'+
+                    ${writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).TRANSLATION ?
+                     'hidden' : ''}">
+                <td th:text="${note.getTranslation()}" style="font-size: 18px"></td>
+            </tr>
+            <tr th:class="'word'+
+                    ${(writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).SPELLING) &&
+                     (writePracticeRequest.getRequestType() != T(com.phantom.japanese_dictionary_mvc.requests.RequestType).DEFAULT)?
+                     'hidden' : ''}">
+                <td th:text="${note.getRomadji()}" style="font-size: 18px"></td>
+            </tr>
+            </tbody>
+            <hr>
+        </table>
+        <hr>
+        <br>
 
-</div>
+    </div>
 </div>
 <div th:replace="allfooter::footer"></div>
 </body>

@@ -16,19 +16,19 @@
 </div>
 <div>
     <div style="width: 50%;  margin: 0 auto" >
-<form name="f" method="post" action="/process_login" >
-    <label for="username" >Введите имя пользователя: </label>
-    <br>
-    <input type="text" name="username" id="username" th:value="'user'"/>
-    <br>
-    <label for="password" >Введите пароль: </label>
-    <br>
-    <input type="password" name="password" id="password" th:value="'user'"/>
-    <br>
-    <input type="submit" value="Login"/>
-    <div th:if="${param.error}" style="color: red">
-        Неправильные имя или пароль</div>
-</form>
+        <form name="f" method="post" action="/process_login" >
+            <label for="username" >Введите имя пользователя: </label>
+            <br>
+            <input type="text" name="username" id="username" th:value="'user'"/>
+            <br>
+            <label for="password" >Введите пароль: </label>
+            <br>
+            <input type="password" name="password" id="password" th:value="'user'"/>
+            <br>
+            <input type="submit" value="Login"/>
+            <div th:if="${param.error}" style="color: red">
+                Неправильные имя или пароль</div>
+        </form>
     </div>
 </div>
 </body>

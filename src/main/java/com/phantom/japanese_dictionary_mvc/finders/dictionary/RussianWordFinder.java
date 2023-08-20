@@ -19,10 +19,13 @@ public class RussianWordFinder implements WordFinder {
 
     @Override
     public boolean checkFullMatch(String wordToFind, Note note) {
+        //todo make better variant
         return note.getTranslation().startsWith(wordToFind + " ") ||
                 note.getTranslation().contains(" " + wordToFind + " ") ||
                 note.getTranslation().equals(wordToFind) ||
-                note.getTranslation().endsWith(" " + wordToFind);
+                note.getTranslation().endsWith(" " + wordToFind) ||
+                note.getTranslation().matches("^" + wordToFind.trim() +"\\p{Punct}+.*") ||
+                note.getTranslation().matches(".* " + wordToFind.trim() +"\\p{Punct}+.*") ;
     }
 
     @Override

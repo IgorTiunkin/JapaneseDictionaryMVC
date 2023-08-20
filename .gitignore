@@ -6,6 +6,7 @@ docker-compose.yml
 !**/src/main/**/target/
 !**/src/test/**/target/
 logs/
+*.log
 
 
 
