@@ -58,7 +58,7 @@ public class GrammarDictionaryController {
             return "grammar/index";
         }
         GrammarFinder grammarFinder = grammarFinderFactory.getInstance(request);
-        List<GrammarNote> notesFromRepository = grammarFinder.getNotesFromRepository(request.getWord());
+        List<GrammarNote> notesFromRepository = grammarFinder.getNotesFromRepository(request.getWord().trim().toLowerCase());
         List<GrammarNoteDTO> grammarNoteDTOS = convertGrammarNoteToGrammarNoteDTO(notesFromRepository);
         model.addAttribute("notes", grammarNoteDTOS);
         return "grammar/multishow";
