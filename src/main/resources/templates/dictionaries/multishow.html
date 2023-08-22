@@ -19,16 +19,16 @@
         <table th:each="note : ${fullMatchNotes}" >
             <tbody >
             <tr>
-                <td th:text="${note.getKanji()}"></td>
+                <td th:text="${note.getKanji()}" style="font-size: 22px"></td>
             </tr>
             <tr>
-                <td th:text="${note.getHiragana()}" style="color: green"></td>
+                <td th:text="${note.getHiragana()}" style="color: green; font-size: 20px"></td>
             </tr>
             <tr>
-                <td th:text="${note.getTranslation()}"></td>
+                <td th:text="${note.getTranslation()}" style="font-size: 18px"></td>
             </tr>
             <tr>
-                <td th:text="${note.getRomadji()}"></td>
+                <td th:text="${note.getRomadji()}" style="font-size: 18px"></td>
             </tr>
             </tbody>
             <hr>
@@ -42,16 +42,16 @@
         <table th:each="note : ${partialMatchNotes}" >
             <tbody >
             <tr>
-                <td th:text="${note.getKanji()}"></td>
+                <td th:text="${note.getKanji()}" style="font-size: 22px"></td>
             </tr>
             <tr>
-                <td th:text="${note.getHiragana()}" style="color: green"></td>
+                <td th:text="${note.getHiragana()}" style="color: green; font-size: 20px"></td>
             </tr>
             <tr>
-                <td th:text="${note.getTranslation()}"></td>
+                <td th:text="${note.getTranslation()}" style="font-size: 18px"></td>
             </tr>
             <tr>
-                <td th:text="${note.getRomadji()}"></td>
+                <td th:text="${note.getRomadji()}" style="font-size: 18px"></td>
             </tr>
             </tbody>
             <hr>

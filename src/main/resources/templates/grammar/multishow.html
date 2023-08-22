@@ -17,7 +17,7 @@
            th:text = "'Число совпадений в моей базе - ' + ${notes.size()}"
            style="font-size: 18px; color: blue"></p>
         <table th:each="grammarnote : ${notes}" >
-            <tbody >
+            <tbody style="font-size: 18px">
             <tr>
                 <td th:text="${grammarnote.getRule()}"></td>
             </tr>

@@ -7,10 +7,10 @@
 <body style="background: bisque">
 <div th:replace="allheader::top_header"></div>
 <div th:replace="allheader::grammar_subheader"></div>
-<h1 style="text-align: center">Раздел грамматики</h1>
-<div>
+<h1 style="text-align: center">Грамматический словарь</h1>
+<div style="font-size: 18px">
     <div style="width: 50%;  margin: 0 auto">
-    <p>Укажите часть грамматической конструкции, а мы постараемся подобрать аналог из нашей базы</p>
+    <p>Укажите часть грамматической конструкции, и мы постараемся подобрать аналог из нашей базы</p>
 
     <form th:method="GET" th:action="@{/grammar/show}" th:object="${request}">
         <label for="word">Введите слово или его часть </label>
@@ -18,11 +18,23 @@
         <input type="submit" value="Поиск">
         <div style="color:red" th:if="${#fields.hasErrors('word')}" th:errors="*{word}"></div>
     </form>
-        <p>Автоматическая настройка будет определять поле по следующему принципу:<br>
-            Запрос на английском языке - поиск по правилу или примеру.<br>
-            Запрос с использованием каны - поиск по правилу.<br>
-            Рекомендуется применять запрос с английской транслитерацией (как можно проще)
+        <br>
+        <p style="padding-bottom: 6px">В качестве запроса используйте английскую транслитерацию. <br>
+            <br>
+            <b>Примеры запросов:</b> <br>
+            to shite <br>
+            bakari ka <br>
+            totan <br>
         </p>
+
+        <p>
+            <b>Формат выдачи:</b><br>
+            Структура конструкции<br>
+            Значение и применение<br>
+            Пример<br>
+            Источник, где можно про нее почитать.
+        </p>
+
     </div>
 </div>
 <div th:replace="allfooter::footer"></div>
