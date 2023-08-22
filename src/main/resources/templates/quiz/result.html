@@ -28,9 +28,9 @@
         <ul style="padding-left: 0px">
             <li th:each="quiztask, itemStat : *{quiztasks}">
                 <ul style="padding-left: 0px">
-                    <p th:text="${quiztasks.get(__${itemStat.index}__).getQuestion()}" style="font-size: 18px"></p>
+                    <p th:text="${quiztasks.get(__${itemStat.index}__).getQuestion()}" style="font-size: 20px"></p>
                     <li th:each="option : ${quiztasks.get(__${itemStat.index}__).getOptions()}"
-                    th:text="${option}"
+                    th:text="${option}" style="font-size: 18px"
                     th:class="'answer'+
                     ${option.equals(user_answers.get(__${itemStat.index}__).getAnswer()) ?
                     'user' : ''} +

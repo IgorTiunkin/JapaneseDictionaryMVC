@@ -118,14 +118,15 @@ class JapaneseDictionaryMvcApplicationTests {
     @Test
     public void whenUserAnswersNull_thenDefaultCollection () {
         List <QuizTask> mockTask = new ArrayList<>();
+        String stubAnswer = "-1";
         for (int i = 0; i < 10; i++) {
             QuizTask quizTask = new QuizTask();
-            quizTask.setRightAnswer("-1");
+            quizTask.setRightAnswer(stubAnswer);
             mockTask.add(quizTask);
         }
         List <Answer> answers = quizResultChecker.createUserAnswersForCheck(mockTask, null);
         for (int i = 0; i < 10;i++) {
-            Assertions.assertEquals("-1", answers.get(i).getAnswer());
+            Assertions.assertEquals(stubAnswer, answers.get(i).getAnswer());
         }
 
     }

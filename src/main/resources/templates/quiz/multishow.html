@@ -16,12 +16,13 @@
                     <ul style="padding-left: 0px">
                         <li th:each="book, itemStat : *{answers}">
                             <ul style="padding-left: 0px">
-                                <p th:text="${quiztasks.get(__${itemStat.index}__).getQuestion()}"></p>
+                                <p th:text="${quiztasks.get(__${itemStat.index}__).getQuestion()}"
+                                style="font-size: 20px"></p>
                                 <li th:each="option : ${quiztasks.get(__${itemStat.index}__).getOptions()}">
                                     <input type="radio"
                                            th:field="*{answers[__${itemStat.index}__].answer}" th:value="${option}"
-                                    id="${option}" />
-                                    <label for="${option}" th:text="${option}"> </label>
+                                    th:id="${option}" />
+                                    <label th:for="${option}" th:text="${option}" style="font-size: 18px"> </label>
                                 </li>
                             </ul>
                         </li>

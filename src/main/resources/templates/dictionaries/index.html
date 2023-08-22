@@ -21,9 +21,9 @@
             <div style="color:red" th:if="${#fields.hasErrors('word')}" th:errors="*{word}"></div>
             <ul style="padding-left: 0px">
                 <li style="display: inline" th:each="type : ${types}">
-                    <input type="radio"  checked="checked" id = "${type}" name="type"
+                    <input type="radio"  checked="checked" th:id="${type.getText()}" name="type"
                            th:field="*{requestType}" th:value="${type}"/>
-                    <label for="${type}" th:text="${type.getText()}"></label>
+                    <label th:for = "${type.getText()}" th:text="${type.getText()}"></label>
                 </li>
             </ul>
             <input type="checkbox" th:field = "*{onlyFullMatch}"

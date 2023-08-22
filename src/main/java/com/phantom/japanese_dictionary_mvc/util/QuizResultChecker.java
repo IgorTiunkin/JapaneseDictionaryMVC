@@ -32,6 +32,7 @@ public class QuizResultChecker {
                 acceptedUserAnswers, quizTaskList);
         List <Answer> userAnswersForCheck = new ArrayList<>(quizTaskList.size());
         int acceptedUserAnswersSize = 0;
+        String stubAnswer = "-1";
         if (acceptedUserAnswers != null) {
             acceptedUserAnswersSize = acceptedUserAnswers.size();
             userAnswersForCheck.addAll(acceptedUserAnswers);
@@ -39,11 +40,11 @@ public class QuizResultChecker {
             for (int i = 0; i < acceptedUserAnswersSize; i++) {
                 if (userAnswersForCheck.get(i)==null
                         || userAnswersForCheck.get(i).getAnswer()==null)
-                {userAnswersForCheck.set(i, new Answer("-1"));}
+                {userAnswersForCheck.set(i, new Answer(stubAnswer));}
             }
         }
         for (int i = acceptedUserAnswersSize; i < quizTaskList.size(); i++) {
-            userAnswersForCheck.add(new Answer("-1"));
+            userAnswersForCheck.add(new Answer(stubAnswer));
         }
         return userAnswersForCheck;
     }
