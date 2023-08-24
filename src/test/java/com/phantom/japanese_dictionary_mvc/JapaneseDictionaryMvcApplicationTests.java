@@ -1,23 +1,23 @@
 package com.phantom.japanese_dictionary_mvc;
 
-import com.phantom.japanese_dictionary_mvc.dto.AnswerDto;
 import com.phantom.japanese_dictionary_mvc.finders.dictionary.*;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinderFactory;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.KanaGrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.RomajiGrammarFinder;
 import com.phantom.japanese_dictionary_mvc.models.Answer;
+import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.models.QuizTask;
+import com.phantom.japanese_dictionary_mvc.repositories.NoteRepository;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
+import com.phantom.japanese_dictionary_mvc.services.NoteService;
 import com.phantom.japanese_dictionary_mvc.util.QuizResultChecker;
-import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
@@ -27,12 +27,14 @@ class JapaneseDictionaryMvcApplicationTests {
     private final GrammarFinderFactory grammarFinderFactory;
     private final QuizResultChecker quizResultChecker;
     private Random random = new Random();
+    private final NoteService noteService;
 
     @Autowired
-    JapaneseDictionaryMvcApplicationTests(WordFinderFactory wordFinderFactory, GrammarFinderFactory grammarFinderFactory, QuizResultChecker quizResultChecker) {
+    JapaneseDictionaryMvcApplicationTests(WordFinderFactory wordFinderFactory, GrammarFinderFactory grammarFinderFactory, QuizResultChecker quizResultChecker, NoteRepository noteRepository, NoteService noteService) {
         this.wordFinderFactory = wordFinderFactory;
         this.grammarFinderFactory = grammarFinderFactory;
         this.quizResultChecker = quizResultChecker;
+        this.noteService = noteService;
     }
 
 
@@ -158,6 +160,52 @@ class JapaneseDictionaryMvcApplicationTests {
         Assertions.assertEquals("-1",answers.get(8).getAnswer());
         Assertions.assertEquals("-1",answers.get(9).getAnswer());
 
+
+    }
+    @Test
+    public void whenRussianWords_thenCorrectFullMatch () {
+        WordFinder wordFinder = new RussianWordFinder(noteService);
+        Note noteToTest = new Note();
+        noteToTest.setTranslation("тест");
+        Assertions.assertTrue(wordFinder.checkFullMatch("тест", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тест1", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тес", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("ест", noteToTest));
+        noteToTest.setTranslation("тест ");
+        Assertions.assertTrue(wordFinder.checkFullMatch("тест", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тест1", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тес", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("ест", noteToTest));
+        noteToTest.setTranslation(" тест");
+        Assertions.assertTrue(wordFinder.checkFullMatch("тест", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тест1", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тес", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("ест", noteToTest));
+        noteToTest.setTranslation(" тест ");
+        Assertions.assertTrue(wordFinder.checkFullMatch("тест", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тест1", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тес", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("ест", noteToTest));
+        noteToTest.setTranslation("тест-");
+        Assertions.assertTrue(wordFinder.checkFullMatch("тест", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тест1", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тес", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("ест", noteToTest));
+        noteToTest.setTranslation("тест,");
+        Assertions.assertTrue(wordFinder.checkFullMatch("тест", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тест1", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тес", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("ест", noteToTest));
+        noteToTest.setTranslation(",тест ");
+        Assertions.assertTrue(wordFinder.checkFullMatch("тест", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тест1", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тес", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("ест", noteToTest));
+        noteToTest.setTranslation(",тест,");
+        Assertions.assertTrue(wordFinder.checkFullMatch("тест", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тест1", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("тес", noteToTest));
+        Assertions.assertFalse(wordFinder.checkFullMatch("ест", noteToTest));
 
     }
 

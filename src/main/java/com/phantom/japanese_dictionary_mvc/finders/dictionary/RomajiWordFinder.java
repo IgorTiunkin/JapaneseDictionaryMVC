@@ -17,7 +17,7 @@ public class RomajiWordFinder implements WordFinder {
     }
     @Override
     public boolean checkFullMatch(String wordToFind, Note note) {
-        return (note.getRomadji().trim().matches(".*\\b"+wordToFind+"\\b.*"));
+        return note.getRomadji().matches(".*\\b"+wordToFind+"\\b.*");
     }
 
     @Override

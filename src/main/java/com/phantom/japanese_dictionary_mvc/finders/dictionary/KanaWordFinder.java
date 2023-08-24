@@ -19,7 +19,7 @@ public class KanaWordFinder implements WordFinder {
 
     @Override
     public boolean checkFullMatch(String wordToFind, Note note) {
-        return note.getHiragana().trim().equals(wordToFind);
+        return note.getHiragana().equals(wordToFind);
     }
 
     @Override

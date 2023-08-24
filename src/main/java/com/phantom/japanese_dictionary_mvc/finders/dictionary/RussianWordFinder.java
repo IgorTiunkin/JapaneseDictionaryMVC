@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 @Component
 public class RussianWordFinder implements WordFinder {
@@ -19,13 +20,7 @@ public class RussianWordFinder implements WordFinder {
 
     @Override
     public boolean checkFullMatch(String wordToFind, Note note) {
-        //todo make better variant
-        return note.getTranslation().startsWith(wordToFind + " ") ||
-                note.getTranslation().contains(" " + wordToFind + " ") ||
-                note.getTranslation().equals(wordToFind) ||
-                note.getTranslation().endsWith(" " + wordToFind) ||
-                note.getTranslation().matches("^" + wordToFind.trim() +"\\p{Punct}+.*") ||
-                note.getTranslation().matches(".* " + wordToFind.trim() +"\\p{Punct}+.*") ;
+        return note.getTranslation().matches(".*\\b" + wordToFind + "\\b.*");
     }
 
     @Override
