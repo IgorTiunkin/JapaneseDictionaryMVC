@@ -39,15 +39,15 @@ public class NoteService {
         noteRepository.save(note);
     }
 
-    @Transactional(readOnly = true) //todo change to integer ser
+    @Transactional(readOnly = true)
     public List <Note> getRandomVariants(int quantity) {
         Random random = new Random();
-        Set<Note> setForPractice = new HashSet<>();
+        Set <Integer> indicesForVariants = new HashSet<>();
         int count = (int) noteRepository.count();
-        while (setForPractice.size()<quantity) { //method need ids start from 1
-            setForPractice.add(noteRepository.getById(1+random.nextInt(count)));
+        while (indicesForVariants.size()<quantity) { //method need ids start from 1
+            indicesForVariants.add(1+random.nextInt(count));
         }
-        return new ArrayList<>(setForPractice);
+        return noteRepository.findAllByIdIn(indicesForVariants);
     }
 
 
