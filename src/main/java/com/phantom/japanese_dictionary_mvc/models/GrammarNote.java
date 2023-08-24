@@ -1,9 +1,6 @@
 package com.phantom.japanese_dictionary_mvc.models;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 
 import javax.persistence.*;
@@ -13,6 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString
 @Entity
+@EqualsAndHashCode
 @Table(name = "Grammarnotes")
 public class GrammarNote {
 

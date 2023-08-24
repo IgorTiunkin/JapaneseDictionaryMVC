@@ -39,7 +39,7 @@ public class NoteService {
         noteRepository.save(note);
     }
 
-    @Transactional(readOnly = true)
+    @Transactional(readOnly = true) //todo change to integer ser
     public List <Note> getRandomVariants(int quantity) {
         Random random = new Random();
         Set<Note> setForPractice = new HashSet<>();
