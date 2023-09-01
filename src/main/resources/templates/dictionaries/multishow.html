@@ -12,11 +12,11 @@
     <div style="width: 50%;  margin: 0 auto">
         <p th:if="${fullMatchNotes.isEmpty() && partialMatchNotes.isEmpty()}"
            th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос или фильтр.'"
-            style="font-size: 18px; color: red" ></p>
+            style="font-size: 18px; color: red" id = "absent"></p>
         <p th:if="${!fullMatchNotes.isEmpty()}"
            th:text = "'Число полных совпадений в моей базе - ' + ${fullMatchNotes.size()}"
-           style="font-size: 18px; color: blue"></p>
-        <table th:each="note : ${fullMatchNotes}" >
+           style="font-size: 18px; color: blue" id = "fullPresent"></p>
+        <table th:each="note : ${fullMatchNotes}" id = "fullTable">
             <tbody >
             <tr>
                 <td th:text="${note.getKanji()}" style="font-size: 22px"></td>
@@ -37,9 +37,9 @@
         <br>
         <p th:if="${!partialMatchNotes.isEmpty()}"
            th:text = "'Число частичных совпадений в моей базе - ' + ${partialMatchNotes.size()}"
-           style="font-size: 18px; color: blue"></p>
+           style="font-size: 18px; color: blue" id = "partialPresent"></p>
 
-        <table th:each="note : ${partialMatchNotes}" >
+        <table th:each="note : ${partialMatchNotes}" id = "partialTable">
             <tbody >
             <tr>
                 <td th:text="${note.getKanji()}" style="font-size: 22px"></td>

@@ -7,4 +7,5 @@ import java.util.List;
 public interface WordFinder {
     boolean checkFullMatch(String wordToFind, Note note);
     List<Note> getNotesFromRepository(String wordToFind);
+
 }

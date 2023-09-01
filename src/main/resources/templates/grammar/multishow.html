@@ -12,11 +12,11 @@
     <div style="width: 50%;  margin: 0 auto">
         <p th:if="${notes.isEmpty()}"
            th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос.'"
-           style="font-size: 18px;color: red"></p>
+           style="font-size: 18px;color: red" id = "absent"></p>
         <p th:if="${!notes.isEmpty()}"
            th:text = "'Число совпадений в моей базе - ' + ${notes.size()}"
-           style="font-size: 18px; color: blue"></p>
-        <table th:each="grammarnote : ${notes}" >
+           style="font-size: 18px; color: blue" id = "match"></p>
+        <table th:each="grammarnote : ${notes}" id = "table">
             <tbody style="font-size: 18px">
             <tr>
                 <td th:text="${grammarnote.getRule()}"></td>
