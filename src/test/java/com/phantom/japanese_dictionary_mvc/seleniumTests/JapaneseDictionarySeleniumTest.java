@@ -92,9 +92,39 @@ public abstract class JapaneseDictionarySeleniumTest {
         Assertions.assertEquals("Auth", driver.getTitle());
     }
 
+    public void whenChooseTranslationAndInputText_thenDictionaryShow() {
+        loginUser().goToDictionary().chooseTranslation().inputWord("болезнь").submit();
+        Assertions.assertEquals("Multi dictionary result", driver.getTitle());
+    }
+
+    public void whenChooseSpellingAndInputText_thenDictionaryShow() {
+        loginUser().goToDictionary().chooseSpelling().inputWord("yamai").submit();
+        Assertions.assertEquals("Multi dictionary result", driver.getTitle());
+    }
+
+    public void whenChooseKanjiAndInputText_thenDictionaryShow() {
+        loginUser().goToDictionary().chooseKanji().inputWord("病").submit();
+        Assertions.assertEquals("Multi dictionary result", driver.getTitle());
+    }
+
+    public void whenChooseKanaAndInputText_thenDictionaryShow() {
+        loginUser().goToDictionary().chooseKana().inputWord("やまい").submit();
+        Assertions.assertEquals("Multi dictionary result", driver.getTitle());
+    }
+
+    public void whenChooseDefaultAndInputText_thenDictionaryShow() {
+        loginUser().goToDictionary().chooseKana().chooseDefault().inputWord("болезнь").submit();
+        Assertions.assertEquals("Multi dictionary result", driver.getTitle());
+    }
+
+    public void whenChooseTranslationFullTextAndInputText_thenDictionaryShow() {
+        loginUser().goToDictionary().chooseTranslation().chooseFullMatch().inputWord("болезнь").submit();
+        Assertions.assertEquals("Multi dictionary result", driver.getTitle());
+    }
 
     @AfterEach
-    public void quit () {
+    public void quit () throws InterruptedException {
+        Thread.sleep(2000);
         driver.quit();
     }
 }

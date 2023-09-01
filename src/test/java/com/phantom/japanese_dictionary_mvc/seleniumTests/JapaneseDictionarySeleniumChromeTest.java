@@ -1,5 +1,6 @@
 package com.phantom.japanese_dictionary_mvc.seleniumTests;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -54,6 +55,36 @@ public class JapaneseDictionarySeleniumChromeTest extends JapaneseDictionarySele
     @Test
     public void whenLogout_thenAuthPage_Chrome() {
         whenLogout_thenAuthPage();
+    }
+
+    @Test
+    public void whenChooseTranslationAndInputText_thenDictionaryShow_Chrome() {
+        whenChooseTranslationAndInputText_thenDictionaryShow();
+    }
+
+    @Test
+    public void whenChooseSpellingAndInputText_thenDictionaryShow_Chrome() {
+        whenChooseSpellingAndInputText_thenDictionaryShow();
+    }
+
+    @Test
+    public void whenChooseKanjiAndInputText_thenDictionaryShow_Chrome() {
+        whenChooseKanjiAndInputText_thenDictionaryShow();
+    }
+
+    @Test
+    public void whenChooseKanaAndInputText_thenDictionaryShow_Chrome() {
+        whenChooseKanaAndInputText_thenDictionaryShow();
+    }
+
+    @Test
+    public void whenChooseDefaultAndInputText_thenDictionaryShow_Chrome() {
+        whenChooseDefaultAndInputText_thenDictionaryShow();
+    }
+
+    @Test
+    public void whenChooseTranslationFullTextAndInputText_thenDictionaryShow_Chrome() {
+        whenChooseTranslationFullTextAndInputText_thenDictionaryShow();
     }
 
 }

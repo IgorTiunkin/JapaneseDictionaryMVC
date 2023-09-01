@@ -19,8 +19,9 @@ public class WelcomePage extends BasePage{
         super(webDriver, webDriverWait);
     }
 
-    public void goToDictionary() {
+    public DictionaryIndexPage goToDictionary() {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(dictionaryBy)).click();
+        return new DictionaryIndexPage(driver, webDriverWait);
     }
 
     public void goToGrammar() {
