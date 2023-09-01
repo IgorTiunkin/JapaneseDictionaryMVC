@@ -1,6 +1,7 @@
-package com.phantom.japanese_dictionary_mvc;
+package com.phantom.japanese_dictionary_mvc.seleniumTests;
 
 import com.phantom.japanese_dictionary_mvc.pageObject.LoginPage;
+import com.phantom.japanese_dictionary_mvc.pageObject.WelcomePage;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -12,25 +13,33 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.Duration;
 
-@SpringBootTest
-public class JapaneseDictionarySeleniumTest {
-    private static WebDriver driver;
+
+public abstract class JapaneseDictionarySeleniumTest {
+    private WebDriver driver;
+    WebDriverWait wait;
     private final String TEST_URL  = "http://localhost:8080/";
 
-    @Test
+    public JapaneseDictionarySeleniumTest (WebDriver webDriver) {
+        this.driver = webDriver;
+        this.wait = new WebDriverWait(driver, Duration.ofMillis(2000));
+    }
+
+
+    private WelcomePage loginUser() {
+        driver.get(TEST_URL + "auth/login");
+        return new LoginPage(driver, wait).loginUser("user", "user");
+    }
+
+
     public void whenClickWithDefault_thenSuccessfulLogin () {
-        driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(2000));
         driver.get(TEST_URL + "auth/login");
         LoginPage loginPage = new LoginPage(driver, wait);
         loginPage.loginDefaultUser();
         Assertions.assertEquals("Welcome", driver.getTitle());
     }
 
-    @Test
+
     public void whenValidUser_thenSuccessfulLogin () {
-        driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(2000));
         driver.get(TEST_URL + "auth/login");
         LoginPage loginPage = new LoginPage(driver, wait);
         loginPage.loginUser("user", "user");
@@ -38,25 +47,47 @@ public class JapaneseDictionarySeleniumTest {
 
     }
 
-    @Test
+
     public void whenInvalidUser_thenLoginPage () {
-        driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(2000));
         driver.get(TEST_URL + "auth/login");
         LoginPage loginPage = new LoginPage(driver, wait);
         loginPage.loginUser("user1", "user");
         Assertions.assertEquals("Auth", driver.getTitle());
     }
 
-    @Test
+
     public void whenInvalidPassword_thenLoginPage () {
-        driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(2000));
         driver.get(TEST_URL + "auth/login");
         LoginPage loginPage = new LoginPage(driver, wait);
         loginPage.loginUser("user", "user1");
         Assertions.assertEquals("Auth", driver.getTitle());
     }
+
+
+    public void whenDictionaryLink_thenDictionaryPage() {
+        loginUser().goToDictionary();
+        Assertions.assertEquals("Base dictionary", driver.getTitle());
+    }
+
+
+    public void whenGrammarLink_thenGrammarPage() {
+        loginUser().goToGrammar();
+        Assertions.assertEquals("Grammar", driver.getTitle());
+    }
+
+
+    public void whenWriteTestLink_thenWriteTestPage() {
+        loginUser().goToWriteTest();
+        Assertions.assertEquals("Write Practice", driver.getTitle());
+    }
+
+
+    public void whenQuizLink_thenQuizPage() {
+        loginUser().goToQuiz();
+        Assertions.assertEquals("Quiz", driver.getTitle());
+    }
+
+
 
     @AfterEach
     public void quit () {

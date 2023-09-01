@@ -20,7 +20,7 @@ public class LoginPage {
         this.webDriverWait = webDriverWait;
     }
 
-    public void loginUser (String username, String password)  {
+    public WelcomePage loginUser (String username, String password)  {
         WebElement usernameBox = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(usernameBy));
         usernameBox.clear();
         usernameBox.sendKeys(username);
@@ -28,9 +28,11 @@ public class LoginPage {
         passwordBox.clear();
         passwordBox.sendKeys(password);
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(submitButtonBy)).click();
+        return new WelcomePage(driver,webDriverWait);
     }
 
-    public void loginDefaultUser ()  {
+    public WelcomePage loginDefaultUser ()  {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(submitButtonBy)).click();
+        return new WelcomePage(driver,webDriverWait);
     }
 }
