@@ -87,6 +87,10 @@ public abstract class JapaneseDictionarySeleniumTest {
         Assertions.assertEquals("Quiz", driver.getTitle());
     }
 
+    public void whenLogout_thenAuthPage() {
+        loginUser().logout();
+        Assertions.assertEquals("Auth", driver.getTitle());
+    }
 
 
     @AfterEach

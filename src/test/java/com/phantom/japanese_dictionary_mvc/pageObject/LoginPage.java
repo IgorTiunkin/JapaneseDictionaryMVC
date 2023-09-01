@@ -7,17 +7,14 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage {
-    private WebDriver driver;
-    private WebDriverWait webDriverWait;
+public class LoginPage extends BasePage{
     private By usernameBy = By.id("username");
     private By passwordBy = By.id("password");
     private By submitButtonBy = By.xpath("//input[@value='Login']");
 
 
     public LoginPage (WebDriver webDriver, WebDriverWait webDriverWait) {
-        this.driver = webDriver;
-        this.webDriverWait = webDriverWait;
+        super(webDriver, webDriverWait);
     }
 
     public WelcomePage loginUser (String username, String password)  {

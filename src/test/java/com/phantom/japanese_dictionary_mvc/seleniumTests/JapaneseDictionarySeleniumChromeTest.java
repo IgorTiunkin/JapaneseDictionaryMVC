@@ -51,4 +51,9 @@ public class JapaneseDictionarySeleniumChromeTest extends JapaneseDictionarySele
         whenQuizLink_thenQuizPage();
     }
 
+    @Test
+    public void whenLogout_thenAuthPage_Chrome() {
+        whenLogout_thenAuthPage();
+    }
+
 }
