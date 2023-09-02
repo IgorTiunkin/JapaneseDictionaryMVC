@@ -1,5 +1,6 @@
 package com.phantom.japanese_dictionary_mvc.seleniumTests;
 
+import com.phantom.japanese_dictionary_mvc.pageObject.QuizShowPage;
 import com.phantom.japanese_dictionary_mvc.pageObject.WritePracticeShowPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -116,6 +117,11 @@ public class JapaneseDictionarySeleniumChromeTest extends JapaneseDictionarySele
     @Test
     public void whenTooManyTasksInput_thenWritePracticeIndex_Chrome() {
         whenTooManyTasksInput_thenWritePracticeIndex();
+    }
+
+    @Test
+    public void whenGiveQuizTasks_thenGetRightNumberOfTasks_Chrome() {
+        whenGiveQuizTasks_thenGetRightNumberOfTasks();
     }
 
 }

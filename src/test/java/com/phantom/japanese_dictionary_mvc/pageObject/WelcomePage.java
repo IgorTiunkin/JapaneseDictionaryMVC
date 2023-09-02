@@ -32,8 +32,9 @@ public class WelcomePage extends BasePage{
         return new WritePracticeIndexPage(driver, webDriverWait);
     }
 
-    public void goToQuiz() {
+    public QuizIndexPage goToQuiz() {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(quizBy)).click();
+        return new QuizIndexPage(driver, webDriverWait);
     }
 
     public LoginPage logout() {

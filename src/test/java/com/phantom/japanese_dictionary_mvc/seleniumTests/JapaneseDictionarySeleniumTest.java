@@ -1,6 +1,7 @@
 package com.phantom.japanese_dictionary_mvc.seleniumTests;
 
 import com.phantom.japanese_dictionary_mvc.pageObject.LoginPage;
+import com.phantom.japanese_dictionary_mvc.pageObject.QuizShowPage;
 import com.phantom.japanese_dictionary_mvc.pageObject.WelcomePage;
 import com.phantom.japanese_dictionary_mvc.pageObject.WritePracticeShowPage;
 import org.junit.jupiter.api.AfterEach;
@@ -9,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Random;
 
 
 public abstract class JapaneseDictionarySeleniumTest {
@@ -162,7 +164,19 @@ public abstract class JapaneseDictionarySeleniumTest {
         Assertions.assertEquals("Write Practice", driver.getTitle());
     }
 
-
+    public void whenGiveQuizTasks_thenGetRightNumberOfTasks() {
+        Random random = new Random();
+        int testNumberOfTasks = random.nextInt(20)+1;
+        int testNumberOfOptions = random.nextInt(8)+2;
+        QuizShowPage quizShowPage = loginUser().goToQuiz()
+                .inputNumberOfTasks(String.valueOf(testNumberOfTasks))
+                .inputNumberOfOptions(String.valueOf(testNumberOfOptions))
+                .submit();
+        int realNumberOfTasks = driver.findElements(quizShowPage.getQuizTaskBy()).size();
+        int realNumberOfOptions = driver.findElements(quizShowPage.getQuizOptionBy()).size();
+        Assertions.assertEquals(testNumberOfTasks, realNumberOfTasks);
+        Assertions.assertEquals(testNumberOfTasks*testNumberOfOptions, realNumberOfOptions);
+    }
 
     @AfterEach
     public void quit () throws InterruptedException {

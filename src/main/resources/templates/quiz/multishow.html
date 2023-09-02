@@ -14,8 +14,8 @@
     <div style="width: 50%;  margin: 0 auto">
         <form th:method="GET" th:action="@{/quiz/check}" th:object="${answer_form}">
                     <ul style="padding-left: 0px">
-                        <li th:each="book, itemStat : *{answers}">
-                            <ul style="padding-left: 0px">
+                        <li th:each="task, itemStat : *{answers}">
+                            <ul style="padding-left: 0px" id = "question">
                                 <p th:text="${quiztasks.get(__${itemStat.index}__).getQuestion()}"
                                 style="font-size: 20px"></p>
                                 <li th:each="option : ${quiztasks.get(__${itemStat.index}__).getOptions()}">
