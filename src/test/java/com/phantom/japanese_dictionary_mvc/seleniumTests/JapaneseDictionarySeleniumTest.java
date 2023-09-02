@@ -2,14 +2,11 @@ package com.phantom.japanese_dictionary_mvc.seleniumTests;
 
 import com.phantom.japanese_dictionary_mvc.pageObject.LoginPage;
 import com.phantom.japanese_dictionary_mvc.pageObject.WelcomePage;
-import org.junit.jupiter.api.AfterAll;
+import com.phantom.japanese_dictionary_mvc.pageObject.WritePracticeShowPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.Duration;
 
@@ -18,6 +15,7 @@ public abstract class JapaneseDictionarySeleniumTest {
     private WebDriver driver;
     WebDriverWait wait;
     private final String TEST_URL  = "http://localhost:8080/";
+    private final String NUMBER_OF_WRITE_TESTS = "5";
 
     public JapaneseDictionarySeleniumTest (WebDriver webDriver) {
         this.driver = webDriver;
@@ -121,6 +119,50 @@ public abstract class JapaneseDictionarySeleniumTest {
         loginUser().goToDictionary().chooseTranslation().chooseFullMatch().inputWord("болезнь").submit();
         Assertions.assertEquals("Multi dictionary result", driver.getTitle());
     }
+
+    public void whenInputTextAndSubmit_thenGrammarShow() {
+        loginUser().goToGrammar().inputText("bakari").submit();
+        Assertions.assertEquals("Grammar show", driver.getTitle());
+    }
+
+    public void whenChooseKanaAndInputInWrite_thenWriteShowUnhiddenKana() {
+        WritePracticeShowPage showPage = loginUser().goToWriteTest().chooseKana().inputNumberOfTasks(NUMBER_OF_WRITE_TESTS).submit();
+        Assertions.assertEquals("word", driver.findElement(showPage.getKanaRowBy()).getAttribute("class"));
+        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getKanjiRowBy()).getAttribute("class"));
+        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getRomadjiRowBy()).getAttribute("class"));
+        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getTranslationRowBy()).getAttribute("class"));
+    }
+
+    public void whenChooseKanjiAndInputInWrite_thenWriteShowUnhiddenKanji() {
+        WritePracticeShowPage showPage = loginUser().goToWriteTest().chooseKanji().inputNumberOfTasks(NUMBER_OF_WRITE_TESTS).submit();
+        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getKanaRowBy()).getAttribute("class"));
+        Assertions.assertEquals("word", driver.findElement(showPage.getKanjiRowBy()).getAttribute("class"));
+        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getRomadjiRowBy()).getAttribute("class"));
+        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getTranslationRowBy()).getAttribute("class"));
+    }
+
+    public void whenChooseRomajiAndInputInWrite_thenWriteShowUnhiddenRomaji() {
+        WritePracticeShowPage showPage = loginUser().goToWriteTest().chooseSpelling().inputNumberOfTasks(NUMBER_OF_WRITE_TESTS).submit();
+        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getKanaRowBy()).getAttribute("class"));
+        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getKanjiRowBy()).getAttribute("class"));
+        Assertions.assertEquals("word", driver.findElement(showPage.getRomadjiRowBy()).getAttribute("class"));
+        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getTranslationRowBy()).getAttribute("class"));
+    }
+
+    public void whenChooseTranslationAndInputInWrite_thenWriteShowUnhiddenTranslation() {
+        WritePracticeShowPage showPage = loginUser().goToWriteTest().chooseTranslation().inputNumberOfTasks(NUMBER_OF_WRITE_TESTS).submit();
+        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getKanaRowBy()).getAttribute("class"));
+        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getKanjiRowBy()).getAttribute("class"));
+        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getRomadjiRowBy()).getAttribute("class"));
+        Assertions.assertEquals("word", driver.findElement(showPage.getTranslationRowBy()).getAttribute("class"));
+    }
+
+    public void whenTooManyTasksInput_thenWritePracticeIndex() {
+        loginUser().goToWriteTest().inputNumberOfTasks("22").submit();
+        Assertions.assertEquals("Write Practice", driver.getTitle());
+    }
+
+
 
     @AfterEach
     public void quit () throws InterruptedException {

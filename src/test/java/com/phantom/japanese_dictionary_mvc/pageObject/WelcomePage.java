@@ -1,9 +1,7 @@
 package com.phantom.japanese_dictionary_mvc.pageObject;
 
-import lombok.extern.java.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -24,12 +22,14 @@ public class WelcomePage extends BasePage{
         return new DictionaryIndexPage(driver, webDriverWait);
     }
 
-    public void goToGrammar() {
+    public GrammarIndexPage goToGrammar() {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(grammarBy)).click();
+        return new GrammarIndexPage(driver, webDriverWait);
     }
 
-    public void goToWriteTest() {
+    public WritePracticeIndexPage goToWriteTest() {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(writeTestBy)).click();
+        return new WritePracticeIndexPage(driver, webDriverWait);
     }
 
     public void goToQuiz() {
