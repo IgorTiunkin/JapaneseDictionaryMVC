@@ -378,3 +378,210 @@
 2023-09-03 20:53:38,296 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /write-test/show
 2023-09-03 20:53:38,298 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-4] Accepted write practice request: requesttype = SPELLING; quantity = 5
 2023-09-03 20:53:38,307 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:14:30,437 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionarySeleniumFirefoxTest using Java 11.0.9.1 on Mabo with PID 11152 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-03 21:14:30,439 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-03 21:14:30,442 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-03 21:14:30,458 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-03 21:14:30,959 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-03 21:14:31,263 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-03 21:14:31,352 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 81 ms. Found 3 JPA repository interfaces.
+2023-09-03 21:14:32,021 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-03 21:14:32,086 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-03 21:14:32,237 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-03 21:14:32,356 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-03 21:14:32,601 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-03 21:14:32,618 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-03 21:14:33,438 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-03 21:14:33,447 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-03 21:14:33,921 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-03 21:14:34,419 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ac76ad9, org.springframework.security.web.context.SecurityContextPersistenceFilter@64096a41, org.springframework.security.web.header.HeaderWriterFilter@25031fd4, org.springframework.security.web.authentication.logout.LogoutFilter@20524816, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7e44f989, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24455d50, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19439ec4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@213c812a, org.springframework.security.web.session.SessionManagementFilter@22195d06, org.springframework.security.web.access.ExceptionTranslationFilter@31dbca5d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@18fcfe7e]
+2023-09-03 21:14:35,371 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionarySeleniumFirefoxTest in 5.315 seconds (JVM running for 30.137)
+2023-09-03 21:14:35,372 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-03 21:14:35,374 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-03 21:14:35,529 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
+2023-09-03 21:14:35,531 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:14:35,836 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /welcome
+2023-09-03 21:14:35,837 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:14:52,269 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionarySeleniumFirefoxTest using Java 11.0.9.1 on Mabo with PID 18140 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-03 21:14:52,270 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-03 21:14:52,273 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-03 21:14:52,275 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-03 21:14:52,810 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-03 21:14:53,121 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-03 21:14:53,217 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 84 ms. Found 3 JPA repository interfaces.
+2023-09-03 21:14:53,907 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-03 21:14:53,977 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-03 21:14:54,135 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-03 21:14:54,258 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-03 21:14:54,477 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-03 21:14:54,496 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-03 21:14:55,187 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-03 21:14:55,196 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-03 21:14:55,662 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-03 21:14:56,164 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6cfe32cd, org.springframework.security.web.context.SecurityContextPersistenceFilter@9cdf13e, org.springframework.security.web.header.HeaderWriterFilter@969c2f9, org.springframework.security.web.authentication.logout.LogoutFilter@79d8075c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@823f978, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@299c86f0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7afac89a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f14eb51, org.springframework.security.web.session.SessionManagementFilter@36e11b60, org.springframework.security.web.access.ExceptionTranslationFilter@585718dd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5f0a5848]
+2023-09-03 21:14:57,119 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionarySeleniumFirefoxTest in 5.183 seconds (JVM running for 11.449)
+2023-09-03 21:14:57,120 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-03 21:14:57,122 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-03 21:14:57,285 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /auth/login
+2023-09-03 21:14:57,287 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:14:57,704 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /welcome
+2023-09-03 21:14:57,707 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:03,935 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
+2023-09-03 21:15:03,937 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:04,281 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /welcome
+2023-09-03 21:15:04,282 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:04,348 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /dictionary
+2023-09-03 21:15:04,350 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:04,981 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /dictionary/show
+2023-09-03 21:15:04,981 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-1] Accepted dictionary request: request type = TRANSLATION; word to find = болезнь; match = true
+2023-09-03 21:15:04,996 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:10,421 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /auth/login
+2023-09-03 21:15:10,423 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:10,748 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /welcome
+2023-09-03 21:15:10,749 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:10,810 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /grammar
+2023-09-03 21:15:10,811 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:16,478 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /auth/login
+2023-09-03 21:15:16,480 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:16,808 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /welcome
+2023-09-03 21:15:16,809 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:16,884 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /write-test
+2023-09-03 21:15:16,888 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:17,300 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /write-test/show
+2023-09-03 21:15:17,304 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-6] Accepted write practice request: requesttype = KANJI; quantity = 5
+2023-09-03 21:15:17,312 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:22,866 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
+2023-09-03 21:15:22,868 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:23,203 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /welcome
+2023-09-03 21:15:23,206 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:23,287 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /dictionary
+2023-09-03 21:15:23,290 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:28,963 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /auth/login
+2023-09-03 21:15:28,965 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:29,297 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /welcome
+2023-09-03 21:15:29,298 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:29,357 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /dictionary
+2023-09-03 21:15:29,360 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:29,724 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /dictionary/show
+2023-09-03 21:15:29,725 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-8] Accepted dictionary request: request type = KANJI; word to find = 病; match = false
+2023-09-03 21:15:29,742 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:35,345 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /auth/login
+2023-09-03 21:15:35,347 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:35,677 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /welcome
+2023-09-03 21:15:35,679 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:35,743 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /dictionary
+2023-09-03 21:15:35,745 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:36,059 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /dictionary/show
+2023-09-03 21:15:36,060 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-6] Accepted dictionary request: request type = KANA; word to find = やまい; match = false
+2023-09-03 21:15:36,073 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:41,508 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
+2023-09-03 21:15:41,510 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:41,819 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /welcome
+2023-09-03 21:15:41,821 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:41,899 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /write-test
+2023-09-03 21:15:41,900 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:41,996 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /write-test/show
+2023-09-03 21:15:41,997 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-1] Accepted write practice request: requesttype = DEFAULT; quantity = 22
+2023-09-03 21:15:41,999 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:47,587 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /auth/login
+2023-09-03 21:15:47,589 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:47,911 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /welcome
+2023-09-03 21:15:47,912 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:47,994 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /write-test
+2023-09-03 21:15:47,997 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:48,348 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /write-test/show
+2023-09-03 21:15:48,350 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-9] Accepted write practice request: requesttype = SPELLING; quantity = 5
+2023-09-03 21:15:48,362 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:54,111 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /auth/login
+2023-09-03 21:15:54,112 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:54,433 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /welcome
+2023-09-03 21:15:54,435 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:54,519 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /quiz
+2023-09-03 21:15:54,522 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:15:54,660 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /quiz/show
+2023-09-03 21:15:54,660 TRACE com.phantom.japanese_dictionary_mvc.controllers.QuizController [http-nio-8080-exec-5] Accepted quiz request: request type = TRANSLATION; number of tasks = 15; number of options = 8
+2023-09-03 21:15:54,695 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:00,259 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /auth/login
+2023-09-03 21:16:00,261 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:00,604 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /welcome
+2023-09-03 21:16:00,605 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:06,312 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /auth/login
+2023-09-03 21:16:06,313 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:06,715 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /auth/login
+2023-09-03 21:16:06,716 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:12,345 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /auth/login
+2023-09-03 21:16:12,346 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:12,666 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /welcome
+2023-09-03 21:16:12,669 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:12,747 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /write-test
+2023-09-03 21:16:12,749 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:13,093 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /write-test/show
+2023-09-03 21:16:13,094 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-2] Accepted write practice request: requesttype = TRANSLATION; quantity = 5
+2023-09-03 21:16:13,101 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:18,880 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /auth/login
+2023-09-03 21:16:18,881 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:19,193 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /welcome
+2023-09-03 21:16:19,194 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:19,260 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /write-test
+2023-09-03 21:16:19,262 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:19,629 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /write-test/show
+2023-09-03 21:16:19,629 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-10] Accepted write practice request: requesttype = KANA; quantity = 5
+2023-09-03 21:16:19,636 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:25,382 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /auth/login
+2023-09-03 21:16:25,384 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:25,713 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /welcome
+2023-09-03 21:16:25,714 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:25,778 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /quiz
+2023-09-03 21:16:25,780 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:31,424 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /auth/login
+2023-09-03 21:16:31,425 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:31,739 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /welcome
+2023-09-03 21:16:31,741 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:31,814 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /dictionary
+2023-09-03 21:16:31,817 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:32,178 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /dictionary/show
+2023-09-03 21:16:32,179 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-2] Accepted dictionary request: request type = SPELLING; word to find = yamai; match = false
+2023-09-03 21:16:32,191 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:37,623 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /auth/login
+2023-09-03 21:16:37,624 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:37,943 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /welcome
+2023-09-03 21:16:37,945 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:38,007 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /dictionary
+2023-09-03 21:16:38,009 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:38,389 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /dictionary/show
+2023-09-03 21:16:38,390 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-10] Accepted dictionary request: request type = TRANSLATION; word to find = болезнь; match = false
+2023-09-03 21:16:38,413 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:43,815 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /auth/login
+2023-09-03 21:16:43,817 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:44,140 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /welcome
+2023-09-03 21:16:44,141 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:44,211 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
+2023-09-03 21:16:44,213 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:50,505 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /auth/login
+2023-09-03 21:16:50,506 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:50,838 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /auth/login
+2023-09-03 21:16:50,840 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:56,291 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /auth/login
+2023-09-03 21:16:56,292 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:56,627 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /welcome
+2023-09-03 21:16:56,628 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:56,689 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /dictionary
+2023-09-03 21:16:56,691 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:16:57,297 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /dictionary/show
+2023-09-03 21:16:57,299 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-9] Accepted dictionary request: request type = DEFAULT; word to find = болезнь; match = false
+2023-09-03 21:16:57,322 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:17:03,148 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /auth/login
+2023-09-03 21:17:03,150 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:17:03,532 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /welcome
+2023-09-03 21:17:03,534 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:17:03,629 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /grammar
+2023-09-03 21:17:03,632 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:17:03,739 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /grammar/show
+2023-09-03 21:17:03,740 TRACE com.phantom.japanese_dictionary_mvc.controllers.GrammarDictionaryController [http-nio-8080-exec-5] Accepted grammar request: requesttype = DEFAULT; word to find = bakari
+2023-09-03 21:17:03,748 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:17:09,257 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /auth/login
+2023-09-03 21:17:09,258 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:17:09,553 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /welcome
+2023-09-03 21:17:09,554 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-09-03 21:17:09,617 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /write-test
+2023-09-03 21:17:09,619 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
