@@ -5,10 +5,7 @@ import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinderFactory;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.KanaGrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.RomajiGrammarFinder;
-import com.phantom.japanese_dictionary_mvc.models.Answer;
-import com.phantom.japanese_dictionary_mvc.models.Note;
-import com.phantom.japanese_dictionary_mvc.models.Person;
-import com.phantom.japanese_dictionary_mvc.models.QuizTask;
+import com.phantom.japanese_dictionary_mvc.models.*;
 import com.phantom.japanese_dictionary_mvc.repositories.NoteRepository;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
@@ -216,11 +213,40 @@ class JapaneseDictionaryMvcApplicationTests {
 
     }
 
-    @Test
-    public void whenUserId3_thenSizeOfAnswers2() {
-        Person user = new Person();
-        user.setPersonId(3);
-        Assertions.assertEquals(2, quizResultsService.getQuizResultsByUser(user).size());
-    }
+   @Test
+   public void givenUserAnswers_thenFailedTasks() {
+       List <QuizTask> quizTasks = new ArrayList<>();
+       List <Answer> userAnswers = new ArrayList<>();
+       List <FailedQuizTask> mockFailedQuizTasks = new ArrayList<>();
+       for (int i = 0; i < 5; i++) {
+           String testQuestion = String.valueOf(random.nextInt(100));
+           String testAnswer = String.valueOf(random.nextInt(100));
+           QuizTask quizTask = new QuizTask();
+           quizTask.setRightAnswer(testAnswer);
+           quizTask.setQuestion(testQuestion);
+           quizTasks.add(quizTask);
+           Answer answer = new Answer();
+           if (i%2==0) {
+               answer.setAnswer(testAnswer);
+           } else {
+               answer.setAnswer(testAnswer + "1");
+               FailedQuizTask failedQuizTask = new FailedQuizTask();
+               failedQuizTask.setFailedQuestion(testQuestion);
+               mockFailedQuizTasks.add(failedQuizTask);
+           }
+           userAnswers.add(answer);
+       }
+       List <FailedQuizTask> realFailedQuizTasks = quizResultChecker.
+               createQuizResultForSave(0, quizTasks, userAnswers, null)
+               .getFailedQuizTasks();
+       Assertions.assertEquals(mockFailedQuizTasks.size(), realFailedQuizTasks.size());
+       for (int i = 0; i < mockFailedQuizTasks.size(); i++) {
+           Assertions.assertEquals(mockFailedQuizTasks.get(i).getFailedQuestion(),
+                   realFailedQuizTasks.get(i).getFailedQuestion());
+       }
+
+   }
+
+
 
 }
