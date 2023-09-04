@@ -30,7 +30,7 @@ public class QuizResult {
     @Column(name = "number_of_tasks")
     private int numberOfTasks;
 
-    @OneToMany (mappedBy = "quizResult", fetch = FetchType.EAGER)
+    @OneToMany (mappedBy = "quizResult", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<FailedQuizTask> failedQuizTasks;
 
     @Override
@@ -38,6 +38,7 @@ public class QuizResult {
         return "QuizResult{" +
                 "numberOfRightAnswers=" + numberOfRightAnswers +
                 ", numberOfTasks=" + numberOfTasks +
+                ", failedQuizTasks=" + failedQuizTasks +
                 '}';
     }
 }

@@ -1,9 +1,6 @@
 package com.phantom.japanese_dictionary_mvc.util;
 
-import com.phantom.japanese_dictionary_mvc.dto.AnswerDto;
-import com.phantom.japanese_dictionary_mvc.models.Answer;
-import com.phantom.japanese_dictionary_mvc.models.QuizTask;
-import org.jetbrains.annotations.NotNull;
+import com.phantom.japanese_dictionary_mvc.models.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -47,5 +44,29 @@ public class QuizResultChecker {
             userAnswersForCheck.add(new Answer(stubAnswer));
         }
         return userAnswersForCheck;
+    }
+
+
+    public QuizResult createQuizResultForSave(int numberOfRightAnswers, List<QuizTask> quizTasks,
+                                              List<Answer> userAnswers, Person currentUser) {
+        QuizResult quizResult = new QuizResult();
+        quizResult.setNumberOfRightAnswers(numberOfRightAnswers);
+        quizResult.setNumberOfTasks(quizTasks.size());
+        quizResult.setUser(currentUser);
+        quizResult.setFailedQuizTasks(getFailedTasksFromResult(quizTasks, userAnswers,quizResult));
+        return quizResult;
+    }
+
+    private List <FailedQuizTask> getFailedTasksFromResult(List<QuizTask> quizTasks,
+                                                           List<Answer> userAnswers,
+                                                           QuizResult quizResult) {
+        List <FailedQuizTask> failedQuizTasks = new ArrayList<>();
+        for (int i = 0; i < quizTasks.size(); i++) {
+            if (!quizTasks.get(i).getRightAnswer().equals(userAnswers.get(i).getAnswer())) {
+                String failedQuestion = quizTasks.get(i).getQuestion();
+                failedQuizTasks.add(new FailedQuizTask(quizResult, failedQuestion));
+            }
+        }
+        return failedQuizTasks;
     }
 }

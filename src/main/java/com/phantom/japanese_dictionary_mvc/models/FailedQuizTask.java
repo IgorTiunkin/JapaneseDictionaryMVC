@@ -25,4 +25,16 @@ public class FailedQuizTask {
 
     @Column(name = "failed_question")
     private String failedQuestion;
+
+    public FailedQuizTask(QuizResult quizResult, String failedQuestion) {
+        this.quizResult = quizResult;
+        this.failedQuestion = failedQuestion;
+    }
+
+    @Override
+    public String toString() {
+        return "FailedQuizTask{" +
+                "failedQuestion='" + failedQuestion + '\'' +
+                '}';
+    }
 }

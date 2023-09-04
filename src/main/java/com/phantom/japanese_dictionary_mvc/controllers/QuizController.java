@@ -25,7 +25,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/quiz")
-@SessionAttributes({"quiztasks", "result", "user_answers"})
+@SessionAttributes({"quiztasks", "numberOfRightAnswers", "user_answers"})
 public class QuizController {
     private final QuizConverter quizConverter;
     private final QuizResultChecker quizResultChecker;
@@ -74,30 +74,35 @@ public class QuizController {
         // for view we need to create full size list with stub values instead of null
         List<Answer> userAnswersForCheck = quizResultChecker.createUserAnswersForCheck(quizTasks, form.getAnswers());
         form.setAnswers(userAnswersForCheck);
-        int result = quizResultChecker.getNumberOfRightAnswers(userAnswersForCheck, quizTasks);
-        model.addAttribute("result", result);
+        int numberOfRightAnswers = quizResultChecker.getNumberOfRightAnswers(userAnswersForCheck, quizTasks);
+        model.addAttribute("numberOfRightAnswers", numberOfRightAnswers);
         model.addAttribute("user_answers", form.getAnswers());
         return "quiz/result";
     }
 
     @GetMapping("/saveResult")
     public String saveResult (@ModelAttribute ("quiztasks") List <QuizTask> quizTasks,
-                              @ModelAttribute ("result") int result,
+                              @ModelAttribute ("numberOfRightAnswers") int numberOfRightAnswers,
                               @ModelAttribute ("user_answers") List<Answer> userAnswers) {
-
-        return "redirect:/welcome";
+            QuizResult quizResult = quizResultChecker.createQuizResultForSave(
+                    numberOfRightAnswers, quizTasks, userAnswers, getCurrentUser());
+            quizResultsService.saveQuizResult(quizResult);
+        return "redirect:/quiz/showStatistics";
 
     }
 
     @GetMapping("/showStatistics")
     public String showStatistics (Model model) {
-        PersonDetails personDetails = (PersonDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Person currentUser = personDetails.getPerson();
+        Person currentUser = getCurrentUser();
         List <QuizResult> quizResultList = quizResultsService.getQuizResultsByUser(currentUser);
         model.addAttribute("quizResultList", quizResultList);
         return "quiz/statistics";
     }
 
+    private Person getCurrentUser() {
+        PersonDetails personDetails = (PersonDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return personDetails.getPerson();
+    }
 
 
 }

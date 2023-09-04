@@ -16,6 +16,13 @@
         .answer{
 
         }
+        .button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: aliceblue;
+            text-decoration: none;
+            border-color: black;
+        }
     </style>
 </head>
 <body style="background: bisque">
@@ -24,7 +31,7 @@
 <h1 style="text-align: center">Ваши результаты</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">
-        <p th:text="'Число правильных ответов = ' + ${result} + '/' + ${quiztasks.size()}" style="font-size: 20px"></p>
+        <p th:text="'Число правильных ответов = ' + ${numberOfRightAnswers} + '/' + ${quiztasks.size()}" style="font-size: 20px"></p>
         <ul style="padding-left: 0px">
             <li th:each="quiztask, itemStat : *{quiztasks}">
                 <ul style="padding-left: 0px">
@@ -40,6 +47,9 @@
                 </ul>
             </li>
         </ul>
+        <br>
+        <a  th:href="@{/quiz/saveResult}" th:text="'Сохранить'" class="button"></a>
+        <a  th:href="@{/welcome}" th:text="'Не сохранять'" class="button"></a>
      </div>
 </div>
 
