@@ -7,10 +7,13 @@ import com.phantom.japanese_dictionary_mvc.finders.grammar.KanaGrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.RomajiGrammarFinder;
 import com.phantom.japanese_dictionary_mvc.models.Answer;
 import com.phantom.japanese_dictionary_mvc.models.Note;
+import com.phantom.japanese_dictionary_mvc.models.Person;
 import com.phantom.japanese_dictionary_mvc.models.QuizTask;
 import com.phantom.japanese_dictionary_mvc.repositories.NoteRepository;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
+import com.phantom.japanese_dictionary_mvc.services.PeopleService;
+import com.phantom.japanese_dictionary_mvc.services.QuizResultsService;
 import com.phantom.japanese_dictionary_mvc.util.QuizResultChecker;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -28,13 +31,17 @@ class JapaneseDictionaryMvcApplicationTests {
     private final QuizResultChecker quizResultChecker;
     private Random random = new Random();
     private final NoteService noteService;
+    private final PeopleService peopleService;
+    private final QuizResultsService quizResultsService;
 
     @Autowired
-    JapaneseDictionaryMvcApplicationTests(WordFinderFactory wordFinderFactory, GrammarFinderFactory grammarFinderFactory, QuizResultChecker quizResultChecker, NoteRepository noteRepository, NoteService noteService) {
+    JapaneseDictionaryMvcApplicationTests(WordFinderFactory wordFinderFactory, GrammarFinderFactory grammarFinderFactory, QuizResultChecker quizResultChecker, NoteRepository noteRepository, NoteService noteService, PeopleService peopleService, QuizResultsService quizResultsService) {
         this.wordFinderFactory = wordFinderFactory;
         this.grammarFinderFactory = grammarFinderFactory;
         this.quizResultChecker = quizResultChecker;
         this.noteService = noteService;
+        this.peopleService = peopleService;
+        this.quizResultsService = quizResultsService;
     }
 
 
@@ -207,6 +214,13 @@ class JapaneseDictionaryMvcApplicationTests {
         Assertions.assertFalse(wordFinder.checkFullMatch("тес", noteToTest));
         Assertions.assertFalse(wordFinder.checkFullMatch("ест", noteToTest));
 
+    }
+
+    @Test
+    public void whenUserId3_thenSizeOfAnswers2() {
+        Person user = new Person();
+        user.setPersonId(3);
+        Assertions.assertEquals(2, quizResultsService.getQuizResultsByUser(user).size());
     }
 
 }

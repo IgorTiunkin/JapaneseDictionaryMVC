@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 @Table(name = "Person")
@@ -32,6 +33,9 @@ public class Person {
 
     @Column(name = "role")
     private String role;
+
+    @OneToMany (mappedBy = "user")
+    private List<QuizResult> quizResultList;
 
     public Person(String username, String password) {
         this.username = username;

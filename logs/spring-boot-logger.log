@@ -1,587 +1,386 @@
-2023-09-03 20:48:34,403 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2023-09-03 20:48:34,406 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplication using Java 11.0.9.1 on Mabo with PID 10776 (C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc\target\classes started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
-2023-09-03 20:48:34,410 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
-2023-09-03 20:48:34,410 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2023-09-03 20:48:34,782 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2023-09-03 20:48:35,299 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-03 20:48:35,383 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 72 ms. Found 3 JPA repository interfaces.
-2023-09-03 20:48:35,875 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2023-09-03 20:48:35,885 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2023-09-03 20:48:35,886 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2023-09-03 20:48:35,886 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
-2023-09-03 20:48:36,030 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2023-09-03 20:48:36,030 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1584 ms
-2023-09-03 20:48:36,157 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-03 20:48:36,208 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
-2023-09-03 20:48:36,332 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-09-03 20:48:36,444 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-09-03 20:48:36,806 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-09-03 20:48:36,824 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-03 20:48:37,589 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-03 20:48:37,606 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-03 20:48:38,029 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-03 20:48:38,328 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5300694d, org.springframework.security.web.context.SecurityContextPersistenceFilter@4023d23f, org.springframework.security.web.header.HeaderWriterFilter@35c95869, org.springframework.security.web.authentication.logout.LogoutFilter@41d84abb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3d1b43d8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a4ae53d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f87a7c7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7320750c, org.springframework.security.web.session.SessionManagementFilter@361d8567, org.springframework.security.web.access.ExceptionTranslationFilter@4769537a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@61648dd2]
-2023-09-03 20:48:38,613 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2023-09-03 20:48:38,630 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2023-09-03 20:48:38,639 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplication in 4.678 seconds (JVM running for 6.426)
-2023-09-03 20:48:38,640 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
-2023-09-03 20:48:38,642 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2023-09-03 20:50:47,820 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionarySeleniumEdgeTest using Java 11.0.9.1 on Mabo with PID 8672 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
-2023-09-03 20:50:47,822 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
-2023-09-03 20:50:47,826 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2023-09-03 20:50:47,836 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2023-09-03 20:50:48,525 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2023-09-03 20:50:48,861 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-03 20:50:49,011 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 139 ms. Found 3 JPA repository interfaces.
-2023-09-03 20:50:49,747 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-03 20:50:49,849 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
-2023-09-03 20:50:50,083 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-09-03 20:50:50,249 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-09-03 20:50:50,490 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-09-03 20:50:50,508 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-03 20:50:51,228 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-03 20:50:51,237 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-03 20:50:51,748 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-03 20:50:52,304 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@259ae1a9, org.springframework.security.web.context.SecurityContextPersistenceFilter@2e7dd504, org.springframework.security.web.header.HeaderWriterFilter@77430c79, org.springframework.security.web.authentication.logout.LogoutFilter@6e68ccc9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@35bb3fea, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e0b7f58, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7fb313e3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d082916, org.springframework.security.web.session.SessionManagementFilter@21f421b8, org.springframework.security.web.access.ExceptionTranslationFilter@2d6e09f0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@57def953]
-2023-09-03 20:50:53,278 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionarySeleniumEdgeTest in 5.832 seconds (JVM running for 122.831)
-2023-09-03 20:50:53,279 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
-2023-09-03 20:50:53,282 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2023-09-03 20:50:53,537 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-09-03 20:50:53,538 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2023-09-03 20:50:53,539 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
-2023-09-03 20:50:53,574 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /auth/login
-2023-09-03 20:50:53,886 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:50:53,955 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /auth/login
-2023-09-03 20:50:53,958 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:50:54,674 WARN org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-4] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [296] milliseconds.
-2023-09-03 20:50:54,682 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /welcome
-2023-09-03 20:50:54,718 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:50:54,795 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /favicon.ico
-2023-09-03 20:50:54,803 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :null
-2023-09-03 20:51:11,244 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionarySeleniumEdgeTest using Java 11.0.9.1 on Mabo with PID 20012 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
-2023-09-03 20:51:11,246 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
-2023-09-03 20:51:11,248 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2023-09-03 20:51:11,262 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2023-09-03 20:51:11,786 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2023-09-03 20:51:12,101 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-03 20:51:12,192 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 82 ms. Found 3 JPA repository interfaces.
-2023-09-03 20:51:13,022 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-03 20:51:13,090 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
-2023-09-03 20:51:13,229 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-09-03 20:51:13,366 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-09-03 20:51:13,630 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-09-03 20:51:13,652 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-03 20:51:14,458 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-03 20:51:14,469 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-03 20:51:14,996 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-03 20:51:15,564 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b0d9da, org.springframework.security.web.context.SecurityContextPersistenceFilter@52c2d1e8, org.springframework.security.web.header.HeaderWriterFilter@af04d6d, org.springframework.security.web.authentication.logout.LogoutFilter@d5eca06, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@62fa4a88, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@334ac669, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e7dd504, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ac35b17, org.springframework.security.web.session.SessionManagementFilter@2d6e09f0, org.springframework.security.web.access.ExceptionTranslationFilter@5ec25b61, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d48299e]
-2023-09-03 20:51:16,589 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionarySeleniumEdgeTest in 5.709 seconds (JVM running for 11.256)
-2023-09-03 20:51:16,591 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
-2023-09-03 20:51:16,593 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2023-09-03 20:51:16,765 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /auth/login
-2023-09-03 20:51:16,772 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:16,867 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /auth/login
-2023-09-03 20:51:16,871 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:17,341 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /welcome
-2023-09-03 20:51:17,344 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:17,424 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /favicon.ico
-2023-09-03 20:51:17,436 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :null
-2023-09-03 20:51:35,747 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionarySeleniumEdgeTest using Java 11.0.9.1 on Mabo with PID 21732 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
-2023-09-03 20:51:35,749 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
-2023-09-03 20:51:35,751 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2023-09-03 20:51:35,761 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2023-09-03 20:51:36,249 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2023-09-03 20:51:36,543 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-03 20:51:36,627 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 76 ms. Found 3 JPA repository interfaces.
-2023-09-03 20:51:37,370 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-03 20:51:37,443 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
-2023-09-03 20:51:37,649 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-09-03 20:51:37,803 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-09-03 20:51:38,100 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-09-03 20:51:38,128 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-03 20:51:38,932 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-03 20:51:38,941 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-03 20:51:39,446 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-03 20:51:39,963 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a7b4ff5, org.springframework.security.web.context.SecurityContextPersistenceFilter@77430c79, org.springframework.security.web.header.HeaderWriterFilter@257da215, org.springframework.security.web.authentication.logout.LogoutFilter@19f9404d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1e9afe4e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@21f421b8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e9e4468, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a20aa4e, org.springframework.security.web.session.SessionManagementFilter@52c2d1e8, org.springframework.security.web.access.ExceptionTranslationFilter@40304938, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@65c66fc4]
-2023-09-03 20:51:40,986 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionarySeleniumEdgeTest in 5.601 seconds (JVM running for 11.032)
-2023-09-03 20:51:40,987 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
-2023-09-03 20:51:40,990 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2023-09-03 20:51:41,170 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
-2023-09-03 20:51:41,178 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:41,277 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /auth/login
-2023-09-03 20:51:41,280 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:41,721 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /welcome
-2023-09-03 20:51:41,725 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:41,802 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /favicon.ico
-2023-09-03 20:51:41,806 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :null
-2023-09-03 20:51:41,877 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /write-test
-2023-09-03 20:51:41,919 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:42,111 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /write-test/show
-2023-09-03 20:51:42,142 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-4] Accepted write practice request: requesttype = DEFAULT; quantity = 22
-2023-09-03 20:51:42,147 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:47,134 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:51:47,156 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
-2023-09-03 20:51:47,166 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:47,241 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /auth/login
-2023-09-03 20:51:47,247 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:47,635 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /welcome
-2023-09-03 20:51:47,637 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:47,693 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /favicon.ico
-2023-09-03 20:51:47,696 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :null
-2023-09-03 20:51:52,534 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:51:52,559 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /auth/login
-2023-09-03 20:51:52,562 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:52,678 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
-2023-09-03 20:51:52,683 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:53,056 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /welcome
-2023-09-03 20:51:53,058 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:53,131 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /favicon.ico
-2023-09-03 20:51:53,133 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :null
-2023-09-03 20:51:53,209 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /write-test
-2023-09-03 20:51:53,219 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:53,469 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /write-test/show
-2023-09-03 20:51:53,470 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-2] Accepted write practice request: requesttype = KANA; quantity = 5
-2023-09-03 20:51:53,539 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:58,616 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:51:58,636 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /auth/login
-2023-09-03 20:51:58,640 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:58,726 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
-2023-09-03 20:51:58,730 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:59,089 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /auth/login
-2023-09-03 20:51:59,091 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:51:59,119 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /auth/login
-2023-09-03 20:51:59,123 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:04,676 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:52:04,758 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /auth/login
-2023-09-03 20:52:04,762 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:04,893 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /auth/login
-2023-09-03 20:52:04,898 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:05,403 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /welcome
-2023-09-03 20:52:05,405 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:05,496 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /favicon.ico
-2023-09-03 20:52:05,500 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :null
-2023-09-03 20:52:05,602 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /dictionary
-2023-09-03 20:52:05,629 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:05,947 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /dictionary/show
-2023-09-03 20:52:05,951 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-1] Accepted dictionary request: request type = TRANSLATION; word to find = болезнь; match = false
-2023-09-03 20:52:06,040 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:10,921 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:52:10,943 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /auth/login
-2023-09-03 20:52:10,948 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:11,031 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /auth/login
-2023-09-03 20:52:11,035 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:11,412 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /welcome
-2023-09-03 20:52:11,413 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:11,494 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /favicon.ico
-2023-09-03 20:52:11,496 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :null
-2023-09-03 20:52:11,570 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /write-test
-2023-09-03 20:52:11,575 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:16,200 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:52:16,224 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /auth/login
-2023-09-03 20:52:16,228 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:16,321 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /auth/login
-2023-09-03 20:52:16,323 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:16,699 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /welcome
-2023-09-03 20:52:16,701 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:16,769 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /favicon.ico
-2023-09-03 20:52:16,773 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :null
-2023-09-03 20:52:16,844 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /quiz
-2023-09-03 20:52:16,859 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:21,673 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:52:21,693 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /auth/login
-2023-09-03 20:52:21,695 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:21,790 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /auth/login
-2023-09-03 20:52:21,793 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:22,147 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /welcome
-2023-09-03 20:52:22,149 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:22,209 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /favicon.ico
-2023-09-03 20:52:22,211 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :null
-2023-09-03 20:52:22,281 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /write-test
-2023-09-03 20:52:22,285 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:22,543 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /write-test/show
-2023-09-03 20:52:22,544 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-9] Accepted write practice request: requesttype = TRANSLATION; quantity = 5
-2023-09-03 20:52:22,555 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:27,736 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:52:27,760 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /auth/login
-2023-09-03 20:52:27,762 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:27,845 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /auth/login
-2023-09-03 20:52:27,849 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:28,057 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /welcome
-2023-09-03 20:52:28,059 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:28,135 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /favicon.ico
-2023-09-03 20:52:28,137 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :null
-2023-09-03 20:52:32,725 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:52:32,747 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /auth/login
-2023-09-03 20:52:32,749 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:32,836 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /auth/login
-2023-09-03 20:52:32,839 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:33,251 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /auth/login
-2023-09-03 20:52:33,253 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:33,287 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /auth/login
-2023-09-03 20:52:33,289 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:37,878 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:52:37,900 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /auth/login
-2023-09-03 20:52:37,903 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:37,986 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /auth/login
-2023-09-03 20:52:37,989 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:38,360 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /welcome
-2023-09-03 20:52:38,362 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:38,432 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /favicon.ico
-2023-09-03 20:52:38,435 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :null
-2023-09-03 20:52:38,504 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /dictionary
-2023-09-03 20:52:38,509 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:38,729 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /dictionary/show
-2023-09-03 20:52:38,730 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-6] Accepted dictionary request: request type = KANA; word to find = やまい; match = false
-2023-09-03 20:52:38,746 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:43,628 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:52:43,652 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /auth/login
-2023-09-03 20:52:43,657 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:43,733 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /auth/login
-2023-09-03 20:52:43,737 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:44,122 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /welcome
-2023-09-03 20:52:44,123 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:44,183 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /favicon.ico
-2023-09-03 20:52:44,186 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :null
-2023-09-03 20:52:44,254 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /grammar
-2023-09-03 20:52:44,264 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:48,792 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:52:48,812 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /auth/login
-2023-09-03 20:52:48,814 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:48,898 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /auth/login
-2023-09-03 20:52:48,900 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:49,271 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /welcome
-2023-09-03 20:52:49,272 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:49,336 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /favicon.ico
-2023-09-03 20:52:49,339 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :null
-2023-09-03 20:52:49,409 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /dictionary
-2023-09-03 20:52:49,414 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:49,685 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /dictionary/show
-2023-09-03 20:52:49,686 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-5] Accepted dictionary request: request type = DEFAULT; word to find = болезнь; match = false
-2023-09-03 20:52:49,719 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:54,248 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:52:54,265 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /auth/login
-2023-09-03 20:52:54,269 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:54,352 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /auth/login
-2023-09-03 20:52:54,358 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:54,721 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /welcome
-2023-09-03 20:52:54,723 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:54,787 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /favicon.ico
-2023-09-03 20:52:54,789 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :null
-2023-09-03 20:52:54,859 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /quiz
-2023-09-03 20:52:54,862 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:55,117 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /quiz/show
-2023-09-03 20:52:55,122 TRACE com.phantom.japanese_dictionary_mvc.controllers.QuizController [http-nio-8080-exec-5] Accepted quiz request: request type = TRANSLATION; number of tasks = 18; number of options = 6
-2023-09-03 20:52:55,177 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:59,856 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:52:59,875 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /auth/login
-2023-09-03 20:52:59,876 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:52:59,963 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /auth/login
-2023-09-03 20:52:59,965 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:00,320 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /welcome
-2023-09-03 20:53:00,322 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:00,391 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /favicon.ico
-2023-09-03 20:53:00,394 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :null
-2023-09-03 20:53:00,470 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /dictionary
-2023-09-03 20:53:00,474 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:00,693 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /dictionary/show
-2023-09-03 20:53:00,694 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-5] Accepted dictionary request: request type = SPELLING; word to find = yamai; match = false
-2023-09-03 20:53:00,706 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:05,486 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:53:05,509 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /auth/login
-2023-09-03 20:53:05,513 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:05,602 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /auth/login
-2023-09-03 20:53:05,607 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:05,957 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /welcome
-2023-09-03 20:53:05,958 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:06,022 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /favicon.ico
-2023-09-03 20:53:06,025 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :null
-2023-09-03 20:53:06,094 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /dictionary
-2023-09-03 20:53:06,097 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:06,320 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /dictionary/show
-2023-09-03 20:53:06,321 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-5] Accepted dictionary request: request type = KANJI; word to find = 病; match = false
-2023-09-03 20:53:06,343 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:10,887 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:53:10,905 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /auth/login
-2023-09-03 20:53:10,907 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:10,992 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /auth/login
-2023-09-03 20:53:10,995 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:11,362 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /welcome
-2023-09-03 20:53:11,363 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:11,425 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /favicon.ico
-2023-09-03 20:53:11,427 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :null
-2023-09-03 20:53:11,495 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /grammar
-2023-09-03 20:53:11,497 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:11,652 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /grammar/show
-2023-09-03 20:53:11,653 TRACE com.phantom.japanese_dictionary_mvc.controllers.GrammarDictionaryController [http-nio-8080-exec-5] Accepted grammar request: requesttype = DEFAULT; word to find = bakari
-2023-09-03 20:53:11,678 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:16,272 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:53:16,290 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /auth/login
-2023-09-03 20:53:16,292 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:16,379 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /auth/login
-2023-09-03 20:53:16,383 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:16,744 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /welcome
-2023-09-03 20:53:16,746 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:16,812 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /favicon.ico
-2023-09-03 20:53:16,815 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :null
-2023-09-03 20:53:16,881 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /dictionary
-2023-09-03 20:53:16,884 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:21,343 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:53:21,365 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
-2023-09-03 20:53:21,370 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:21,451 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /auth/login
-2023-09-03 20:53:21,454 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:21,823 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /welcome
-2023-09-03 20:53:21,825 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:21,879 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /favicon.ico
-2023-09-03 20:53:21,883 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :null
-2023-09-03 20:53:21,952 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /write-test
-2023-09-03 20:53:21,956 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:22,200 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /write-test/show
-2023-09-03 20:53:22,201 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-4] Accepted write practice request: requesttype = KANJI; quantity = 5
-2023-09-03 20:53:22,210 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:26,857 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:53:26,874 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
-2023-09-03 20:53:26,876 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:26,965 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /auth/login
-2023-09-03 20:53:26,967 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:27,345 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /welcome
-2023-09-03 20:53:27,346 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:27,409 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /favicon.ico
-2023-09-03 20:53:27,412 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :null
-2023-09-03 20:53:27,490 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /dictionary
-2023-09-03 20:53:27,493 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:27,795 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /dictionary/show
-2023-09-03 20:53:27,796 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-4] Accepted dictionary request: request type = TRANSLATION; word to find = болезнь; match = true
-2023-09-03 20:53:27,811 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:32,320 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:53:32,338 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
-2023-09-03 20:53:32,341 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:32,427 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /auth/login
-2023-09-03 20:53:32,430 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:32,806 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /welcome
-2023-09-03 20:53:32,807 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:32,872 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /favicon.ico
-2023-09-03 20:53:32,874 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :null
-2023-09-03 20:53:32,952 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /auth/login
-2023-09-03 20:53:32,953 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:37,457 WARN org.openqa.selenium.devtools.CdpVersionFinder [main] Unable to find an exact match for CDP version 116, so returning the closest version found: 115
-2023-09-03 20:53:37,481 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
-2023-09-03 20:53:37,484 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:37,571 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /auth/login
-2023-09-03 20:53:37,574 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:37,933 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /welcome
-2023-09-03 20:53:37,934 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:37,987 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /favicon.ico
-2023-09-03 20:53:37,990 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :null
-2023-09-03 20:53:38,057 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /write-test
-2023-09-03 20:53:38,060 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
-2023-09-03 20:53:38,296 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /write-test/show
-2023-09-03 20:53:38,298 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-4] Accepted write practice request: requesttype = SPELLING; quantity = 5
-2023-09-03 20:53:38,307 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:14:30,437 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionarySeleniumFirefoxTest using Java 11.0.9.1 on Mabo with PID 11152 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
-2023-09-03 21:14:30,439 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
-2023-09-03 21:14:30,442 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2023-09-03 21:14:30,458 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2023-09-03 21:14:30,959 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2023-09-03 21:14:31,263 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-03 21:14:31,352 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 81 ms. Found 3 JPA repository interfaces.
-2023-09-03 21:14:32,021 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-03 21:14:32,086 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
-2023-09-03 21:14:32,237 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-09-03 21:14:32,356 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-09-03 21:14:32,601 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-09-03 21:14:32,618 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-03 21:14:33,438 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-03 21:14:33,447 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-03 21:14:33,921 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-03 21:14:34,419 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ac76ad9, org.springframework.security.web.context.SecurityContextPersistenceFilter@64096a41, org.springframework.security.web.header.HeaderWriterFilter@25031fd4, org.springframework.security.web.authentication.logout.LogoutFilter@20524816, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7e44f989, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24455d50, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19439ec4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@213c812a, org.springframework.security.web.session.SessionManagementFilter@22195d06, org.springframework.security.web.access.ExceptionTranslationFilter@31dbca5d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@18fcfe7e]
-2023-09-03 21:14:35,371 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionarySeleniumFirefoxTest in 5.315 seconds (JVM running for 30.137)
-2023-09-03 21:14:35,372 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
-2023-09-03 21:14:35,374 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2023-09-03 21:14:35,529 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
-2023-09-03 21:14:35,531 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:14:35,836 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /welcome
-2023-09-03 21:14:35,837 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:14:52,269 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionarySeleniumFirefoxTest using Java 11.0.9.1 on Mabo with PID 18140 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
-2023-09-03 21:14:52,270 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
-2023-09-03 21:14:52,273 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2023-09-03 21:14:52,275 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
-2023-09-03 21:14:52,810 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2023-09-03 21:14:53,121 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-03 21:14:53,217 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 84 ms. Found 3 JPA repository interfaces.
-2023-09-03 21:14:53,907 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-03 21:14:53,977 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
-2023-09-03 21:14:54,135 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-09-03 21:14:54,258 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-09-03 21:14:54,477 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-09-03 21:14:54,496 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-03 21:14:55,187 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-03 21:14:55,196 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-03 21:14:55,662 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-03 21:14:56,164 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6cfe32cd, org.springframework.security.web.context.SecurityContextPersistenceFilter@9cdf13e, org.springframework.security.web.header.HeaderWriterFilter@969c2f9, org.springframework.security.web.authentication.logout.LogoutFilter@79d8075c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@823f978, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@299c86f0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7afac89a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f14eb51, org.springframework.security.web.session.SessionManagementFilter@36e11b60, org.springframework.security.web.access.ExceptionTranslationFilter@585718dd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5f0a5848]
-2023-09-03 21:14:57,119 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionarySeleniumFirefoxTest in 5.183 seconds (JVM running for 11.449)
-2023-09-03 21:14:57,120 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
-2023-09-03 21:14:57,122 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2023-09-03 21:14:57,285 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /auth/login
-2023-09-03 21:14:57,287 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:14:57,704 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /welcome
-2023-09-03 21:14:57,707 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:03,935 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
-2023-09-03 21:15:03,937 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:04,281 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /welcome
-2023-09-03 21:15:04,282 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:04,348 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /dictionary
-2023-09-03 21:15:04,350 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:04,981 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /dictionary/show
-2023-09-03 21:15:04,981 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-1] Accepted dictionary request: request type = TRANSLATION; word to find = болезнь; match = true
-2023-09-03 21:15:04,996 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:10,421 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /auth/login
-2023-09-03 21:15:10,423 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:10,748 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /welcome
-2023-09-03 21:15:10,749 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:10,810 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /grammar
-2023-09-03 21:15:10,811 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:16,478 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /auth/login
-2023-09-03 21:15:16,480 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:16,808 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /welcome
-2023-09-03 21:15:16,809 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:16,884 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /write-test
-2023-09-03 21:15:16,888 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:17,300 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /write-test/show
-2023-09-03 21:15:17,304 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-6] Accepted write practice request: requesttype = KANJI; quantity = 5
-2023-09-03 21:15:17,312 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:22,866 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
-2023-09-03 21:15:22,868 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:23,203 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /welcome
-2023-09-03 21:15:23,206 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:23,287 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /dictionary
-2023-09-03 21:15:23,290 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:28,963 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /auth/login
-2023-09-03 21:15:28,965 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:29,297 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /welcome
-2023-09-03 21:15:29,298 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:29,357 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /dictionary
-2023-09-03 21:15:29,360 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:29,724 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /dictionary/show
-2023-09-03 21:15:29,725 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-8] Accepted dictionary request: request type = KANJI; word to find = 病; match = false
-2023-09-03 21:15:29,742 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:35,345 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /auth/login
-2023-09-03 21:15:35,347 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:35,677 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /welcome
-2023-09-03 21:15:35,679 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:35,743 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /dictionary
-2023-09-03 21:15:35,745 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:36,059 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /dictionary/show
-2023-09-03 21:15:36,060 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-6] Accepted dictionary request: request type = KANA; word to find = やまい; match = false
-2023-09-03 21:15:36,073 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:41,508 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
-2023-09-03 21:15:41,510 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:41,819 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /welcome
-2023-09-03 21:15:41,821 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:41,899 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /write-test
-2023-09-03 21:15:41,900 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:41,996 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /write-test/show
-2023-09-03 21:15:41,997 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-1] Accepted write practice request: requesttype = DEFAULT; quantity = 22
-2023-09-03 21:15:41,999 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:47,587 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /auth/login
-2023-09-03 21:15:47,589 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:47,911 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /welcome
-2023-09-03 21:15:47,912 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:47,994 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /write-test
-2023-09-03 21:15:47,997 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:48,348 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /write-test/show
-2023-09-03 21:15:48,350 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-9] Accepted write practice request: requesttype = SPELLING; quantity = 5
-2023-09-03 21:15:48,362 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:54,111 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /auth/login
-2023-09-03 21:15:54,112 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:54,433 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /welcome
-2023-09-03 21:15:54,435 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:54,519 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /quiz
-2023-09-03 21:15:54,522 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:15:54,660 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /quiz/show
-2023-09-03 21:15:54,660 TRACE com.phantom.japanese_dictionary_mvc.controllers.QuizController [http-nio-8080-exec-5] Accepted quiz request: request type = TRANSLATION; number of tasks = 15; number of options = 8
-2023-09-03 21:15:54,695 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:00,259 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /auth/login
-2023-09-03 21:16:00,261 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:00,604 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /welcome
-2023-09-03 21:16:00,605 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:06,312 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /auth/login
-2023-09-03 21:16:06,313 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:06,715 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /auth/login
-2023-09-03 21:16:06,716 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:12,345 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /auth/login
-2023-09-03 21:16:12,346 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:12,666 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /welcome
-2023-09-03 21:16:12,669 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:12,747 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /write-test
-2023-09-03 21:16:12,749 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:13,093 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /write-test/show
-2023-09-03 21:16:13,094 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-2] Accepted write practice request: requesttype = TRANSLATION; quantity = 5
-2023-09-03 21:16:13,101 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:18,880 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /auth/login
-2023-09-03 21:16:18,881 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:19,193 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /welcome
-2023-09-03 21:16:19,194 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:19,260 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /write-test
-2023-09-03 21:16:19,262 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:19,629 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /write-test/show
-2023-09-03 21:16:19,629 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-10] Accepted write practice request: requesttype = KANA; quantity = 5
-2023-09-03 21:16:19,636 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:25,382 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /auth/login
-2023-09-03 21:16:25,384 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:25,713 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /welcome
-2023-09-03 21:16:25,714 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:25,778 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /quiz
-2023-09-03 21:16:25,780 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:31,424 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /auth/login
-2023-09-03 21:16:31,425 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:31,739 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /welcome
-2023-09-03 21:16:31,741 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:31,814 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /dictionary
-2023-09-03 21:16:31,817 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:32,178 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  GET : /dictionary/show
-2023-09-03 21:16:32,179 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-2] Accepted dictionary request: request type = SPELLING; word to find = yamai; match = false
-2023-09-03 21:16:32,191 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:37,623 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /auth/login
-2023-09-03 21:16:37,624 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:37,943 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /welcome
-2023-09-03 21:16:37,945 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:38,007 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /dictionary
-2023-09-03 21:16:38,009 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:38,389 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  GET : /dictionary/show
-2023-09-03 21:16:38,390 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-10] Accepted dictionary request: request type = TRANSLATION; word to find = болезнь; match = false
-2023-09-03 21:16:38,413 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:43,815 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /auth/login
-2023-09-03 21:16:43,817 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:44,140 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /welcome
-2023-09-03 21:16:44,141 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:44,211 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /auth/login
-2023-09-03 21:16:44,213 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:50,505 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /auth/login
-2023-09-03 21:16:50,506 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:50,838 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /auth/login
-2023-09-03 21:16:50,840 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:56,291 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /auth/login
-2023-09-03 21:16:56,292 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:56,627 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  GET : /welcome
-2023-09-03 21:16:56,628 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:56,689 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /dictionary
-2023-09-03 21:16:56,691 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:16:57,297 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  GET : /dictionary/show
-2023-09-03 21:16:57,299 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-9] Accepted dictionary request: request type = DEFAULT; word to find = болезнь; match = false
-2023-09-03 21:16:57,322 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:17:03,148 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /auth/login
-2023-09-03 21:17:03,150 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:17:03,532 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  GET : /welcome
-2023-09-03 21:17:03,534 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:17:03,629 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  GET : /grammar
-2023-09-03 21:17:03,632 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:17:03,739 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  GET : /grammar/show
-2023-09-03 21:17:03,740 TRACE com.phantom.japanese_dictionary_mvc.controllers.GrammarDictionaryController [http-nio-8080-exec-5] Accepted grammar request: requesttype = DEFAULT; word to find = bakari
-2023-09-03 21:17:03,748 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:17:09,257 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  GET : /auth/login
-2023-09-03 21:17:09,258 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:17:09,553 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  GET : /welcome
-2023-09-03 21:17:09,554 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
-2023-09-03 21:17:09,617 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  GET : /write-test
-2023-09-03 21:17:09,619 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-09-04 14:40:13,439 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 21728 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 14:40:13,434 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 14:40:13,442 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 14:40:13,444 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 14:40:14,025 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 14:40:14,266 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 14:40:14,358 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 83 ms. Found 3 JPA repository interfaces.
+2023-09-04 14:40:14,936 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 14:40:15,018 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 14:40:15,217 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 14:40:15,695 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 14:40:16,178 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 14:40:16,203 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 14:40:17,281 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 14:40:17,291 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 14:40:18,247 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@528a16fb, org.springframework.security.web.context.SecurityContextPersistenceFilter@4d793390, org.springframework.security.web.header.HeaderWriterFilter@2f4fc18, org.springframework.security.web.authentication.logout.LogoutFilter@59aba3c3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@50a095cb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@279e8bc0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@337fb1a5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3673e211, org.springframework.security.web.session.SessionManagementFilter@1d38cdde, org.springframework.security.web.access.ExceptionTranslationFilter@2a4bd699, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3355d9ba]
+2023-09-04 14:40:18,620 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 5.613 seconds (JVM running for 7.122)
+2023-09-04 14:40:18,621 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 14:40:18,624 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 14:40:42,238 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 14:40:42,241 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 21424 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 14:40:42,242 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 14:40:42,245 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 14:40:42,785 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 14:40:42,999 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 14:40:43,100 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 85 ms. Found 3 JPA repository interfaces.
+2023-09-04 14:40:43,752 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 14:40:43,823 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 14:40:44,020 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 14:40:44,541 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 14:40:44,824 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 14:40:44,846 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 14:40:45,759 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 14:40:45,770 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 14:40:46,950 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34c6b52e, org.springframework.security.web.context.SecurityContextPersistenceFilter@2093bb6c, org.springframework.security.web.header.HeaderWriterFilter@c8531b9, org.springframework.security.web.authentication.logout.LogoutFilter@3897f9ae, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7fc5a558, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@758d0555, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e67e090, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f7c4e0, org.springframework.security.web.session.SessionManagementFilter@3c108c05, org.springframework.security.web.access.ExceptionTranslationFilter@50a095cb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5d515e2c]
+2023-09-04 14:40:47,384 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 5.577 seconds (JVM running for 7.648)
+2023-09-04 14:40:47,387 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 14:40:47,389 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 14:45:38,676 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 12404 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 14:45:38,679 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 14:45:38,679 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 14:45:38,682 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 14:45:39,199 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 14:45:39,354 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 14:45:39,467 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 99 ms. Found 3 JPA repository interfaces.
+2023-09-04 14:45:40,038 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 14:45:40,098 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 14:45:40,232 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 14:45:40,745 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 14:45:41,009 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 14:45:41,031 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 14:45:41,866 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 14:45:41,875 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 14:45:42,782 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3adbd038, org.springframework.security.web.context.SecurityContextPersistenceFilter@2f4fc18, org.springframework.security.web.header.HeaderWriterFilter@2552181d, org.springframework.security.web.authentication.logout.LogoutFilter@237d0625, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2ee5c08d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d38cdde, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23ffc910, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e976553, org.springframework.security.web.session.SessionManagementFilter@8beb0dd, org.springframework.security.web.access.ExceptionTranslationFilter@2f3a0f37, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5f877009]
+2023-09-04 14:45:43,140 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 4.899 seconds (JVM running for 6.235)
+2023-09-04 14:45:43,141 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 14:45:43,144 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 14:52:34,754 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 14:52:34,759 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 11644 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 14:52:34,761 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 14:52:34,764 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 14:52:35,315 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 14:52:35,537 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 14:52:35,644 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 90 ms. Found 3 JPA repository interfaces.
+2023-09-04 14:52:36,322 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 14:52:36,397 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 14:52:36,567 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 14:52:37,077 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 14:52:37,357 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 14:52:37,381 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 14:52:38,288 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 14:52:38,298 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 14:52:39,416 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@511a307e, org.springframework.security.web.context.SecurityContextPersistenceFilter@2a191f83, org.springframework.security.web.header.HeaderWriterFilter@6b2efcae, org.springframework.security.web.authentication.logout.LogoutFilter@58041b11, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@301f9aa0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e976553, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@758d0555, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7aef8000, org.springframework.security.web.session.SessionManagementFilter@346690d6, org.springframework.security.web.access.ExceptionTranslationFilter@28e24663, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4866a755]
+2023-09-04 14:52:39,909 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 5.614 seconds (JVM running for 7.362)
+2023-09-04 14:52:39,911 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 14:52:39,914 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 14:55:20,275 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 11068 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 14:55:20,277 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 14:55:20,276 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 14:55:20,281 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 14:55:20,760 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 14:55:20,971 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 14:55:21,068 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 84 ms. Found 3 JPA repository interfaces.
+2023-09-04 14:55:21,645 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 14:55:21,704 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 14:55:21,863 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 14:55:22,309 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 14:55:22,527 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 14:55:22,547 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 14:55:23,480 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 14:55:23,489 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 14:55:24,401 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b2efcae, org.springframework.security.web.context.SecurityContextPersistenceFilter@6003eb60, org.springframework.security.web.header.HeaderWriterFilter@7ec8db0c, org.springframework.security.web.authentication.logout.LogoutFilter@39dce2df, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@34e53c02, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@51d9fd30, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6e612122, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8aa1562, org.springframework.security.web.session.SessionManagementFilter@5dd2ea0a, org.springframework.security.web.access.ExceptionTranslationFilter@66859ea9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@31b67d61]
+2023-09-04 14:55:24,786 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 4.924 seconds (JVM running for 6.203)
+2023-09-04 14:55:24,788 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 14:55:24,790 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:05:00,085 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:05:00,090 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 4412 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:05:00,091 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:05:00,094 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:05:00,648 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:05:00,854 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:05:00,953 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 83 ms. Found 3 JPA repository interfaces.
+2023-09-04 15:05:01,600 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:05:01,670 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:05:01,844 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:05:02,332 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:05:02,594 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:05:02,616 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:05:03,511 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:05:03,521 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:05:04,622 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b8cde43, org.springframework.security.web.context.SecurityContextPersistenceFilter@185b7cc6, org.springframework.security.web.header.HeaderWriterFilter@2a191f83, org.springframework.security.web.authentication.logout.LogoutFilter@336e17be, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5adc71e7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3673e211, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@bb38c49, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@34c6b52e, org.springframework.security.web.session.SessionManagementFilter@5e976553, org.springframework.security.web.access.ExceptionTranslationFilter@35fac3ba, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10e4cc6]
+2023-09-04 15:05:05,062 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 5.438 seconds (JVM running for 7.121)
+2023-09-04 15:05:05,064 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:05:05,067 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:05:47,764 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s66ms7µs800ns).
+2023-09-04 15:05:58,963 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:05:58,970 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 16572 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:05:58,971 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:05:58,973 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:05:59,499 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:05:59,687 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:05:59,784 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 88 ms. Found 3 JPA repository interfaces.
+2023-09-04 15:06:00,352 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:06:00,412 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:06:00,561 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:06:01,020 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:06:01,251 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:06:01,271 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:06:02,083 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:06:02,093 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:06:03,016 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@758d0555, org.springframework.security.web.context.SecurityContextPersistenceFilter@4d793390, org.springframework.security.web.header.HeaderWriterFilter@2f4fc18, org.springframework.security.web.authentication.logout.LogoutFilter@236a3e4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6b2efcae, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@279e8bc0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@337fb1a5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@48788853, org.springframework.security.web.session.SessionManagementFilter@1d38cdde, org.springframework.security.web.access.ExceptionTranslationFilter@2a4bd699, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6f651ac]
+2023-09-04 15:06:03,359 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 4.807 seconds (JVM running for 6.07)
+2023-09-04 15:06:03,360 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:06:03,362 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:06:24,682 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:06:24,689 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 16928 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:06:24,691 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:06:24,693 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:06:25,226 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:06:25,443 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:06:25,539 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 81 ms. Found 3 JPA repository interfaces.
+2023-09-04 15:06:26,297 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:06:26,362 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:06:26,535 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:06:27,010 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:06:27,312 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:06:27,334 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:06:28,183 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:06:28,192 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:06:29,248 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25e203e6, org.springframework.security.web.context.SecurityContextPersistenceFilter@3673e211, org.springframework.security.web.header.HeaderWriterFilter@5e976553, org.springframework.security.web.authentication.logout.LogoutFilter@510e6b93, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7eea934d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ac77269, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14983265, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8b1bfdf, org.springframework.security.web.session.SessionManagementFilter@7d0333c8, org.springframework.security.web.access.ExceptionTranslationFilter@6b2efcae, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4d3a7f83]
+2023-09-04 15:06:29,705 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 5.461 seconds (JVM running for 7.107)
+2023-09-04 15:06:29,707 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:06:29,710 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:07:44,208 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:07:44,209 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 9000 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:07:44,212 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:07:44,214 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:07:44,700 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:07:44,916 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:07:45,013 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 83 ms. Found 3 JPA repository interfaces.
+2023-09-04 15:07:45,552 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:07:45,613 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:07:45,757 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:07:46,232 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:07:46,483 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:07:46,504 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:07:47,383 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:07:47,393 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:07:48,295 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1fab0394, org.springframework.security.web.context.SecurityContextPersistenceFilter@41b2123e, org.springframework.security.web.header.HeaderWriterFilter@219dd935, org.springframework.security.web.authentication.logout.LogoutFilter@29a50a11, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1cb929a9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f3a0f37, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6003eb60, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@28e24663, org.springframework.security.web.session.SessionManagementFilter@7d15c513, org.springframework.security.web.access.ExceptionTranslationFilter@3c4e23be, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25a2c4dc]
+2023-09-04 15:07:48,643 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 4.835 seconds (JVM running for 6.127)
+2023-09-04 15:07:48,644 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:07:48,646 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:08:12,211 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:08:12,214 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 17736 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:08:12,216 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:08:12,217 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:08:12,741 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:08:12,939 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:08:13,037 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 81 ms. Found 3 JPA repository interfaces.
+2023-09-04 15:08:13,696 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:08:13,764 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:08:13,936 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:08:14,413 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:08:14,674 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:08:14,698 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:08:15,547 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:08:15,557 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:08:16,639 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f7c4e0, org.springframework.security.web.context.SecurityContextPersistenceFilter@528a16fb, org.springframework.security.web.header.HeaderWriterFilter@3adbd038, org.springframework.security.web.authentication.logout.LogoutFilter@6c767288, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@42fd8f2f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48788853, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@361483eb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25e203e6, org.springframework.security.web.session.SessionManagementFilter@193d7ac7, org.springframework.security.web.access.ExceptionTranslationFilter@3f2afa8b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@53b8a0f7]
+2023-09-04 15:08:17,092 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 5.294 seconds (JVM running for 7.109)
+2023-09-04 15:08:17,094 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:08:17,096 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:10:08,972 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m54s188ms206µs200ns).
+2023-09-04 15:10:21,287 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:10:21,303 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 20712 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:10:21,304 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:10:21,307 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:10:21,835 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:10:22,062 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:10:22,161 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 84 ms. Found 3 JPA repository interfaces.
+2023-09-04 15:10:22,794 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:10:22,865 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:10:23,032 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:10:23,503 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:10:23,759 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:10:23,781 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:10:24,655 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:10:24,667 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:10:25,891 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7cadf3ca, org.springframework.security.web.context.SecurityContextPersistenceFilter@5464aeec, org.springframework.security.web.header.HeaderWriterFilter@361483eb, org.springframework.security.web.authentication.logout.LogoutFilter@42150951, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6f7c4e0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5186c801, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2665a2e7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@34fcc5e3, org.springframework.security.web.session.SessionManagementFilter@724c26e0, org.springframework.security.web.access.ExceptionTranslationFilter@3673e211, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3a44993c]
+2023-09-04 15:10:26,310 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 5.451 seconds (JVM running for 7.147)
+2023-09-04 15:10:26,312 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:10:26,314 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:11:15,188 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51s317ms472µs400ns).
+2023-09-04 15:11:17,632 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 14344 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:11:17,633 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:11:17,635 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:11:17,638 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:11:18,206 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:11:18,395 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:11:18,487 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 80 ms. Found 3 JPA repository interfaces.
+2023-09-04 15:11:19,045 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:11:19,106 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:11:19,247 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:11:19,702 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:11:19,945 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:11:19,971 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:11:20,765 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:11:20,774 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:11:21,660 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c8531b9, org.springframework.security.web.context.SecurityContextPersistenceFilter@7f31937b, org.springframework.security.web.header.HeaderWriterFilter@571e2f15, org.springframework.security.web.authentication.logout.LogoutFilter@337eeceb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@28e24663, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e612122, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@279e8bc0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3adbd038, org.springframework.security.web.session.SessionManagementFilter@2e7e4480, org.springframework.security.web.access.ExceptionTranslationFilter@5e9671e6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@9fc2f89]
+2023-09-04 15:11:21,996 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 4.724 seconds (JVM running for 6.17)
+2023-09-04 15:11:21,998 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:11:22,000 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:15:06,024 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:15:06,032 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 13528 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:15:06,033 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:15:06,036 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:15:06,573 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:15:06,780 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:15:06,877 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 81 ms. Found 3 JPA repository interfaces.
+2023-09-04 15:15:07,498 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:15:07,573 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:15:07,758 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:15:08,260 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:15:08,516 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:15:08,538 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:15:09,451 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:15:09,461 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:15:10,583 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7eea934d, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f2afa8b, org.springframework.security.web.header.HeaderWriterFilter@f996445, org.springframework.security.web.authentication.logout.LogoutFilter@478cebdb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@f833223, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c70c771, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5e976553, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4700963e, org.springframework.security.web.session.SessionManagementFilter@7263b0c4, org.springframework.security.web.access.ExceptionTranslationFilter@34e53c02, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2190508d]
+2023-09-04 15:15:11,119 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 5.546 seconds (JVM running for 7.181)
+2023-09-04 15:15:11,121 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:15:11,125 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:16:46,700 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m38s79ms681µs400ns).
+2023-09-04 15:21:53,547 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:21:53,554 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 7692 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:21:53,555 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:21:53,558 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:21:54,070 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:21:54,302 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:21:54,403 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 87 ms. Found 3 JPA repository interfaces.
+2023-09-04 15:21:55,045 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:21:55,114 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:21:55,292 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:21:55,900 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:21:56,179 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:21:56,203 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:21:57,061 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:21:57,071 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:21:58,159 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b5d1d9, org.springframework.security.web.context.SecurityContextPersistenceFilter@7eb774c3, org.springframework.security.web.header.HeaderWriterFilter@2093bb6c, org.springframework.security.web.authentication.logout.LogoutFilter@85f5f55, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@523f3c29, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@bb38c49, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@478cebdb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@703a2bc9, org.springframework.security.web.session.SessionManagementFilter@758d0555, org.springframework.security.web.access.ExceptionTranslationFilter@70e8c019, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@542754be]
+2023-09-04 15:21:58,590 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 5.488 seconds (JVM running for 7.081)
+2023-09-04 15:21:58,591 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:21:58,593 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:23:10,421 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m14s125ms517µs100ns).
+2023-09-04 15:25:16,583 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:25:16,587 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 21080 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:25:16,589 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:25:16,591 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:25:17,125 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:25:17,339 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:25:17,438 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 83 ms. Found 3 JPA repository interfaces.
+2023-09-04 15:25:18,064 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:25:18,139 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:25:18,313 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:25:18,790 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:25:19,040 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:25:19,063 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:25:19,994 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:25:20,006 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:25:21,119 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@511a307e, org.springframework.security.web.context.SecurityContextPersistenceFilter@2a191f83, org.springframework.security.web.header.HeaderWriterFilter@6b2efcae, org.springframework.security.web.authentication.logout.LogoutFilter@58041b11, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@301f9aa0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e976553, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@758d0555, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7aef8000, org.springframework.security.web.session.SessionManagementFilter@346690d6, org.springframework.security.web.access.ExceptionTranslationFilter@28e24663, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4866a755]
+2023-09-04 15:25:21,571 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 5.406 seconds (JVM running for 7.328)
+2023-09-04 15:25:21,573 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:25:21,575 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:26:12,958 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53s816ms125µs400ns).
+2023-09-04 15:26:52,846 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:26:52,851 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 17276 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:26:52,853 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:26:52,855 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:26:53,354 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:26:53,543 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:26:53,626 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 75 ms. Found 3 JPA repository interfaces.
+2023-09-04 15:26:54,188 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:26:54,244 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:26:54,379 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:26:54,878 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:26:55,115 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:26:55,135 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:26:56,083 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:26:56,091 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:26:56,997 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a79da3a, org.springframework.security.web.context.SecurityContextPersistenceFilter@3d99d327, org.springframework.security.web.header.HeaderWriterFilter@2a4bd699, org.springframework.security.web.authentication.logout.LogoutFilter@4b9d2cee, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@74babce8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f4fc18, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a359f7c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a191f83, org.springframework.security.web.session.SessionManagementFilter@2552181d, org.springframework.security.web.access.ExceptionTranslationFilter@41b2123e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@72ce8a9b]
+2023-09-04 15:26:57,349 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 4.92 seconds (JVM running for 6.182)
+2023-09-04 15:26:57,350 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:26:57,352 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:28:40,811 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 636 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:28:40,813 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:28:40,816 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:28:40,821 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:28:41,458 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:28:41,647 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:28:41,735 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 76 ms. Found 3 JPA repository interfaces.
+2023-09-04 15:28:42,316 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:28:42,370 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:28:42,498 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:28:42,944 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:28:43,178 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:28:43,197 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:28:44,004 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:28:44,012 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:28:44,961 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@638d624a, org.springframework.security.web.context.SecurityContextPersistenceFilter@35277c6c, org.springframework.security.web.header.HeaderWriterFilter@717b0d81, org.springframework.security.web.authentication.logout.LogoutFilter@75ef1392, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@346690d6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@74cff17c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7698a3d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7eb774c3, org.springframework.security.web.session.SessionManagementFilter@3a359f7c, org.springframework.security.web.access.ExceptionTranslationFilter@2e7e4480, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3a663a45]
+2023-09-04 15:28:45,304 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 4.909 seconds (JVM running for 6.276)
+2023-09-04 15:28:45,306 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:28:45,308 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:39:42,951 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 20660 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:39:42,954 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:39:42,956 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:39:42,954 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:39:43,491 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:39:43,720 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:39:43,809 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 75 ms. Found 4 JPA repository interfaces.
+2023-09-04 15:39:44,369 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:39:44,428 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:39:44,569 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:39:45,048 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:39:45,270 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:39:45,303 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:39:46,183 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:39:46,191 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:39:47,119 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14983265, org.springframework.security.web.context.SecurityContextPersistenceFilter@38b0e2a7, org.springframework.security.web.header.HeaderWriterFilter@35277c6c, org.springframework.security.web.authentication.logout.LogoutFilter@178ebac3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5e976553, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4902c584, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@58690f5e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35e357b, org.springframework.security.web.session.SessionManagementFilter@74cff17c, org.springframework.security.web.access.ExceptionTranslationFilter@6e612122, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5527dbb0]
+2023-09-04 15:39:47,463 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 4.94 seconds (JVM running for 6.294)
+2023-09-04 15:39:47,464 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:39:47,466 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:43:22,017 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 4744 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:43:22,019 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:43:22,022 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:43:22,023 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:43:22,524 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:43:22,759 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:43:22,854 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 86 ms. Found 4 JPA repository interfaces.
+2023-09-04 15:43:23,399 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:43:23,455 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:43:23,599 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:43:24,086 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:43:24,334 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:43:24,355 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:43:25,197 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:43:25,207 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:43:26,174 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@15c3849f, org.springframework.security.web.context.SecurityContextPersistenceFilter@2987b699, org.springframework.security.web.header.HeaderWriterFilter@174f0d06, org.springframework.security.web.authentication.logout.LogoutFilter@2cc9a948, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1b3a95d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4271b748, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79c2bc34, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4a7e469d, org.springframework.security.web.session.SessionManagementFilter@3663af34, org.springframework.security.web.access.ExceptionTranslationFilter@5598dff2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5e976553]
+2023-09-04 15:43:26,653 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 5.049 seconds (JVM running for 6.397)
+2023-09-04 15:43:26,654 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:43:26,657 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-09-04 15:43:45,859 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplicationTests using Java 11.0.9.1 on Mabo with PID 18544 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-09-04 15:43:45,860 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-09-04 15:43:45,862 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2023-09-04 15:43:45,864 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-09-04 15:43:46,375 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-09-04 15:43:46,566 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-04 15:43:46,659 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 83 ms. Found 4 JPA repository interfaces.
+2023-09-04 15:43:47,237 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-04 15:43:47,299 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-09-04 15:43:47,434 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-04 15:43:47,892 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-09-04 15:43:48,120 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-09-04 15:43:48,141 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-04 15:43:49,059 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-04 15:43:49,067 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-04 15:43:50,048 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5186c801, org.springframework.security.web.context.SecurityContextPersistenceFilter@92b1bda, org.springframework.security.web.header.HeaderWriterFilter@73eae5f, org.springframework.security.web.authentication.logout.LogoutFilter@160e45c8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@48788853, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b9d2cee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@706690e1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20e41f13, org.springframework.security.web.session.SessionManagementFilter@4b62f1ba, org.springframework.security.web.access.ExceptionTranslationFilter@23ffc910, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7282f7b1]
+2023-09-04 15:43:50,388 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplicationTests in 4.909 seconds (JVM running for 6.226)
+2023-09-04 15:43:50,389 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-09-04 15:43:50,392 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC

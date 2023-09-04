@@ -20,7 +20,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/quiz")
-@SessionAttributes({"quiztasks"})
+@SessionAttributes({"quiztasks", "result", "user_answers"})
 public class QuizController {
     private final QuizConverter quizConverter;
     private final QuizResultChecker quizResultChecker;
@@ -71,6 +71,15 @@ public class QuizController {
         model.addAttribute("result", result);
         model.addAttribute("user_answers", form.getAnswers());
         return "quiz/result";
+    }
+
+    @GetMapping("/saveResult")
+    public String saveResult (@ModelAttribute ("quiztasks") List <QuizTask> quizTasks,
+                              @ModelAttribute ("result") int result,
+                              @ModelAttribute ("user_answers") List<Answer> userAnswers) {
+
+        return "redirect:/welcome";
+
     }
 
 
