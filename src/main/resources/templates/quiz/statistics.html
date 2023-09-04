@@ -15,16 +15,18 @@
 <div th:replace="allheader::quiz_subheader"></div>
 <h1 style="text-align: center">Ваша статистика</h1>
 <div>
-    <div style="width: 50%;  margin: 0 auto; font-size: 18px">
+    <div style="width: 70%;  margin: 0 auto; font-size: 18px">
         <table>
             <thead></thead>
             <tbody>
             <tr>
+                <th>Дата выполнения</th>
                 <th>Количество верных ответов</th>
                 <th>Количество заданий</th>
                 <th>Задания, на которые дан неправильный ответ</th>
             </tr>
             <tr th:each="quizResult : ${quizResultList}" th:id="${quizResult.getQuizResultId()}">
+                <td th:text="${quizResult.getDateOfQuiz()}"></td>
                 <td th:text="${quizResult.getNumberOfRightAnswers()}" style="text-align: right"></td>
                 <td th:text="${quizResult.getNumberOfTasks()}" style="text-align: right"></td>
                 <td style="text-align: right">

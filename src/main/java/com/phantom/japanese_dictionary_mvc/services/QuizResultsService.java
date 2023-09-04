@@ -7,6 +7,7 @@ import com.phantom.japanese_dictionary_mvc.util.QuizResultChecker;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -24,6 +25,7 @@ public class QuizResultsService {
 
     @Transactional (readOnly = false)
     public void saveQuizResult(QuizResult quizResult) {
+        quizResult.setDateOfQuiz(LocalDateTime.now());
         quizResultsRepository.save(quizResult);
     }
 }

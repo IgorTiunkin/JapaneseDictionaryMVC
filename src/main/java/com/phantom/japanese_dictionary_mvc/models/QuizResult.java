@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -29,6 +30,9 @@ public class QuizResult {
 
     @Column(name = "number_of_tasks")
     private int numberOfTasks;
+
+    @Column (name = "date_time")
+    private LocalDateTime dateOfQuiz;
 
     @OneToMany (mappedBy = "quizResult", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<FailedQuizTask> failedQuizTasks;
