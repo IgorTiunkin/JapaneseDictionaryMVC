@@ -33,5 +33,11 @@ public class QuizResult {
     /*@OneToMany (mappedBy = "quizResult")
     private List<FailedQuizTask> failedTasksQuestion;*/
 
-
+    @Override
+    public String toString() {
+        return "QuizResult{" +
+                "numberOfRightAnswers=" + numberOfRightAnswers +
+                ", numberOfTasks=" + numberOfTasks +
+                '}';
+    }
 }

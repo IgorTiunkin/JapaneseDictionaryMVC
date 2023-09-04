@@ -1,15 +1,20 @@
 package com.phantom.japanese_dictionary_mvc.controllers;
 
+import com.phantom.japanese_dictionary_mvc.models.Person;
+import com.phantom.japanese_dictionary_mvc.models.QuizResult;
 import com.phantom.japanese_dictionary_mvc.models.QuizTask;
 import com.phantom.japanese_dictionary_mvc.requests.QuizRequest;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
-import com.phantom.japanese_dictionary_mvc.services.NoteService;
 import com.phantom.japanese_dictionary_mvc.models.Answer;
 import com.phantom.japanese_dictionary_mvc.dto.AnswerDto;
+import com.phantom.japanese_dictionary_mvc.security.PersonDetails;
+import com.phantom.japanese_dictionary_mvc.services.QuizResultsService;
 import com.phantom.japanese_dictionary_mvc.util.QuizConverter;
 import com.phantom.japanese_dictionary_mvc.util.QuizResultChecker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,12 +29,14 @@ import java.util.List;
 public class QuizController {
     private final QuizConverter quizConverter;
     private final QuizResultChecker quizResultChecker;
+    private final QuizResultsService quizResultsService;
     private final static Logger LOGGER = LoggerFactory.getLogger(QuizController.class);
 
 
-    public QuizController (QuizConverter quizConverter, QuizResultChecker quizResultChecker) {
+    public QuizController(QuizConverter quizConverter, QuizResultChecker quizResultChecker, QuizResultsService quizResultsService) {
         this.quizConverter = quizConverter;
         this.quizResultChecker = quizResultChecker;
+        this.quizResultsService = quizResultsService;
     }
 
 
@@ -80,6 +87,15 @@ public class QuizController {
 
         return "redirect:/welcome";
 
+    }
+
+    @GetMapping("/showStatistics")
+    public String showStatistics (Model model) {
+        PersonDetails personDetails = (PersonDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Person currentUser = personDetails.getPerson();
+        List <QuizResult> quizResultList = quizResultsService.getQuizResultsByUser(currentUser);
+        model.addAttribute("quizResultList", quizResultList);
+        return "quiz/statistics";
     }
 
 
