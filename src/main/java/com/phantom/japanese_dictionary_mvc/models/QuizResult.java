@@ -30,8 +30,8 @@ public class QuizResult {
     @Column(name = "number_of_tasks")
     private int numberOfTasks;
 
-    /*@OneToMany (mappedBy = "quizResult")
-    private List<FailedQuizTask> failedTasksQuestion;*/
+    @OneToMany (mappedBy = "quizResult", fetch = FetchType.EAGER)
+    private List<FailedQuizTask> failedQuizTasks;
 
     @Override
     public String toString() {

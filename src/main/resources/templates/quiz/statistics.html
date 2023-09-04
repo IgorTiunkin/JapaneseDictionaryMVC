@@ -22,10 +22,15 @@
             <tr>
                 <th>Количество верных ответов</th>
                 <th>Количество заданий</th>
+                <th>Задания, на которые дан неправильный ответ</th>
             </tr>
             <tr th:each="quizResult : ${quizResultList}" th:id="${quizResult.getQuizResultId()}">
                 <td th:text="${quizResult.getNumberOfRightAnswers()}" style="text-align: right"></td>
                 <td th:text="${quizResult.getNumberOfTasks()}" style="text-align: right"></td>
+                <td style="text-align: right">
+                    <span th:each="failedTask : ${quizResult.getFailedQuizTasks()}" th:id = "${failedTask.getFailedQuizTaskId()}"
+                    th:text="${failedTask.getFailedQuestion()} + '; '" ></span>
+                </td>
             </tr>
             </tbody>
         </table>
