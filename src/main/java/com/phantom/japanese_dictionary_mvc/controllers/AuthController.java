@@ -3,6 +3,7 @@ package com.phantom.japanese_dictionary_mvc.controllers;
 import com.phantom.japanese_dictionary_mvc.dto.PersonDTO;
 import com.phantom.japanese_dictionary_mvc.models.Person;
 import com.phantom.japanese_dictionary_mvc.services.PeopleService;
+import com.phantom.japanese_dictionary_mvc.util.PersonValidator;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,11 +20,12 @@ import javax.validation.Valid;
 public class AuthController {
     private final PeopleService peopleService;
     private final ModelMapper modelMapper;
+    private final PersonValidator personValidator;
 
-
-    public AuthController(PeopleService peopleService, ModelMapper modelMapper) {
+    public AuthController(PeopleService peopleService, ModelMapper modelMapper, PersonValidator personValidator) {
         this.peopleService = peopleService;
         this.modelMapper = modelMapper;
+        this.personValidator = personValidator;
     }
 
     @GetMapping("/login")
@@ -39,11 +41,11 @@ public class AuthController {
 
     @PostMapping("/saveUser")
     public String saveUser (@ModelAttribute ("person") @Valid PersonDTO userDTO, BindingResult bindingResult) {
+        Person user = convertToPerson(userDTO);
+        personValidator.validate(user, bindingResult);
         if (bindingResult.hasErrors()) {
             return "auth/signup";
         }
-        Person user = convertToPerson(userDTO);
-
         peopleService.saveUser(user);
         return "redirect:/auth/login";
     }
