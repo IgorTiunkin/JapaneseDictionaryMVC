@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body style="background: bisque">
+<h1 style="text-align: center">Регистрация</h1>
+<div>
+    <div style="width: 50%;  margin: 0 auto; font-size: 18px; line-height: 1.5; text-align: justify" >
+        <p>Выберите имя пользователя и пароль. Имя пользователя и пароль должны быть от 2 до 100 символов.<br>
+            Так как мы не собираем ваши личные данные при регистрации, то сохраните где-нибудь свой пароль.</p>
+     </div>
+</div>
+<div>
+    <div style="width: 50%;  margin: 0 auto; font-size: 18px" >
+        <form  th:method="POST" th:action="@{/auth/saveUser}" th:object="${person}" >
+            <label for="username" >Введите имя пользователя: </label>
+            <br>
+            <input type="text" id="username" th:field="*{username}"/>
+            <div style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username error</div>
+            <br>
+            <label for="password" >Введите пароль: </label>
+            <br>
+            <input type="password" id="password" th:field="*{password}"/>
+            <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password error</div>
+            <br>
+            <input type="submit" value="Сохранить"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>

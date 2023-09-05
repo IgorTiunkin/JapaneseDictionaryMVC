@@ -30,8 +30,7 @@ public class QuizResultQuizResultDTOMapper {
         String formattedDateOfQuiz = "Дата неизвестна";
         if (dateOfQuiz !=null) {
             DateTimeFormatter formatter
-                    = DateTimeFormatter.ofPattern(
-                    "dd-MM-yyyy HH:mm:ss");
+                    = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
             formattedDateOfQuiz = dateOfQuiz.format(formatter);
         }
         quizResultDTO.setDateOfQuiz(formattedDateOfQuiz);

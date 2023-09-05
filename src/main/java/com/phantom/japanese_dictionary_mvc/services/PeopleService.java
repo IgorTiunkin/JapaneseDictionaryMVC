@@ -1,23 +1,30 @@
 package com.phantom.japanese_dictionary_mvc.services;
 
 import com.phantom.japanese_dictionary_mvc.models.Person;
-import com.phantom.japanese_dictionary_mvc.models.QuizResult;
 import com.phantom.japanese_dictionary_mvc.repositories.PeopleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
 public class PeopleService {
 
     private final PeopleRepository peopleRepository;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    public PeopleService(PeopleRepository peopleRepository) {
+    public PeopleService(PeopleRepository peopleRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.peopleRepository = peopleRepository;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    }
+
+    @Transactional(readOnly = false)
+    public void saveUser(Person user) {
+        String encryptedPassword = bCryptPasswordEncoder.encode(user.getPassword());
+        user.setPassword(encryptedPassword);
+        peopleRepository.save(user);
     }
 
 }
