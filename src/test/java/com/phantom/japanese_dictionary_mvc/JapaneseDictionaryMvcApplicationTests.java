@@ -1,10 +1,12 @@
 package com.phantom.japanese_dictionary_mvc;
 
+import com.phantom.japanese_dictionary_mvc.dto.QuizResultDTO;
 import com.phantom.japanese_dictionary_mvc.finders.dictionary.*;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinderFactory;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.KanaGrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.RomajiGrammarFinder;
+import com.phantom.japanese_dictionary_mvc.mappers.QuizResultQuizResultDTOMapper;
 import com.phantom.japanese_dictionary_mvc.models.*;
 import com.phantom.japanese_dictionary_mvc.repositories.NoteRepository;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
@@ -17,6 +19,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -30,15 +33,17 @@ class JapaneseDictionaryMvcApplicationTests {
     private final NoteService noteService;
     private final PeopleService peopleService;
     private final QuizResultsService quizResultsService;
+    private final QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper;
 
     @Autowired
-    JapaneseDictionaryMvcApplicationTests(WordFinderFactory wordFinderFactory, GrammarFinderFactory grammarFinderFactory, QuizResultChecker quizResultChecker, NoteRepository noteRepository, NoteService noteService, PeopleService peopleService, QuizResultsService quizResultsService) {
+    JapaneseDictionaryMvcApplicationTests(WordFinderFactory wordFinderFactory, GrammarFinderFactory grammarFinderFactory, QuizResultChecker quizResultChecker, NoteRepository noteRepository, NoteService noteService, PeopleService peopleService, QuizResultsService quizResultsService, QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper) {
         this.wordFinderFactory = wordFinderFactory;
         this.grammarFinderFactory = grammarFinderFactory;
         this.quizResultChecker = quizResultChecker;
         this.noteService = noteService;
         this.peopleService = peopleService;
         this.quizResultsService = quizResultsService;
+        this.quizResultQuizResultDTOMapper = quizResultQuizResultDTOMapper;
     }
 
 
@@ -244,6 +249,36 @@ class JapaneseDictionaryMvcApplicationTests {
            Assertions.assertEquals(mockFailedQuizTasks.get(i).getFailedQuestion(),
                    realFailedQuizTasks.get(i).getFailedQuestion());
        }
+
+   }
+
+   @Test
+   public void whenQuizResult_thenQuizDTO () {
+       QuizResult quizResult = new QuizResult();
+       quizResult.setQuizResultId(1);
+       quizResult.setNumberOfRightAnswers(2);
+       quizResult.setNumberOfTasks(5);
+       quizResult.setDateOfQuiz(LocalDateTime.of(2023, 9, 5, 16, 55, 15));
+       FailedQuizTask failedQuizTask = new FailedQuizTask();
+       failedQuizTask.setFailedQuizTaskId(2);
+       failedQuizTask.setFailedQuestion("Test");
+       List <FailedQuizTask> failedQuizTasks = new ArrayList<>();
+       failedQuizTasks.add(failedQuizTask);
+       quizResult.setFailedQuizTasks(failedQuizTasks);
+       QuizResultDTO quizResultDTO = quizResultQuizResultDTOMapper.quizResultToQuizResultDTO(quizResult);
+       System.out.println(quizResultDTO);
+       Assertions.assertEquals(2023, quizResultDTO.getLocalDateOfQuiz().getYear());
+       Assertions.assertEquals(9, quizResultDTO.getLocalDateOfQuiz().getMonthValue());
+       Assertions.assertEquals(5, quizResultDTO.getLocalDateOfQuiz().getDayOfMonth());
+       Assertions.assertEquals(16, quizResultDTO.getLocalTimeOfQuiz().getHour());
+       Assertions.assertEquals(55, quizResultDTO.getLocalTimeOfQuiz().getMinute());
+       Assertions.assertEquals(15, quizResultDTO.getLocalTimeOfQuiz().getSecond());
+       Assertions.assertEquals(1, quizResultDTO.getQuizResultId());
+       Assertions.assertEquals(2, quizResultDTO.getNumberOfRightAnswers());
+       Assertions.assertEquals(5, quizResultDTO.getNumberOfTasks());
+       Assertions.assertEquals(2, quizResultDTO.getFailedQuizTasks().get(0).getFailedQuizTaskId());
+       Assertions.assertEquals("Test", quizResultDTO.getFailedQuizTasks().get(0).getFailedQuestion());
+
 
    }
 

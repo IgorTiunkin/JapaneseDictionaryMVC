@@ -44,7 +44,7 @@ public class NoteService {
         Random random = new Random();
         Set <Integer> indicesForVariants = new HashSet<>();
         int count = (int) noteRepository.count();
-        while (indicesForVariants.size()<quantity) { //method need ids start from 1
+        while (indicesForVariants.size()<quantity) { //method need ids start from 1 and continious id
             indicesForVariants.add(1+random.nextInt(count));
         }
         return noteRepository.findAllByIdIn(indicesForVariants);

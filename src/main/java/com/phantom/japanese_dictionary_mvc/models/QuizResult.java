@@ -45,4 +45,5 @@ public class QuizResult {
                 ", failedQuizTasks=" + failedQuizTasks +
                 '}';
     }
+
 }

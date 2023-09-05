@@ -95,6 +95,7 @@ public class QuizController {
     public String showStatistics (Model model) {
         Person currentUser = getCurrentUser();
         List <QuizResult> quizResultList = quizResultsService.getQuizResultsByUser(currentUser);
+        
         model.addAttribute("quizResultList", quizResultList);
         return "quiz/statistics";
     }
