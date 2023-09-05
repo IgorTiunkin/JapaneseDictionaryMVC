@@ -7,17 +7,17 @@
 <body>
 <div th:fragment="top_header" class="">
     <div>
-        <div style="width: 50%;  margin: 0 auto">
+        <div style="width: 50%;  margin: 0 auto; font-size: 18px">
             <span>Навигация по разделам</span>
             <nav>
-                <a th:href="@{/dictionary}" th:text="'Основной словарь'"></a> |
-                <a th:href="@{/grammar}" th:text="'Грамматический словарь'"></a> |
-                <a th:href="@{/write-test}" th:text="'Письменная практика'"></a> |
-                <a th:href="@{/quiz}" th:text="'Квиз'"></a>
+                <a th:href="@{/dictionary}" th:text="'Основной словарь'" style="text-decoration: none;"></a> |
+                <a th:href="@{/grammar}" th:text="'Грамматический словарь'" style="text-decoration: none;"></a> |
+                <a th:href="@{/write-test}" th:text="'Письменная практика'" style="text-decoration: none;"></a> |
+                <a th:href="@{/quiz}" th:text="'Квиз'" style="text-decoration: none;"></a>
             </nav> <br>
             <span>Действия пользователя</span>
             <nav>
-                <a th:href="@{/logout}" th:text="'Выход'"></a>
+                <a th:href="@{/logout}" th:text="'Выход'" style="text-decoration: none;"></a>
             </nav> <br>
         </div>
     </div>
@@ -27,7 +27,7 @@
     <div>
         <div style="width: 50%;  margin: 0 auto">
             <nav>
-                <a th:href="@{/grammar}" th:text="'Поиск по грамматике'"></a>
+                <a th:href="@{/grammar}" th:text="'Поиск по грамматике'" style="text-decoration: none; font-size: 18px"></a>
             </nav>
         </div>
     </div>
@@ -37,7 +37,7 @@
     <div>
         <div style="width: 50%;  margin: 0 auto">
             <nav>
-                <a th:href="@{/dictionary}" th:text="'Поиск по словарю'"></a>
+                <a th:href="@{/dictionary}" th:text="'Поиск по словарю'" style="text-decoration: none; font-size: 18px"></a>
             </nav>
         </div>
     </div>
@@ -47,7 +47,7 @@
     <div>
         <div style="width: 50%;  margin: 0 auto">
             <nav>
-                <a th:href="@{/write-test}" th:text="'Выбор параметров письменной практики'"></a>
+                <a th:href="@{/write-test}" th:text="'Выбор параметров письменной практики'" style="text-decoration: none; font-size: 18px"></a>
             </nav>
         </div>
     </div>
@@ -57,8 +57,8 @@
     <div>
         <div style="width: 50%;  margin: 0 auto">
             <nav>
-                <a th:href="@{/quiz}" th:text="'Старт квиза'"></a> |
-                <a th:href="@{/quiz/showStatistics}" th:text="'Статистика'"></a>
+                <a th:href="@{/quiz}" th:text="'Старт квиза'" style="text-decoration: none; font-size: 18px"></a> |
+                <a th:href="@{/quiz/showStatistics}" th:text="'Статистика'" style="text-decoration: none; font-size: 18px"></a>
             </nav>
         </div>
     </div>
