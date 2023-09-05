@@ -1,5 +1,7 @@
 package com.phantom.japanese_dictionary_mvc.controllers;
 
+import com.phantom.japanese_dictionary_mvc.dto.QuizResultDTO;
+import com.phantom.japanese_dictionary_mvc.mappers.QuizResultQuizResultDTOMapper;
 import com.phantom.japanese_dictionary_mvc.models.Person;
 import com.phantom.japanese_dictionary_mvc.models.QuizResult;
 import com.phantom.japanese_dictionary_mvc.models.QuizTask;
@@ -14,7 +16,6 @@ import com.phantom.japanese_dictionary_mvc.util.QuizResultChecker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/quiz")
@@ -30,13 +32,15 @@ public class QuizController {
     private final QuizConverter quizConverter;
     private final QuizResultChecker quizResultChecker;
     private final QuizResultsService quizResultsService;
+    private final QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper;
     private final static Logger LOGGER = LoggerFactory.getLogger(QuizController.class);
 
 
-    public QuizController(QuizConverter quizConverter, QuizResultChecker quizResultChecker, QuizResultsService quizResultsService) {
+    public QuizController(QuizConverter quizConverter, QuizResultChecker quizResultChecker, QuizResultsService quizResultsService, QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper) {
         this.quizConverter = quizConverter;
         this.quizResultChecker = quizResultChecker;
         this.quizResultsService = quizResultsService;
+        this.quizResultQuizResultDTOMapper = quizResultQuizResultDTOMapper;
     }
 
 
@@ -94,9 +98,12 @@ public class QuizController {
     @GetMapping("/showStatistics")
     public String showStatistics (Model model) {
         Person currentUser = getCurrentUser();
-        List <QuizResult> quizResultList = quizResultsService.getQuizResultsByUser(currentUser);
-        
-        model.addAttribute("quizResultList", quizResultList);
+        List <QuizResult> quizResultHistory = quizResultsService.getQuizResultsByUser(currentUser);
+        List <QuizResultDTO> quizResultHistoryDTO =
+                quizResultHistory.stream().
+                map(quizResultQuizResultDTOMapper::quizResultToQuizResultDTO)
+                .collect(Collectors.toList());
+        model.addAttribute("quizResultList", quizResultHistoryDTO);
         return "quiz/statistics";
     }
 

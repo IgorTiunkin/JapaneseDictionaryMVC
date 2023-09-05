@@ -6,6 +6,8 @@ import com.phantom.japanese_dictionary_mvc.models.FailedQuizTask;
 import com.phantom.japanese_dictionary_mvc.models.QuizResult;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +26,15 @@ public class QuizResultQuizResultDTOMapper {
         quizResultDTO.setQuizResultId(quizResult.getQuizResultId());
         quizResultDTO.setNumberOfTasks(quizResult.getNumberOfTasks());
         quizResultDTO.setNumberOfRightAnswers(quizResult.getNumberOfRightAnswers());
-        quizResultDTO.setLocalDateOfQuiz(quizResult.getDateOfQuiz().toLocalDate());
-        quizResultDTO.setLocalTimeOfQuiz(quizResult.getDateOfQuiz().toLocalTime());
+        LocalDateTime dateOfQuiz = quizResult.getDateOfQuiz();
+        String formattedDateOfQuiz = "Дата неизвестна";
+        if (dateOfQuiz !=null) {
+            DateTimeFormatter formatter
+                    = DateTimeFormatter.ofPattern(
+                    "dd-MM-yyyy HH:mm:ss");
+            formattedDateOfQuiz = dateOfQuiz.format(formatter);
+        }
+        quizResultDTO.setDateOfQuiz(formattedDateOfQuiz);
         List<FailedQuizTaskDTO> failedQuizTaskDTOList = new ArrayList<>();
         for (FailedQuizTask failedQuizTask : quizResult.getFailedQuizTasks()) {
             failedQuizTaskDTOList.add(failedQuizTaskToDTOMapper.failedQuizTaskToDTO(failedQuizTask));

@@ -266,13 +266,7 @@ class JapaneseDictionaryMvcApplicationTests {
        failedQuizTasks.add(failedQuizTask);
        quizResult.setFailedQuizTasks(failedQuizTasks);
        QuizResultDTO quizResultDTO = quizResultQuizResultDTOMapper.quizResultToQuizResultDTO(quizResult);
-       System.out.println(quizResultDTO);
-       Assertions.assertEquals(2023, quizResultDTO.getLocalDateOfQuiz().getYear());
-       Assertions.assertEquals(9, quizResultDTO.getLocalDateOfQuiz().getMonthValue());
-       Assertions.assertEquals(5, quizResultDTO.getLocalDateOfQuiz().getDayOfMonth());
-       Assertions.assertEquals(16, quizResultDTO.getLocalTimeOfQuiz().getHour());
-       Assertions.assertEquals(55, quizResultDTO.getLocalTimeOfQuiz().getMinute());
-       Assertions.assertEquals(15, quizResultDTO.getLocalTimeOfQuiz().getSecond());
+       Assertions.assertEquals("05-09-2023 16:55:15", quizResultDTO.getDateOfQuiz());
        Assertions.assertEquals(1, quizResultDTO.getQuizResultId());
        Assertions.assertEquals(2, quizResultDTO.getNumberOfRightAnswers());
        Assertions.assertEquals(5, quizResultDTO.getNumberOfTasks());

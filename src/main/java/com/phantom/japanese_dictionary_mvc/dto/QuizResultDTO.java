@@ -24,9 +24,7 @@ public class QuizResultDTO {
 
     private int numberOfTasks;
 
-    private LocalDate localDateOfQuiz;
-
-    private LocalTime localTimeOfQuiz;
+    private String dateOfQuiz;
 
     private List<FailedQuizTaskDTO> failedQuizTasks;
 
