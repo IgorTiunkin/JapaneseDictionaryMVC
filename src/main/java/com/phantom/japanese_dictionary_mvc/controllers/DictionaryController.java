@@ -39,7 +39,6 @@ public class DictionaryController {
         this.noteService = noteService;
     }
 
-
     @GetMapping
     public String index (Model model) {
         model.addAttribute("request", new Request());
@@ -49,7 +48,7 @@ public class DictionaryController {
 
     @GetMapping("/show")
     public String show (@ModelAttribute ("request") @Valid Request request, BindingResult bindingResult
-            , Model model) {
+            , Model model, @RequestParam (required = false, value = "page", defaultValue = "0") Integer page) {
         LOGGER.trace("Accepted dictionary request: request type = {}; word to find = {}; match = {}",
                 request.getRequestType(), request.getWord(), request.isOnlyFullMatch());
         if (bindingResult.hasErrors()) {
@@ -57,7 +56,7 @@ public class DictionaryController {
             return "dictionaries/index";
         }
 
-        DictionaryReply dictionaryReply = replyConverter.getDictionaryReply(request);
+        DictionaryReply dictionaryReply = replyConverter.getDictionaryReply(request, page);
         model.addAttribute("dictionaryReply", dictionaryReply);
         return "dictionaries/multishow";
     }

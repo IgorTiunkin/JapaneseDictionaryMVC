@@ -17,13 +17,15 @@ public class ReplyConverter {
 
     private final WordFinderFactory wordFinderFactory;
     private final ModelMapper modelMapper;
+    private final int LIMIT_OF_NOTES_IN_VIEW = 500;
+    private final int NOTES_PER_PAGE = 10;
 
     public ReplyConverter(WordFinderFactory wordFinderFactory, ModelMapper modelMapper) {
         this.wordFinderFactory = wordFinderFactory;
         this.modelMapper = modelMapper;
     }
 
-    public DictionaryReply getDictionaryReply(Request request) {
+    public DictionaryReply getDictionaryReply(Request request, Integer page) {
         DictionaryReply dictionaryReply = new DictionaryReply();
 
         WordFinder wordFinder = wordFinderFactory.getInstance(request); //choose finder
@@ -32,23 +34,32 @@ public class ReplyConverter {
 
 
         List <Note> fullMatchNotes = getFullMatch(wordFinder, mixSearchResult, wordToFind);
-        List <Note> partialMatchNotest = new ArrayList<>();
+        List <Note> partialMatchNotes = new ArrayList<>();
         if (!request.isOnlyFullMatch()){
-            partialMatchNotest = getPartialMatch(wordFinder, mixSearchResult, wordToFind);
+            partialMatchNotes = getPartialMatch(wordFinder, mixSearchResult, wordToFind);
         }
 
         dictionaryReply.setFullMatchCount(fullMatchNotes.size());
-        dictionaryReply.setPartialMatchCount(partialMatchNotest.size());
+        dictionaryReply.setPartialMatchCount(partialMatchNotes.size());
 
-        dictionaryReply.setFullMatchVisible(true);
-        dictionaryReply.setPartialMatchVisible(true);
-        List <NoteDTO> fullMatchNotesDTO = convertNoteToNoteDTO(fullMatchNotes);
-        List <NoteDTO> partialMatchNotesDTO = convertNoteToNoteDTO(partialMatchNotest);
-        dictionaryReply.setFullMatchNoteDTOS(fullMatchNotesDTO);
-        dictionaryReply.setPartialMatchNoteDTOS(partialMatchNotesDTO);
+        List <Note> notesToShow = getNotesToShowForCurrentPage(fullMatchNotes, partialMatchNotes, page);
+
+        List <NoteDTO> nodeDTOS = convertNoteToNoteDTO(notesToShow);
+        dictionaryReply.setNoteDTOS(nodeDTOS);
         return dictionaryReply;
     }
 
+    private List<Note> getNotesToShowForCurrentPage(List<Note> fullMatchNotes, List<Note> partialMatchNotes, Integer page) {
+        fullMatchNotes.addAll(partialMatchNotes);
+        int indexOfLastNote = Math.min(fullMatchNotes.size(), LIMIT_OF_NOTES_IN_VIEW);
+        Integer currentPage = Math.min(page, fullMatchNotes.size()/NOTES_PER_PAGE);
+        List <Note> notesToShowForCurrentPage = new ArrayList<>();
+        for (int i = currentPage*NOTES_PER_PAGE;
+             i < Math.min ((currentPage+1)*NOTES_PER_PAGE, indexOfLastNote); i++) {
+            notesToShowForCurrentPage.add(fullMatchNotes.get(i));
+        }
+        return notesToShowForCurrentPage;
+    }
 
 
     public List <Note> getFullMatch(WordFinder wordFinder, List<Note> mixSearchResult, String wordToFind) {

@@ -13,15 +13,10 @@ import java.util.List;
 @NoArgsConstructor
 public class DictionaryReply {
 
-    private List <NoteDTO> fullMatchNoteDTOS;
-
-    private List <NoteDTO> partialMatchNoteDTOS;
+    private List <NoteDTO> NoteDTOS;
 
     private int fullMatchCount;
 
     private int partialMatchCount;
 
-    private boolean isFullMatchVisible;
-
-    private boolean isPartialMatchVisible;
 }

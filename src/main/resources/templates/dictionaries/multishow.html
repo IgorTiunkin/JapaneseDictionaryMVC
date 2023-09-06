@@ -13,10 +13,13 @@
         <p th:if="${dictionaryReply.getFullMatchCount()==0 && dictionaryReply.getPartialMatchCount()==0}"
            th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос или фильтр.'"
             style="font-size: 18px; color: red" id = "absent"></p>
-        <p th:if="${dictionaryReply.isFullMatchVisible()}"
+        <p th:if="${dictionaryReply.getFullMatchCount()>0}"
            th:text = "'Число полных совпадений в моей базе - ' + ${dictionaryReply.getFullMatchCount()}"
-           style="font-size: 18px; color: blue" id = "fullPresent"></p>
-        <table th:each="note : ${dictionaryReply.getFullMatchNoteDTOS()}" id = "fullTable">
+           style="font-size: 18px; color: blue" id = "fullPresent"><br></p>
+        <p th:if="${dictionaryReply.getPartialMatchCount()>0}"
+           th:text = "'Число частичных совпадений в моей базе - ' + ${dictionaryReply.getPartialMatchCount()}"
+           style="font-size: 18px; color: blue" id = "partialPresent"></p>
+        <table th:each="note : ${dictionaryReply.getNoteDTOS()}" id = "fullTable">
             <tbody >
             <tr>
                 <td th:text="${note.getKanji()}" style="font-size: 22px"></td>
@@ -35,27 +38,6 @@
         </table>
         <hr>
         <br>
-        <p th:if="${dictionaryReply.isPartialMatchVisible()}"
-           th:text = "'Число частичных совпадений в моей базе - ' + ${dictionaryReply.getPartialMatchCount()}"
-           style="font-size: 18px; color: blue" id = "partialPresent"></p>
-
-        <table th:each="note : ${dictionaryReply.getPartialMatchNoteDTOS()}" id = "partialTable">
-            <tbody >
-            <tr>
-                <td th:text="${note.getKanji()}" style="font-size: 22px"></td>
-            </tr>
-            <tr>
-                <td th:text="${note.getHiragana()}" style="color: green; font-size: 20px"></td>
-            </tr>
-            <tr>
-                <td th:text="${note.getTranslation()}" style="font-size: 18px"></td>
-            </tr>
-            <tr>
-                <td th:text="${note.getRomadji()}" style="font-size: 18px"></td>
-            </tr>
-            </tbody>
-            <hr>
-        </table>
     </div>
 </div>
 <div th:replace="allfooter::footer"></div>

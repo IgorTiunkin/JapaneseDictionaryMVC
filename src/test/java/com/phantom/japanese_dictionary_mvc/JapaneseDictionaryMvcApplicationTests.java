@@ -286,11 +286,11 @@ class JapaneseDictionaryMvcApplicationTests {
         Request request = new Request();
         request.setWord("Кофе");
         request.setRequestType(RequestType.TRANSLATION);
-        DictionaryReply dictionaryReply = replyConverter.getDictionaryReply(request);
+        DictionaryReply dictionaryReply = replyConverter.getDictionaryReply(request, 0);
         Assertions.assertEquals(8, dictionaryReply.getFullMatchCount());
         Assertions.assertEquals(3, dictionaryReply.getPartialMatchCount());
         request.setOnlyFullMatch(true);
-        dictionaryReply = replyConverter.getDictionaryReply(request);
+        dictionaryReply = replyConverter.getDictionaryReply(request, 0);
        Assertions.assertEquals(8, dictionaryReply.getFullMatchCount());
        Assertions.assertEquals(0, dictionaryReply.getPartialMatchCount());
     }
@@ -300,11 +300,11 @@ class JapaneseDictionaryMvcApplicationTests {
         Request request = new Request();
         request.setWord("Boku");
         request.setRequestType(RequestType.SPELLING);
-        DictionaryReply dictionaryReply = replyConverter.getDictionaryReply(request);
+        DictionaryReply dictionaryReply = replyConverter.getDictionaryReply(request,0);
         Assertions.assertEquals(2, dictionaryReply.getFullMatchCount());
         Assertions.assertEquals(27, dictionaryReply.getPartialMatchCount());
         request.setOnlyFullMatch(true);
-        dictionaryReply = replyConverter.getDictionaryReply(request);
+        dictionaryReply = replyConverter.getDictionaryReply(request,0);
         Assertions.assertEquals(2, dictionaryReply.getFullMatchCount());
         Assertions.assertEquals(0, dictionaryReply.getPartialMatchCount());
     }
