@@ -6,17 +6,15 @@ import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
+import com.phantom.japanese_dictionary_mvc.util.DictionaryReply;
 import com.phantom.japanese_dictionary_mvc.util.ReplyConverter;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -34,13 +32,11 @@ public class DictionaryController {
 
     private final ReplyConverter replyConverter;
     private final NoteService noteService;
-    private final ModelMapper modelMapper;
     private final static Logger LOGGER = LoggerFactory.getLogger(DictionaryController.class);
 
-    public DictionaryController(ReplyConverter replyConverter, NoteService noteService, ModelMapper modelMapper) {
+    public DictionaryController(ReplyConverter replyConverter, NoteService noteService) {
         this.replyConverter = replyConverter;
         this.noteService = noteService;
-        this.modelMapper = modelMapper;
     }
 
 
@@ -61,25 +57,12 @@ public class DictionaryController {
             return "dictionaries/index";
         }
 
-        List<Note> fullMatchNotes = replyConverter.getFullReplies(request);
-        List <NoteDTO> fullMatchNoteDTOS = convertNoteToNoteDTO(fullMatchNotes);
-        model.addAttribute("fullMatchNotes", fullMatchNoteDTOS);
-
-        List<Note> partialMatchNotes = new ArrayList<>();
-        if (!request.isOnlyFullMatch()) {
-            partialMatchNotes = replyConverter.getPartialReplies(request);
-        }
-        List <NoteDTO> partialMatchNoteDTOS = convertNoteToNoteDTO(partialMatchNotes);
-        model.addAttribute("partialMatchNotes", partialMatchNoteDTOS);
+        DictionaryReply dictionaryReply = replyConverter.getDictionaryReply(request);
+        model.addAttribute("dictionaryReply", dictionaryReply);
         return "dictionaries/multishow";
     }
 
 
-    private List <NoteDTO> convertNoteToNoteDTO(List <Note> notes) {
-        List <NoteDTO> noteDTOS = new ArrayList<>();
-        for (Note note: notes) noteDTOS.add(modelMapper.map(note, NoteDTO.class));
-        return noteDTOS;
-    }
 
     @GetMapping ("/import")
     public String excelFile () {

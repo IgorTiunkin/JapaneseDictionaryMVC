@@ -10,13 +10,13 @@
 <h1 style="text-align: center">Результат поиска</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">
-        <p th:if="${fullMatchNotes.isEmpty() && partialMatchNotes.isEmpty()}"
+        <p th:if="${dictionaryReply.getFullMatchCount()==0 && dictionaryReply.getPartialMatchCount()==0}"
            th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос или фильтр.'"
             style="font-size: 18px; color: red" id = "absent"></p>
-        <p th:if="${!fullMatchNotes.isEmpty()}"
-           th:text = "'Число полных совпадений в моей базе - ' + ${fullMatchNotes.size()}"
+        <p th:if="${dictionaryReply.isFullMatchVisible()}"
+           th:text = "'Число полных совпадений в моей базе - ' + ${dictionaryReply.getFullMatchCount()}"
            style="font-size: 18px; color: blue" id = "fullPresent"></p>
-        <table th:each="note : ${fullMatchNotes}" id = "fullTable">
+        <table th:each="note : ${dictionaryReply.getFullMatchNoteDTOS()}" id = "fullTable">
             <tbody >
             <tr>
                 <td th:text="${note.getKanji()}" style="font-size: 22px"></td>
@@ -35,11 +35,11 @@
         </table>
         <hr>
         <br>
-        <p th:if="${!partialMatchNotes.isEmpty()}"
-           th:text = "'Число частичных совпадений в моей базе - ' + ${partialMatchNotes.size()}"
+        <p th:if="${dictionaryReply.isPartialMatchVisible()}"
+           th:text = "'Число частичных совпадений в моей базе - ' + ${dictionaryReply.getPartialMatchCount()}"
            style="font-size: 18px; color: blue" id = "partialPresent"></p>
 
-        <table th:each="note : ${partialMatchNotes}" id = "partialTable">
+        <table th:each="note : ${dictionaryReply.getPartialMatchNoteDTOS()}" id = "partialTable">
             <tbody >
             <tr>
                 <td th:text="${note.getKanji()}" style="font-size: 22px"></td>

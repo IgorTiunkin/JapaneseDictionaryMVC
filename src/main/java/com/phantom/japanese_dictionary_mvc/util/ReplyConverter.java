@@ -1,10 +1,12 @@
 package com.phantom.japanese_dictionary_mvc.util;
 
 
+import com.phantom.japanese_dictionary_mvc.dto.NoteDTO;
 import com.phantom.japanese_dictionary_mvc.finders.dictionary.WordFinder;
 import com.phantom.japanese_dictionary_mvc.finders.dictionary.WordFinderFactory;
 import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -14,12 +16,32 @@ import java.util.List;
 public class ReplyConverter {
 
     private final WordFinderFactory wordFinderFactory;
+    private final ModelMapper modelMapper;
 
-    public ReplyConverter(WordFinderFactory wordFinderFactory) {
+    public ReplyConverter(WordFinderFactory wordFinderFactory, ModelMapper modelMapper) {
         this.wordFinderFactory = wordFinderFactory;
+        this.modelMapper = modelMapper;
     }
 
-    public List <Note> getFullReplies(Request request) { // take input message - return all replies
+    public DictionaryReply getDictionaryReply(Request request) {
+        DictionaryReply dictionaryReply = new DictionaryReply();
+        List <Note> fullMatchNotes = getFullMatch(request);
+        List <Note> partialMatchNotest = new ArrayList<>();
+        if (!request.isOnlyFullMatch()){
+            partialMatchNotest = getPartialMatch(request);
+        }
+        dictionaryReply.setFullMatchCount(fullMatchNotes.size());
+        dictionaryReply.setPartialMatchCount(partialMatchNotest.size());
+        dictionaryReply.setFullMatchVisible(true);
+        dictionaryReply.setPartialMatchVisible(true);
+        List <NoteDTO> fullMatchNotesDTO = convertNoteToNoteDTO(fullMatchNotes);
+        List <NoteDTO> partialMatchNotesDTO = convertNoteToNoteDTO(partialMatchNotest);
+        dictionaryReply.setFullMatchNoteDTOS(fullMatchNotesDTO);
+        dictionaryReply.setPartialMatchNoteDTOS(partialMatchNotesDTO);
+        return dictionaryReply;
+    }
+
+    public List <Note> getFullMatch(Request request) { // take input message - return all replies
 
         //todo
         //use both of objects = find way to extract
@@ -36,7 +58,7 @@ public class ReplyConverter {
         return fullMatch;
     }
 
-    public List <Note> getPartialReplies(Request request) {
+    public List <Note> getPartialMatch(Request request) {
 
         WordFinder wordFinder = wordFinderFactory.getInstance(request); //choose finder
         String wordToFind = request.getWord().trim().toLowerCase();
@@ -49,6 +71,13 @@ public class ReplyConverter {
             }
         }
         return partialMatch;
+    }
+
+
+    private List <NoteDTO> convertNoteToNoteDTO(List <Note> notes) {
+        List <NoteDTO> noteDTOS = new ArrayList<>();
+        for (Note note: notes) noteDTOS.add(modelMapper.map(note, NoteDTO.class));
+        return noteDTOS;
     }
 
 
