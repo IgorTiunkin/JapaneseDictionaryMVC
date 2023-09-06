@@ -28,6 +28,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/dictionary")
+@SessionAttributes({"request"})
 public class DictionaryController {
 
     private final ReplyConverter replyConverter;
@@ -58,6 +59,7 @@ public class DictionaryController {
 
         DictionaryReply dictionaryReply = replyConverter.getDictionaryReply(request, page);
         model.addAttribute("dictionaryReply", dictionaryReply);
+        model.addAttribute("currentPage", page);
         return "dictionaries/multishow";
     }
 

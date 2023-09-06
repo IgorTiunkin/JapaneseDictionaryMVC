@@ -42,6 +42,9 @@ public class ReplyConverter {
         dictionaryReply.setFullMatchCount(fullMatchNotes.size());
         dictionaryReply.setPartialMatchCount(partialMatchNotes.size());
 
+        int indexOfLastPage = (Math.min(fullMatchNotes.size()+partialMatchNotes.size(), LIMIT_OF_NOTES_IN_VIEW)-1)/NOTES_PER_PAGE;
+        dictionaryReply.setIndexOfLastPage(indexOfLastPage);
+
         List <Note> notesToShow = getNotesToShowForCurrentPage(fullMatchNotes, partialMatchNotes, page);
 
         List <NoteDTO> nodeDTOS = convertNoteToNoteDTO(notesToShow);

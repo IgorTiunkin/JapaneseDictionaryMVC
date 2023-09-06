@@ -19,4 +19,6 @@ public class DictionaryReply {
 
     private int partialMatchCount;
 
+    private int indexOfLastPage;
+
 }
