@@ -25,13 +25,21 @@ public class ReplyConverter {
 
     public DictionaryReply getDictionaryReply(Request request) {
         DictionaryReply dictionaryReply = new DictionaryReply();
-        List <Note> fullMatchNotes = getFullMatch(request);
+
+        WordFinder wordFinder = wordFinderFactory.getInstance(request); //choose finder
+        String wordToFind = request.getWord().trim().toLowerCase();
+        List<Note> mixSearchResult = wordFinder.getNotesFromRepository(wordToFind); //get mixed (full+partial) result
+
+
+        List <Note> fullMatchNotes = getFullMatch(wordFinder, mixSearchResult, wordToFind);
         List <Note> partialMatchNotest = new ArrayList<>();
         if (!request.isOnlyFullMatch()){
-            partialMatchNotest = getPartialMatch(request);
+            partialMatchNotest = getPartialMatch(wordFinder, mixSearchResult, wordToFind);
         }
+
         dictionaryReply.setFullMatchCount(fullMatchNotes.size());
         dictionaryReply.setPartialMatchCount(partialMatchNotest.size());
+
         dictionaryReply.setFullMatchVisible(true);
         dictionaryReply.setPartialMatchVisible(true);
         List <NoteDTO> fullMatchNotesDTO = convertNoteToNoteDTO(fullMatchNotes);
@@ -41,32 +49,22 @@ public class ReplyConverter {
         return dictionaryReply;
     }
 
-    public List <Note> getFullMatch(Request request) { // take input message - return all replies
 
-        //todo
-        //use both of objects = find way to extract
-        WordFinder wordFinder = wordFinderFactory.getInstance(request); //choose finder
-        String wordToFind = request.getWord().trim().toLowerCase();
-        List<Note> mixSearchResult = wordFinder.getNotesFromRepository(wordToFind); //get mixed (full+partial) result
 
+    public List <Note> getFullMatch(WordFinder wordFinder, List<Note> mixSearchResult, String wordToFind) {
         List <Note> fullMatch = new ArrayList<>();
         for (Note note : mixSearchResult) {
-            if (wordFinder.checkFullMatch(wordToFind, note)) { //check full match
+            if (wordFinder.checkFullMatch(wordToFind, note)) {
                     fullMatch.add(note);
                 }
             }
         return fullMatch;
     }
 
-    public List <Note> getPartialMatch(Request request) {
-
-        WordFinder wordFinder = wordFinderFactory.getInstance(request); //choose finder
-        String wordToFind = request.getWord().trim().toLowerCase();
-        List<Note> mixSearchResult = wordFinder.getNotesFromRepository(wordToFind); //get mixed (full+partial) result
-
+    public List <Note> getPartialMatch(WordFinder wordFinder, List<Note> mixSearchResult, String wordToFind) {
         List <Note> partialMatch = new ArrayList<>();
         for (Note note : mixSearchResult) {
-            if (!wordFinder.checkFullMatch(wordToFind, note)) { //check partial match
+            if (!wordFinder.checkFullMatch(wordToFind, note)) {
                 partialMatch.add(note);
             }
         }

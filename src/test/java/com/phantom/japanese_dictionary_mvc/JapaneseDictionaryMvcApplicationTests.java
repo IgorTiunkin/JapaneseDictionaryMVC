@@ -10,10 +10,13 @@ import com.phantom.japanese_dictionary_mvc.mappers.QuizResultQuizResultDTOMapper
 import com.phantom.japanese_dictionary_mvc.models.*;
 import com.phantom.japanese_dictionary_mvc.repositories.NoteRepository;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
+import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
 import com.phantom.japanese_dictionary_mvc.services.PeopleService;
 import com.phantom.japanese_dictionary_mvc.services.QuizResultsService;
+import com.phantom.japanese_dictionary_mvc.util.DictionaryReply;
 import com.phantom.japanese_dictionary_mvc.util.QuizResultChecker;
+import com.phantom.japanese_dictionary_mvc.util.ReplyConverter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,9 +37,10 @@ class JapaneseDictionaryMvcApplicationTests {
     private final PeopleService peopleService;
     private final QuizResultsService quizResultsService;
     private final QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper;
+    private final ReplyConverter replyConverter;
 
     @Autowired
-    JapaneseDictionaryMvcApplicationTests(WordFinderFactory wordFinderFactory, GrammarFinderFactory grammarFinderFactory, QuizResultChecker quizResultChecker, NoteRepository noteRepository, NoteService noteService, PeopleService peopleService, QuizResultsService quizResultsService, QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper) {
+    JapaneseDictionaryMvcApplicationTests(WordFinderFactory wordFinderFactory, GrammarFinderFactory grammarFinderFactory, QuizResultChecker quizResultChecker, NoteRepository noteRepository, NoteService noteService, PeopleService peopleService, QuizResultsService quizResultsService, QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper, ReplyConverter replyConverter) {
         this.wordFinderFactory = wordFinderFactory;
         this.grammarFinderFactory = grammarFinderFactory;
         this.quizResultChecker = quizResultChecker;
@@ -44,6 +48,7 @@ class JapaneseDictionaryMvcApplicationTests {
         this.peopleService = peopleService;
         this.quizResultsService = quizResultsService;
         this.quizResultQuizResultDTOMapper = quizResultQuizResultDTOMapper;
+        this.replyConverter = replyConverter;
     }
 
 
@@ -275,6 +280,36 @@ class JapaneseDictionaryMvcApplicationTests {
 
 
    }
+
+   @Test
+    public void whenKofe_then8FullAnd3Partial () {
+        Request request = new Request();
+        request.setWord("Кофе");
+        request.setRequestType(RequestType.TRANSLATION);
+        DictionaryReply dictionaryReply = replyConverter.getDictionaryReply(request);
+        Assertions.assertEquals(8, dictionaryReply.getFullMatchCount());
+        Assertions.assertEquals(3, dictionaryReply.getPartialMatchCount());
+        request.setOnlyFullMatch(true);
+        dictionaryReply = replyConverter.getDictionaryReply(request);
+       Assertions.assertEquals(8, dictionaryReply.getFullMatchCount());
+       Assertions.assertEquals(0, dictionaryReply.getPartialMatchCount());
+    }
+
+    @Test
+    public void whenBoku_then2FullAnd27Partial () {
+        Request request = new Request();
+        request.setWord("Boku");
+        request.setRequestType(RequestType.SPELLING);
+        DictionaryReply dictionaryReply = replyConverter.getDictionaryReply(request);
+        Assertions.assertEquals(2, dictionaryReply.getFullMatchCount());
+        Assertions.assertEquals(27, dictionaryReply.getPartialMatchCount());
+        request.setOnlyFullMatch(true);
+        dictionaryReply = replyConverter.getDictionaryReply(request);
+        Assertions.assertEquals(2, dictionaryReply.getFullMatchCount());
+        Assertions.assertEquals(0, dictionaryReply.getPartialMatchCount());
+    }
+
+
 
 
 
