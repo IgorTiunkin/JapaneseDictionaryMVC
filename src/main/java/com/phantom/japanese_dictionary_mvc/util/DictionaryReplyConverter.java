@@ -8,22 +8,24 @@ import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.replies.DictionaryReply;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class ReplyConverter {
+public class DictionaryReplyConverter {
 
     private final WordFinderFactory wordFinderFactory;
-    private final ModelMapper modelMapper;
+    private final BaseGenericConverter baseGenericConverter;
     private final int LIMIT_OF_NOTES_IN_VIEW = 500;
     private final int NOTES_PER_PAGE = 10;
 
-    public ReplyConverter(WordFinderFactory wordFinderFactory, ModelMapper modelMapper) {
+    @Autowired
+    public DictionaryReplyConverter(WordFinderFactory wordFinderFactory, BaseGenericConverter baseGenericConverter) {
         this.wordFinderFactory = wordFinderFactory;
-        this.modelMapper = modelMapper;
+        this.baseGenericConverter = baseGenericConverter;
     }
 
     public DictionaryReply getDictionaryReplyForCurrentPage(Request request, Integer page) {
@@ -46,23 +48,12 @@ public class ReplyConverter {
         int indexOfLastPage = (Math.min(fullMatchNotes.size()+partialMatchNotes.size(), LIMIT_OF_NOTES_IN_VIEW)-1)/NOTES_PER_PAGE;
         dictionaryReply.setIndexOfLastPage(indexOfLastPage);
 
-        List <Note> notesToShow = getNotesToShowForCurrentPage(fullMatchNotes, partialMatchNotes, page);
-
-        List <NoteDTO> nodeDTOS = convertNoteToNoteDTO(notesToShow);
-        dictionaryReply.setNoteDTOS(nodeDTOS);
-        return dictionaryReply;
-    }
-
-    private List<Note> getNotesToShowForCurrentPage(List<Note> fullMatchNotes, List<Note> partialMatchNotes, Integer page) {
         fullMatchNotes.addAll(partialMatchNotes);
-        int indexOfLastNote = Math.min(fullMatchNotes.size(), LIMIT_OF_NOTES_IN_VIEW);
-        Integer currentPage = Math.min(page, fullMatchNotes.size()/NOTES_PER_PAGE);
-        List <Note> notesToShowForCurrentPage = new ArrayList<>();
-        for (int i = currentPage*NOTES_PER_PAGE;
-             i < Math.min ((currentPage+1)*NOTES_PER_PAGE, indexOfLastNote); i++) {
-            notesToShowForCurrentPage.add(fullMatchNotes.get(i));
-        }
-        return notesToShowForCurrentPage;
+        List <Note> notesToShow = baseGenericConverter.getNotesToShowForCurrentPage(fullMatchNotes, page, LIMIT_OF_NOTES_IN_VIEW, NOTES_PER_PAGE);
+        List <NoteDTO> nodeDTOS = baseGenericConverter.convertNoteToNoteDTO(notesToShow, NoteDTO.class);
+        dictionaryReply.setNoteDTOS(nodeDTOS);
+
+        return dictionaryReply;
     }
 
 
@@ -85,13 +76,5 @@ public class ReplyConverter {
         }
         return partialMatch;
     }
-
-
-    private List <NoteDTO> convertNoteToNoteDTO(List <Note> notes) {
-        List <NoteDTO> noteDTOS = new ArrayList<>();
-        for (Note note: notes) noteDTOS.add(modelMapper.map(note, NoteDTO.class));
-        return noteDTOS;
-    }
-
 
 }

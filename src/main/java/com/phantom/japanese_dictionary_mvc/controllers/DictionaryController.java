@@ -6,7 +6,7 @@ import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
 import com.phantom.japanese_dictionary_mvc.replies.DictionaryReply;
-import com.phantom.japanese_dictionary_mvc.util.ReplyConverter;
+import com.phantom.japanese_dictionary_mvc.util.DictionaryReplyConverter;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -28,12 +28,12 @@ import java.io.IOException;
 @SessionAttributes({"request"})
 public class DictionaryController {
 
-    private final ReplyConverter replyConverter;
+    private final DictionaryReplyConverter dictionaryReplyConverter;
     private final NoteService noteService;
     private final static Logger LOGGER = LoggerFactory.getLogger(DictionaryController.class);
 
-    public DictionaryController(ReplyConverter replyConverter, NoteService noteService) {
-        this.replyConverter = replyConverter;
+    public DictionaryController(DictionaryReplyConverter dictionaryReplyConverter, NoteService noteService) {
+        this.dictionaryReplyConverter = dictionaryReplyConverter;
         this.noteService = noteService;
     }
 
@@ -54,7 +54,7 @@ public class DictionaryController {
             return "dictionaries/index";
         }
 
-        DictionaryReply dictionaryReply = replyConverter.getDictionaryReplyForCurrentPage(request, page);
+        DictionaryReply dictionaryReply = dictionaryReplyConverter.getDictionaryReplyForCurrentPage(request, page);
         model.addAttribute("dictionaryReply", dictionaryReply);
         model.addAttribute("currentPage", page);
         return "dictionaries/multishow";

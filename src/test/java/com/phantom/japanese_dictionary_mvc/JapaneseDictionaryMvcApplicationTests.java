@@ -18,7 +18,7 @@ import com.phantom.japanese_dictionary_mvc.services.QuizResultsService;
 import com.phantom.japanese_dictionary_mvc.replies.DictionaryReply;
 import com.phantom.japanese_dictionary_mvc.util.GrammarDictionaryReplyConverter;
 import com.phantom.japanese_dictionary_mvc.util.QuizResultChecker;
-import com.phantom.japanese_dictionary_mvc.util.ReplyConverter;
+import com.phantom.japanese_dictionary_mvc.util.DictionaryReplyConverter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,17 +37,21 @@ class JapaneseDictionaryMvcApplicationTests {
     private Random random = new Random();
     private final NoteService noteService;
     private final QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper;
-    private final ReplyConverter replyConverter;
+    private final DictionaryReplyConverter dictionaryReplyConverter;
     private final GrammarDictionaryReplyConverter grammarDictionaryReplyConverter;
 
     @Autowired
-    JapaneseDictionaryMvcApplicationTests(WordFinderFactory wordFinderFactory, GrammarFinderFactory grammarFinderFactory, QuizResultChecker quizResultChecker, NoteRepository noteRepository, NoteService noteService, PeopleService peopleService, QuizResultsService quizResultsService, QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper, ReplyConverter replyConverter, GrammarDictionaryReplyConverter grammarDictionaryReplyConverter) {
+    JapaneseDictionaryMvcApplicationTests(WordFinderFactory wordFinderFactory, GrammarFinderFactory grammarFinderFactory,
+                                          QuizResultChecker quizResultChecker, NoteService noteService,
+                                          QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper,
+                                          DictionaryReplyConverter dictionaryReplyConverter,
+                                          GrammarDictionaryReplyConverter grammarDictionaryReplyConverter) {
         this.wordFinderFactory = wordFinderFactory;
         this.grammarFinderFactory = grammarFinderFactory;
         this.quizResultChecker = quizResultChecker;
         this.noteService = noteService;
         this.quizResultQuizResultDTOMapper = quizResultQuizResultDTOMapper;
-        this.replyConverter = replyConverter;
+        this.dictionaryReplyConverter = dictionaryReplyConverter;
         this.grammarDictionaryReplyConverter = grammarDictionaryReplyConverter;
     }
 
@@ -286,11 +290,11 @@ class JapaneseDictionaryMvcApplicationTests {
         Request request = new Request();
         request.setWord("Кофе");
         request.setRequestType(RequestType.TRANSLATION);
-        DictionaryReply dictionaryReply = replyConverter.getDictionaryReplyForCurrentPage(request, 0);
+        DictionaryReply dictionaryReply = dictionaryReplyConverter.getDictionaryReplyForCurrentPage(request, 0);
         Assertions.assertEquals(8, dictionaryReply.getFullMatchCount());
         Assertions.assertEquals(3, dictionaryReply.getPartialMatchCount());
         request.setOnlyFullMatch(true);
-        dictionaryReply = replyConverter.getDictionaryReplyForCurrentPage(request, 0);
+        dictionaryReply = dictionaryReplyConverter.getDictionaryReplyForCurrentPage(request, 0);
        Assertions.assertEquals(8, dictionaryReply.getFullMatchCount());
        Assertions.assertEquals(0, dictionaryReply.getPartialMatchCount());
     }
@@ -300,11 +304,11 @@ class JapaneseDictionaryMvcApplicationTests {
         Request request = new Request();
         request.setWord("Boku");
         request.setRequestType(RequestType.SPELLING);
-        DictionaryReply dictionaryReply = replyConverter.getDictionaryReplyForCurrentPage(request,0);
+        DictionaryReply dictionaryReply = dictionaryReplyConverter.getDictionaryReplyForCurrentPage(request,0);
         Assertions.assertEquals(2, dictionaryReply.getFullMatchCount());
         Assertions.assertEquals(27, dictionaryReply.getPartialMatchCount());
         request.setOnlyFullMatch(true);
-        dictionaryReply = replyConverter.getDictionaryReplyForCurrentPage(request,0);
+        dictionaryReply = dictionaryReplyConverter.getDictionaryReplyForCurrentPage(request,0);
         Assertions.assertEquals(2, dictionaryReply.getFullMatchCount());
         Assertions.assertEquals(0, dictionaryReply.getPartialMatchCount());
     }
