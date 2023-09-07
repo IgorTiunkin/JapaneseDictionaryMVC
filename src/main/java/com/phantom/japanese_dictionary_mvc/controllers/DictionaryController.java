@@ -1,7 +1,6 @@
 package com.phantom.japanese_dictionary_mvc.controllers;
 
 
-import com.phantom.japanese_dictionary_mvc.dto.NoteDTO;
 import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
@@ -23,8 +22,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 @RequestMapping("/dictionary")
@@ -57,7 +54,7 @@ public class DictionaryController {
             return "dictionaries/index";
         }
 
-        DictionaryReply dictionaryReply = replyConverter.getDictionaryReply(request, page);
+        DictionaryReply dictionaryReply = replyConverter.getDictionaryReplyForCurrentPage(request, page);
         model.addAttribute("dictionaryReply", dictionaryReply);
         model.addAttribute("currentPage", page);
         return "dictionaries/multishow";

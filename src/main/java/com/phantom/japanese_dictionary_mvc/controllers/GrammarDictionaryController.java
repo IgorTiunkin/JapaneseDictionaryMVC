@@ -1,13 +1,11 @@
 package com.phantom.japanese_dictionary_mvc.controllers;
 
 import com.phantom.japanese_dictionary_mvc.dto.GrammarNoteDTO;
-import com.phantom.japanese_dictionary_mvc.dto.NoteDTO;
-import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinder;
-import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinderFactory;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
-import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.services.GrammarNoteService;
+import com.phantom.japanese_dictionary_mvc.util.GrammarDictionaryReply;
+import com.phantom.japanese_dictionary_mvc.util.GrammarDictionaryReplyConverter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -29,18 +27,19 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/grammar")
+@SessionAttributes({"request"})
 public class GrammarDictionaryController {
 
-    private final GrammarFinderFactory grammarFinderFactory;
     private final GrammarNoteService grammarNoteService;
     private final ModelMapper modelMapper;
+    private final GrammarDictionaryReplyConverter grammarDictionaryReplyConverter;
     private final static Logger LOGGER = LoggerFactory.getLogger(GrammarDictionaryController.class);
 
     @Autowired
-    public GrammarDictionaryController(GrammarFinderFactory grammarFinderFactory, GrammarNoteService grammarNoteService, ModelMapper modelMapper) {
-        this.grammarFinderFactory = grammarFinderFactory;
+    public GrammarDictionaryController(GrammarNoteService grammarNoteService, ModelMapper modelMapper, GrammarDictionaryReplyConverter grammarDictionaryReplyConverter) {
         this.grammarNoteService = grammarNoteService;
         this.modelMapper = modelMapper;
+        this.grammarDictionaryReplyConverter = grammarDictionaryReplyConverter;
     }
 
     @GetMapping
@@ -51,16 +50,15 @@ public class GrammarDictionaryController {
 
     @GetMapping("/show")
     public String show (@ModelAttribute("request") @Valid Request request, BindingResult bindingResult
-            , Model model) {
+            , Model model, @RequestParam (required = false, value = "page", defaultValue = "0") Integer page) {
         LOGGER.trace("Accepted grammar request: requesttype = {}; word to find = {}",
                 request.getRequestType(), request.getWord());
         if (bindingResult.hasErrors()) {
             return "grammar/index";
         }
-        GrammarFinder grammarFinder = grammarFinderFactory.getInstance(request);
-        List<GrammarNote> notesFromRepository = grammarFinder.getNotesFromRepository(request.getWord().trim().toLowerCase());
-        List<GrammarNoteDTO> grammarNoteDTOS = convertGrammarNoteToGrammarNoteDTO(notesFromRepository);
-        model.addAttribute("notes", grammarNoteDTOS);
+        GrammarDictionaryReply grammarDictionaryReply = grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(request, page);
+        model.addAttribute("grammarDictionaryReply", grammarDictionaryReply);
+        model.addAttribute("currentPage", page);
         return "grammar/multishow";
     }
 
@@ -97,9 +95,4 @@ public class GrammarDictionaryController {
         return "redirect:/grammar";
     }
 
-    private List <GrammarNoteDTO> convertGrammarNoteToGrammarNoteDTO(List <GrammarNote> grammarNotes) {
-        List <GrammarNoteDTO> grammarNoteDTO = new ArrayList<>();
-        for (GrammarNote grammarNote: grammarNotes) grammarNoteDTO.add(modelMapper.map(grammarNote, GrammarNoteDTO.class));
-        return grammarNoteDTO;
-    }
 }

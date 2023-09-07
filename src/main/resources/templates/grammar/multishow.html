@@ -10,13 +10,13 @@
 <h1 style="text-align: center">Результат поиска</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">
-        <p th:if="${notes.isEmpty()}"
+        <p th:if="${grammarDictionaryReply.getMatchCount()==0}"
            th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос.'"
            style="font-size: 18px;color: red" id = "absent"></p>
-        <p th:if="${!notes.isEmpty()}"
-           th:text = "'Число совпадений в моей базе - ' + ${notes.size()}"
+        <p th:if="${grammarDictionaryReply.getMatchCount()!=0}"
+           th:text = "'Число совпадений в моей базе - ' + ${grammarDictionaryReply.getMatchCount()}"
            style="font-size: 18px; color: blue" id = "match"></p>
-        <table th:each="grammarnote : ${notes}" id = "table">
+        <table th:each="grammarnote : ${grammarDictionaryReply.getGrammarNoteDTOS()}" id = "table">
             <tbody style="font-size: 18px">
             <tr>
                 <td th:text="${grammarnote.getRule()}"></td>

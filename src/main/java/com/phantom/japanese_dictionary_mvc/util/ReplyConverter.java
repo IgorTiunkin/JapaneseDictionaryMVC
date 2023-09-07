@@ -25,7 +25,7 @@ public class ReplyConverter {
         this.modelMapper = modelMapper;
     }
 
-    public DictionaryReply getDictionaryReply(Request request, Integer page) {
+    public DictionaryReply getDictionaryReplyForCurrentPage(Request request, Integer page) {
         DictionaryReply dictionaryReply = new DictionaryReply();
 
         WordFinder wordFinder = wordFinderFactory.getInstance(request); //choose finder
