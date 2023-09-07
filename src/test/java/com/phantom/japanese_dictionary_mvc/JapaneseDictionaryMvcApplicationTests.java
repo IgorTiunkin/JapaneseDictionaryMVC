@@ -8,13 +8,15 @@ import com.phantom.japanese_dictionary_mvc.finders.grammar.KanaGrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.RomajiGrammarFinder;
 import com.phantom.japanese_dictionary_mvc.mappers.QuizResultQuizResultDTOMapper;
 import com.phantom.japanese_dictionary_mvc.models.*;
+import com.phantom.japanese_dictionary_mvc.replies.GrammarDictionaryReply;
 import com.phantom.japanese_dictionary_mvc.repositories.NoteRepository;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
 import com.phantom.japanese_dictionary_mvc.services.PeopleService;
 import com.phantom.japanese_dictionary_mvc.services.QuizResultsService;
-import com.phantom.japanese_dictionary_mvc.util.DictionaryReply;
+import com.phantom.japanese_dictionary_mvc.replies.DictionaryReply;
+import com.phantom.japanese_dictionary_mvc.util.GrammarDictionaryReplyConverter;
 import com.phantom.japanese_dictionary_mvc.util.QuizResultChecker;
 import com.phantom.japanese_dictionary_mvc.util.ReplyConverter;
 import org.junit.jupiter.api.Assertions;
@@ -34,21 +36,19 @@ class JapaneseDictionaryMvcApplicationTests {
     private final QuizResultChecker quizResultChecker;
     private Random random = new Random();
     private final NoteService noteService;
-    private final PeopleService peopleService;
-    private final QuizResultsService quizResultsService;
     private final QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper;
     private final ReplyConverter replyConverter;
+    private final GrammarDictionaryReplyConverter grammarDictionaryReplyConverter;
 
     @Autowired
-    JapaneseDictionaryMvcApplicationTests(WordFinderFactory wordFinderFactory, GrammarFinderFactory grammarFinderFactory, QuizResultChecker quizResultChecker, NoteRepository noteRepository, NoteService noteService, PeopleService peopleService, QuizResultsService quizResultsService, QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper, ReplyConverter replyConverter) {
+    JapaneseDictionaryMvcApplicationTests(WordFinderFactory wordFinderFactory, GrammarFinderFactory grammarFinderFactory, QuizResultChecker quizResultChecker, NoteRepository noteRepository, NoteService noteService, PeopleService peopleService, QuizResultsService quizResultsService, QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper, ReplyConverter replyConverter, GrammarDictionaryReplyConverter grammarDictionaryReplyConverter) {
         this.wordFinderFactory = wordFinderFactory;
         this.grammarFinderFactory = grammarFinderFactory;
         this.quizResultChecker = quizResultChecker;
         this.noteService = noteService;
-        this.peopleService = peopleService;
-        this.quizResultsService = quizResultsService;
         this.quizResultQuizResultDTOMapper = quizResultQuizResultDTOMapper;
         this.replyConverter = replyConverter;
+        this.grammarDictionaryReplyConverter = grammarDictionaryReplyConverter;
     }
 
 
@@ -309,8 +309,34 @@ class JapaneseDictionaryMvcApplicationTests {
         Assertions.assertEquals(0, dictionaryReply.getPartialMatchCount());
     }
 
+    @Test
+    public void whenBakari_then26Matches () {
+        Request request = new Request();
+        request.setWord("bakari");
+        request.setRequestType(RequestType.SPELLING);
+        GrammarDictionaryReply grammarDictionaryReply = grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(request, 0);
+        Assertions.assertEquals(26, grammarDictionaryReply.getMatchCount());
+        Assertions.assertEquals(2, grammarDictionaryReply.getIndexOfLastPage());
 
+        grammarDictionaryReply = grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(request, 1);
+        Assertions.assertEquals(26, grammarDictionaryReply.getMatchCount());
+        Assertions.assertEquals(2, grammarDictionaryReply.getIndexOfLastPage());
 
+    }
+
+    @Test
+    public void whenToShite_then22Matches () {
+        Request request = new Request();
+        request.setWord("to shite");
+        request.setRequestType(RequestType.SPELLING);
+        GrammarDictionaryReply grammarDictionaryReply = grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(request, 0);
+        Assertions.assertEquals(22, grammarDictionaryReply.getMatchCount());
+        Assertions.assertEquals(2, grammarDictionaryReply.getIndexOfLastPage());
+
+        grammarDictionaryReply = grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(request, 1);
+        Assertions.assertEquals(22, grammarDictionaryReply.getMatchCount());
+        Assertions.assertEquals(2, grammarDictionaryReply.getIndexOfLastPage());
+    }
 
 
 }

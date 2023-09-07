@@ -5,6 +5,7 @@ import com.phantom.japanese_dictionary_mvc.dto.NoteDTO;
 import com.phantom.japanese_dictionary_mvc.finders.dictionary.WordFinder;
 import com.phantom.japanese_dictionary_mvc.finders.dictionary.WordFinderFactory;
 import com.phantom.japanese_dictionary_mvc.models.Note;
+import com.phantom.japanese_dictionary_mvc.replies.DictionaryReply;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;

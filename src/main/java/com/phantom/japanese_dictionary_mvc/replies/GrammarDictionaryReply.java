@@ -1,4 +1,4 @@
-package com.phantom.japanese_dictionary_mvc.util;
+package com.phantom.japanese_dictionary_mvc.replies;
 
 import com.phantom.japanese_dictionary_mvc.dto.GrammarNoteDTO;
 import com.phantom.japanese_dictionary_mvc.dto.NoteDTO;

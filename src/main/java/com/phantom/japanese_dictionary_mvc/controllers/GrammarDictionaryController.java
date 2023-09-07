@@ -1,10 +1,9 @@
 package com.phantom.japanese_dictionary_mvc.controllers;
 
-import com.phantom.japanese_dictionary_mvc.dto.GrammarNoteDTO;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.services.GrammarNoteService;
-import com.phantom.japanese_dictionary_mvc.util.GrammarDictionaryReply;
+import com.phantom.japanese_dictionary_mvc.replies.GrammarDictionaryReply;
 import com.phantom.japanese_dictionary_mvc.util.GrammarDictionaryReplyConverter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -22,8 +21,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 @RequestMapping("/grammar")

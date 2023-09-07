@@ -5,7 +5,7 @@ import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
-import com.phantom.japanese_dictionary_mvc.util.DictionaryReply;
+import com.phantom.japanese_dictionary_mvc.replies.DictionaryReply;
 import com.phantom.japanese_dictionary_mvc.util.ReplyConverter;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;

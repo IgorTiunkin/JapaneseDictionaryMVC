@@ -4,6 +4,7 @@ import com.phantom.japanese_dictionary_mvc.dto.GrammarNoteDTO;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinderFactory;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
+import com.phantom.japanese_dictionary_mvc.replies.GrammarDictionaryReply;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;

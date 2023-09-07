@@ -35,6 +35,25 @@
             <hr>
         </table>
         <hr>
+        <div th:if="${grammarDictionaryReply.getIndexOfLastPage() > 0}" style="font-size: 18px">
+            <ul style="padding-left: 0px">
+                <li th:if="${currentPage > 0}" style="display: inline">
+                    <a th:href="@{/grammar/show?page=0}" style="text-decoration: none">Первая</a> |
+                </li>
+                <li th:if="${currentPage > 0}" style="display: inline">
+                    <a th:href="@{/grammar/show?page={previousPage}(previousPage=${currentPage.intValue()-1})}"
+                       style="text-decoration: none">Предыдущая</a> |
+                </li>
+                <li th:if="${currentPage < grammarDictionaryReply.getIndexOfLastPage()}" style="display: inline">
+                    <a th:href="@{/grammar/show?page={nextPage}(nextPage=${currentPage.intValue()+1})}"
+                       style="text-decoration: none">Следующая</a> |
+                </li>
+                <li th:if="${currentPage < grammarDictionaryReply.getIndexOfLastPage()}" style="display: inline">
+                    <a th:href="@{/grammar/show?page={lastPage}(lastPage=${grammarDictionaryReply.getIndexOfLastPage()})}"
+                       style="text-decoration: none">Последняя</a>
+                </li>
+            </ul>
+        </div>
      </div>
 </div>
 <div th:replace="allfooter::footer"></div>
