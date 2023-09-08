@@ -4,6 +4,7 @@ import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Repository
