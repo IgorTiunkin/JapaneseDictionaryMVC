@@ -8,11 +8,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.time.Duration;
 import java.util.Random;
 
-
+@ActiveProfiles("test")
 public abstract class JapaneseDictionarySeleniumTest {
     private WebDriver driver;
     WebDriverWait wait;
