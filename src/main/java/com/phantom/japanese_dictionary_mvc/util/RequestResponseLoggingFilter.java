@@ -22,7 +22,7 @@ public class RequestResponseLoggingFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
         log.info(
-                "Logging Request  {} : {}", req.getMethod(),
+                "Logging Request  {}  {} : {}", req.getSession().getId(), req.getMethod(),
                 req.getRequestURI());
         chain.doFilter(request, response);
         log.info(
