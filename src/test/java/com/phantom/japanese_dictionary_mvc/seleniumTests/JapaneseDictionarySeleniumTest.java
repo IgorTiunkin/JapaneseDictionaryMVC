@@ -18,6 +18,7 @@ public abstract class JapaneseDictionarySeleniumTest {
     private WebDriver driver;
     WebDriverWait wait;
     private final String TEST_URL  = "http://localhost:8080/";
+    //private final String TEST_URL  = "http://89.223.122.4:8080/";
     private final String NUMBER_OF_WRITE_TESTS = "5";
 
     public JapaneseDictionarySeleniumTest (WebDriver webDriver) {

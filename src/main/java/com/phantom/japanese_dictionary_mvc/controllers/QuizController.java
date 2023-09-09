@@ -76,7 +76,7 @@ public class QuizController {
         return "quiz/multishow";
     }
 
-    @GetMapping("/check")
+    @PostMapping("/check")
     public String checkAnswer(@ModelAttribute ("answer_form") AnswerDto form,
                               @ModelAttribute ("quiztasks") List <QuizTask> quizTasks,
                               Model model) {

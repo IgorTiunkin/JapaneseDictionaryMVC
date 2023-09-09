@@ -12,7 +12,7 @@
 
 <div>
     <div style="width: 50%;  margin: 0 auto">
-        <form th:method="GET" th:action="@{/quiz/check}" th:object="${answer_form}">
+        <form th:method="POST" th:action="@{/quiz/check}" th:object="${answer_form}">
                     <ul style="padding-left: 0px">
                         <li th:each="task, itemStat : *{answers}">
                             <ul style="padding-left: 0px" id = "question">
