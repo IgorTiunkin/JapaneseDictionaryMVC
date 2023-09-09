@@ -2,6 +2,7 @@ package com.phantom.japanese_dictionary_mvc.controllers;
 
 import com.phantom.japanese_dictionary_mvc.dto.FailedQuizTaskDTO;
 import com.phantom.japanese_dictionary_mvc.dto.QuizResultDTO;
+import com.phantom.japanese_dictionary_mvc.exceptions.FileIOException;
 import com.phantom.japanese_dictionary_mvc.mappers.QuizResultQuizResultDTOMapper;
 import com.phantom.japanese_dictionary_mvc.models.*;
 import com.phantom.japanese_dictionary_mvc.requests.QuizRequest;
@@ -11,7 +12,6 @@ import com.phantom.japanese_dictionary_mvc.security.PersonDetails;
 import com.phantom.japanese_dictionary_mvc.services.QuizResultsService;
 import com.phantom.japanese_dictionary_mvc.util.QuizConverter;
 import com.phantom.japanese_dictionary_mvc.util.QuizResultChecker;
-import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -121,16 +121,19 @@ public class QuizController {
 
 
     @GetMapping ("/exportStatistics")
-    public String exportStatistics(@ModelAttribute ("quizResultList") List <QuizResultDTO> quizResultDTOS,
-                                   HttpServletResponse response) throws IOException {
+    public void exportStatistics(@ModelAttribute ("quizResultList") List <QuizResultDTO> quizResultDTOS,
+                                   HttpServletResponse response) {
         Workbook workbook = createXlsFile(quizResultDTOS);
         response.setContentType("application/vnd.ms-excel");
         response.setHeader("Content-Disposition", "attachment; filename=quiz results.xlsx");
+
+
         try (ServletOutputStream outputStream = response.getOutputStream()) {
             workbook.write(outputStream);
             workbook.close();
+        } catch (IOException exception) {
+            throw new FileIOException("Ошибка при выгрузке результатов квиза.");
         }
-        return "redirect:/quiz/showStatistics";
     }
 
     private Workbook createXlsFile(List<QuizResultDTO> quizResultDTOS) {

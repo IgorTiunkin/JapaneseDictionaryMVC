@@ -1,10 +1,12 @@
 package com.phantom.japanese_dictionary_mvc.controllers;
 
+import com.phantom.japanese_dictionary_mvc.exceptions.FileIOException;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.services.GrammarNoteService;
 import com.phantom.japanese_dictionary_mvc.replies.GrammarDictionaryReply;
 import com.phantom.japanese_dictionary_mvc.util.GrammarDictionaryReplyConverter;
+import org.apache.poi.EmptyFileException;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -18,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.io.IOException;
@@ -60,36 +63,43 @@ public class GrammarDictionaryController {
     }
 
     @GetMapping ("/import")
-    public String excelFile () {
+    public String importFile(@ModelAttribute ("emptyFile") String emptyFile) {
         return "grammar/import";
     }
 
 
-    @PostMapping("/import")
-    public String loadExcelFileToDb(@RequestParam("file") MultipartFile multipartFile) throws IOException {
+    @PostMapping("/importing")
+    public String loadExcelFileToDb(@RequestParam("file") MultipartFile multipartFile,
+                                    RedirectAttributes redirectAttributes) {
 
-        XSSFWorkbook workbook = new XSSFWorkbook(multipartFile.getInputStream());
-        XSSFSheet worksheet = workbook.getSheetAt(0);
+        try (XSSFWorkbook workbook = new XSSFWorkbook(multipartFile.getInputStream())) {
+            XSSFSheet worksheet = workbook.getSheetAt(0);
 
+            for (int i = 1; i < worksheet.getPhysicalNumberOfRows(); i++) {
+                GrammarNote grammarNote = new GrammarNote();
 
-        for(int i=1; i<worksheet.getPhysicalNumberOfRows(); i++) {
-            GrammarNote grammarNote = new GrammarNote();
-
-            XSSFRow row = worksheet.getRow(i);
-            if (row!=null) {
-                XSSFCell currentCell = row.getCell(0);
-                if (currentCell!=null) grammarNote.setSource(currentCell.getStringCellValue());
-                currentCell = row.getCell(1);
-                if (currentCell!=null) grammarNote.setRule(currentCell.getStringCellValue());
-                currentCell = row.getCell(2);
-                if (currentCell!=null) grammarNote.setExplanation(currentCell.getStringCellValue());
-                currentCell = row.getCell(3);
-                if (currentCell!=null) grammarNote.setExample(currentCell.getStringCellValue());
-                System.out.println(grammarNote);
-                grammarNoteService.saveGrammarNote(grammarNote);
+                XSSFRow row = worksheet.getRow(i);
+                if (row != null) {
+                    XSSFCell currentCell = row.getCell(0);
+                    if (currentCell != null) grammarNote.setSource(currentCell.getStringCellValue());
+                    currentCell = row.getCell(1);
+                    if (currentCell != null) grammarNote.setRule(currentCell.getStringCellValue());
+                    currentCell = row.getCell(2);
+                    if (currentCell != null) grammarNote.setExplanation(currentCell.getStringCellValue());
+                    currentCell = row.getCell(3);
+                    if (currentCell != null) grammarNote.setExample(currentCell.getStringCellValue());
+                    System.out.println(grammarNote);
+                    grammarNoteService.saveGrammarNote(grammarNote);
+                }
             }
+            return "redirect:/grammar";
+        } catch (IOException exception) {
+            throw new FileIOException("Ошибка при импорте грамматического словаря");
+        } catch (EmptyFileException exception) {
+            redirectAttributes.addFlashAttribute("emptyFile", "Выберите файл для загрузки");
+            LOGGER.info("Файл для загрузки не выбран");
+            return "redirect:/grammar/import";
         }
-        return "redirect:/grammar";
     }
 
 }

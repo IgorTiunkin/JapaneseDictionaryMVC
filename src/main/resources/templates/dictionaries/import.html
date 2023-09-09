@@ -18,10 +18,11 @@
         Максимальный размер - 10 мегабайт.
         </p>
 
-        <form th:action="@{/dictionary/import}" method="post" enctype="multipart/form-data">
+        <form th:action="@{/dictionary/importing}" method="post" enctype="multipart/form-data">
             <input type="file" th:name="file" />
             <input th:type="submit" value="Import" />
         </form>
+        <div th:if="${emptyFile!=null}" th:text="${emptyFile}" style="color: red"></div>
     </div>
 </div>
 <div th:replace="allfooter::footer"></div>

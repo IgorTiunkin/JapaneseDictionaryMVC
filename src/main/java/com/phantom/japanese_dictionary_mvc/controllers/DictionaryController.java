@@ -1,12 +1,14 @@
 package com.phantom.japanese_dictionary_mvc.controllers;
 
 
+import com.phantom.japanese_dictionary_mvc.exceptions.FileIOException;
 import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
 import com.phantom.japanese_dictionary_mvc.replies.DictionaryReply;
 import com.phantom.japanese_dictionary_mvc.util.DictionaryReplyConverter;
+import org.apache.poi.EmptyFileException;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -19,6 +21,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.io.IOException;
@@ -63,41 +66,50 @@ public class DictionaryController {
 
 
     @GetMapping ("/import")
-    public String excelFile () {
+    public String importFile(@ModelAttribute ("emptyFile") String emptyFile) {
         return "dictionaries/import";
     }
 
-    @PostMapping("/import")
-    public String loadExcelFileToDb(@RequestParam("file") MultipartFile multipartFile) throws IOException {
+    @PostMapping("/importing")
+    public String loadExcelFileToDb(@RequestParam("file") MultipartFile multipartFile,
+                                    RedirectAttributes redirectAttributes) {
 
-        XSSFWorkbook workbook = new XSSFWorkbook(multipartFile.getInputStream());
-        XSSFSheet worksheet = workbook.getSheetAt(0);
+        try (XSSFWorkbook workbook = new XSSFWorkbook(multipartFile.getInputStream())) {
 
-        for(int i=1; i<worksheet.getPhysicalNumberOfRows(); i++) {
-            Note note = new Note();
-            XSSFRow row = worksheet.getRow(i);
-            if (row!=null) {
-                XSSFCell currentCell = row.getCell(0);
-                if (currentCell!=null && currentCell.getCellType()== CellType.STRING) {
-                    note.setRomadji(currentCell.getStringCellValue());
-                } else if (currentCell!=null && currentCell.getCellType()== CellType.NUMERIC){
-                    note.setRomadji(String.valueOf(currentCell.getNumericCellValue()));
+            XSSFSheet worksheet = workbook.getSheetAt(0);
+
+            for (int i = 1; i < worksheet.getPhysicalNumberOfRows(); i++) {
+                Note note = new Note();
+                XSSFRow row = worksheet.getRow(i);
+                if (row != null) {
+                    XSSFCell currentCell = row.getCell(0);
+                    if (currentCell != null && currentCell.getCellType() == CellType.STRING) {
+                        note.setRomadji(currentCell.getStringCellValue());
+                    } else if (currentCell != null && currentCell.getCellType() == CellType.NUMERIC) {
+                        note.setRomadji(String.valueOf(currentCell.getNumericCellValue()));
+                    }
+                    currentCell = row.getCell(1);
+                    if (currentCell != null) note.setKanji(currentCell.getStringCellValue());
+                    currentCell = row.getCell(2);
+                    if (currentCell != null) note.setHiragana(currentCell.getStringCellValue());
+                    currentCell = row.getCell(3);
+                    if (currentCell != null && currentCell.getCellType() == CellType.STRING) {
+                        note.setTranslation(currentCell.getStringCellValue());
+                    } else if (currentCell != null && currentCell.getCellType() == CellType.NUMERIC) {
+                        note.setTranslation(String.valueOf(currentCell.getNumericCellValue()));
+                    }
+                    System.out.println(note);
+                    noteService.saveNote(note);
                 }
-                currentCell = row.getCell(1);
-                if (currentCell!=null) note.setKanji(currentCell.getStringCellValue());
-                currentCell = row.getCell(2);
-                if (currentCell!=null) note.setHiragana(currentCell.getStringCellValue());
-                currentCell = row.getCell(3);
-                if (currentCell!=null && currentCell.getCellType()== CellType.STRING) {
-                    note.setTranslation(currentCell.getStringCellValue());
-                } else if (currentCell!=null && currentCell.getCellType()== CellType.NUMERIC){
-                    note.setTranslation(String.valueOf(currentCell.getNumericCellValue()));
-                }
-                System.out.println(note);
-                noteService.saveNote(note);
             }
+            return "redirect:/dictionary";
+        } catch (IOException exception) {
+            throw new FileIOException("Ошибка при импорте словаря");
+        } catch (EmptyFileException exception) {
+            redirectAttributes.addFlashAttribute("emptyFile", "Выберите файл для загрузки");
+            LOGGER.info("Файл для загрузки не выбран");
+            return "redirect:/dictionary/import";
         }
-        return "redirect:/dictionary";
     }
 
 }
