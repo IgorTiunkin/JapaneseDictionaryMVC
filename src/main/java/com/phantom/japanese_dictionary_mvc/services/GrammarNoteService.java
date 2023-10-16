@@ -17,8 +17,9 @@ public class GrammarNoteService {
     }
 
     @Transactional
-    public void saveGrammarNote(GrammarNote grammarNote) {
+    public boolean saveGrammarNote(GrammarNote grammarNote) {
         grammarNoteRepository.save(grammarNote);
+        return true;
     }
 
     public List<GrammarNote> findByEnglishFragment (String wordToFind) { //todo - отделить полный?
