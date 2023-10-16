@@ -26,10 +26,11 @@ public class PeopleService {
     }
 
     @Transactional
-    public void saveUser(Person user) {
+    public boolean saveUser(Person user) {
         String encryptedPassword = bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(encryptedPassword);
         peopleRepository.save(user);
+        return true;
     }
 
     public Optional<Person> getUserByUsername(String username) {

@@ -24,8 +24,9 @@ public class QuizResultsService {
     }
 
     @Transactional
-    public void saveQuizResult(QuizResult quizResult) {
+    public boolean saveQuizResult(QuizResult quizResult) {
         quizResult.setDateOfQuiz(LocalDateTime.now());
         quizResultsRepository.save(quizResult);
+        return true;
     }
 }
