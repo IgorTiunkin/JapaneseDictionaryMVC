@@ -34,7 +34,8 @@ public class GrammarDictionaryReplyConverter {
 
         grammarDictionaryReply.setMatchCount(notesFromRepository.size());
 
-        int indexOfLastPage = (Math.min(notesFromRepository.size(), LIMIT_OF_GRAMMAR_NOTES_IN_VIEW)-1)/GRAMMAR_NOTES_PER_PAGE;
+        int indexOfLastPage = (Math.min(notesFromRepository.size(),
+                LIMIT_OF_GRAMMAR_NOTES_IN_VIEW)-1)/GRAMMAR_NOTES_PER_PAGE;
         grammarDictionaryReply.setIndexOfLastPage(indexOfLastPage);
 
         List <GrammarNote> grammarNotesToShow = baseGenericConverter.getNotesToShowForCurrentPage(notesFromRepository, page,

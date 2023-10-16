@@ -49,14 +49,16 @@ public class GrammarDictionaryController {
     }
 
     @GetMapping("/show")
-    public String show (@ModelAttribute("request") @Valid Request request, BindingResult bindingResult
-            , Model model, @RequestParam (required = false, value = "page", defaultValue = "0") Integer page) {
+    public String show (@ModelAttribute("request") @Valid Request request, BindingResult bindingResult,
+                        Model model,
+                        @RequestParam (required = false, value = "page", defaultValue = "0") Integer page) {
         LOGGER.trace("Accepted grammar request: requesttype = {}; word to find = {}",
                 request.getRequestType(), request.getWord());
         if (bindingResult.hasErrors()) {
             return "grammar/index";
         }
-        GrammarDictionaryReply grammarDictionaryReply = grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(request, page);
+        GrammarDictionaryReply grammarDictionaryReply =
+                grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(request, page);
         model.addAttribute("grammarDictionaryReply", grammarDictionaryReply);
         model.addAttribute("currentPage", page);
         return "grammar/multishow";

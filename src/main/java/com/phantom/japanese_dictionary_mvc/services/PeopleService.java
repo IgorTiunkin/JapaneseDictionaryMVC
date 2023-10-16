@@ -25,7 +25,7 @@ public class PeopleService {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
-    @Transactional(readOnly = false)
+    @Transactional
     public void saveUser(Person user) {
         String encryptedPassword = bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(encryptedPassword);

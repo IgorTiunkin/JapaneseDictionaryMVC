@@ -34,7 +34,7 @@ public class AuthController {
     }
 
     @GetMapping("/signup")
-    public String sighUp (Model model) {
+    public String signUp(Model model) {
         model.addAttribute("person", new PersonDTO());
         return "auth/signup";
     }

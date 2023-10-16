@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.*;
 
 @Service
+@Transactional(readOnly = true)
 public class NoteService {
     private final NoteRepository noteRepository;
 
@@ -39,7 +40,6 @@ public class NoteService {
         noteRepository.save(note);
     }
 
-    @Transactional(readOnly = true)
     public List <Note> getRandomVariants(int quantity) {
         Random random = new Random();
         Set <Integer> indicesForVariants = new HashSet<>();

@@ -11,17 +11,15 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @ToString
 public class PersonDTO {
+
     @NotEmpty(message = "Имя пользователя не может быть пустым")
     @Size(min = 2, max = 100, message = "Допустимый размер от 2 и до 100 символов")
-    @Column(name = "username")
     private String username;
 
     @NotEmpty(message = "Пароль не может быть пустым")
     @Size (min = 2, max = 100, message = "Допустимый размер от 2 и до 100 символов")
-    @Column(name = "password")
     private String password;
 
-    @Column(name = "role")
     private String role;
 
     public PersonDTO(String username, String password) {

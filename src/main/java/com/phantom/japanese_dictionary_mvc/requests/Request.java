@@ -9,7 +9,6 @@ import javax.validation.constraints.Pattern;
 
 @Setter
 @Getter
-
 public class Request {
     @NotBlank (message = "Поле должно быть заполнено")
     @Pattern(regexp = "[^,.;:(){}\\[\\]]*", message = "В запросе не должно быть знаков препинания")

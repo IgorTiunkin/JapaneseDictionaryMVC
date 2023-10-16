@@ -23,7 +23,7 @@ public class QuizResultsService {
         return quizResultsRepository.findAllByUser(user);
     }
 
-    @Transactional (readOnly = false)
+    @Transactional
     public void saveQuizResult(QuizResult quizResult) {
         quizResult.setDateOfQuiz(LocalDateTime.now());
         quizResultsRepository.save(quizResult);
