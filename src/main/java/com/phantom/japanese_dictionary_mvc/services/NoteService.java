@@ -36,8 +36,9 @@ public class NoteService {
     }
 
     @Transactional
-    public void saveNote (Note note) {
+    public boolean saveNote (Note note) {
         noteRepository.save(note);
+        return true;
     }
 
     public List <Note> getRandomVariants(int quantity) {

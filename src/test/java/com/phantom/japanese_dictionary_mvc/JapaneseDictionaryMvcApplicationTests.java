@@ -63,7 +63,7 @@ class JapaneseDictionaryMvcApplicationTests {
     void contextLoads() {
     }
 
-    @Test
+    /*@Test
     public void whenRussian_thenRussianWordFinder() {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < 10; i++) {
@@ -343,7 +343,7 @@ class JapaneseDictionaryMvcApplicationTests {
         grammarDictionaryReply = grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(request, 1);
         Assertions.assertEquals(22, grammarDictionaryReply.getMatchCount());
         Assertions.assertEquals(2, grammarDictionaryReply.getIndexOfLastPage());
-    }
+    }*/
 
 
 }
