@@ -20,7 +20,7 @@ class LanguageDefinerTest {
     }
 
     @Test
-    public void whenТест_thenRussian() {
+    public void whenRussian_thenRussian() {
         assertEquals(LanguageType.RUSSIAN, languageDefiner.defineLanguage("тест"));
     }
 
@@ -32,6 +32,11 @@ class LanguageDefinerTest {
     @Test
     public void whenKanji_thenKanji() {
         assertEquals(LanguageType.KANJI, languageDefiner.defineLanguage("上段"));
+    }
+
+    @Test
+    public void whenEmpty_thenEquals() {
+        assertEquals(LanguageType.RUSSIAN, languageDefiner.defineLanguage(""));
     }
 
 
