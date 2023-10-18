@@ -9,18 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class BaseGenericConverter {
+public class BaseGenericNoteConverter {
 
     private final ModelMapper modelMapper;
 
-    public BaseGenericConverter(ModelMapper modelMapper) {
+    public BaseGenericNoteConverter(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
     }
 
     public <T> List<T> getNotesToShowForCurrentPage(List<T> notesFromRepository, Integer page,
                                                  int LIMIT_OF_NOTES_IN_VIEW, int NOTES_PER_PAGE) {
         int indexOfLastNote = Math.min(notesFromRepository.size(), LIMIT_OF_NOTES_IN_VIEW);
-        Integer currentPage = Math.min(page, notesFromRepository.size()/NOTES_PER_PAGE);
+        int currentPage = Math.min(page, notesFromRepository.size()/NOTES_PER_PAGE);
         List <T> notesToShowForCurrentPage = new ArrayList<>();
         for (int i = currentPage*NOTES_PER_PAGE;
              i < Math.min ((currentPage+1)*NOTES_PER_PAGE, indexOfLastNote); i++) {

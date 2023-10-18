@@ -7,7 +7,6 @@ import com.phantom.japanese_dictionary_mvc.finders.dictionary.WordFinderFactory;
 import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.replies.DictionaryReply;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,14 +17,14 @@ import java.util.List;
 public class DictionaryReplyConverter {
 
     private final WordFinderFactory wordFinderFactory;
-    private final BaseGenericConverter baseGenericConverter;
+    private final BaseGenericNoteConverter baseGenericNoteConverter;
     private final int LIMIT_OF_NOTES_IN_VIEW = 500;
     private final int NOTES_PER_PAGE = 10;
 
     @Autowired
-    public DictionaryReplyConverter(WordFinderFactory wordFinderFactory, BaseGenericConverter baseGenericConverter) {
+    public DictionaryReplyConverter(WordFinderFactory wordFinderFactory, BaseGenericNoteConverter baseGenericNoteConverter) {
         this.wordFinderFactory = wordFinderFactory;
-        this.baseGenericConverter = baseGenericConverter;
+        this.baseGenericNoteConverter = baseGenericNoteConverter;
     }
 
     public DictionaryReply getDictionaryReplyForCurrentPage(Request request, Integer page) {
@@ -49,8 +48,8 @@ public class DictionaryReplyConverter {
         dictionaryReply.setIndexOfLastPage(indexOfLastPage);
 
         fullMatchNotes.addAll(partialMatchNotes);
-        List <Note> notesToShow = baseGenericConverter.getNotesToShowForCurrentPage(fullMatchNotes, page, LIMIT_OF_NOTES_IN_VIEW, NOTES_PER_PAGE);
-        List <NoteDTO> nodeDTOS = baseGenericConverter.convertNoteToNoteDTO(notesToShow, NoteDTO.class);
+        List <Note> notesToShow = baseGenericNoteConverter.getNotesToShowForCurrentPage(fullMatchNotes, page, LIMIT_OF_NOTES_IN_VIEW, NOTES_PER_PAGE);
+        List <NoteDTO> nodeDTOS = baseGenericNoteConverter.convertNoteToNoteDTO(notesToShow, NoteDTO.class);
         dictionaryReply.setNoteDTOS(nodeDTOS);
 
         return dictionaryReply;

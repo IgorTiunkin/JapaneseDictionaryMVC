@@ -6,24 +6,22 @@ import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinderFactory;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
 import com.phantom.japanese_dictionary_mvc.replies.GrammarDictionaryReply;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class GrammarDictionaryReplyConverter {
 
     private final GrammarFinderFactory grammarFinderFactory;
-    private final BaseGenericConverter baseGenericConverter;
+    private final BaseGenericNoteConverter baseGenericNoteConverter;
     private final int LIMIT_OF_GRAMMAR_NOTES_IN_VIEW = 500;
     private final int GRAMMAR_NOTES_PER_PAGE = 10;
 
     public GrammarDictionaryReplyConverter(GrammarFinderFactory grammarFinderFactory,
-                                           BaseGenericConverter baseGenericConverter) {
+                                           BaseGenericNoteConverter baseGenericNoteConverter) {
         this.grammarFinderFactory = grammarFinderFactory;
-        this.baseGenericConverter = baseGenericConverter;
+        this.baseGenericNoteConverter = baseGenericNoteConverter;
     }
 
     public GrammarDictionaryReply getGrammarDictionaryReplyForCurrentPage(Request request, Integer page) {
@@ -42,10 +40,10 @@ public class GrammarDictionaryReplyConverter {
         int indexOfLastPage = (countOfGrammarNotesToShow -1)/GRAMMAR_NOTES_PER_PAGE;
         grammarDictionaryReply.setIndexOfLastPage(indexOfLastPage);
 
-        List <GrammarNote> grammarNotesToShow = baseGenericConverter.getNotesToShowForCurrentPage
+        List <GrammarNote> grammarNotesToShow = baseGenericNoteConverter.getNotesToShowForCurrentPage
                 (notesFromRepository, page,
                 LIMIT_OF_GRAMMAR_NOTES_IN_VIEW, GRAMMAR_NOTES_PER_PAGE);
-        List <GrammarNoteDTO> grammarNotesDTOToShow = baseGenericConverter.convertNoteToNoteDTO(grammarNotesToShow,
+        List <GrammarNoteDTO> grammarNotesDTOToShow = baseGenericNoteConverter.convertNoteToNoteDTO(grammarNotesToShow,
                 GrammarNoteDTO.class);
         grammarDictionaryReply.setGrammarNoteDTOS(grammarNotesDTOToShow);
 

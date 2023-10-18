@@ -7,7 +7,6 @@ import com.phantom.japanese_dictionary_mvc.finders.grammar.RomajiGrammarFinder;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -26,7 +25,7 @@ class GrammarDictionaryReplyConverterTest {
     @Mock
     private GrammarFinderFactory grammarFinderFactory;
     @Mock
-    private BaseGenericConverter baseGenericConverter;
+    private BaseGenericNoteConverter baseGenericNoteConverter;
     @Mock
     private KanaGrammarFinder kanaGrammarFinder;
     @Mock
@@ -59,9 +58,9 @@ class GrammarDictionaryReplyConverterTest {
         assertEquals(0, grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(KANA_REQUEST, 0)
                 .getIndexOfLastPage());
 
-        doReturn(List.of(TEST_GRAMMAR_NOTE, TEST_GRAMMAR_NOTE_BAKARI)).when(baseGenericConverter)
+        doReturn(List.of(TEST_GRAMMAR_NOTE, TEST_GRAMMAR_NOTE_BAKARI)).when(baseGenericNoteConverter)
                 .getNotesToShowForCurrentPage(any(),anyInt(),anyInt(), anyInt());
-        doReturn(List.of(TEST_GRAMMAR_NOTE_DTO_1, TEST_GRAMMAR_NOTE_DTO_2)).when(baseGenericConverter)
+        doReturn(List.of(TEST_GRAMMAR_NOTE_DTO_1, TEST_GRAMMAR_NOTE_DTO_2)).when(baseGenericNoteConverter)
                 .convertNoteToNoteDTO(List.of(TEST_GRAMMAR_NOTE, TEST_GRAMMAR_NOTE_BAKARI), GrammarNoteDTO.class);
         assertEquals(TEST_GRAMMAR_NOTE_DTO_1.getRule(), grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(KANA_REQUEST, 0)
                 .getGrammarNoteDTOS().get(0).getRule());
