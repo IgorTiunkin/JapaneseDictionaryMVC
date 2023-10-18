@@ -1,5 +1,6 @@
 package com.phantom.japanese_dictionary_mvc.requests;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +10,7 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class QuizRequest {
     private RequestType requestType;
 

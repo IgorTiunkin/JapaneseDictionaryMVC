@@ -26,8 +26,10 @@ public class QuizConverter {
         List <Note> randomVariants = noteService.getRandomVariants(numberOfTasks*numberOfOptions);
         //get random variants enough to break into set of tasks
         for (int i = 0; i < numberOfTasks*numberOfOptions; i+=numberOfOptions) {
+
             QuizTask quizTask = new QuizTask();
             quizTask.setNumber(i/numberOfOptions+1);
+
             if (quizRequest.getRequestType() == RequestType.TRANSLATION) {
                 quizTask.setQuestion(randomVariants.get(i).getTranslation());
                 quizTask.setRightAnswer(randomVariants.get(i).getKanji());
@@ -43,8 +45,9 @@ public class QuizConverter {
                     quizTask.getOptions().add(randomVariants.get(j).getTranslation());
                 }
             }
+
+            //shuffle all options and add task
             Collections.shuffle(quizTask.getOptions());
-            //add all options and shuffle
             taskList.add(quizTask);
         }
         return taskList;
