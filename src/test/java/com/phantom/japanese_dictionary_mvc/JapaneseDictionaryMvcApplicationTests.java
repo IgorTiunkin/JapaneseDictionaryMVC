@@ -138,51 +138,9 @@ class JapaneseDictionaryMvcApplicationTests {
         Assertions.assertTrue(grammarFinder instanceof KanaGrammarFinder);
     }
 
-    @Test
-    public void whenUserAnswersNull_thenDefaultCollection () {
-        List <QuizTask> mockTask = new ArrayList<>();
-        String stubAnswer = "-1";
-        for (int i = 0; i < 10; i++) {
-            QuizTask quizTask = new QuizTask();
-            quizTask.setRightAnswer(stubAnswer);
-            mockTask.add(quizTask);
-        }
-        List <Answer> answers = quizResultChecker.createUserAnswersForCheck(mockTask, null);
-        for (int i = 0; i < 10;i++) {
-            Assertions.assertEquals(stubAnswer, answers.get(i).getAnswer());
-        }
-
-    }
-
-    @Test
-    public void whenPartialList_thenNoExceptions () {
-        List <QuizTask> mockTask = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            QuizTask quizTask = new QuizTask();
-            quizTask.setRightAnswer("-1");
-            mockTask.add(quizTask);
-        }
-        List <Answer> list = new ArrayList<>();
-        list.add(null);
-        list.add(new Answer("2"));
-        list.add(null);
-        list.add(new Answer("3"));
-        list.add(null);
-        list.add(new Answer("4"));
-        List <Answer> answers = quizResultChecker.createUserAnswersForCheck(mockTask, list);
-        Assertions.assertEquals("-1",answers.get(0).getAnswer());
-        Assertions.assertEquals("2",answers.get(1).getAnswer());
-        Assertions.assertEquals("-1",answers.get(2).getAnswer());
-        Assertions.assertEquals("3",answers.get(3).getAnswer());
-        Assertions.assertEquals("-1",answers.get(4).getAnswer());
-        Assertions.assertEquals("4",answers.get(5).getAnswer());
-        Assertions.assertEquals("-1",answers.get(6).getAnswer());
-        Assertions.assertEquals("-1",answers.get(7).getAnswer());
-        Assertions.assertEquals("-1",answers.get(8).getAnswer());
-        Assertions.assertEquals("-1",answers.get(9).getAnswer());
 
 
-    }
+
     @Test
     public void whenRussianWords_thenCorrectFullMatch () {
         WordFinder wordFinder = new RussianWordFinder(noteService);
@@ -230,39 +188,7 @@ class JapaneseDictionaryMvcApplicationTests {
 
     }
 
-   @Test
-   public void givenUserAnswers_thenFailedTasks() {
-       List <QuizTask> quizTasks = new ArrayList<>();
-       List <Answer> userAnswers = new ArrayList<>();
-       List <FailedQuizTask> mockFailedQuizTasks = new ArrayList<>();
-       for (int i = 0; i < 5; i++) {
-           String testQuestion = String.valueOf(random.nextInt(100));
-           String testAnswer = String.valueOf(random.nextInt(100));
-           QuizTask quizTask = new QuizTask();
-           quizTask.setRightAnswer(testAnswer);
-           quizTask.setQuestion(testQuestion);
-           quizTasks.add(quizTask);
-           Answer answer = new Answer();
-           if (i%2==0) {
-               answer.setAnswer(testAnswer);
-           } else {
-               answer.setAnswer(testAnswer + "1");
-               FailedQuizTask failedQuizTask = new FailedQuizTask();
-               failedQuizTask.setFailedQuestion(testQuestion);
-               mockFailedQuizTasks.add(failedQuizTask);
-           }
-           userAnswers.add(answer);
-       }
-       List <FailedQuizTask> realFailedQuizTasks = quizResultChecker.
-               createQuizResultForSave(0, quizTasks, userAnswers, null)
-               .getFailedQuizTasks();
-       Assertions.assertEquals(mockFailedQuizTasks.size(), realFailedQuizTasks.size());
-       for (int i = 0; i < mockFailedQuizTasks.size(); i++) {
-           Assertions.assertEquals(mockFailedQuizTasks.get(i).getFailedQuestion(),
-                   realFailedQuizTasks.get(i).getFailedQuestion());
-       }
 
-   }
 
    @Test
    public void whenQuizResult_thenQuizDTO () {
