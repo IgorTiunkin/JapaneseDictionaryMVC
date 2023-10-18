@@ -87,16 +87,18 @@ class BaseGenericNoteConverterTest {
     public void whenNote_thenNoteDto() {
         doReturn(new NoteDTO()).when(modelMapper).map(any(), any());
         List <Note> noteList = List.of(TEST_NOTE_YAMAI, TEST_NOTE_JOUDAN);
-        assertEquals(NoteDTO.class, baseGenericNoteConverter.convertNoteToNoteDTO(noteList, NoteDTO.class).get(0).getClass());
-        assertEquals(2,baseGenericNoteConverter.convertNoteToNoteDTO(noteList, NoteDTO.class).size());
+        List<NoteDTO> noteDTOS = baseGenericNoteConverter.convertNoteToNoteDTO(noteList, NoteDTO.class);
+        assertEquals(NoteDTO.class, noteDTOS.get(0).getClass());
+        assertEquals(2, noteDTOS.size());
     }
 
     @Test
     public void whenGrammarNote_thenGrammarNoteDto() {
         doReturn(new GrammarNoteDTO()).when(modelMapper).map(any(), any());
         List <GrammarNote> noteList = List.of(TEST_GRAMMAR_NOTE, TEST_GRAMMAR_NOTE_BAKARI);
-        assertEquals(GrammarNoteDTO.class, baseGenericNoteConverter.convertNoteToNoteDTO(noteList, GrammarNoteDTO.class).get(0).getClass());
-        assertEquals(2,baseGenericNoteConverter.convertNoteToNoteDTO(noteList, GrammarNoteDTO.class).size());
+        List<GrammarNoteDTO> grammarNoteDTOS = baseGenericNoteConverter.convertNoteToNoteDTO(noteList, GrammarNoteDTO.class);
+        assertEquals(GrammarNoteDTO.class, grammarNoteDTOS.get(0).getClass());
+        assertEquals(2, grammarNoteDTOS.size());
     }
 
 }

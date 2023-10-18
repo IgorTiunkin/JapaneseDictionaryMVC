@@ -42,9 +42,10 @@ class QuizConverterTest {
         quizRequest.setRequestType(RequestType.TRANSLATION);
         doReturn(List.of(TEST_NOTE_YAMAI, TEST_NOTE_JOUDAN, TEST_NOTE_SENSOU, TEST_NOTE_KUMO))
                 .when(noteService).getRandomVariants(4);
-        assertEquals(numberOfTasks,quizConverter.getQuizTasks(quizRequest).size());
-        assertEquals(numberOfOptions, quizConverter.getQuizTasks(quizRequest).get(0).getOptions().size());
-        assertEquals(TEST_NOTE_YAMAI.getKanji(), quizConverter.getQuizTasks(quizRequest).get(0).getRightAnswer());
+        List<QuizTask> quizTasks = quizConverter.getQuizTasks(quizRequest);
+        assertEquals(numberOfTasks, quizTasks.size());
+        assertEquals(numberOfOptions, quizTasks.get(0).getOptions().size());
+        assertEquals(TEST_NOTE_YAMAI.getKanji(), quizTasks.get(0).getRightAnswer());
     }
 
     @Test
@@ -57,9 +58,10 @@ class QuizConverterTest {
         quizRequest.setRequestType(RequestType.KANJI);
         doReturn(List.of(TEST_NOTE_YAMAI, TEST_NOTE_JOUDAN, TEST_NOTE_SENSOU, TEST_NOTE_KUMO))
                 .when(noteService).getRandomVariants(4);
-        assertEquals(numberOfTasks,quizConverter.getQuizTasks(quizRequest).size());
-        assertEquals(numberOfOptions, quizConverter.getQuizTasks(quizRequest).get(0).getOptions().size());
-        assertEquals(TEST_NOTE_YAMAI.getTranslation(), quizConverter.getQuizTasks(quizRequest).get(0).getRightAnswer());
+        List<QuizTask> quizTasks = quizConverter.getQuizTasks(quizRequest);
+        assertEquals(numberOfTasks, quizTasks.size());
+        assertEquals(numberOfOptions, quizTasks.get(0).getOptions().size());
+        assertEquals(TEST_NOTE_YAMAI.getTranslation(), quizTasks.get(0).getRightAnswer());
     }
 
 }

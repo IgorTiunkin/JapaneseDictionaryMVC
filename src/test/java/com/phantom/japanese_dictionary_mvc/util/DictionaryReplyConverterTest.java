@@ -5,6 +5,7 @@ import com.phantom.japanese_dictionary_mvc.finders.dictionary.RussianWordFinder;
 import com.phantom.japanese_dictionary_mvc.finders.dictionary.WordFinder;
 import com.phantom.japanese_dictionary_mvc.finders.dictionary.WordFinderFactory;
 import com.phantom.japanese_dictionary_mvc.models.Note;
+import com.phantom.japanese_dictionary_mvc.replies.DictionaryReply;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import org.junit.jupiter.api.Test;
@@ -56,10 +57,11 @@ class DictionaryReplyConverterTest {
         doReturn(List.of(TEST_NOTE_YAMAI, TEST_NOTE_JOUDAN)).when(baseGenericNoteConverter).getNotesToShowForCurrentPage(any(), anyInt(),anyInt(),anyInt());
         doReturn(List.of(TEST_NOTEDTO_YAMAI, TEST_NOTEDTO_JOUDAN)).when(baseGenericNoteConverter).convertNoteToNoteDTO(any(), any());
 
-        assertEquals(2, dictionaryReplyConverter.getDictionaryReplyForCurrentPage(request, 0).getNoteDTOS().size());
-        assertEquals(1, dictionaryReplyConverter.getDictionaryReplyForCurrentPage(request, 0).getFullMatchCount());
-        assertEquals(1, dictionaryReplyConverter.getDictionaryReplyForCurrentPage(request, 0).getPartialMatchCount());
-        assertEquals(0, dictionaryReplyConverter.getDictionaryReplyForCurrentPage(request, 0).getIndexOfLastPage());
+        DictionaryReply dictionaryReplyForCurrentPage = dictionaryReplyConverter.getDictionaryReplyForCurrentPage(request, 0);
+        assertEquals(2, dictionaryReplyForCurrentPage.getNoteDTOS().size());
+        assertEquals(1, dictionaryReplyForCurrentPage.getFullMatchCount());
+        assertEquals(1, dictionaryReplyForCurrentPage.getPartialMatchCount());
+        assertEquals(0, dictionaryReplyForCurrentPage.getIndexOfLastPage());
 
     }
 
@@ -78,9 +80,10 @@ class DictionaryReplyConverterTest {
         doReturn(List.of(TEST_NOTE_YAMAI, TEST_NOTE_JOUDAN)).when(baseGenericNoteConverter).getNotesToShowForCurrentPage(any(), anyInt(),anyInt(),anyInt());
         doReturn(List.of(TEST_NOTEDTO_YAMAI, TEST_NOTEDTO_JOUDAN)).when(baseGenericNoteConverter).convertNoteToNoteDTO(any(), any());
 
-        assertEquals(1, dictionaryReplyConverter.getDictionaryReplyForCurrentPage(request, 0).getFullMatchCount());
-        assertEquals(0, dictionaryReplyConverter.getDictionaryReplyForCurrentPage(request, 0).getPartialMatchCount());
-        assertEquals(0, dictionaryReplyConverter.getDictionaryReplyForCurrentPage(request, 0).getIndexOfLastPage());
+        DictionaryReply dictionaryReplyForCurrentPage = dictionaryReplyConverter.getDictionaryReplyForCurrentPage(request, 0);
+        assertEquals(1, dictionaryReplyForCurrentPage.getFullMatchCount());
+        assertEquals(0, dictionaryReplyForCurrentPage.getPartialMatchCount());
+        assertEquals(0, dictionaryReplyForCurrentPage.getIndexOfLastPage());
 
     }
 }

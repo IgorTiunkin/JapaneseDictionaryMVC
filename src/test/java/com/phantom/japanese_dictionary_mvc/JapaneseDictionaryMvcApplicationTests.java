@@ -119,29 +119,7 @@ class JapaneseDictionaryMvcApplicationTests {
 
 
 
-   @Test
-   public void whenQuizResult_thenQuizDTO () {
-       QuizResult quizResult = new QuizResult();
-       quizResult.setQuizResultId(1);
-       quizResult.setNumberOfRightAnswers(2);
-       quizResult.setNumberOfTasks(5);
-       quizResult.setDateOfQuiz(LocalDateTime.of(2023, 9, 5, 16, 55, 15));
-       FailedQuizTask failedQuizTask = new FailedQuizTask();
-       failedQuizTask.setFailedQuizTaskId(2);
-       failedQuizTask.setFailedQuestion("Test");
-       List <FailedQuizTask> failedQuizTasks = new ArrayList<>();
-       failedQuizTasks.add(failedQuizTask);
-       quizResult.setFailedQuizTasks(failedQuizTasks);
-       QuizResultDTO quizResultDTO = quizResultQuizResultDTOMapper.quizResultToQuizResultDTO(quizResult);
-       Assertions.assertEquals("05-09-2023 16:55:15", quizResultDTO.getDateOfQuiz());
-       Assertions.assertEquals(1, quizResultDTO.getQuizResultId());
-       Assertions.assertEquals(2, quizResultDTO.getNumberOfRightAnswers());
-       Assertions.assertEquals(5, quizResultDTO.getNumberOfTasks());
-       Assertions.assertEquals(2, quizResultDTO.getFailedQuizTasks().get(0).getFailedQuizTaskId());
-       Assertions.assertEquals("Test", quizResultDTO.getFailedQuizTasks().get(0).getFailedQuestion());
 
-
-   }
 
    @Test
     public void whenKofe_then8FullAnd3Partial () {

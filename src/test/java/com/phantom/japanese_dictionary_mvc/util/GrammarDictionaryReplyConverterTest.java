@@ -5,6 +5,7 @@ import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinderFactory;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.KanaGrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.RomajiGrammarFinder;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
+import com.phantom.japanese_dictionary_mvc.replies.GrammarDictionaryReply;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import org.junit.jupiter.api.Test;
@@ -62,9 +63,11 @@ class GrammarDictionaryReplyConverterTest {
                 .getNotesToShowForCurrentPage(any(),anyInt(),anyInt(), anyInt());
         doReturn(List.of(TEST_GRAMMAR_NOTE_DTO_1, TEST_GRAMMAR_NOTE_DTO_2)).when(baseGenericNoteConverter)
                 .convertNoteToNoteDTO(List.of(TEST_GRAMMAR_NOTE, TEST_GRAMMAR_NOTE_BAKARI), GrammarNoteDTO.class);
-        assertEquals(TEST_GRAMMAR_NOTE_DTO_1.getRule(), grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(KANA_REQUEST, 0)
+
+        GrammarDictionaryReply grammarDictionaryReplyForCurrentPage = grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(KANA_REQUEST, 0);
+        assertEquals(TEST_GRAMMAR_NOTE_DTO_1.getRule(), grammarDictionaryReplyForCurrentPage
                 .getGrammarNoteDTOS().get(0).getRule());
-        assertEquals(2, grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(KANA_REQUEST,0)
+        assertEquals(2, grammarDictionaryReplyForCurrentPage
         .getMatchCount());
 
 

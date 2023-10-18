@@ -1,9 +1,6 @@
 package com.phantom.japanese_dictionary_mvc.util;
 
-import com.phantom.japanese_dictionary_mvc.models.Answer;
-import com.phantom.japanese_dictionary_mvc.models.FailedQuizTask;
-import com.phantom.japanese_dictionary_mvc.models.Person;
-import com.phantom.japanese_dictionary_mvc.models.QuizTask;
+import com.phantom.japanese_dictionary_mvc.models.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -153,14 +150,12 @@ class QuizResultCheckerTest {
             mockUserAnswers.add(answer);
         }
         Person person = new Person("username", "password");
-        assertEquals(person.getUsername(), quizResultChecker.createQuizResultForSave
-                (numberOfRightAnswers, mockQuizTasks, mockUserAnswers, person).getUser().getUsername());
-        assertEquals(5, quizResultChecker.createQuizResultForSave
-                (numberOfRightAnswers, mockQuizTasks, mockUserAnswers, person).getNumberOfRightAnswers());
-        assertEquals(numberOfTasks, quizResultChecker.createQuizResultForSave
-                (numberOfRightAnswers, mockQuizTasks, mockUserAnswers, person).getNumberOfTasks());
-        assertEquals("1", quizResultChecker.createQuizResultForSave
-                (numberOfRightAnswers, mockQuizTasks, mockUserAnswers, person).getFailedQuizTasks().get(0).getFailedQuestion());
+        QuizResult quizResultForSave = quizResultChecker.createQuizResultForSave
+                (numberOfRightAnswers, mockQuizTasks, mockUserAnswers, person);
+        assertEquals(person.getUsername(), quizResultForSave.getUser().getUsername());
+        assertEquals(5, quizResultForSave.getNumberOfRightAnswers());
+        assertEquals(numberOfTasks, quizResultForSave.getNumberOfTasks());
+        assertEquals("1", quizResultForSave.getFailedQuizTasks().get(0).getFailedQuestion());
 
 
     }

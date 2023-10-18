@@ -10,7 +10,6 @@ import javax.persistence.*;
 @AllArgsConstructor
 @ToString
 @Entity
-@EqualsAndHashCode
 @Table(name = "Japan")
 public class Note {
 
