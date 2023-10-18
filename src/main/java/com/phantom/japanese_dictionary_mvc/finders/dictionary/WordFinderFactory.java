@@ -25,8 +25,12 @@ public class WordFinderFactory {
         if (request.getRequestType() == RequestType.TRANSLATION) return new RussianWordFinder(noteService);
         if (request.getRequestType() == RequestType.SPELLING) return new RomajiWordFinder(noteService);
         String wordToFind = request.getWord();
-        if (languageDefiner.defineLanguage(wordToFind) == LanguageType.ENGLISH) return new RomajiWordFinder(noteService);
-        if (languageDefiner.defineLanguage(wordToFind) == LanguageType.KANJI) return new KanjiWordFinder(noteService);
+        if (languageDefiner.defineLanguage(wordToFind) == LanguageType.ENGLISH) {
+            return new RomajiWordFinder(noteService);
+        }
+        if (languageDefiner.defineLanguage(wordToFind) == LanguageType.KANJI) {
+            return new KanjiWordFinder(noteService);
+        }
         if (languageDefiner.defineLanguage(wordToFind) == LanguageType.KANA) {
             return new KanaWordFinder(noteService);
         }
