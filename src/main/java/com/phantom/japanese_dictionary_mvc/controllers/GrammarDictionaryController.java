@@ -31,14 +31,12 @@ import java.io.IOException;
 public class GrammarDictionaryController {
 
     private final GrammarNoteService grammarNoteService;
-    private final ModelMapper modelMapper;
     private final GrammarDictionaryReplyConverter grammarDictionaryReplyConverter;
     private final static Logger LOGGER = LoggerFactory.getLogger(GrammarDictionaryController.class);
 
     @Autowired
-    public GrammarDictionaryController(GrammarNoteService grammarNoteService, ModelMapper modelMapper, GrammarDictionaryReplyConverter grammarDictionaryReplyConverter) {
+    public GrammarDictionaryController(GrammarNoteService grammarNoteService, GrammarDictionaryReplyConverter grammarDictionaryReplyConverter) {
         this.grammarNoteService = grammarNoteService;
-        this.modelMapper = modelMapper;
         this.grammarDictionaryReplyConverter = grammarDictionaryReplyConverter;
     }
 
