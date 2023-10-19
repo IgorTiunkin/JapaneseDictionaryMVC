@@ -1,6 +1,7 @@
 package com.phantom.japanese_dictionary_mvc.integration;
 
 
+import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -14,30 +15,16 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.transaction.annotation.Transactional;
 import org.testcontainers.containers.PostgreSQLContainer;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
-@ActiveProfiles("test")
-@Transactional
-@Sql({
-        "classpath:sql/data.sql"
-})
-public class NoteServiceIT {
 
-    private static final PostgreSQLContainer<?> container =
-            new PostgreSQLContainer<>("postgres:13.1-alpine");
-
-    @BeforeAll
-    static void startContainer() {
-        container.start();
-    }
-
-    @DynamicPropertySource
-    static void postgresProperties(DynamicPropertyRegistry registry) {
-        registry.add("spring.datasource.url", container::getJdbcUrl);
-    }
+public class NoteServiceIT extends BaseServiceIT{
 
     private final NoteService noteService;
+
+    private final Note TEST_NOTE_YAMAI = new Note(1, "yamai", "病", "やまい","болезнь");
 
     @Autowired
     public NoteServiceIT(NoteService noteService) {
@@ -45,8 +32,58 @@ public class NoteServiceIT {
     }
 
     @Test
-    public void when_then() {
-        assertEquals(1,1);
+    public void whenRussianKofe_then4Partial() {
+        String wordToFind = "кофе";
+        List<Note> noteList = noteService.findFragmentByRussianText(wordToFind);
+        assertEquals(4, noteList.size());
+        for (Note note : noteList) {
+            assertTrue(note.getTranslation().contains(wordToFind));
+        }
     }
+
+    @Test
+    public void whenEnglishKofe_then4Partial() {
+        String wordToFind = "koohii";
+        List<Note> noteList = noteService.findFragmentByEnglishText(wordToFind);
+        assertEquals(4, noteList.size());
+        for (Note note : noteList) {
+            assertTrue(note.getRomadji().contains(wordToFind));
+        }
+    }
+
+    @Test
+    public void whenKanaKofe_then4Partial() {
+        String wordToFind = "コーヒー";
+        List<Note> noteList = noteService.findFragmentByKanaText(wordToFind);
+        assertEquals(4, noteList.size());
+        for (Note note : noteList) {
+            assertTrue(note.getHiragana().contains(wordToFind));
+        }
+    }
+
+    @Test
+    public void whenKanjiOkawari_then1Partial() {
+        String wordToFind = "お代わり";
+        List<Note> noteList = noteService.findFragmentByKanjiText(wordToFind);
+        assertEquals(1, noteList.size());
+        for (Note note : noteList) {
+            assertTrue(note.getKanji().contains(wordToFind));
+        }
+    }
+
+    @Test
+    public void whenSave_thenTrue() {
+        boolean saveNote = noteService.saveNote(TEST_NOTE_YAMAI);
+        assertTrue(saveNote);
+    }
+
+    @Test
+    public void when3_then3Notes() {
+        int numberOfVariants = 3;
+        List<Note> randomVariants = noteService.getRandomVariants(numberOfVariants);
+        assertEquals(numberOfVariants, randomVariants.size());
+    }
+
+
 
 }
