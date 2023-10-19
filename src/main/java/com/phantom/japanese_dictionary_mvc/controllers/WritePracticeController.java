@@ -46,7 +46,8 @@ public class WritePracticeController {
             model.addAttribute("types", RequestType.values());
             return "writepractice/index";
         }
-        List<Note> writePracticeList = noteService.getRandomVariants(writePracticeRequest.getQuantity());
+        int practiceRequestQuantity = writePracticeRequest.getQuantity();
+        List<Note> writePracticeList = noteService.getRandomVariants(practiceRequestQuantity);
         model.addAttribute("writePracticeList", writePracticeList);
         return "writepractice/multishow";
     }
