@@ -50,7 +50,8 @@ class GrammarDictionaryControllerTest extends BaseControllerTest{
     private final String SHOW_VIEW_NAME = "grammar/multishow";
     private final String IMPORT_VIEW_NAME = "grammar/import";
 
-    private final GrammarNoteDTO TEST_GRAMMAR_NOTE_DTO = new GrammarNoteDTO("test source", "test rule", "test explanation", "test example");
+    private final GrammarNoteDTO TEST_GRAMMAR_NOTE_DTO = new GrammarNoteDTO("test source", "test rule",
+            "test explanation", "test example");
 
     @BeforeEach
     public void init() {
