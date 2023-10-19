@@ -21,10 +21,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static org.mockito.Mockito.*;
 
-@SpringBootTest
-@ActiveProfiles("test")
-@AutoConfigureMockMvc
-class AuthControllerTest {
+class AuthControllerTest extends BaseControllerTest{
 
     @Mock
     private PeopleService peopleService;
@@ -37,8 +34,6 @@ class AuthControllerTest {
 
     @InjectMocks
     private AuthController authController;
-
-    private MockMvc mvc;
 
     private final String BASE_PATH = "/auth";
 

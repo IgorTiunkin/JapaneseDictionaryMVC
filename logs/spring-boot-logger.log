@@ -2418,3 +2418,90 @@ Caused by: org.postgresql.util.PSQLException: ВАЖНО: пользовател
 2023-10-19 11:18:39,352 TRACE com.phantom.japanese_dictionary_mvc.util.QuizResultChecker [main] Checking answers: Modified answers = [Answer{answer='0'}, Answer{answer='1w'}, Answer{answer='2'}, Answer{answer='3w'}, Answer{answer='4'}, Answer{answer='5w'}, Answer{answer='6'}, Answer{answer='7w'}, Answer{answer='8'}]
 2023-10-19 11:18:39,374 TRACE com.phantom.japanese_dictionary_mvc.util.QuizResultChecker [main] Checking answers: input answers = [null, Answer{answer='2'}, null, Answer{answer='3'}, null, Answer{answer='4'}]; tasks = [QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}] 
 2023-10-19 11:18:39,409 TRACE com.phantom.japanese_dictionary_mvc.util.QuizResultChecker [main] Checking answers: input answers = null; tasks = [QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}, QuizTask{number=null, question='null', rightAnswer='-1', options=[]}] 
+2023-10-19 11:31:40,821 INFO org.springframework.boot.StartupInfoLogger [main] Starting WelcomeControllerTest using Java 11.0.9.1 on Mabo with PID 15356 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-10-19 11:31:40,824 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-10-19 11:31:40,824 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: test
+2023-10-19 11:31:40,822 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-10-19 11:31:41,509 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-10-19 11:31:41,848 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-19 11:31:41,948 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 91 ms. Found 4 JPA repository interfaces.
+2023-10-19 11:31:42,665 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-19 11:31:42,729 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-10-19 11:31:42,872 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-19 11:31:43,421 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-10-19 11:31:43,869 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-10-19 11:31:43,890 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-10-19 11:31:44,754 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-19 11:31:44,763 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 11:31:45,270 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-19 11:31:45,821 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8a7cd7c, org.springframework.security.web.context.SecurityContextPersistenceFilter@72b6fa98, org.springframework.security.web.header.HeaderWriterFilter@55c581e4, org.springframework.security.web.authentication.logout.LogoutFilter@45b2d17b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@9863ed5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4281a26f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@52b32622, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21f0cc97, org.springframework.security.web.session.SessionManagementFilter@42095996, org.springframework.security.web.access.ExceptionTranslationFilter@68dc2f53, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7683d632]
+2023-10-19 11:31:46,790 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2023-10-19 11:31:46,791 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2023-10-19 11:31:46,792 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 1 ms
+2023-10-19 11:31:46,816 INFO org.springframework.boot.StartupInfoLogger [main] Started WelcomeControllerTest in 6.583 seconds (JVM running for 8.256)
+2023-10-19 11:31:46,818 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-10-19 11:31:46,821 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-10-19 11:31:46,971 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2023-10-19 11:31:46,972 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2023-10-19 11:31:46,972 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 0 ms
+2023-10-19 11:34:12,706 INFO org.springframework.boot.StartupInfoLogger [main] Starting WelcomeControllerTest using Java 11.0.9.1 on Mabo with PID 12232 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-10-19 11:34:12,708 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-10-19 11:34:12,708 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: test
+2023-10-19 11:34:12,708 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-10-19 11:34:13,236 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-10-19 11:34:13,530 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-19 11:34:13,633 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 94 ms. Found 4 JPA repository interfaces.
+2023-10-19 11:34:14,343 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-19 11:34:14,406 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-10-19 11:34:14,543 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-19 11:34:15,095 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-10-19 11:34:15,379 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-10-19 11:34:15,400 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-10-19 11:34:16,246 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-19 11:34:16,255 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 11:34:16,755 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-19 11:34:17,298 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b441609, org.springframework.security.web.context.SecurityContextPersistenceFilter@3da55998, org.springframework.security.web.header.HeaderWriterFilter@590336ed, org.springframework.security.web.authentication.logout.LogoutFilter@6c26e588, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5923210, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33197c2f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@28941a68, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@22f7bf36, org.springframework.security.web.session.SessionManagementFilter@99af41d, org.springframework.security.web.access.ExceptionTranslationFilter@37aea657, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@481c1e92]
+2023-10-19 11:34:18,262 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2023-10-19 11:34:18,263 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2023-10-19 11:34:18,264 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 1 ms
+2023-10-19 11:34:18,284 INFO org.springframework.boot.StartupInfoLogger [main] Started WelcomeControllerTest in 6.114 seconds (JVM running for 7.765)
+2023-10-19 11:34:18,285 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-10-19 11:34:18,287 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-10-19 11:34:18,433 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2023-10-19 11:34:18,434 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2023-10-19 11:34:18,434 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 0 ms
+2023-10-19 11:34:53,617 INFO org.springframework.boot.StartupInfoLogger [main] Starting AuthControllerTest using Java 11.0.9.1 on Mabo with PID 8892 (started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-10-19 11:34:53,617 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-10-19 11:34:53,620 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-10-19 11:34:53,620 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: test
+2023-10-19 11:34:54,130 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-10-19 11:34:54,448 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-19 11:34:54,550 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 94 ms. Found 4 JPA repository interfaces.
+2023-10-19 11:34:55,244 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-19 11:34:55,317 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-10-19 11:34:55,471 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-19 11:34:56,024 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-10-19 11:34:56,293 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-10-19 11:34:56,316 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-10-19 11:34:57,294 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-19 11:34:57,303 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-19 11:34:57,748 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-19 11:34:58,312 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@514b247b, org.springframework.security.web.context.SecurityContextPersistenceFilter@5ace6611, org.springframework.security.web.header.HeaderWriterFilter@12925d2, org.springframework.security.web.authentication.logout.LogoutFilter@24bdd996, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2dfab167, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@8a7cd7c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@626ff077, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66b62ebd, org.springframework.security.web.session.SessionManagementFilter@6b9fc5c7, org.springframework.security.web.access.ExceptionTranslationFilter@9863ed5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@461b38ca]
+2023-10-19 11:34:59,288 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2023-10-19 11:34:59,289 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2023-10-19 11:34:59,290 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 1 ms
+2023-10-19 11:34:59,313 INFO org.springframework.boot.StartupInfoLogger [main] Started AuthControllerTest in 6.215 seconds (JVM running for 7.773)
+2023-10-19 11:34:59,315 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-10-19 11:34:59,318 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-10-19 11:34:59,605 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2023-10-19 11:34:59,605 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2023-10-19 11:34:59,606 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 0 ms
+2023-10-19 11:34:59,759 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2023-10-19 11:34:59,760 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2023-10-19 11:34:59,760 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 0 ms
+2023-10-19 11:34:59,784 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2023-10-19 11:34:59,784 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2023-10-19 11:34:59,785 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 1 ms
+2023-10-19 11:34:59,813 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2023-10-19 11:34:59,814 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2023-10-19 11:34:59,814 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 0 ms
