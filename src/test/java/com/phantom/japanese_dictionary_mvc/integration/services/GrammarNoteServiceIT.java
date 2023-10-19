@@ -1,5 +1,6 @@
-package com.phantom.japanese_dictionary_mvc.integration;
+package com.phantom.japanese_dictionary_mvc.integration.services;
 
+import com.phantom.japanese_dictionary_mvc.integration.BaseServiceIT;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
 import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.services.GrammarNoteService;
@@ -11,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class GrammarNoteServiceIT extends BaseServiceIT{
+public class GrammarNoteServiceIT extends BaseServiceIT {
 
     private final GrammarNoteService grammarNoteService;
 

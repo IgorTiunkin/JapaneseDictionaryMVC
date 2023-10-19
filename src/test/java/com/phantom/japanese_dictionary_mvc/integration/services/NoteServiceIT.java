@@ -1,6 +1,7 @@
-package com.phantom.japanese_dictionary_mvc.integration;
+package com.phantom.japanese_dictionary_mvc.integration.services;
 
 
+import com.phantom.japanese_dictionary_mvc.integration.BaseServiceIT;
 import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
 import org.junit.jupiter.api.Assertions;
@@ -20,7 +21,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class NoteServiceIT extends BaseServiceIT{
+public class NoteServiceIT extends BaseServiceIT {
 
     private final NoteService noteService;
 
