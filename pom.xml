@@ -117,9 +117,6 @@
                     <excludes>
                         <exclude>**/seleniumTests/**</exclude>
                     </excludes>
-                    <includes>
-                        <include>**/*IT.java</include>
-                    </includes>
                 </configuration>
             </plugin>
             <plugin>
