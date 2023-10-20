@@ -28,9 +28,6 @@ import static org.mockito.Mockito.doReturn;
 
 public class GrammarDictionaryControllerIT extends BaseIT {
 
-
-    private final GrammarNoteService grammarNoteService;
-    private final GrammarDictionaryReplyConverter grammarDictionaryReplyConverter;
     private final GrammarDictionaryController grammarDictionaryController;
 
     private final String BASE_PATH = "/grammar";
@@ -48,10 +45,7 @@ public class GrammarDictionaryControllerIT extends BaseIT {
     private MockMvc mvc;
 
     @Autowired
-    public GrammarDictionaryControllerIT(GrammarNoteService grammarNoteService, GrammarDictionaryReplyConverter grammarDictionaryReplyConverter,
-                                         GrammarDictionaryController grammarDictionaryController) {
-        this.grammarNoteService = grammarNoteService;
-        this.grammarDictionaryReplyConverter = grammarDictionaryReplyConverter;
+    public GrammarDictionaryControllerIT(GrammarDictionaryController grammarDictionaryController) {
         this.grammarDictionaryController = grammarDictionaryController;
     }
 

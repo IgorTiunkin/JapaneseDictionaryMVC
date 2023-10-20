@@ -38,6 +38,7 @@ class PeopleServiceTest {
         doReturn("test").when(bCryptPasswordEncoder).encode(any());
         doReturn(PERSON).when(peopleRepository).save(any());
         Assertions.assertTrue(peopleService.saveUser(PERSON));
+        System.out.println(PERSON);
     }
 
     @Test

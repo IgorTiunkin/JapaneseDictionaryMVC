@@ -21,10 +21,6 @@ import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 
 public class AuthControllerIT extends BaseIT {
-
-    private final PeopleService peopleService;
-    private final ModelMapper modelMapper;
-    private final PersonValidator personValidator;
     private final AuthController authController;
 
     private final String BASE_PATH = "/auth";
@@ -39,11 +35,7 @@ public class AuthControllerIT extends BaseIT {
     private MockMvc mvc;
 
     @Autowired
-    public AuthControllerIT(PeopleService peopleService, ModelMapper modelMapper,
-                            PersonValidator personValidator, AuthController authController) {
-        this.peopleService = peopleService;
-        this.modelMapper = modelMapper;
-        this.personValidator = personValidator;
+    public AuthControllerIT(AuthController authController) {
         this.authController = authController;
     }
 

@@ -3,6 +3,7 @@ package com.phantom.japanese_dictionary_mvc.services;
 import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.models.QuizTask;
 import com.phantom.japanese_dictionary_mvc.repositories.NoteRepository;
+import org.hamcrest.Matchers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -45,6 +46,7 @@ public class NoteService {
         Random random = new Random();
         Set <Integer> indicesForVariants = new HashSet<>();
         int count = (int) noteRepository.count();
+        quantity = Math.min(quantity, count);
         while (indicesForVariants.size()<quantity) { //method need ids start from 1 and continious id
             indicesForVariants.add(1+random.nextInt(count));
         }

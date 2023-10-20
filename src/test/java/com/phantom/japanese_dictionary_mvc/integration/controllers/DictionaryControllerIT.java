@@ -25,8 +25,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.doReturn;
 
 public class DictionaryControllerIT extends BaseIT {
-    private final DictionaryReplyConverter dictionaryReplyConverter;
-    private final NoteService noteService;
     private final DictionaryController dictionaryController;
 
     private final String BASE_PATH = "/dictionary";
@@ -43,10 +41,7 @@ public class DictionaryControllerIT extends BaseIT {
     private MockMvc mvc;
 
     @Autowired
-    public DictionaryControllerIT(DictionaryReplyConverter dictionaryReplyConverter, NoteService noteService,
-                                  DictionaryController dictionaryController) {
-        this.dictionaryReplyConverter = dictionaryReplyConverter;
-        this.noteService = noteService;
+    public DictionaryControllerIT(DictionaryController dictionaryController) {
         this.dictionaryController = dictionaryController;
     }
 
