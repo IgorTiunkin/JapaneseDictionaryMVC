@@ -1,10 +1,9 @@
 package com.phantom.japanese_dictionary_mvc.integration.services;
 
-import com.phantom.japanese_dictionary_mvc.integration.BaseServiceIT;
+import com.phantom.japanese_dictionary_mvc.integration.BaseIT;
 import com.phantom.japanese_dictionary_mvc.models.Person;
 import com.phantom.japanese_dictionary_mvc.models.QuizResult;
 import com.phantom.japanese_dictionary_mvc.services.QuizResultsService;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class QuizResultServiceIT extends BaseServiceIT {
+public class QuizResultServiceIT extends BaseIT {
 
     private final QuizResultsService quizResultsService;
 

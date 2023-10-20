@@ -1,10 +1,8 @@
 package com.phantom.japanese_dictionary_mvc.integration.services;
 
-import com.phantom.japanese_dictionary_mvc.integration.BaseServiceIT;
+import com.phantom.japanese_dictionary_mvc.integration.BaseIT;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
-import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.services.GrammarNoteService;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,7 +10,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class GrammarNoteServiceIT extends BaseServiceIT {
+public class GrammarNoteServiceIT extends BaseIT {
 
     private final GrammarNoteService grammarNoteService;
 

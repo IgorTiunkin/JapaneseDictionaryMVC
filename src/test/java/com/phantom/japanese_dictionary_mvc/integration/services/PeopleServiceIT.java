@@ -1,6 +1,6 @@
 package com.phantom.japanese_dictionary_mvc.integration.services;
 
-import com.phantom.japanese_dictionary_mvc.integration.BaseServiceIT;
+import com.phantom.japanese_dictionary_mvc.integration.BaseIT;
 import com.phantom.japanese_dictionary_mvc.models.Person;
 import com.phantom.japanese_dictionary_mvc.models.QuizResult;
 import com.phantom.japanese_dictionary_mvc.services.PeopleService;
@@ -13,7 +13,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class PeopleServiceIT extends BaseServiceIT {
+public class PeopleServiceIT extends BaseIT {
 
     private final PeopleService peopleService;
 

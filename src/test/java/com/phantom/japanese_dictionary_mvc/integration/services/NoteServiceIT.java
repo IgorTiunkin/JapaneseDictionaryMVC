@@ -1,27 +1,18 @@
 package com.phantom.japanese_dictionary_mvc.integration.services;
 
 
-import com.phantom.japanese_dictionary_mvc.integration.BaseServiceIT;
+import com.phantom.japanese_dictionary_mvc.integration.BaseIT;
 import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.DynamicPropertyRegistry;
-import org.springframework.test.context.DynamicPropertySource;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.transaction.annotation.Transactional;
-import org.testcontainers.containers.PostgreSQLContainer;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class NoteServiceIT extends BaseServiceIT {
+public class NoteServiceIT extends BaseIT {
 
     private final NoteService noteService;
 

@@ -1,15 +1,14 @@
 package com.phantom.japanese_dictionary_mvc.integration.services;
 
-import com.phantom.japanese_dictionary_mvc.integration.BaseServiceIT;
+import com.phantom.japanese_dictionary_mvc.integration.BaseIT;
 import com.phantom.japanese_dictionary_mvc.services.PersonDetailsService;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PersonDetailsServiceIT extends BaseServiceIT {
+public class PersonDetailsServiceIT extends BaseIT {
 
     private final PersonDetailsService personDetailsService;
 
