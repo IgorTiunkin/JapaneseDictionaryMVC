@@ -6,27 +6,34 @@ import com.phantom.japanese_dictionary_mvc.dto.FailedQuizTaskDTO;
 import com.phantom.japanese_dictionary_mvc.dto.QuizResultDTO;
 import com.phantom.japanese_dictionary_mvc.integration.BaseIT;
 import com.phantom.japanese_dictionary_mvc.models.Answer;
+import com.phantom.japanese_dictionary_mvc.models.Person;
 import com.phantom.japanese_dictionary_mvc.models.QuizResult;
 import com.phantom.japanese_dictionary_mvc.models.QuizTask;
 import com.phantom.japanese_dictionary_mvc.requests.QuizRequest;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
-import com.sun.security.auth.UserPrincipal;
+import com.phantom.japanese_dictionary_mvc.security.PersonDetails;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.authentication.TestingAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.test.context.support.WithAnonymousUser;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilderSupport;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
+
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 
-import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -55,24 +62,28 @@ public class QuizControllerIT extends BaseIT {
     private final QuizResultDTO TEST_QUIZ_RESULT_DTO = new QuizResultDTO(1, 1, 2, "date", List.of(new FailedQuizTaskDTO()));
 
 
+    private final WebApplicationContext context;
+
     private MockMvc mvc;
 
     @Autowired
-    public QuizControllerIT(QuizController quizController) {
+    public QuizControllerIT(QuizController quizController, WebApplicationContext context) {
         this.quizController = quizController;
+        this.context = context;
     }
 
 
     @BeforeEach
     public void init() {
-        mvc = MockMvcBuilders.standaloneSetup(quizController)
+        mvc = MockMvcBuilders.webAppContextSetup(context)
+                .apply(springSecurity())
                 .build();
     }
 
     @Test
+    @WithMockUser (username = "test", password = "test")
     public void whenCorrectRequest_thenCorrectShow() throws Exception {
         QuizRequest request = new QuizRequest(RequestType.TRANSLATION, 2, 2);
-
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(PATH_TO_SHOW).accept(MediaType.TEXT_HTML)
                 .flashAttr("quizrequest", request))
                 .andExpect(MockMvcResultMatchers.status().isOk())
@@ -140,8 +151,8 @@ public class QuizControllerIT extends BaseIT {
         assertEquals("-1", answers.get(0).getAnswer());
     }
 
-    /*@Test
-    @WithMockUser()
+    @Test
+    @WithUserDetails
     public void whenSave_thenOK() throws Exception {
         List <QuizTask> quizTasks = List.of(TEST_QUIZ_TASK);
         List <Answer> answers = List.of(TEST_ANSWER);
@@ -151,9 +162,35 @@ public class QuizControllerIT extends BaseIT {
                 .sessionAttr("quiztasks", quizTasks)
                 .sessionAttr("numberOfRightAnswers", numberOfRightAnswers)
                 .sessionAttr("user_answers", answers))
-                .andExpect(MockMvcResultMatchers.status().isOk());
+                .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
+                .andExpect(MockMvcResultMatchers.view().name("redirect:"+PATH_TO_STATISTICS));
+    }
 
-    }*/
+    @Test
+    @WithUserDetails
+    public void whenShowStatisticsForUser_then4() throws Exception {
+        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(PATH_TO_STATISTICS).accept(MediaType.TEXT_HTML))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.view().name(STATISTICS_VIEW_NAME))
+                .andReturn();
+        Map<String, Object> model = mvcResult.getModelAndView().getModel();
+        List <QuizResultDTO> quizResultHistoryDTO = (List<QuizResultDTO>) model.get("quizResultList");
+        assertEquals(4, quizResultHistoryDTO.size());
+    }
+
+    @Test
+    @WithUserDetails (value = "user2")
+    public void whenShowStatisticsForUser2_then2() throws Exception {
+        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(PATH_TO_STATISTICS).accept(MediaType.TEXT_HTML))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.view().name(STATISTICS_VIEW_NAME))
+                .andReturn();
+        Map<String, Object> model = mvcResult.getModelAndView().getModel();
+        List <QuizResultDTO> quizResultHistoryDTO = (List<QuizResultDTO>) model.get("quizResultList");
+        assertEquals(2, quizResultHistoryDTO.size());
+    }
+
+
 
 
 
