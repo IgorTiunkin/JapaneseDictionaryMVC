@@ -24,6 +24,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.test.context.support.WithAnonymousUser;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.security.test.context.support.WithUserDetails;
+import org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -31,7 +32,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,12 +76,12 @@ public class QuizControllerIT extends BaseIT {
     @BeforeEach
     public void init() {
         mvc = MockMvcBuilders.webAppContextSetup(context)
-                .apply(springSecurity())
+                .apply(SecurityMockMvcConfigurers.springSecurity())
                 .build();
     }
 
     @Test
-    @WithMockUser (username = "test", password = "test")
+    @WithMockUser
     public void whenCorrectRequest_thenCorrectShow() throws Exception {
         QuizRequest request = new QuizRequest(RequestType.TRANSLATION, 2, 2);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(PATH_TO_SHOW).accept(MediaType.TEXT_HTML)
@@ -103,6 +103,7 @@ public class QuizControllerIT extends BaseIT {
 
 
     @Test
+    @WithMockUser
     public void whenCheck1RightAnswer_thenResult1 () throws Exception {
         AnswerDto answerDto = new AnswerDto();
         answerDto.addAnswer(new Answer("a1"));
@@ -121,6 +122,7 @@ public class QuizControllerIT extends BaseIT {
     }
 
     @Test
+    @WithMockUser
     public void whenEmptyAnswer_thenResult0AndStub () throws Exception {
         AnswerDto answerDto = new AnswerDto();
 
@@ -138,6 +140,7 @@ public class QuizControllerIT extends BaseIT {
     }
 
     @Test
+    @WithMockUser
     public void whenAbsentAnswer_thenResult0AndStub () throws Exception {
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.post(PATH_TO_CHECK).accept(MediaType.TEXT_HTML)
                 .sessionAttr("quiztasks", List.of(TEST_QUIZ_TASK)))
@@ -189,10 +192,6 @@ public class QuizControllerIT extends BaseIT {
         List <QuizResultDTO> quizResultHistoryDTO = (List<QuizResultDTO>) model.get("quizResultList");
         assertEquals(2, quizResultHistoryDTO.size());
     }
-
-
-
-
 
 
 }

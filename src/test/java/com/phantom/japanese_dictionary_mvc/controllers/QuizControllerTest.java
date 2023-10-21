@@ -20,11 +20,13 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -170,7 +172,15 @@ class QuizControllerTest extends BaseControllerTest{
 
     }
 
-
+    @Test
+    public void whenExportStatistics_thenOk() {
+        List <QuizResultDTO> quizResultDTOS = List.of(TEST_QUIZ_RESULT_DTO);
+        HttpServletResponse httpServletResponse = new MockHttpServletResponse();
+        quizController.exportStatistics(quizResultDTOS, httpServletResponse);
+        assertEquals("application/vnd.ms-excel", httpServletResponse.getContentType());
+        assertEquals("attachment; filename=quiz results.xlsx",
+                httpServletResponse.getHeader("Content-Disposition"));
+    }
 
 
 }
