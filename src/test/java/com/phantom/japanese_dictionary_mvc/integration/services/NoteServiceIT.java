@@ -16,7 +16,9 @@ public class NoteServiceIT extends BaseIT {
 
     private final NoteService noteService;
 
-    private final Note TEST_NOTE_YAMAI = new Note(1, "yamai", "病", "やまい","болезнь");
+    private final Note TEST_NOTE_YAMAI = Note.builder()
+            .id(1).translation("болезнь").romadji("yamai").kanji("病").hiragana("やまい")
+            .build();
 
     @Autowired
     public NoteServiceIT(NoteService noteService) {

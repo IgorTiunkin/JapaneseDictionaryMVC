@@ -23,15 +23,19 @@ import static org.mockito.Mockito.doReturn;
 @ActiveProfiles("test")
 class BaseGenericNoteConverterTest {
 
-    private final Note TEST_NOTE_YAMAI = new Note(1, "yamai", "病", "やまい","болезнь");
-    private final Note TEST_NOTE_JOUDAN = new Note(1, "joudan", "冗談", "じょうだん","шутка");
+    private final Note TEST_NOTE_YAMAI = Note.builder()
+            .id(1).translation("болезнь").romadji("yamai").kanji("病").hiragana("やまい")
+            .build();
+    private final Note TEST_NOTE_JOUDAN = Note.builder()
+            .id(2).translation("шутка").romadji("joudan").kanji("冗談").hiragana("じょうだん")
+            .build();
 
-    private final GrammarNote TEST_GRAMMAR_NOTE
-            = new GrammarNote(1, "Test source", "Test rule",
-            "Test explanation", "Test example");
-    private final GrammarNote TEST_GRAMMAR_NOTE_BAKARI
-            = new GrammarNote(2, "Bakari source", "Bakari rule",
-            "Bakari explanation", "Bakari example");
+    private final GrammarNote TEST_GRAMMAR_NOTE = GrammarNote.builder()
+            .grammarNoteId(1).source("Test source").rule("Test rule").explanation("Test explanation").example("Test example")
+            .build();
+    private final GrammarNote TEST_GRAMMAR_NOTE_BAKARI =  GrammarNote.builder()
+            .grammarNoteId(2).source("Bakari source").rule("Bakari rule").explanation("Bakari explanation").example("Bakari example")
+            .build();
 
     @Mock
     private ModelMapper modelMapper;

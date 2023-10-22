@@ -14,9 +14,9 @@ public class GrammarNoteServiceIT extends BaseIT {
 
     private final GrammarNoteService grammarNoteService;
 
-    private final GrammarNote TEST_GRAMMAR_NOTE
-            = new GrammarNote(1, "Test source", "Test rule",
-            "Test explanation", "Test example");
+    private final GrammarNote TEST_GRAMMAR_NOTE = GrammarNote.builder()
+            .grammarNoteId(1).source("Test source").rule("Test rule").explanation("Test explanation").example("Test example")
+            .build();
 
     @Autowired
     public GrammarNoteServiceIT(GrammarNoteService grammarNoteService) {

@@ -40,16 +40,18 @@ class GrammarDictionaryReplyConverterTest {
     private final Request ENGLISH_REQUEST = new Request("test", RequestType.SPELLING, false);
     private final Request KANA_REQUEST = new Request("test_kana", RequestType.KANA, false);
 
-    private final GrammarNote TEST_GRAMMAR_NOTE
-            = new GrammarNote(1, "Test source", "Test rule",
-            "Test explanation", "Test example");
-    private final GrammarNote TEST_GRAMMAR_NOTE_BAKARI
-            = new GrammarNote(2, "Bakari source", "Bakari rule",
-            "Bakari explanation", "Bakari example");
-    private final GrammarNoteDTO TEST_GRAMMAR_NOTE_DTO_1 = new GrammarNoteDTO("Test source", "Test rule",
-            "Test explanation", "Test example");
-    private final GrammarNoteDTO TEST_GRAMMAR_NOTE_DTO_2 = new GrammarNoteDTO("Bakari source", "Bakari rule",
-            "Bakari explanation", "Bakari example");
+    private final GrammarNote TEST_GRAMMAR_NOTE = GrammarNote.builder()
+            .grammarNoteId(1).source("Test source").rule("Test rule").explanation("Test explanation").example("Test example")
+            .build();
+    private final GrammarNote TEST_GRAMMAR_NOTE_BAKARI =  GrammarNote.builder()
+            .grammarNoteId(2).source("Bakari source").rule("Bakari rule").explanation("Bakari explanation").example("Bakari example")
+            .build();
+    private final GrammarNoteDTO TEST_GRAMMAR_NOTE_DTO_1 = GrammarNoteDTO.builder()
+            .source("Test source").rule("Test rule").explanation("Test explanation").example("Test example")
+            .build();
+    private final GrammarNoteDTO TEST_GRAMMAR_NOTE_DTO_2 = GrammarNoteDTO.builder()
+            .source("Bakari source").rule("Bakari rule").explanation("Bakari explanation").example("Bakari example")
+            .build();
 
 
     @Test

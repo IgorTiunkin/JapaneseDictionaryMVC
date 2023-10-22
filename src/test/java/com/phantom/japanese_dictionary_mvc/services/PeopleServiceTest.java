@@ -22,8 +22,9 @@ import static org.mockito.Mockito.*;
 @ActiveProfiles("test")
 class PeopleServiceTest {
 
-    private final Person PERSON = new Person(1, "username", "password", "admin",
-            new ArrayList<QuizResult>());
+    private final Person PERSON = Person.builder()
+            .personId(1).username("username").password("password").role("admib").quizResultList(new ArrayList<QuizResult>())
+            .build();
 
     @Mock
     private PeopleRepository peopleRepository;

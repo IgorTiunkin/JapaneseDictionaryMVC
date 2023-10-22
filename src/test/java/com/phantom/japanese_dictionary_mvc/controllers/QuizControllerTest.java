@@ -66,11 +66,16 @@ class QuizControllerTest extends BaseControllerTest{
     private final String RESULT_VIEW_NAME = "quiz/result";
     private final String STATISTICS_VIEW_NAME = "quiz/statistics";
 
-    private final QuizTask TEST_QUIZ_TASK = new QuizTask(1, "q1", "a1" , List.of("o1", "o2"));
+    private final QuizTask TEST_QUIZ_TASK = QuizTask.builder()
+            .number(1).question("q1").rightAnswer("a1").options(List.of("a1", "a2"))
+            .build();
     private final Answer TEST_ANSWER = new Answer("answer");
-    private final QuizResult TEST_QUIZ_RESULT = new QuizResult(1, null, 1, 1, null, null);
-    private final QuizResultDTO TEST_QUIZ_RESULT_DTO = new QuizResultDTO(1, 1, 2, "date", List.of(new FailedQuizTaskDTO()));
-
+    private final QuizResult TEST_QUIZ_RESULT = QuizResult.builder()
+            .quizResultId(1).user(null).numberOfRightAnswers(1).numberOfTasks(1).dateOfQuiz(null).failedQuizTasks(null)
+            .build();
+    private final QuizResultDTO TEST_QUIZ_RESULT_DTO = QuizResultDTO.builder()
+            .quizResultId(1).numberOfRightAnswers(1).numberOfTasks(2).dateOfQuiz("date").failedQuizTasks(List.of(new FailedQuizTaskDTO()))
+            .build();
 
     @BeforeEach
     public void init() {

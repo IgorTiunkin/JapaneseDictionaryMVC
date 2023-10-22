@@ -2,10 +2,7 @@ package com.phantom.japanese_dictionary_mvc.dto;
 
 
 import com.phantom.japanese_dictionary_mvc.models.FailedQuizTask;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import java.time.LocalDate;
@@ -18,6 +15,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class QuizResultDTO {
 
     private int quizResultId;

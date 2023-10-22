@@ -8,6 +8,7 @@ import javax.persistence.Column;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @ToString
 public class GrammarNoteDTO {
 

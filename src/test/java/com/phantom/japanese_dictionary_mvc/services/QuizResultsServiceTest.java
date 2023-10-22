@@ -18,7 +18,9 @@ import static org.mockito.Mockito.*;
 @ActiveProfiles("test")
 class QuizResultsServiceTest {
 
-    private final QuizResult TEST_QUIZ_RESULT = new QuizResult(1, null, 5, 10, null, null);
+    private final QuizResult TEST_QUIZ_RESULT = QuizResult.builder()
+            .quizResultId(1).numberOfRightAnswers(5).numberOfTasks(10).dateOfQuiz(null).failedQuizTasks(null).user(null)
+            .build();
 
     @Mock
     private QuizResultsRepository quizResultsRepository;

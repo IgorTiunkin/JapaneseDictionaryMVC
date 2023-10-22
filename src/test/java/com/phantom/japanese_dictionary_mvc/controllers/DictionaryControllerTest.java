@@ -10,6 +10,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.aspectj.weaver.ast.Not;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -48,8 +49,9 @@ class DictionaryControllerTest extends BaseControllerTest{
     private final String MULTISHOW_VIEW_NAME = "dictionaries/multishow";
     private final String IMPORT_VIEW_NAME = "dictionaries/import";
 
-    private final NoteDTO TEST_NOTE_DTO = new NoteDTO("romaji", "kanji", "hiragana", "translation");
-
+    private final NoteDTO TEST_NOTE_DTO = NoteDTO.builder()
+            .romadji("romaji").kanji("kanji").hiragana("hiragana").translation("translation")
+            .build();
 
     @BeforeEach
     public void init() {

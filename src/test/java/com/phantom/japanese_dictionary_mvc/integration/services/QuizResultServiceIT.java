@@ -16,9 +16,12 @@ public class QuizResultServiceIT extends BaseIT {
 
     private final QuizResultsService quizResultsService;
 
-    private final QuizResult TEST_QUIZ_RESULT = new QuizResult(1, null, 5, 10, null, null);
-    private final Person PERSON = new Person(1, "username", "password", "admin",
-            new ArrayList<QuizResult>());
+    private final QuizResult TEST_QUIZ_RESULT = QuizResult.builder()
+            .quizResultId(1).numberOfRightAnswers(5).numberOfTasks(10).dateOfQuiz(null).failedQuizTasks(null).user(null)
+            .build();
+    private final Person PERSON = Person.builder()
+            .personId(1).username("username").password("password").role("admin").quizResultList(new ArrayList<QuizResult>())
+            .build();
 
     @Autowired
     public QuizResultServiceIT(QuizResultsService quizResultsService) {

@@ -39,8 +39,9 @@ public class GrammarDictionaryControllerIT extends BaseIT {
     private final String SHOW_VIEW_NAME = "grammar/multishow";
     private final String IMPORT_VIEW_NAME = "grammar/import";
 
-    private final GrammarNoteDTO TEST_GRAMMAR_NOTE_DTO = new GrammarNoteDTO("test source", "test rule",
-            "test explanation", "test example");
+    private final GrammarNote TEST_GRAMMAR_NOTE = GrammarNote.builder()
+            .grammarNoteId(1).source("Test source").rule("Test rule").explanation("Test explanation").example("Test example")
+            .build();
 
     private MockMvc mvc;
 

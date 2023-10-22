@@ -36,11 +36,18 @@ class DictionaryReplyConverterTest {
     @InjectMocks
     private DictionaryReplyConverter dictionaryReplyConverter;
 
-    private final Note TEST_NOTE_YAMAI = new Note(1, "yamai", "病", "やまい","болезнь");
-    private final Note TEST_NOTE_JOUDAN = new Note(1, "joudan", "冗談", "じょうだん","шутка");
-    private final NoteDTO TEST_NOTEDTO_YAMAI = new NoteDTO("yamai", "病", "やまい","болезнь");
-    private final NoteDTO TEST_NOTEDTO_JOUDAN = new NoteDTO("joudan", "冗談", "じょうだん","шутка");
-
+    private final Note TEST_NOTE_YAMAI = Note.builder()
+            .id(1).translation("болезнь").romadji("yamai").kanji("病").hiragana("やまい")
+            .build();
+    private final Note TEST_NOTE_JOUDAN = Note.builder()
+            .id(2).translation("шутка").romadji("joudan").kanji("冗談").hiragana("じょうだん")
+            .build();
+    private final NoteDTO TEST_NOTEDTO_YAMAI = NoteDTO.builder()
+            .romadji("yamai").kanji("病").hiragana("やまい").translation("болезнь")
+            .build();
+    private final NoteDTO TEST_NOTEDTO_JOUDAN = NoteDTO.builder()
+            .romadji("joudan").kanji("冗談").hiragana("じょうだん").translation("шутка")
+            .build();
 
     @Test
     public void whenFullRequest_thenFullMatch() {

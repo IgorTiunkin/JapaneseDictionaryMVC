@@ -27,10 +27,18 @@ class QuizConverterTest {
     @InjectMocks
     private QuizConverter quizConverter;
 
-    private final Note TEST_NOTE_YAMAI = new Note(1, "yamai", "病", "やまい","болезнь");
-    private final Note TEST_NOTE_JOUDAN = new Note(2, "joudan", "冗談", "じょうだん","шутка");
-    private final Note TEST_NOTE_SENSOU = new Note(3, "sensou", "戦争", "せんそう","войн");
-    private final Note TEST_NOTE_KUMO = new Note(4, "kumo", "蜘蛛", "くも","паук");
+    private final Note TEST_NOTE_YAMAI = Note.builder()
+            .id(1).translation("болезнь").romadji("yamai").kanji("病").hiragana("やまい")
+            .build();
+    private final Note TEST_NOTE_JOUDAN = Note.builder()
+            .id(2).translation("шутка").romadji("joudan").kanji("冗談").hiragana("じょうだん")
+            .build();
+    private final Note TEST_NOTE_SENSOU = Note.builder()
+            .id(3).translation("войн").romadji("sensou").kanji("戦争").hiragana("せんそう")
+            .build();
+    private final Note TEST_NOTE_KUMO = Note.builder()
+            .id(4).translation("паук").romadji("kumo").kanji("戦争").hiragana("くも")
+            .build();
 
     @Test
     public void whenTranslation_thenKanji() {

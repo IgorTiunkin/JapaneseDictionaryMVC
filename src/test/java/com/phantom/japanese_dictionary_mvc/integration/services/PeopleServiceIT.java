@@ -17,8 +17,9 @@ public class PeopleServiceIT extends BaseIT {
 
     private final PeopleService peopleService;
 
-    private final Person PERSON = new Person(1, "username", "password", "admin",
-            new ArrayList<QuizResult>());
+    private final Person PERSON = Person.builder()
+            .personId(1).username("username").password("password").role("admib").quizResultList(new ArrayList<QuizResult>())
+            .build();
 
     @Autowired
     public PeopleServiceIT(PeopleService peopleService) {

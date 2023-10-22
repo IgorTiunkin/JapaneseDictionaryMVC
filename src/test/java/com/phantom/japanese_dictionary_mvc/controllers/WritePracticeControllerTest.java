@@ -44,8 +44,12 @@ class WritePracticeControllerTest extends BaseControllerTest{
     private final String INDEX_VIEW_NAME = "writepractice/index";
     private final String SHOW_VIEW_NAME = "writepractice/multishow";
 
-    private final Note TEST_NOTE_YAMAI = new Note(1, "yamai", "病", "やまい","болезнь");
-    private final Note TEST_NOTE_JOUDAN = new Note(1, "joudan", "冗談", "じょうだん","шутка");
+    private final Note TEST_NOTE_YAMAI = Note.builder()
+            .id(1).translation("болезнь").romadji("yamai").kanji("病").hiragana("やまい")
+            .build();
+    private final Note TEST_NOTE_JOUDAN = Note.builder()
+            .id(2).translation("шутка").romadji("joudan").kanji("冗談").hiragana("じょうだん")
+            .build();
 
 
     @Test

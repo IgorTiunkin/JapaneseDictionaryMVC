@@ -1,15 +1,14 @@
 package com.phantom.japanese_dictionary_mvc.models;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "failed_quiz_tasks")
 public class FailedQuizTask {

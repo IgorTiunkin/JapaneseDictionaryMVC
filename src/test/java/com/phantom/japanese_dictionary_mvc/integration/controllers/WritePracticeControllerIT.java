@@ -30,8 +30,6 @@ public class WritePracticeControllerIT extends BaseIT {
     private final String INDEX_VIEW_NAME = "writepractice/index";
     private final String SHOW_VIEW_NAME = "writepractice/multishow";
 
-    private final Note TEST_NOTE_YAMAI = new Note(1, "yamai", "病", "やまい","болезнь");
-    private final Note TEST_NOTE_JOUDAN = new Note(1, "joudan", "冗談", "じょうだん","шутка");
 
     private MockMvc mvc;
 

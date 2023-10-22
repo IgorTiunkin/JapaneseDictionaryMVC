@@ -20,12 +20,12 @@ import static org.mockito.Mockito.doReturn;
 @ActiveProfiles("test")
 class GrammarNoteServiceTest {
 
-    private final GrammarNote TEST_GRAMMAR_NOTE
-            = new GrammarNote(1, "Test source", "Test rule",
-            "Test explanation", "Test example");
-    private final GrammarNote TEST_GRAMMAR_NOTE_BAKARI
-            = new GrammarNote(2, "Bakari source", "Bakari rule",
-            "Bakari explanation", "Bakari example");
+    private final GrammarNote TEST_GRAMMAR_NOTE = GrammarNote.builder()
+            .grammarNoteId(1).source("Test source").rule("Test rule").explanation("Test explanation").example("Test example")
+            .build();
+    private final GrammarNote TEST_GRAMMAR_NOTE_BAKARI =  GrammarNote.builder()
+            .grammarNoteId(2).source("Bakari source").rule("Bakari rule").explanation("Bakari explanation").example("Bakari example")
+            .build();
 
     @Mock
     private GrammarNoteRepository grammarNoteRepository;
