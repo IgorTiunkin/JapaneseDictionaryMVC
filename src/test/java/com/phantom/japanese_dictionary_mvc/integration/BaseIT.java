@@ -17,7 +17,7 @@ import org.testcontainers.containers.PostgreSQLContainer;
 })
 public abstract class BaseIT {
 
-    private static final PostgreSQLContainer<?> container =
+    protected static final PostgreSQLContainer<?> container =
             new PostgreSQLContainer<>("postgres:13.1-alpine");
 
     @BeforeAll

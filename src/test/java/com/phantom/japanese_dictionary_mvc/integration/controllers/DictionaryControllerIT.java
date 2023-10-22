@@ -6,26 +6,26 @@ import com.phantom.japanese_dictionary_mvc.integration.BaseIT;
 import com.phantom.japanese_dictionary_mvc.replies.DictionaryReply;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
-import com.phantom.japanese_dictionary_mvc.services.NoteService;
-import com.phantom.japanese_dictionary_mvc.util.DictionaryReplyConverter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
 
-import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.doReturn;
 
 public class DictionaryControllerIT extends BaseIT {
-    private final DictionaryController dictionaryController;
+
+    private final WebApplicationContext context;
 
     private final String BASE_PATH = "/dictionary";
     private final String PATH_TO_SHOW = BASE_PATH + "/show";
@@ -41,20 +41,19 @@ public class DictionaryControllerIT extends BaseIT {
     private MockMvc mvc;
 
     @Autowired
-    public DictionaryControllerIT(DictionaryController dictionaryController) {
-        this.dictionaryController = dictionaryController;
+    public DictionaryControllerIT(WebApplicationContext context) {
+        this.context = context;
     }
 
     @BeforeEach
     public void init() {
-        mvc = MockMvcBuilders.standaloneSetup(dictionaryController)
+        mvc = MockMvcBuilders.webAppContextSetup(context)
                 .build();
     }
 
     @Test
     public void whenEmptyRequest_thenIndex() throws Exception {
         Request request = new Request("", RequestType.TRANSLATION, false);
-
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(PATH_TO_SHOW).accept(MediaType.TEXT_HTML)
                 .flashAttr("request", request))
                 .andExpect(MockMvcResultMatchers.status().isOk())
