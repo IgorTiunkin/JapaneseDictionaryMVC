@@ -1,6 +1,8 @@
 package com.phantom.japanese_dictionary_mvc.models;
 
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -33,7 +35,8 @@ public class QuizResult {
     @Column (name = "date_time")
     private LocalDateTime dateOfQuiz;
 
-    @OneToMany (mappedBy = "quizResult", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany (mappedBy = "quizResult", cascade = CascadeType.ALL)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<FailedQuizTask> failedQuizTasks;
 
     @Override
