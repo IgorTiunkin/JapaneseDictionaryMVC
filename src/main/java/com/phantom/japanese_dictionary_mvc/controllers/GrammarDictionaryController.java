@@ -2,6 +2,7 @@ package com.phantom.japanese_dictionary_mvc.controllers;
 
 import com.phantom.japanese_dictionary_mvc.exceptions.FileIOException;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
+import com.phantom.japanese_dictionary_mvc.requests.GrammarRequest;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.services.GrammarNoteService;
 import com.phantom.japanese_dictionary_mvc.replies.GrammarDictionaryReply;
@@ -41,21 +42,21 @@ public class GrammarDictionaryController {
 
     @GetMapping
     public String index(Model model) {
-        model.addAttribute("request", new Request());
+        model.addAttribute("request", new GrammarRequest());
         return "grammar/index";
     }
 
     @GetMapping("/show")
-    public String show (@ModelAttribute("request") @Valid Request request, BindingResult bindingResult,
+    public String show (@ModelAttribute("request") @Valid GrammarRequest grammarRequest, BindingResult bindingResult,
                         Model model,
                         @RequestParam (required = false, value = "page", defaultValue = "0") Integer page) {
-        LOGGER.trace("Accepted grammar request: requesttype = {}; word to find = {}",
-                request.getRequestType(), request.getWord());
+        LOGGER.trace("Accepted grammar request: word to find = {}",
+                 grammarRequest.getWord());
         if (bindingResult.hasErrors()) {
             return "grammar/index";
         }
         GrammarDictionaryReply grammarDictionaryReply =
-                grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(request, page);
+                grammarDictionaryReplyConverter.getGrammarDictionaryReplyForCurrentPage(grammarRequest, page);
         model.addAttribute("grammarDictionaryReply", grammarDictionaryReply);
         model.addAttribute("currentPage", page);
         return "grammar/multishow";

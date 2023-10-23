@@ -5,6 +5,7 @@ import com.phantom.japanese_dictionary_mvc.dto.GrammarNoteDTO;
 import com.phantom.japanese_dictionary_mvc.integration.BaseIT;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
 import com.phantom.japanese_dictionary_mvc.replies.GrammarDictionaryReply;
+import com.phantom.japanese_dictionary_mvc.requests.GrammarRequest;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.GrammarNoteService;
@@ -56,11 +57,11 @@ public class GrammarDictionaryControllerIT extends BaseIT {
                 .build();
     }
 
-    private GrammarDictionaryReply getDictionaryReply(String wordToFind, RequestType requestType) throws Exception {
-        Request request = new Request(wordToFind, requestType, false);
+    private GrammarDictionaryReply getDictionaryReply(String wordToFind) throws Exception {
+        GrammarRequest grammarRequest = new GrammarRequest(wordToFind);
 
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(PATH_TO_SHOW).accept(MediaType.TEXT_HTML)
-                .flashAttr("request", request))
+                .flashAttr("request", grammarRequest))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.view().name(SHOW_VIEW_NAME))
                 .andReturn();
@@ -76,7 +77,7 @@ public class GrammarDictionaryControllerIT extends BaseIT {
     @Test
     public void whenToShite_then3Partial() throws Exception {
         String wordToFind = "to shite";
-        GrammarDictionaryReply dictionaryReplyResult = getDictionaryReply(wordToFind, RequestType.SPELLING);
+        GrammarDictionaryReply dictionaryReplyResult = getDictionaryReply(wordToFind);
         assertEquals(3, dictionaryReplyResult.getMatchCount());
         assertEquals(3, dictionaryReplyResult.getGrammarNoteDTOS().size());
 

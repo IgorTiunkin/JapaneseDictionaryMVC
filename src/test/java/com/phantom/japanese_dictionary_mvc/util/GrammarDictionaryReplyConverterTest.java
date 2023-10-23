@@ -6,6 +6,7 @@ import com.phantom.japanese_dictionary_mvc.finders.grammar.KanaGrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.RomajiGrammarFinder;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
 import com.phantom.japanese_dictionary_mvc.replies.GrammarDictionaryReply;
+import com.phantom.japanese_dictionary_mvc.requests.GrammarRequest;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import org.junit.jupiter.api.Test;
@@ -37,8 +38,7 @@ class GrammarDictionaryReplyConverterTest {
     private final int LIMIT_OF_GRAMMAR_NOTES_IN_VIEW = 500;
     private final int GRAMMAR_NOTES_PER_PAGE = 10;
 
-    private final Request ENGLISH_REQUEST = new Request("test", RequestType.SPELLING, false);
-    private final Request KANA_REQUEST = new Request("test_kana", RequestType.KANA, false);
+    private final GrammarRequest KANA_REQUEST = new GrammarRequest("test_kana");
 
     private final GrammarNote TEST_GRAMMAR_NOTE = GrammarNote.builder()
             .grammarNoteId(1).source("Test source").rule("Test rule").explanation("Test explanation").example("Test example")

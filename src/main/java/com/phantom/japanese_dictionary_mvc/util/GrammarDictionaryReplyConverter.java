@@ -5,6 +5,7 @@ import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinder;
 import com.phantom.japanese_dictionary_mvc.finders.grammar.GrammarFinderFactory;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
 import com.phantom.japanese_dictionary_mvc.replies.GrammarDictionaryReply;
+import com.phantom.japanese_dictionary_mvc.requests.GrammarRequest;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import org.springframework.stereotype.Component;
 
@@ -24,11 +25,11 @@ public class GrammarDictionaryReplyConverter {
         this.baseGenericNoteConverter = baseGenericNoteConverter;
     }
 
-    public GrammarDictionaryReply getGrammarDictionaryReplyForCurrentPage(Request request, Integer page) {
+    public GrammarDictionaryReply getGrammarDictionaryReplyForCurrentPage(GrammarRequest grammarRequest, Integer page) {
         GrammarDictionaryReply grammarDictionaryReply = new GrammarDictionaryReply();
 
-        GrammarFinder grammarFinder = grammarFinderFactory.getInstance(request);
-        String wordToFind = request.getWord().trim().toLowerCase();
+        GrammarFinder grammarFinder = grammarFinderFactory.getInstance(grammarRequest);
+        String wordToFind = grammarRequest.getWord().trim().toLowerCase();
 
         List <GrammarNote> notesFromRepository = grammarFinder.getNotesFromRepository(wordToFind);
         grammarDictionaryReply.setMatchCount(notesFromRepository.size());

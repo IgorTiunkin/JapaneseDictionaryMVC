@@ -24,6 +24,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -48,7 +49,8 @@ public class QuizController {
 
 
 
-    public QuizController(QuizConverter quizConverter, QuizResultChecker quizResultChecker, QuizResultsService quizResultsService, QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper) {
+    public QuizController(QuizConverter quizConverter, QuizResultChecker quizResultChecker,
+                          QuizResultsService quizResultsService, QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper) {
         this.quizConverter = quizConverter;
         this.quizResultChecker = quizResultChecker;
         this.quizResultsService = quizResultsService;
@@ -65,7 +67,7 @@ public class QuizController {
 
     @GetMapping("/show")
     public String showQuiz(@ModelAttribute ("quizrequest") @Valid QuizRequest quizRequest,
-                           BindingResult bindingResult, Model model) {
+                           BindingResult bindingResult, Model model, RedirectAttributes redirectAttributes) {
         LOGGER.trace("Accepted quiz request: request type = {}; number of tasks = {}; number of options = {}",
                 quizRequest.getRequestType(),quizRequest.getNumberOfTasks(), quizRequest.getNumberOfOptions());
         if (bindingResult.hasErrors()) {
@@ -91,6 +93,7 @@ public class QuizController {
         // for view we need to create full size list with stub values instead of null
         List<Answer> userAnswersForCheck = quizResultChecker.createUserAnswersForCheck(quizTasks, form.getAnswers());
         form.setAnswers(userAnswersForCheck);
+
         int numberOfRightAnswers = quizResultChecker.getNumberOfRightAnswers(userAnswersForCheck, quizTasks);
         model.addAttribute("numberOfRightAnswers", numberOfRightAnswers);
         model.addAttribute("user_answers", form.getAnswers());

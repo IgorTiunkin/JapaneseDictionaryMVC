@@ -4,6 +4,7 @@ import com.phantom.japanese_dictionary_mvc.dto.GrammarNoteDTO;
 import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
 import com.phantom.japanese_dictionary_mvc.replies.DictionaryReply;
 import com.phantom.japanese_dictionary_mvc.replies.GrammarDictionaryReply;
+import com.phantom.japanese_dictionary_mvc.requests.GrammarRequest;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.GrammarNoteService;
@@ -68,20 +69,20 @@ class GrammarDictionaryControllerTest extends BaseControllerTest{
                 .andExpect(MockMvcResultMatchers.view().name(INDEX_VIEW_NAME))
                 .andReturn();
         Map<String, Object> model = mvcResult.getModelAndView().getModel();
-        assertEquals(model.get("request").getClass(), Request.class);
+        assertEquals(model.get("request").getClass(), GrammarRequest.class);
     }
 
     @Test
     public void whenCorrectRequest_thenCorrectShow() throws Exception {
-        Request request = new Request("test", RequestType.SPELLING, false);
+        GrammarRequest grammarRequest = new GrammarRequest("test");
         GrammarDictionaryReply dictionaryReply = new GrammarDictionaryReply();
         dictionaryReply.setMatchCount(2);
         dictionaryReply.setIndexOfLastPage(0);
         dictionaryReply.setGrammarNoteDTOS(List.of(TEST_GRAMMAR_NOTE_DTO));
-        doReturn(dictionaryReply).when(grammarDictionaryReplyConverter).getGrammarDictionaryReplyForCurrentPage(request, 0);
+        doReturn(dictionaryReply).when(grammarDictionaryReplyConverter).getGrammarDictionaryReplyForCurrentPage(grammarRequest, 0);
 
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(PATH_TO_SHOW).accept(MediaType.TEXT_HTML)
-                .flashAttr("request", request))
+                .flashAttr("request", grammarRequest))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.view().name(SHOW_VIEW_NAME))
                 .andReturn();
@@ -96,10 +97,10 @@ class GrammarDictionaryControllerTest extends BaseControllerTest{
 
     @Test
     public void whenIncorrectRequest_thenIndex() throws Exception {
-        Request request = new Request("", RequestType.TRANSLATION, false);
+        GrammarRequest grammarRequest = new GrammarRequest("");
 
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(PATH_TO_SHOW).accept(MediaType.TEXT_HTML)
-                .flashAttr("request", request))
+                .flashAttr("request", grammarRequest))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.view().name(INDEX_VIEW_NAME))
                 .andReturn();
