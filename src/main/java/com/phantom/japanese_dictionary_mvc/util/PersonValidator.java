@@ -1,5 +1,6 @@
 package com.phantom.japanese_dictionary_mvc.util;
 
+import com.phantom.japanese_dictionary_mvc.dto.PersonDTO;
 import com.phantom.japanese_dictionary_mvc.models.Person;
 import com.phantom.japanese_dictionary_mvc.services.PeopleService;
 import org.springframework.stereotype.Component;
@@ -25,7 +26,7 @@ public class PersonValidator implements Validator {
 
     @Override
     public void validate(Object o, Errors errors) {
-        Person user = (Person)o;
+        PersonDTO user = (PersonDTO) o;
         String currentUsername = user.getUsername();
         Optional <Person> dublicateUser = peopleService.getUserByUsername(currentUsername);
         if (dublicateUser.isPresent()) {

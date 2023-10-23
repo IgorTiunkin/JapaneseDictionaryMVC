@@ -41,11 +41,11 @@ public class AuthController {
 
     @PostMapping("/saveUser")
     public String saveUser (@ModelAttribute ("person") @Valid PersonDTO userDTO, BindingResult bindingResult) {
-        Person user = convertToPerson(userDTO);
-        personValidator.validate(user, bindingResult);
+        personValidator.validate(userDTO, bindingResult);
         if (bindingResult.hasErrors()) {
             return "auth/signup";
         }
+        Person user = convertToPerson(userDTO);
         peopleService.saveUser(user);
         return "redirect:/auth/login";
     }
