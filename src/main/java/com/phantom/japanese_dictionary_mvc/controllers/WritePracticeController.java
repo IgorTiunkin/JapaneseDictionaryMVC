@@ -32,7 +32,7 @@ public class WritePracticeController {
     @GetMapping
     public String index (Model model) {
         model.addAttribute("writePracticeRequest", new WritePracticeRequest());
-        model.addAttribute("types", RequestType.values());
+        model.addAttribute("types", List.of(RequestType.TRANSLATION, RequestType.SPELLING, RequestType.KANJI, RequestType.KANA));
         return "writepractice/index";
     }
 

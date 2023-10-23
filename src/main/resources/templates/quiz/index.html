@@ -29,7 +29,7 @@
             <div style="color:red" th:if="${#fields.hasErrors('numberOfOptions')}" th:errors="*{numberOfOptions}"></div>
             <ul style="padding-left: 0px">
                 <li style="display: inline" th:each="type : ${types}">
-                    <input type="radio"  checked="checked" th:id = "${type.getText()}" name="type"
+                    <input type="radio"  th:checked="${quizrequest.getRequestType()==type}" th:id = "${type.getText()}" name="type"
                            th:field="*{requestType}" th:value="${type}"/>
                     <label th:for="${type.getText()}" th:text="${type.getText()}"></label>
                 </li>

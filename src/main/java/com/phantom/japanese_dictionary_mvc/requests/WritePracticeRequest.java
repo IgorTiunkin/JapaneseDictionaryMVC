@@ -20,7 +20,7 @@ public class WritePracticeRequest {
     private Integer quantity;
 
     public WritePracticeRequest() {
-        this.requestType = RequestType.DEFAULT;
+        this.requestType = RequestType.TRANSLATION;
         this.quantity = 10;
     }
 }

@@ -158,3 +158,322 @@
 2023-10-23 14:53:53,946 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
 2023-10-23 14:53:58,316 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  24453765D60F1157C437BEF095115EC7  GET : /auth/login
 2023-10-23 14:53:58,319 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:15:13,111 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-10-23 15:15:13,111 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplication using Java 11.0.9.1 on Mabo with PID 14148 (C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc\target\classes started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-10-23 15:15:13,114 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-10-23 15:15:13,115 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2023-10-23 15:15:13,380 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-10-23 15:15:13,683 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-23 15:15:13,747 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
+2023-10-23 15:15:14,129 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-10-23 15:15:14,136 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-10-23 15:15:14,136 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-10-23 15:15:14,136 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-10-23 15:15:14,277 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-10-23 15:15:14,278 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1132 ms
+2023-10-23 15:15:14,402 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-23 15:15:14,444 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-10-23 15:15:14,525 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-23 15:15:14,594 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-10-23 15:15:14,776 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-10-23 15:15:14,786 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-10-23 15:15:15,365 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-23 15:15:15,373 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-23 15:15:15,627 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-23 15:15:15,862 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5eff5e4c, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e033801, org.springframework.security.web.header.HeaderWriterFilter@4601a148, org.springframework.security.web.authentication.logout.LogoutFilter@125a8ab6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2a9e7b4d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57ed8f95, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d2d793d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2fe2fcc2, org.springframework.security.web.session.SessionManagementFilter@2fc40856, org.springframework.security.web.access.ExceptionTranslationFilter@64f613da, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4423692a]
+2023-10-23 15:15:16,112 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-10-23 15:15:16,129 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-23 15:15:16,137 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplication in 3.495 seconds (JVM running for 4.672)
+2023-10-23 15:15:16,138 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-10-23 15:15:16,140 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-10-23 15:15:27,836 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-23 15:15:27,837 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-10-23 15:15:27,838 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2023-10-23 15:15:28,238 WARN org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [379] milliseconds.
+2023-10-23 15:15:28,240 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  38D51696978ADE1003C5ECA793F024C8  GET : /auth/login
+2023-10-23 15:15:28,475 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:15:30,270 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  68E2DCB7F8A751FE35C22B68EEC17F27  GET : /welcome
+2023-10-23 15:15:30,288 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:15:32,330 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  68E2DCB7F8A751FE35C22B68EEC17F27  GET : /dictionary
+2023-10-23 15:15:32,371 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:20:42,606 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-10-23 15:20:42,608 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplication using Java 11.0.9.1 on Mabo with PID 15548 (C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc\target\classes started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-10-23 15:20:42,609 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-10-23 15:20:42,610 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2023-10-23 15:20:43,253 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-10-23 15:20:43,563 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-23 15:20:43,639 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 69 ms. Found 4 JPA repository interfaces.
+2023-10-23 15:20:44,076 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-10-23 15:20:44,083 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-10-23 15:20:44,083 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-10-23 15:20:44,083 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-10-23 15:20:44,213 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-10-23 15:20:44,214 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1575 ms
+2023-10-23 15:20:44,323 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-23 15:20:44,357 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-10-23 15:20:44,443 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-23 15:20:44,513 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-10-23 15:20:44,680 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-10-23 15:20:44,691 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-10-23 15:20:45,256 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-23 15:20:45,264 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-23 15:20:45,540 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-23 15:20:45,790 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50b2ba2c, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a712f12, org.springframework.security.web.header.HeaderWriterFilter@5c20505f, org.springframework.security.web.authentication.logout.LogoutFilter@1a1f22f2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@31de8099, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@56adbb07, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@448fa659, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@12478b4e, org.springframework.security.web.session.SessionManagementFilter@2202c92f, org.springframework.security.web.access.ExceptionTranslationFilter@57ac236a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@76eee0b1]
+2023-10-23 15:20:46,042 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-10-23 15:20:46,059 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-23 15:20:46,067 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplication in 3.946 seconds (JVM running for 5.113)
+2023-10-23 15:20:46,068 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-10-23 15:20:46,069 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-10-23 15:20:50,540 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-23 15:20:50,540 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-10-23 15:20:50,541 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2023-10-23 15:20:50,935 WARN org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [363] milliseconds.
+2023-10-23 15:20:50,948 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  D686B923F81A5ED97522F8DA4A267DF1  GET : /auth/login
+2023-10-23 15:20:51,187 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:20:52,755 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  A8E2C463D6E108BC250F24ECCFB3D387  GET : /welcome
+2023-10-23 15:20:52,773 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:20:54,248 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  A8E2C463D6E108BC250F24ECCFB3D387  GET : /dictionary
+2023-10-23 15:20:54,295 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:21:01,058 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  A8E2C463D6E108BC250F24ECCFB3D387  GET : /dictionary/show
+2023-10-23 15:21:01,087 TRACE com.phantom.japanese_dictionary_mvc.controllers.DictionaryController [http-nio-8080-exec-6] Accepted dictionary request: request type = DEFAULT; word to find = yamai; match = false
+2023-10-23 15:21:01,149 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:21:03,745 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  A8E2C463D6E108BC250F24ECCFB3D387  GET : /dictionary
+2023-10-23 15:21:03,752 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:21:25,093 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-10-23 15:21:25,096 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplication using Java 11.0.9.1 on Mabo with PID 5612 (C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc\target\classes started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-10-23 15:21:25,099 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-10-23 15:21:25,100 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2023-10-23 15:21:25,364 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-10-23 15:21:25,675 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-23 15:21:25,741 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2023-10-23 15:21:26,118 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-10-23 15:21:26,126 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-10-23 15:21:26,126 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-10-23 15:21:26,126 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-10-23 15:21:26,266 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-10-23 15:21:26,266 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1132 ms
+2023-10-23 15:21:26,377 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-23 15:21:26,412 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-10-23 15:21:26,491 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-23 15:21:26,559 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-10-23 15:21:27,103 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-10-23 15:21:27,113 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-10-23 15:21:27,695 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-23 15:21:27,702 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-23 15:21:27,957 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-23 15:21:28,209 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29ae2517, org.springframework.security.web.context.SecurityContextPersistenceFilter@2f64f99f, org.springframework.security.web.header.HeaderWriterFilter@7fa68ff4, org.springframework.security.web.authentication.logout.LogoutFilter@22ed2886, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@79ae3fb1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@123d0816, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66ab088c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7a78d2aa, org.springframework.security.web.session.SessionManagementFilter@5eb9bf7d, org.springframework.security.web.access.ExceptionTranslationFilter@299dd381, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3fc051ce]
+2023-10-23 15:21:28,464 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-10-23 15:21:28,480 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-23 15:21:28,488 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplication in 3.951 seconds (JVM running for 5.255)
+2023-10-23 15:21:28,489 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-10-23 15:21:28,490 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-10-23 15:21:48,135 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-23 15:21:48,136 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-10-23 15:21:48,138 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2023-10-23 15:21:48,517 WARN org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [352] milliseconds.
+2023-10-23 15:21:48,530 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  C0FF719B3BF0CB814E6D0065EF1C544A  GET : /auth/login
+2023-10-23 15:21:48,771 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:21:50,532 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  5A0FF0EEC838CB4F3ACE221A907B53F5  GET : /welcome
+2023-10-23 15:21:50,549 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:21:51,864 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  5A0FF0EEC838CB4F3ACE221A907B53F5  GET : /dictionary
+2023-10-23 15:21:51,923 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:22:10,740 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-10-23 15:22:10,740 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplication using Java 11.0.9.1 on Mabo with PID 15396 (C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc\target\classes started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-10-23 15:22:10,744 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-10-23 15:22:10,745 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2023-10-23 15:22:11,022 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-10-23 15:22:11,343 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-23 15:22:11,410 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2023-10-23 15:22:11,812 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-10-23 15:22:11,819 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-10-23 15:22:11,819 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-10-23 15:22:11,819 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-10-23 15:22:11,965 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-10-23 15:22:11,965 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1179 ms
+2023-10-23 15:22:12,079 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-23 15:22:12,114 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-10-23 15:22:12,193 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-23 15:22:12,264 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-10-23 15:22:12,459 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-10-23 15:22:12,474 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-10-23 15:22:13,058 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-23 15:22:13,066 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-23 15:22:13,326 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-23 15:22:13,584 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13731ff4, org.springframework.security.web.context.SecurityContextPersistenceFilter@30ca66c5, org.springframework.security.web.header.HeaderWriterFilter@618e7761, org.springframework.security.web.authentication.logout.LogoutFilter@2202c92f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@67baa05, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38c1b1a7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3fdede3a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ce8084a, org.springframework.security.web.session.SessionManagementFilter@34f8ce89, org.springframework.security.web.access.ExceptionTranslationFilter@34001c5d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4c0ab04f]
+2023-10-23 15:22:13,848 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-10-23 15:22:13,867 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-23 15:22:13,877 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplication in 3.646 seconds (JVM running for 4.869)
+2023-10-23 15:22:13,878 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-10-23 15:22:13,880 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-10-23 15:22:19,913 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-23 15:22:19,913 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-10-23 15:22:19,914 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2023-10-23 15:22:20,309 WARN org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [365] milliseconds.
+2023-10-23 15:22:20,321 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  C743A9D9A9186221A35C081474D4D5F3  GET : /auth/login
+2023-10-23 15:22:20,558 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:22:22,071 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  F91053AB650C2525227EC98E654587F1  GET : /welcome
+2023-10-23 15:22:22,089 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:22:23,618 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  F91053AB650C2525227EC98E654587F1  GET : /dictionary
+2023-10-23 15:22:23,666 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:22:25,790 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  F91053AB650C2525227EC98E654587F1  GET : /grammar
+2023-10-23 15:22:25,806 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:22:27,466 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  F91053AB650C2525227EC98E654587F1  GET : /write-test
+2023-10-23 15:22:27,489 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:22:56,608 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  F91053AB650C2525227EC98E654587F1  GET : /quiz
+2023-10-23 15:22:56,623 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:23:00,775 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  F91053AB650C2525227EC98E654587F1  GET : /write-test
+2023-10-23 15:23:00,784 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:29:36,419 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplication using Java 11.0.9.1 on Mabo with PID 8968 (C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc\target\classes started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-10-23 15:29:36,417 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-10-23 15:29:36,421 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-10-23 15:29:36,421 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2023-10-23 15:29:36,676 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-10-23 15:29:36,974 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-23 15:29:37,040 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2023-10-23 15:29:37,459 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-10-23 15:29:37,466 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-10-23 15:29:37,467 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-10-23 15:29:37,467 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-10-23 15:29:37,599 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-10-23 15:29:37,600 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1144 ms
+2023-10-23 15:29:37,708 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-23 15:29:37,742 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-10-23 15:29:37,822 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-23 15:29:37,892 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-10-23 15:29:38,058 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-10-23 15:29:38,069 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-10-23 15:29:38,619 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-23 15:29:38,626 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-23 15:29:38,880 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-23 15:29:39,140 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1018f702, org.springframework.security.web.context.SecurityContextPersistenceFilter@322eb1a, org.springframework.security.web.header.HeaderWriterFilter@62264d4f, org.springframework.security.web.authentication.logout.LogoutFilter@4b1b2255, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1e09c0b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@69f24965, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2202c92f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5400db7e, org.springframework.security.web.session.SessionManagementFilter@4ed19540, org.springframework.security.web.access.ExceptionTranslationFilter@52d01430, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@c414eb3]
+2023-10-23 15:29:39,388 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-10-23 15:29:39,409 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-23 15:29:39,419 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplication in 3.475 seconds (JVM running for 4.615)
+2023-10-23 15:29:39,420 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-10-23 15:29:39,422 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-10-23 15:29:44,716 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-23 15:29:44,716 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-10-23 15:29:44,717 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2023-10-23 15:29:45,102 WARN org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [354] milliseconds.
+2023-10-23 15:29:45,116 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  3366274B0D8609BAF826E81F5B9CD10A  GET : /auth/login
+2023-10-23 15:29:45,382 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:29:47,151 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  C68C3D2A045099BA9BDD5C7698ACE340  GET : /welcome
+2023-10-23 15:29:47,169 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:29:48,563 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  C68C3D2A045099BA9BDD5C7698ACE340  GET : /dictionary
+2023-10-23 15:29:48,611 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:29:50,413 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  C68C3D2A045099BA9BDD5C7698ACE340  GET : /grammar
+2023-10-23 15:29:50,425 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:29:51,324 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  C68C3D2A045099BA9BDD5C7698ACE340  GET : /write-test
+2023-10-23 15:29:51,342 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:29:54,749 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  C68C3D2A045099BA9BDD5C7698ACE340  GET : /quiz
+2023-10-23 15:29:54,766 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:29:59,053 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  C68C3D2A045099BA9BDD5C7698ACE340  GET : /write-test
+2023-10-23 15:29:59,065 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:32:49,990 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-10-23 15:32:49,995 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplication using Java 11.0.9.1 on Mabo with PID 12008 (C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc\target\classes started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-10-23 15:32:49,996 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-10-23 15:32:49,996 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2023-10-23 15:32:50,252 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-10-23 15:32:50,546 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-23 15:32:50,619 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 66 ms. Found 4 JPA repository interfaces.
+2023-10-23 15:32:51,017 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-10-23 15:32:51,025 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-10-23 15:32:51,025 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-10-23 15:32:51,025 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-10-23 15:32:51,155 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-10-23 15:32:51,156 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1128 ms
+2023-10-23 15:32:51,264 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-23 15:32:51,298 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-10-23 15:32:51,384 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-23 15:32:51,453 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-10-23 15:32:51,613 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-10-23 15:32:51,623 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-10-23 15:32:52,166 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-23 15:32:52,173 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-23 15:32:52,438 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-23 15:32:52,700 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@76eee0b1, org.springframework.security.web.context.SecurityContextPersistenceFilter@4eab9aec, org.springframework.security.web.header.HeaderWriterFilter@533e8807, org.springframework.security.web.authentication.logout.LogoutFilter@5644f664, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@151d216e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c6efee3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62525dd3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2119b989, org.springframework.security.web.session.SessionManagementFilter@2b4ba2d9, org.springframework.security.web.access.ExceptionTranslationFilter@3085befb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@257d3968]
+2023-10-23 15:32:52,949 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-10-23 15:32:52,965 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-23 15:32:52,974 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplication in 3.459 seconds (JVM running for 4.581)
+2023-10-23 15:32:52,975 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-10-23 15:32:52,976 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-10-23 15:33:08,761 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-23 15:33:08,761 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-10-23 15:33:08,762 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2023-10-23 15:33:09,143 WARN org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [353] milliseconds.
+2023-10-23 15:33:09,155 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  86935FCDDA0BB68E1A9BEFCF65FB6A42  GET : /auth/login
+2023-10-23 15:33:09,384 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:33:11,151 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  101B94741F0DC3A003797FE4DCF76CB2  GET : /welcome
+2023-10-23 15:33:11,169 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:33:12,534 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  101B94741F0DC3A003797FE4DCF76CB2  GET : /write-test
+2023-10-23 15:33:12,585 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:33:16,047 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  101B94741F0DC3A003797FE4DCF76CB2  GET : /write-test/show
+2023-10-23 15:33:16,072 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-6] Accepted write practice request: requesttype = TRANSLATION; quantity = 10
+2023-10-23 15:33:16,129 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:33:19,798 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  101B94741F0DC3A003797FE4DCF76CB2  GET : /write-test
+2023-10-23 15:33:19,807 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:33:21,995 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  101B94741F0DC3A003797FE4DCF76CB2  GET : /write-test/show
+2023-10-23 15:33:21,996 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-7] Accepted write practice request: requesttype = SPELLING; quantity = 10
+2023-10-23 15:33:22,015 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:33:26,149 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  101B94741F0DC3A003797FE4DCF76CB2  GET : /write-test
+2023-10-23 15:33:26,156 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:33:28,092 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  101B94741F0DC3A003797FE4DCF76CB2  GET : /write-test/show
+2023-10-23 15:33:28,094 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-10] Accepted write practice request: requesttype = TRANSLATION; quantity = 10
+2023-10-23 15:33:28,111 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:33:30,469 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  101B94741F0DC3A003797FE4DCF76CB2  GET : /write-test
+2023-10-23 15:33:30,477 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:33:32,284 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  101B94741F0DC3A003797FE4DCF76CB2  GET : /write-test/show
+2023-10-23 15:33:32,286 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-2] Accepted write practice request: requesttype = KANJI; quantity = 10
+2023-10-23 15:33:32,302 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:33:34,284 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  101B94741F0DC3A003797FE4DCF76CB2  GET : /write-test
+2023-10-23 15:33:34,292 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:33:36,998 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  101B94741F0DC3A003797FE4DCF76CB2  GET : /write-test/show
+2023-10-23 15:33:36,999 TRACE com.phantom.japanese_dictionary_mvc.controllers.WritePracticeController [http-nio-8080-exec-4] Accepted write practice request: requesttype = KANA; quantity = 10
+2023-10-23 15:33:37,015 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:33:39,676 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  101B94741F0DC3A003797FE4DCF76CB2  GET : /dictionary
+2023-10-23 15:33:39,694 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:33:42,440 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  F9546EC20B9E6F348789DF1C421A1E98  GET : /auth/login
+2023-10-23 15:33:42,443 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:36:06,968 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplication using Java 11.0.9.1 on Mabo with PID 12584 (C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc\target\classes started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-10-23 15:36:06,966 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-10-23 15:36:06,970 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-10-23 15:36:06,970 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2023-10-23 15:36:07,224 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-10-23 15:36:07,524 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-23 15:36:07,590 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
+2023-10-23 15:36:07,983 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-10-23 15:36:07,990 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-10-23 15:36:07,990 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-10-23 15:36:07,990 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-10-23 15:36:08,117 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-10-23 15:36:08,117 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1118 ms
+2023-10-23 15:36:08,226 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-23 15:36:08,261 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-10-23 15:36:08,352 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-23 15:36:08,428 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-10-23 15:36:08,596 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-10-23 15:36:08,607 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-10-23 15:36:09,178 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-23 15:36:09,185 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-23 15:36:09,459 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-23 15:36:09,715 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c0d3715, org.springframework.security.web.context.SecurityContextPersistenceFilter@3163e03b, org.springframework.security.web.header.HeaderWriterFilter@5a45c218, org.springframework.security.web.authentication.logout.LogoutFilter@251e2f4a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@a84b6de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c20505f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@237ee2e1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d67bf4d, org.springframework.security.web.session.SessionManagementFilter@57ac236a, org.springframework.security.web.access.ExceptionTranslationFilter@322eb1a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4880a9d]
+2023-10-23 15:36:09,983 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-10-23 15:36:10,000 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-23 15:36:10,009 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplication in 3.609 seconds (JVM running for 4.75)
+2023-10-23 15:36:10,010 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-10-23 15:36:10,011 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-10-23 15:36:13,819 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-23 15:36:13,819 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-10-23 15:36:13,820 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2023-10-23 15:36:14,206 WARN org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [366] milliseconds.
+2023-10-23 15:36:14,208 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  4217E18D0E9DD0C24882C2CD250B8570  GET : /auth/login
+2023-10-23 15:36:14,448 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:36:15,691 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  9E91F94FD21A7C170FB2AFA409EF7376  GET : /welcome
+2023-10-23 15:36:15,710 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:36:17,431 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  9E91F94FD21A7C170FB2AFA409EF7376  GET : /quiz
+2023-10-23 15:36:17,488 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:36:21,755 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  9E91F94FD21A7C170FB2AFA409EF7376  GET : /quiz/show
+2023-10-23 15:36:21,781 TRACE com.phantom.japanese_dictionary_mvc.controllers.QuizController [http-nio-8080-exec-3] Accepted quiz request: request type = KANJI; number of tasks = 10; number of options = 4
+2023-10-23 15:36:21,853 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-10-23 15:36:25,446 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  56A915F60930906A7DBDDAA86398D6A2  GET : /auth/login
+2023-10-23 15:36:25,450 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
