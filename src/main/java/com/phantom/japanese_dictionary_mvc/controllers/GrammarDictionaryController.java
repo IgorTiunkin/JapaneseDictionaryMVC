@@ -28,6 +28,7 @@ import java.io.IOException;
 
 @Controller
 @RequestMapping("/grammar")
+@SessionAttributes("request") //needed for view in different pages
 public class GrammarDictionaryController {
 
     private final GrammarNoteService grammarNoteService;

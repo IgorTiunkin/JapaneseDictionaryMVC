@@ -28,6 +28,7 @@ import java.io.IOException;
 
 @Controller
 @RequestMapping("/dictionary")
+@SessionAttributes("request") //needed for view in different pages
 public class DictionaryController {
 
     private final DictionaryReplyConverter dictionaryReplyConverter;
