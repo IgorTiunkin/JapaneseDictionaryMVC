@@ -28,7 +28,6 @@ import java.io.IOException;
 
 @Controller
 @RequestMapping("/dictionary")
-@SessionAttributes({"request"})
 public class DictionaryController {
 
     private final DictionaryReplyConverter dictionaryReplyConverter;

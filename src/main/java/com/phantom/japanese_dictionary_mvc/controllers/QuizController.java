@@ -44,6 +44,8 @@ public class QuizController {
     private final QuizResultsService quizResultsService;
     private final QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper;
     private final static Logger LOGGER = LoggerFactory.getLogger(QuizController.class);
+    private final static List<RequestType> REQUEST_TYPE_LIST = List.of(RequestType.KANJI, RequestType.TRANSLATION);
+
 
 
     public QuizController(QuizConverter quizConverter, QuizResultChecker quizResultChecker, QuizResultsService quizResultsService, QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper) {
@@ -57,7 +59,7 @@ public class QuizController {
     @GetMapping
     public String index (Model model) {
         model.addAttribute("quizrequest", new QuizRequest());
-        model.addAttribute("types", List.of(RequestType.KANJI, RequestType.TRANSLATION));
+        model.addAttribute("types", REQUEST_TYPE_LIST);
         return "quiz/index";
     }
 
@@ -67,6 +69,7 @@ public class QuizController {
         LOGGER.trace("Accepted quiz request: request type = {}; number of tasks = {}; number of options = {}",
                 quizRequest.getRequestType(),quizRequest.getNumberOfTasks(), quizRequest.getNumberOfOptions());
         if (bindingResult.hasErrors()) {
+            model.addAttribute("types", REQUEST_TYPE_LIST);
             return "quiz/index";
         }
 

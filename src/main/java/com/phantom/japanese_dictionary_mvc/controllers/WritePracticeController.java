@@ -23,6 +23,8 @@ import java.util.List;
 public class WritePracticeController {
     private final NoteService noteService;
     private final static Logger LOGGER = LoggerFactory.getLogger(WritePracticeController.class);
+    private final static List<RequestType> REQUEST_TYPE_LIST = List.of(RequestType.TRANSLATION, RequestType.SPELLING, RequestType.KANJI, RequestType.KANA);
+
 
     @Autowired
     public WritePracticeController(NoteService noteService) {
@@ -32,7 +34,7 @@ public class WritePracticeController {
     @GetMapping
     public String index (Model model) {
         model.addAttribute("writePracticeRequest", new WritePracticeRequest());
-        model.addAttribute("types", List.of(RequestType.TRANSLATION, RequestType.SPELLING, RequestType.KANJI, RequestType.KANA));
+        model.addAttribute("types", REQUEST_TYPE_LIST);
         return "writepractice/index";
     }
 
@@ -43,7 +45,7 @@ public class WritePracticeController {
         LOGGER.trace("Accepted write practice request: requesttype = {}; quantity = {}",
                 writePracticeRequest.getRequestType(), writePracticeRequest.getQuantity());
         if (bindingResult.hasErrors()) {
-            model.addAttribute("types", RequestType.values());
+            model.addAttribute("types", REQUEST_TYPE_LIST);
             return "writepractice/index";
         }
         int practiceRequestQuantity = writePracticeRequest.getQuantity();
