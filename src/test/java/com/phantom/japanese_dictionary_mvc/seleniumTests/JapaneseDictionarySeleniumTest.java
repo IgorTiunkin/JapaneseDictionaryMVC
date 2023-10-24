@@ -11,7 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.time.Duration;
-import java.util.Random;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @ActiveProfiles("test")
 public abstract class JapaneseDictionarySeleniumTest {
@@ -19,7 +20,28 @@ public abstract class JapaneseDictionarySeleniumTest {
     WebDriverWait wait;
     private final String TEST_URL  = "http://localhost:8080/";
     //private final String TEST_URL  = "http://89.223.122.4:8080/";
+    private final String PATH_TO_LOGIN = TEST_URL +"auth/login";
+    private final String WELCOME_TITLE = "Welcome";
+    private final String AUTH_TITLE = "Auth";
+    private final String BASE_DICTIONARY_TITLE = "Base dictionary";
+    private final String GRAMMAR_TITLE = "Grammar";
+    private final String WRITE_PRACTICE_TITLE = "Write Practice";
+    private final String QUIZ_TITLE = "Quiz";
+    private final String MULTI_DICTIONARY_RESULT_TITLE = "Multi dictionary result";
+    private final String GRAMMAR_SHOW_TITLE = "Grammar show";
+
     private final String NUMBER_OF_WRITE_TESTS = "5";
+
+    private final String TRANSLATION_WORD_TO_FIND = "болезнь";
+    private final String SPELLING_WORD_TO_FIND = "yamai";
+    private final String KANJI_WORD_TO_FIND = "病";
+    private final String KANA_WORD_TO_FIND = "やまい";
+    private final String GRAMMAR_WORD_TO_FIND = "bakari";
+
+    private final String WRITE_PRACTICE_OPEN_CLASS = "word";
+    private final String WRITE_PRACTICE_CLOSE_CLASS = "wordhidden";
+    private final String WRITE_PRACTICE_CLASS = "class";
+
 
     public JapaneseDictionarySeleniumTest (WebDriver webDriver) {
         this.driver = webDriver;
@@ -28,161 +50,159 @@ public abstract class JapaneseDictionarySeleniumTest {
 
 
     private WelcomePage loginUser() {
-        driver.get(TEST_URL + "auth/login");
+        driver.get(PATH_TO_LOGIN);
         return new LoginPage(driver, wait).loginUser("user", "user");
     }
 
 
     public void whenClickWithDefault_thenSuccessfulLogin () {
-        driver.get(TEST_URL + "auth/login");
+        driver.get(PATH_TO_LOGIN);
         LoginPage loginPage = new LoginPage(driver, wait);
         loginPage.loginDefaultUser();
-        Assertions.assertEquals("Welcome", driver.getTitle());
+        assertEquals(WELCOME_TITLE, driver.getTitle());
     }
 
 
     public void whenValidUser_thenSuccessfulLogin () {
-        driver.get(TEST_URL + "auth/login");
+        driver.get(PATH_TO_LOGIN);
         LoginPage loginPage = new LoginPage(driver, wait);
         loginPage.loginUser("user", "user");
-        Assertions.assertEquals("Welcome", driver.getTitle());
-
+        assertEquals(WELCOME_TITLE, driver.getTitle());
     }
 
 
     public void whenInvalidUser_thenLoginPage () {
-        driver.get(TEST_URL + "auth/login");
+        driver.get(PATH_TO_LOGIN);
         LoginPage loginPage = new LoginPage(driver, wait);
         loginPage.loginUser("user1", "user");
-        Assertions.assertEquals("Auth", driver.getTitle());
+        assertEquals(AUTH_TITLE, driver.getTitle());
     }
 
 
     public void whenInvalidPassword_thenLoginPage () {
-        driver.get(TEST_URL + "auth/login");
+        driver.get(PATH_TO_LOGIN);
         LoginPage loginPage = new LoginPage(driver, wait);
         loginPage.loginUser("user", "user1");
-        Assertions.assertEquals("Auth", driver.getTitle());
+        assertEquals(AUTH_TITLE, driver.getTitle());
     }
 
 
     public void whenDictionaryLink_thenDictionaryPage() {
         loginUser().goToDictionary();
-        Assertions.assertEquals("Base dictionary", driver.getTitle());
+        assertEquals(BASE_DICTIONARY_TITLE, driver.getTitle());
     }
 
 
     public void whenGrammarLink_thenGrammarPage() {
         loginUser().goToGrammar();
-        Assertions.assertEquals("Grammar", driver.getTitle());
+        assertEquals(GRAMMAR_TITLE, driver.getTitle());
     }
 
 
     public void whenWriteTestLink_thenWriteTestPage() {
         loginUser().goToWriteTest();
-        Assertions.assertEquals("Write Practice", driver.getTitle());
+        assertEquals(WRITE_PRACTICE_TITLE, driver.getTitle());
     }
 
 
     public void whenQuizLink_thenQuizPage() {
         loginUser().goToQuiz();
-        Assertions.assertEquals("Quiz", driver.getTitle());
+        assertEquals(QUIZ_TITLE, driver.getTitle());
     }
 
     public void whenLogout_thenAuthPage() {
         loginUser().logout();
-        Assertions.assertEquals("Auth", driver.getTitle());
+        assertEquals(AUTH_TITLE, driver.getTitle());
     }
 
     public void whenChooseTranslationAndInputText_thenDictionaryShow() {
-        loginUser().goToDictionary().chooseTranslation().inputWord("болезнь").submit();
-        Assertions.assertEquals("Multi dictionary result", driver.getTitle());
+        loginUser().goToDictionary().chooseTranslation().inputWord(TRANSLATION_WORD_TO_FIND).submit();
+        assertEquals(MULTI_DICTIONARY_RESULT_TITLE, driver.getTitle());
     }
 
     public void whenChooseSpellingAndInputText_thenDictionaryShow() {
-        loginUser().goToDictionary().chooseSpelling().inputWord("yamai").submit();
-        Assertions.assertEquals("Multi dictionary result", driver.getTitle());
+        loginUser().goToDictionary().chooseSpelling().inputWord(SPELLING_WORD_TO_FIND).submit();
+        assertEquals(MULTI_DICTIONARY_RESULT_TITLE, driver.getTitle());
     }
 
     public void whenChooseKanjiAndInputText_thenDictionaryShow() {
-        loginUser().goToDictionary().chooseKanji().inputWord("病").submit();
-        Assertions.assertEquals("Multi dictionary result", driver.getTitle());
+        loginUser().goToDictionary().chooseKanji().inputWord(KANJI_WORD_TO_FIND).submit();
+        assertEquals(MULTI_DICTIONARY_RESULT_TITLE, driver.getTitle());
     }
 
     public void whenChooseKanaAndInputText_thenDictionaryShow() {
-        loginUser().goToDictionary().chooseKana().inputWord("やまい").submit();
-        Assertions.assertEquals("Multi dictionary result", driver.getTitle());
+        loginUser().goToDictionary().chooseKana().inputWord(KANA_WORD_TO_FIND).submit();
+        assertEquals(MULTI_DICTIONARY_RESULT_TITLE, driver.getTitle());
     }
 
     public void whenChooseDefaultAndInputText_thenDictionaryShow() {
-        loginUser().goToDictionary().chooseKana().chooseDefault().inputWord("болезнь").submit();
-        Assertions.assertEquals("Multi dictionary result", driver.getTitle());
+        loginUser().goToDictionary().chooseKana().chooseDefault().inputWord(TRANSLATION_WORD_TO_FIND).submit();
+        assertEquals(MULTI_DICTIONARY_RESULT_TITLE, driver.getTitle());
     }
 
     public void whenChooseTranslationFullTextAndInputText_thenDictionaryShow() {
-        loginUser().goToDictionary().chooseTranslation().chooseFullMatch().inputWord("болезнь").submit();
-        Assertions.assertEquals("Multi dictionary result", driver.getTitle());
+        loginUser().goToDictionary().chooseTranslation().chooseFullMatch().inputWord(TRANSLATION_WORD_TO_FIND).submit();
+        assertEquals(MULTI_DICTIONARY_RESULT_TITLE, driver.getTitle());
     }
 
     public void whenInputTextAndSubmit_thenGrammarShow() {
-        loginUser().goToGrammar().inputText("bakari").submit();
-        Assertions.assertEquals("Grammar show", driver.getTitle());
+        loginUser().goToGrammar().inputText(GRAMMAR_WORD_TO_FIND).submit();
+        assertEquals(GRAMMAR_SHOW_TITLE, driver.getTitle());
     }
 
     public void whenChooseKanaAndInputInWrite_thenWriteShowUnhiddenKana() {
         WritePracticeShowPage showPage = loginUser().goToWriteTest().chooseKana().inputNumberOfTasks(NUMBER_OF_WRITE_TESTS).submit();
-        Assertions.assertEquals("word", driver.findElement(showPage.getKanaRowBy()).getAttribute("class"));
-        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getKanjiRowBy()).getAttribute("class"));
-        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getRomadjiRowBy()).getAttribute("class"));
-        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getTranslationRowBy()).getAttribute("class"));
+        assertEquals(WRITE_PRACTICE_OPEN_CLASS, driver.findElement(showPage.getKanaRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
+        assertEquals(WRITE_PRACTICE_CLOSE_CLASS, driver.findElement(showPage.getKanjiRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
+        assertEquals(WRITE_PRACTICE_CLOSE_CLASS, driver.findElement(showPage.getRomadjiRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
+        assertEquals(WRITE_PRACTICE_CLOSE_CLASS, driver.findElement(showPage.getTranslationRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
     }
 
     public void whenChooseKanjiAndInputInWrite_thenWriteShowUnhiddenKanji() {
         WritePracticeShowPage showPage = loginUser().goToWriteTest().chooseKanji().inputNumberOfTasks(NUMBER_OF_WRITE_TESTS).submit();
-        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getKanaRowBy()).getAttribute("class"));
-        Assertions.assertEquals("word", driver.findElement(showPage.getKanjiRowBy()).getAttribute("class"));
-        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getRomadjiRowBy()).getAttribute("class"));
-        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getTranslationRowBy()).getAttribute("class"));
+        assertEquals(WRITE_PRACTICE_CLOSE_CLASS, driver.findElement(showPage.getKanaRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
+        assertEquals(WRITE_PRACTICE_OPEN_CLASS, driver.findElement(showPage.getKanjiRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
+        assertEquals(WRITE_PRACTICE_CLOSE_CLASS, driver.findElement(showPage.getRomadjiRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
+        assertEquals(WRITE_PRACTICE_CLOSE_CLASS, driver.findElement(showPage.getTranslationRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
     }
 
     public void whenChooseRomajiAndInputInWrite_thenWriteShowUnhiddenRomaji() {
         WritePracticeShowPage showPage = loginUser().goToWriteTest().chooseSpelling().inputNumberOfTasks(NUMBER_OF_WRITE_TESTS).submit();
-        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getKanaRowBy()).getAttribute("class"));
-        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getKanjiRowBy()).getAttribute("class"));
-        Assertions.assertEquals("word", driver.findElement(showPage.getRomadjiRowBy()).getAttribute("class"));
-        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getTranslationRowBy()).getAttribute("class"));
+        assertEquals(WRITE_PRACTICE_CLOSE_CLASS, driver.findElement(showPage.getKanaRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
+        assertEquals(WRITE_PRACTICE_CLOSE_CLASS, driver.findElement(showPage.getKanjiRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
+        assertEquals(WRITE_PRACTICE_OPEN_CLASS, driver.findElement(showPage.getRomadjiRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
+        assertEquals(WRITE_PRACTICE_CLOSE_CLASS, driver.findElement(showPage.getTranslationRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
     }
 
     public void whenChooseTranslationAndInputInWrite_thenWriteShowUnhiddenTranslation() {
         WritePracticeShowPage showPage = loginUser().goToWriteTest().chooseTranslation().inputNumberOfTasks(NUMBER_OF_WRITE_TESTS).submit();
-        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getKanaRowBy()).getAttribute("class"));
-        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getKanjiRowBy()).getAttribute("class"));
-        Assertions.assertEquals("wordhidden", driver.findElement(showPage.getRomadjiRowBy()).getAttribute("class"));
-        Assertions.assertEquals("word", driver.findElement(showPage.getTranslationRowBy()).getAttribute("class"));
+        assertEquals(WRITE_PRACTICE_CLOSE_CLASS, driver.findElement(showPage.getKanaRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
+        assertEquals(WRITE_PRACTICE_CLOSE_CLASS, driver.findElement(showPage.getKanjiRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
+        assertEquals(WRITE_PRACTICE_CLOSE_CLASS, driver.findElement(showPage.getRomadjiRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
+        assertEquals(WRITE_PRACTICE_OPEN_CLASS, driver.findElement(showPage.getTranslationRowBy()).getAttribute(WRITE_PRACTICE_CLASS));
     }
 
     public void whenTooManyTasksInput_thenWritePracticeIndex() {
         loginUser().goToWriteTest().inputNumberOfTasks("22").submit();
-        Assertions.assertEquals("Write Practice", driver.getTitle());
+        assertEquals(WRITE_PRACTICE_TITLE, driver.getTitle());
     }
 
     public void whenGiveQuizTasks_thenGetRightNumberOfTasks() {
-        Random random = new Random();
-        int testNumberOfTasks = random.nextInt(20)+1;
-        int testNumberOfOptions = random.nextInt(8)+2;
+        int testNumberOfTasks = 10;
+        int testNumberOfOptions = 5;
         QuizShowPage quizShowPage = loginUser().goToQuiz()
                 .inputNumberOfTasks(String.valueOf(testNumberOfTasks))
                 .inputNumberOfOptions(String.valueOf(testNumberOfOptions))
                 .submit();
         int realNumberOfTasks = driver.findElements(quizShowPage.getQuizTaskBy()).size();
         int realNumberOfOptions = driver.findElements(quizShowPage.getQuizOptionBy()).size();
-        Assertions.assertEquals(testNumberOfTasks, realNumberOfTasks);
-        Assertions.assertEquals(testNumberOfTasks*testNumberOfOptions, realNumberOfOptions);
+        assertEquals(testNumberOfTasks, realNumberOfTasks);
+        assertEquals(testNumberOfTasks*testNumberOfOptions, realNumberOfOptions);
     }
 
     @AfterEach
     public void quit () throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         driver.quit();
     }
 }
