@@ -93,6 +93,11 @@ public class JapaneseDictionarySeleniumFirefoxTest extends JapaneseDictionarySel
     }
 
     @Test
+    public void whenInputTextAndSubmitAndGoToLastPage_thenGrammarShow_Firefox() {
+        whenInputTextAndSubmitAndGoToLastPage_thenGrammarShow();
+    }
+
+    @Test
     public void whenChooseKanaAndInputInWrite_thenWriteShowHiddenKana_Firefox() {
         whenChooseKanaAndInputInWrite_thenWriteShowUnhiddenKana();
     }

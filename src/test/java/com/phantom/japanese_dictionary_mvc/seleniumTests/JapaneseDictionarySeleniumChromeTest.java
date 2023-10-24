@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 public class JapaneseDictionarySeleniumChromeTest extends JapaneseDictionarySeleniumTest {
 
@@ -92,6 +94,11 @@ public class JapaneseDictionarySeleniumChromeTest extends JapaneseDictionarySele
     @Test
     public void whenInputTextAndSubmit_thenGrammarShow_Chrome() {
         whenInputTextAndSubmit_thenGrammarShow();
+    }
+
+    @Test
+    public void whenInputTextAndSubmitAndGoToLastPage_thenGrammarShow_Chrome() {
+        whenInputTextAndSubmitAndGoToLastPage_thenGrammarShow();
     }
 
     @Test

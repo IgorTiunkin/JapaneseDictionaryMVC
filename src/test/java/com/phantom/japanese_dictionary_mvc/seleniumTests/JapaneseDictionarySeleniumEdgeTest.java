@@ -93,6 +93,11 @@ public class JapaneseDictionarySeleniumEdgeTest extends JapaneseDictionarySeleni
     }
 
     @Test
+    public void whenInputTextAndSubmitAndGoToLastPage_thenGrammarShow_Edge() {
+        whenInputTextAndSubmitAndGoToLastPage_thenGrammarShow();
+    }
+
+    @Test
     public void whenChooseKanaAndInputInWrite_thenWriteShowHiddenKana_Edge() {
         whenChooseKanaAndInputInWrite_thenWriteShowUnhiddenKana();
     }

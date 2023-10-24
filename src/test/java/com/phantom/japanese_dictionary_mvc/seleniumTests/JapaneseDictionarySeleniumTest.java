@@ -1,11 +1,9 @@
 package com.phantom.japanese_dictionary_mvc.seleniumTests;
 
-import com.phantom.japanese_dictionary_mvc.pageObject.LoginPage;
-import com.phantom.japanese_dictionary_mvc.pageObject.QuizShowPage;
-import com.phantom.japanese_dictionary_mvc.pageObject.WelcomePage;
-import com.phantom.japanese_dictionary_mvc.pageObject.WritePracticeShowPage;
+import com.phantom.japanese_dictionary_mvc.pageObject.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.test.context.ActiveProfiles;
@@ -148,6 +146,13 @@ public abstract class JapaneseDictionarySeleniumTest {
     public void whenInputTextAndSubmit_thenGrammarShow() {
         loginUser().goToGrammar().inputText(GRAMMAR_WORD_TO_FIND).submit();
         assertEquals(GRAMMAR_SHOW_TITLE, driver.getTitle());
+    }
+
+    //Test for checking navigation - work only for dev
+    public void whenInputTextAndSubmitAndGoToLastPage_thenGrammarShow(){
+        GrammarIndexPage grammarIndexPage = loginUser().goToGrammar().inputText(GRAMMAR_WORD_TO_FIND).submit().goToPage(2);
+        assertEquals(GRAMMAR_SHOW_TITLE, driver.getTitle());
+        assertEquals(6, driver.findElements(grammarIndexPage.getTableResultBy()).size());
     }
 
     public void whenChooseKanaAndInputInWrite_thenWriteShowUnhiddenKana() {
