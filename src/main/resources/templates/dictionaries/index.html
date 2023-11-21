@@ -7,17 +7,15 @@
 <body style="background: bisque">
 <div th:replace="allheader::top_header"></div>
 <div th:replace="allheader::dictionary_subheader"></div>
-<h1 style="text-align: center; padding-top: 0px;">Словарь</h1>
+<h1 style="text-align: center; padding-top: 0px;">[[#{auth.dictionaries.h1}]]</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto; font-size: 18px">
-        <p style="line-height: 1.5; text-align: justify">Записи в данном словаре содержат несколько полей, по каждому из которых можно искать.
-        Вы можете выбрать поле поиска самостоятельно, отметив одну из опций под строкой для ввода текста.
-        Подробнее о настройках поиска можно прочесть внизу.</p>
+        <p style="line-height: 1.5; text-align: justify">[[#{auth.dictionaries.welcome.message}]]</p>
 
         <form th:method="GET" th:action="@{/dictionary/show}" th:object="${request}">
-            <label for="word" >Введите слово или его часть </label>
+            <label for="word" >[[#{auth.dictionaries.word.label}]]</label>
             <input style="width: 400px" type="text" th:field = "*{word}" id = "word"/>
-            <input type="submit" value="Поиск">
+            <input type="submit" th:value="#{auth.dictionaries.submit.value}">
             <div style="color:red" th:if="${#fields.hasErrors('word')}" th:errors="*{word}"></div>
             <ul style="padding-left: 0px">
                 <li style="display: inline" th:each="type : ${types}">
@@ -28,36 +26,36 @@
             </ul>
             <input type="checkbox" th:field = "*{onlyFullMatch}"
                    style="vertical-align: middle; position: relative" id = "full"/>
-            <label for="full" th:text="'Только полные совпадения'">  </label>
+            <label for="full" th:text="#{auth.dictionaries.fullmatch}">  </label>
         </form>
         <br>
         <p style="line-height: 1.5">
-            В каждой записи есть следующие поля, которые будут выводиться при любом запросе: <br>
+            [[#{auth.dictionaries.comment.1}]] <br>
             <br>
-            <b>Пример:</b><br>
-            <i>Иероглифы:</i> 病<br>
-            <i>Кана:</i> やまい<br>
-            <i>Перевод:</i> болезнь, дурная привычка<br>
-            <i>Транслитерация:</i> yamai <br>
-            Если вы хотите целенаправленно искать по конкретному полю, отметьте соответствующую опцию.
+            <b>[[#{auth.dictionaries.comment.2}]]</b><br>
+            <i>[[#{auth.dictionaries.comment.3}]]</i> 病<br>
+            <i>[[#{auth.dictionaries.comment.4}]]</i> やまい<br>
+            <i>[[#{auth.dictionaries.comment.5}]]</i> болезнь, дурная привычка<br>
+            <i>[[#{auth.dictionaries.comment.6}]]</i> yamai <br>
+            [[#{auth.dictionaries.comment.7}]]
         </p>
         <hr>
-        <p style="line-height: 1.5; padding-bottom: 6px;" >Доступен поиск по умолчанию.<br>
-            Этот поиск будет определять поле по следующему принципу:<br>
+        <p style="line-height: 1.5; padding-bottom: 6px;" >[[#{auth.dictionaries.comment.8}]]<br>
+            [[#{auth.dictionaries.comment.9}]]<br>
             <br>
-            Запрос на кириллице - поиск по переводу.<br>
-            Запрос на латинице - поиск по транслитерации.<br>
-            Запрос с использованием иероглифов - поиск по иероглифам.<br>
-            Запрос с использованием каны - поиск по кане. <br>
-            Не смешивайте разные языки (за исключением иероглифов и каны).<br>
+            [[#{auth.dictionaries.comment.10}]]<br>
+            [[#{auth.dictionaries.comment.11}]]<br>
+            [[#{auth.dictionaries.comment.12}]]<br>
+            [[#{auth.dictionaries.comment.13}]]<br>
+            [[#{auth.dictionaries.comment.14}]]<br>
         </p>
         <hr>
-        <p style="line-height: 1.5; padding-bottom: 6px;"> Также доступна опция "Только полные совпадения". <br>
-            Правила определения: <br>
+        <p style="line-height: 1.5; padding-bottom: 6px;"> [[#{auth.dictionaries.comment.15}]]<br>
+            [[#{auth.dictionaries.comment.16}]] <br>
             <br>
-            Для иероглифов и каны будет выдана только запись с данным словом.<br>
-            Для транслитерации будут выданы записи, где данное слово встречается изолированно. <br>
-            Для перевода на русский язык будут выданы записи, где данное слово встречается изолированно именно в запрошенной форме.
+            [[#{auth.dictionaries.comment.17}]]<br>
+            [[#{auth.dictionaries.comment.18}]] <br>
+            [[#{auth.dictionaries.comment.19}]]
         </p>
     </div>
 </div>
