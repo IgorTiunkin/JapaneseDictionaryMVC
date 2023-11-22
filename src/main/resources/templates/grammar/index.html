@@ -7,32 +7,32 @@
 <body style="background: bisque">
 <div th:replace="allheader::top_header"></div>
 <div th:replace="allheader::grammar_subheader"></div>
-<h1 style="text-align: center">Грамматический словарь</h1>
+<h1 style="text-align: center">[[#{grammar.index.h1}]]</h1>
 <div style="font-size: 18px">
     <div style="width: 50%;  margin: 0 auto">
-    <p>Укажите часть грамматической конструкции, и мы постараемся подобрать аналог из нашей базы</p>
+    <p>[[#{grammar.index.welcome.message}]]</p>
 
     <form th:method="GET" th:action="@{/grammar/show}" th:object="${request}">
-        <label for="word">Введите слово или его часть </label>
+        <label for="word">[[#{grammar.index.word.label}]]</label>
         <input type="text" th:field = "*{word}" id = "word"/>
-        <input type="submit" value="Поиск">
+        <input type="submit" th:value="#{grammar.index.submit.value}">
         <div style="color:red" th:if="${#fields.hasErrors('word')}" th:errors="*{word}"></div>
     </form>
         <br>
-        <p style="padding-bottom: 6px">В качестве запроса используйте английскую транслитерацию. <br>
+        <p style="padding-bottom: 6px">[[#{grammar.index.comment.1}]]<br>
             <br>
-            <b>Примеры запросов:</b> <br>
+            <b>[[#{grammar.index.comment.2}]]</b> <br>
             to shite <br>
             bakari ka <br>
             totan <br>
         </p>
 
         <p>
-            <b>Формат выдачи:</b><br>
-            Структура конструкции<br>
-            Значение и применение<br>
-            Пример<br>
-            Источник, где можно про нее почитать.
+            <b>[[#{grammar.index.comment.3}]]</b><br>
+            [[#{grammar.index.comment.4}]]<br>
+            [[#{grammar.index.comment.5}]]<br>
+            [[#{grammar.index.comment.6}]]<br>
+            [[#{grammar.index.comment.7}]]
         </p>
 
     </div>

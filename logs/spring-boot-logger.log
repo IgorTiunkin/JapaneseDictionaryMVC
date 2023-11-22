@@ -211,3 +211,97 @@
 2023-11-22 13:23:31,359 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  CAEDF8BB2D08BD12D30122B35BC9DAFB  GET : /images/ja.png
 2023-11-22 13:23:31,363 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :image/png
 2023-11-22 13:23:31,363 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :image/png
+2023-11-22 14:06:42,450 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2023-11-22 14:06:42,454 INFO org.springframework.boot.StartupInfoLogger [main] Starting JapaneseDictionaryMvcApplication using Java 11.0.9.1 on Mabo with PID 14100 (C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc\target\classes started by Admin in C:\Users\Admin\Desktop\jav\intel ultim folder\japanese_dictionary_mvc)
+2023-11-22 14:06:42,455 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.5.0, Spring v5.3.7
+2023-11-22 14:06:42,455 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2023-11-22 14:06:42,766 WARN org.springframework.core.log.CompositeLog [background-preinit] For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-11-22 14:06:43,134 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-22 14:06:43,204 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 62 ms. Found 4 JPA repository interfaces.
+2023-11-22 14:06:43,653 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-11-22 14:06:43,660 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-11-22 14:06:43,661 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-11-22 14:06:43,661 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-11-22 14:06:43,797 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-11-22 14:06:43,797 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1306 ms
+2023-11-22 14:06:43,917 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-22 14:06:43,964 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.31.Final
+2023-11-22 14:06:44,059 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-11-22 14:06:44,153 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-11-22 14:06:44,510 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-11-22 14:06:44,525 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-11-22 14:06:45,152 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-22 14:06:45,160 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-22 14:06:45,448 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-22 14:06:45,734 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e09c0b, org.springframework.security.web.context.SecurityContextPersistenceFilter@3085befb, org.springframework.security.web.header.HeaderWriterFilter@7730da00, org.springframework.security.web.authentication.logout.LogoutFilter@448fa659, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4edd8a0a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2bc0603f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4542af89, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4880a9d, org.springframework.security.web.session.SessionManagementFilter@3fdede3a, org.springframework.security.web.access.ExceptionTranslationFilter@125a8ab6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10b5ff4d]
+2023-11-22 14:06:46,004 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-11-22 14:06:46,020 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-22 14:06:46,029 INFO org.springframework.boot.StartupInfoLogger [main] Started JapaneseDictionaryMvcApplication in 4.121 seconds (JVM running for 6.433)
+2023-11-22 14:06:46,030 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state LivenessState changed to CORRECT
+2023-11-22 14:06:46,031 INFO org.springframework.boot.availability.ApplicationAvailabilityBean [main] Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2023-11-22 14:06:52,473 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-22 14:06:52,473 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-11-22 14:06:52,474 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2023-11-22 14:06:52,872 WARN org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [377] milliseconds.
+2023-11-22 14:06:52,874 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  15E4E75577E2285BEBCB14B9FE05749E  GET : /auth/login
+2023-11-22 14:06:53,172 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-11-22 14:06:53,214 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  15E4E75577E2285BEBCB14B9FE05749E  GET : /images/ru.png
+2023-11-22 14:06:53,218 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  15E4E75577E2285BEBCB14B9FE05749E  GET : /images/en.png
+2023-11-22 14:06:53,219 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  15E4E75577E2285BEBCB14B9FE05749E  GET : /images/ja.png
+2023-11-22 14:06:53,232 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :image/png
+2023-11-22 14:06:53,232 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :image/png
+2023-11-22 14:06:53,232 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :image/png
+2023-11-22 14:06:55,226 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  0A5588FFDCC64F73F17FDE01BD16BD67  GET : /welcome
+2023-11-22 14:06:55,244 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-11-22 14:06:58,273 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  0A5588FFDCC64F73F17FDE01BD16BD67  GET : /grammar
+2023-11-22 14:06:58,308 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :text/html;charset=UTF-8
+2023-11-22 14:07:18,379 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  0A5588FFDCC64F73F17FDE01BD16BD67  GET : /grammar/23
+2023-11-22 14:07:18,382 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :null
+2023-11-22 14:07:21,933 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  5A969D052F1A483B0F4C1FCD835AEF6C  GET : /auth/login
+2023-11-22 14:07:21,937 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-11-22 14:07:21,980 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Request  5A969D052F1A483B0F4C1FCD835AEF6C  GET : /images/ru.png
+2023-11-22 14:07:21,984 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-4] Logging Response :image/png
+2023-11-22 14:07:21,984 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  5A969D052F1A483B0F4C1FCD835AEF6C  GET : /images/ja.png
+2023-11-22 14:07:21,984 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  5A969D052F1A483B0F4C1FCD835AEF6C  GET : /images/en.png
+2023-11-22 14:07:21,989 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :image/png
+2023-11-22 14:07:21,989 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :image/png
+2023-11-22 14:07:23,174 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  5A969D052F1A483B0F4C1FCD835AEF6C  GET : /auth/login
+2023-11-22 14:07:23,179 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :text/html;charset=UTF-8
+2023-11-22 14:07:23,228 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  5A969D052F1A483B0F4C1FCD835AEF6C  GET : /images/ru.png
+2023-11-22 14:07:23,231 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  5A969D052F1A483B0F4C1FCD835AEF6C  GET : /images/en.png
+2023-11-22 14:07:23,231 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  5A969D052F1A483B0F4C1FCD835AEF6C  GET : /images/ja.png
+2023-11-22 14:07:23,231 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :image/png
+2023-11-22 14:07:23,235 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :image/png
+2023-11-22 14:07:23,235 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :image/png
+2023-11-22 14:07:24,787 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  1CE7185D94B37C80D467E92CF4115866  GET : /welcome
+2023-11-22 14:07:24,790 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :text/html;charset=UTF-8
+2023-11-22 14:07:26,934 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  1CE7185D94B37C80D467E92CF4115866  GET : /grammar
+2023-11-22 14:07:26,941 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :text/html;charset=UTF-8
+2023-11-22 14:07:39,848 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  E640B03283CE287712CB71B34D341AF7  GET : /auth/login
+2023-11-22 14:07:39,852 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
+2023-11-22 14:07:39,895 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Request  E640B03283CE287712CB71B34D341AF7  GET : /images/ru.png
+2023-11-22 14:07:39,898 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  E640B03283CE287712CB71B34D341AF7  GET : /images/en.png
+2023-11-22 14:07:39,898 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Request  E640B03283CE287712CB71B34D341AF7  GET : /images/ja.png
+2023-11-22 14:07:39,898 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-5] Logging Response :image/png
+2023-11-22 14:07:39,904 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :image/png
+2023-11-22 14:07:39,904 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-7] Logging Response :image/png
+2023-11-22 14:07:41,074 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  E640B03283CE287712CB71B34D341AF7  GET : /auth/login
+2023-11-22 14:07:41,078 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :text/html;charset=UTF-8
+2023-11-22 14:07:41,124 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  E640B03283CE287712CB71B34D341AF7  GET : /images/ru.png
+2023-11-22 14:07:41,127 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :image/png
+2023-11-22 14:07:41,133 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Request  E640B03283CE287712CB71B34D341AF7  GET : /images/ja.png
+2023-11-22 14:07:41,133 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  E640B03283CE287712CB71B34D341AF7  GET : /images/en.png
+2023-11-22 14:07:41,136 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :image/png
+2023-11-22 14:07:41,136 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-1] Logging Response :image/png
+2023-11-22 14:07:42,409 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Request  53DEE3AFEBF6402FA5473DF7040AB1CA  GET : /welcome
+2023-11-22 14:07:42,411 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-3] Logging Response :text/html;charset=UTF-8
+2023-11-22 14:07:43,673 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Request  53DEE3AFEBF6402FA5473DF7040AB1CA  GET : /grammar
+2023-11-22 14:07:43,679 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-2] Logging Response :text/html;charset=UTF-8
+2023-11-22 14:08:13,660 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Request  D9C828372A71FBACA42BC8D8BD0B34DB  GET : /auth/login
+2023-11-22 14:08:13,664 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-6] Logging Response :text/html;charset=UTF-8
+2023-11-22 14:08:13,711 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Request  D9C828372A71FBACA42BC8D8BD0B34DB  GET : /images/ru.png
+2023-11-22 14:08:13,715 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-8] Logging Response :image/png
+2023-11-22 14:08:13,715 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Request  D9C828372A71FBACA42BC8D8BD0B34DB  GET : /images/en.png
+2023-11-22 14:08:13,718 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-9] Logging Response :image/png
+2023-11-22 14:08:13,718 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Request  D9C828372A71FBACA42BC8D8BD0B34DB  GET : /images/ja.png
+2023-11-22 14:08:13,722 INFO com.phantom.japanese_dictionary_mvc.util.RequestResponseLoggingFilter [http-nio-8080-exec-10] Logging Response :image/png
