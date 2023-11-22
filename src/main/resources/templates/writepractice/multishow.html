@@ -16,11 +16,11 @@
 <body style="background: bisque">
 <div th:replace="allheader::top_header"></div>
 <div th:replace="allheader::writepractice_subheader"></div>
-<h1 style="text-align: center">Начинаем письменную практику</h1>
+<h1 style="text-align: center">[[#{writepractice.multishow.h1}]]</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">
-        <p>Чтобы увидеть ответ, наведите мышкой.</p>
-        <p th:text="'Количество выбранных задач - ' + ${writePracticeList.size()}"
+        <p>[[#{writepractice.multishow.comment.1}]]</p>
+        <p th:text="#{writepractice.multishow.number} + ' ' + ${writePracticeList.size()}"
             style="font-size: 18px"></p>
 
         <table th:each="note : ${writePracticeList}" id = "practiceTable">

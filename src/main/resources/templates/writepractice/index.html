@@ -7,19 +7,18 @@
 <body style="background: bisque">
 <div th:replace="allheader::top_header"></div>
 <div th:replace="allheader::writepractice_subheader"></div>
-<h1 style="text-align: center">Письменная практика</h1>
+<h1 style="text-align: center">[[#{writepractice.index.h1}]]</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto; font-size: 18px; line-height: 1.5">
-        <p> В каждом задании четыре поля: перевод, транслитерация, иероглифы, кана.
-        Выберите, какое из полей оставить открытым, - остальные будут скрыты. <br>
-        Попробуйте самостоятельно от руки записать ответы на бумаге.<br>
-        Ежедневная практика прописи от руки очень важна для совершенствования. Проверка на вашей совести:)</p>
+        <p>[[#{writepractice.index.welcome.1}]] <br>
+            [[#{writepractice.index.welcome.2}]] <br>
+            [[#{writepractice.index.welcome.3}]]</p>
 
 
         <form th:method="GET" th:action="@{/write-test/show}" th:object="${writePracticeRequest}">
-            <label for="quantity">Введите количество заданий (не более 20). </label>
+            <label for="quantity">[[#{writepractice.index.tasks.number}]] </label>
             <input style="width: 100px" type="text" th:field = "*{quantity}" id = "quantity"/>
-            <input type="submit" value="Выбор">
+            <input type="submit" th:value="#{writepractice.index.submit.value}">
             <div style="color:red" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></div>
             <ul style="padding-left: 0px">
                 <li style="display: inline" th:each="type : ${types}">
