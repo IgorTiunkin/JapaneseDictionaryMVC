@@ -7,14 +7,14 @@
 <body style="background: bisque">
 <div th:replace="allheader::top_header"></div>
 <div th:replace="allheader::grammar_subheader"></div>
-<h1 style="text-align: center">Результат поиска</h1>
+<h1 style="text-align: center">[[#{grammar.multishow.h1}]]</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">
         <p th:if="${grammarDictionaryReply.getMatchCount()==0}"
-           th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос.'"
+           th:text="#{grammar.multishow.notfound}"
            style="font-size: 18px;color: red" id = "absent"></p>
         <p th:if="${grammarDictionaryReply.getMatchCount()!=0}"
-           th:text = "'Число совпадений в моей базе - ' + ${grammarDictionaryReply.getMatchCount()}"
+           th:text = "#{grammar.multishow.match} + ' ' + ${grammarDictionaryReply.getMatchCount()}"
            style="font-size: 18px; color: blue" id = "match"></p>
         <table th:each="grammarnote : ${grammarDictionaryReply.getGrammarNoteDTOS()}" id = "table">
             <tbody style="font-size: 18px">
@@ -38,19 +38,19 @@
         <div th:if="${grammarDictionaryReply.getIndexOfLastPage() > 0}" style="font-size: 18px">
             <ul style="padding-left: 0px">
                 <li th:if="${currentPage > 0}" style="display: inline">
-                    <a th:href="@{/grammar/show?page=0}" style="text-decoration: none">Первая</a> |
+                    <a th:href="@{/grammar/show?page=0}" style="text-decoration: none">[[#{grammar.multishow.page.first}]]</a> |
                 </li>
                 <li th:if="${currentPage > 0}" style="display: inline">
                     <a th:href="@{/grammar/show?page={previousPage}(previousPage=${currentPage.intValue()-1})}"
-                       style="text-decoration: none">Предыдущая</a> |
+                       style="text-decoration: none">[[#{grammar.multishow.page.previous}]]</a> |
                 </li>
                 <li th:if="${currentPage < grammarDictionaryReply.getIndexOfLastPage()}" style="display: inline">
                     <a th:href="@{/grammar/show?page={nextPage}(nextPage=${currentPage.intValue()+1})}"
-                       style="text-decoration: none">Следующая</a> |
+                       style="text-decoration: none">[[#{grammar.multishow.page.next}]]</a> |
                 </li>
                 <li th:if="${currentPage < grammarDictionaryReply.getIndexOfLastPage()}" style="display: inline">
                     <a th:href="@{/grammar/show?page={lastPage}(lastPage=${grammarDictionaryReply.getIndexOfLastPage()})}"
-                       style="text-decoration: none">Последняя</a>
+                       style="text-decoration: none">[[#{grammar.multishow.page.last}]]</a>
                 </li>
             </ul>
         </div>

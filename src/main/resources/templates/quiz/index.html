@@ -7,21 +7,21 @@
 <body style="background: bisque">
 <div th:replace="allheader::top_header"></div>
 <div th:replace="allheader::quiz_subheader"></div>
-<h1 style="text-align: center">Квиз</h1>
+<h1 style="text-align: center">[[#{quiz.index.h1}]]</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto; font-size: 18px">
-        <p style="line-height: 1.5"> В квизе вам предстоит по предложенному заданию выбрать один из правильных ответов.<br>
-         Доступны два варианта квиза, выбрать которые можно, нажав соответствующую кнопку.<br>
-        - "Иероглифы" : по записи на японском языке нужно определить перевод на русский. <br>
-        - "Перевод" : по записи на русском языке нужно определить перевод на японский. </p>
+        <p style="line-height: 1.5"> [[#{quiz.index.welcome.1}]]<br>
+            [[#{quiz.index.welcome.2}]]<br>
+            [[#{quiz.index.welcome.3}]]<br>
+            [[#{quiz.index.welcome.4}]]</p>
 
 
         <form th:method="GET" th:action="@{/quiz/show}" th:object="${quizrequest}">
-            <span>Введите количество заданий (не более 20)</span>
+            <span>[[#{quiz.index.tasks.number}]]</span>
             <br>
             <input style="width: 150px" type="text" th:field = "*{numberOfTasks}" id = "numberOfTasks"/>
             <br>
-            <span>Введите количество вариантов (от 2 до 10)</span>
+            <span>[[#{quiz.index.options.number}]]</span>
             <br>
             <input style="width: 150px" type="text" th:field = "*{numberOfOptions}" id = "numberOfOptions"/>
             <br>
@@ -34,7 +34,7 @@
                     <label th:for="${type.getText()}" th:text="${type.getText()}"></label>
                 </li>
             </ul>
-            <input type="submit" value="Выбор">
+            <input type="submit" th:value="#{quiz.index.submit.value}">
         </form>
     </div>
 </div>
