@@ -8,7 +8,7 @@
 <body style="background: bisque">
 <div th:replace="allheader::top_header"></div>
 <div th:replace="allheader::quiz_subheader"></div>
-<h1 style="text-align: center">Ваши задания</h1>
+<h1 style="text-align: center">[[#{quiz.multishow.h1}]]</h1>
 
 <div>
     <div style="width: 50%;  margin: 0 auto">
@@ -27,7 +27,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <input type="submit" id="submitButton" th:value="Отослать">
+                    <input type="submit" id="submitButton" th:value="#{quiz.multishow.submit.value}">
         </form>
     </div>
 </div>

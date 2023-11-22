@@ -13,17 +13,17 @@
 <body style="background: bisque">
 <div th:replace="allheader::top_header"></div>
 <div th:replace="allheader::quiz_subheader"></div>
-<h1 style="text-align: center">Ваша статистика</h1>
+<h1 style="text-align: center">[[#{quiz.statistics.h1}]]</h1>
 <div>
     <div style="width: 70%;  margin: 0 auto; font-size: 18px">
         <table>
             <thead></thead>
             <tbody>
             <tr>
-                <th>Дата выполнения</th>
-                <th>Количество верных ответов</th>
-                <th>Количество заданий</th>
-                <th>Задания, на которые дан неправильный ответ</th>
+                <th>[[#{quiz.statistics.table.date}]]</th>
+                <th>[[#{quiz.statistics.table.right}]]</th>
+                <th>[[#{quiz.statistics.table.tasks}]]</th>
+                <th>[[#{quiz.statistics.table.wrong}]]</th>
             </tr>
             <tr th:each="quizResult : ${quizResultList}" th:id="${quizResult.getQuizResultId()}">
                 <td th:text="${quizResult.getDateOfQuiz()}"></td>
@@ -37,7 +37,7 @@
             </tbody>
         </table>
         <br>
-        <a th:href="@{/quiz/exportStatistics}" style="text-decoration: none; font-size: 18px">Выгрузка данных</a>
+        <a th:href="@{/quiz/exportStatistics}" style="text-decoration: none; font-size: 18px">[[#{quiz.statistics.table.import}]]</a>
     </div>
 </div>
 

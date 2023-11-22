@@ -28,10 +28,10 @@
 <body style="background: bisque">
 <div th:replace="allheader::top_header"></div>
 <div th:replace="allheader::quiz_subheader"></div>
-<h1 style="text-align: center">Ваши результаты</h1>
+<h1 style="text-align: center">[[#{quiz.result.h1}]]</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">
-        <p th:text="'Число правильных ответов = ' + ${numberOfRightAnswers} + '/' + ${quiztasks.size()}" style="font-size: 20px"></p>
+        <p th:text="#{quiz.result.right.number} + ' ' + ${numberOfRightAnswers} + '/' + ${quiztasks.size()}" style="font-size: 20px"></p>
         <ul style="padding-left: 0px">
             <li th:each="quiztask, itemStat : *{quiztasks}">
                 <ul style="padding-left: 0px">
@@ -48,8 +48,8 @@
             </li>
         </ul>
         <br>
-        <a  th:href="@{/quiz/saveResult}" th:text="'Сохранить'" class="button"></a>
-        <a  th:href="@{/welcome}" th:text="'Не сохранять'" class="button"></a>
+        <a  th:href="@{/quiz/saveResult}" th:text="#{quiz.result.save}" class="button"></a>
+        <a  th:href="@{/welcome}" th:text="#{quiz.result.return}" class="button"></a>
      </div>
 </div>
 
