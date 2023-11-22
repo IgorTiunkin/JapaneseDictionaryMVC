@@ -8,16 +8,16 @@
 <div th:fragment="top_header" class="">
     <div>
         <div style="width: 50%;  margin: 0 auto; font-size: 18px">
-            <span>Навигация по разделам</span>
+            <span>[[#{allheader.navi.title}]]</span>
             <nav>
-                <a th:href="@{/dictionary}" th:text="'Основной словарь'" style="text-decoration: none;"></a> |
-                <a th:href="@{/grammar}" th:text="'Грамматический словарь'" style="text-decoration: none;"></a> |
-                <a th:href="@{/write-test}" th:text="'Письменная практика'" style="text-decoration: none;"></a> |
-                <a th:href="@{/quiz}" th:text="'Квиз'" style="text-decoration: none;"></a>
+                <a th:href="@{/dictionary}" th:text="#{allheader.navi.dictionary}" style="text-decoration: none;"></a> |
+                <a th:href="@{/grammar}" th:text="#{allheader.navi.grammar}" style="text-decoration: none;"></a> |
+                <a th:href="@{/write-test}" th:text="#{allheader.navi.writepractice}" style="text-decoration: none;"></a> |
+                <a th:href="@{/quiz}" th:text="#{allheader.navi.quiz}" style="text-decoration: none;"></a>
             </nav> <br>
-            <span>Действия пользователя</span>
+            <span>[[#{allheader.navi.user.action}]]</span>
             <nav>
-                <a th:href="@{/logout}" th:text="'Выход'" style="text-decoration: none;"></a>
+                <a th:href="@{/logout}" th:text="#{allheader.navi.user.action.logout}" style="text-decoration: none;"></a>
             </nav> <br>
         </div>
     </div>
@@ -27,7 +27,7 @@
     <div>
         <div style="width: 50%;  margin: 0 auto">
             <nav>
-                <a th:href="@{/grammar}" th:text="'Поиск по грамматике'" style="text-decoration: none; font-size: 18px"></a>
+                <a th:href="@{/grammar}" th:text="#{allheader.navi.grammar.search}" style="text-decoration: none; font-size: 18px"></a>
             </nav>
         </div>
     </div>
@@ -37,7 +37,7 @@
     <div>
         <div style="width: 50%;  margin: 0 auto">
             <nav>
-                <a th:href="@{/dictionary}" th:text="'Поиск по словарю'" style="text-decoration: none; font-size: 18px"></a>
+                <a th:href="@{/dictionary}" th:text="#{allheader.navi.dictionary.search}" style="text-decoration: none; font-size: 18px"></a>
             </nav>
         </div>
     </div>
@@ -47,7 +47,7 @@
     <div>
         <div style="width: 50%;  margin: 0 auto">
             <nav>
-                <a th:href="@{/write-test}" th:text="'Выбор параметров письменной практики'" style="text-decoration: none; font-size: 18px"></a>
+                <a th:href="@{/write-test}" th:text="#{allheader.navi.writepractice.search}" style="text-decoration: none; font-size: 18px"></a>
             </nav>
         </div>
     </div>
@@ -57,8 +57,8 @@
     <div>
         <div style="width: 50%;  margin: 0 auto">
             <nav>
-                <a th:href="@{/quiz}" th:text="'Старт квиза'" style="text-decoration: none; font-size: 18px"></a> |
-                <a th:href="@{/quiz/showStatistics}" th:text="'Статистика'" style="text-decoration: none; font-size: 18px"></a>
+                <a th:href="@{/quiz}" th:text="#{allheader.navi.quiz.search}" style="text-decoration: none; font-size: 18px"></a> |
+                <a th:href="@{/quiz/showStatistics}" th:text="#{allheader.navi.quiz.statistics}" style="text-decoration: none; font-size: 18px"></a>
             </nav>
         </div>
     </div>
