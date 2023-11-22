@@ -6,6 +6,7 @@ import com.phantom.japanese_dictionary_mvc.services.PeopleService;
 import com.phantom.japanese_dictionary_mvc.util.PersonValidator;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.Locale;
 
 @Controller
 @RequestMapping("/auth")

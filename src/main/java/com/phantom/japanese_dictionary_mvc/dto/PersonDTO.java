@@ -14,12 +14,12 @@ import javax.validation.constraints.Size;
 @ToString
 public class PersonDTO {
 
-    @NotEmpty(message = "Имя пользователя не может быть пустым")
-    @Size(min = 2, max = 100, message = "Допустимый размер от 2 и до 100 символов")
+    @NotEmpty(message = "{persondto.username.not-empty}")
+    @Size(min = 2, max = 100, message = "{persondto.username.size}")
     private String username;
 
-    @NotEmpty(message = "Пароль не может быть пустым")
-    @Size (min = 2, max = 100, message = "Допустимый размер от 2 и до 100 символов")
+    @NotEmpty(message = "{persondto.password.not-empty}")
+    @Size (min = 2, max = 100, message = "{persondto.password.size}")
     private String password;
 
     private String role;
