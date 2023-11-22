@@ -7,15 +7,15 @@
 <body style="background: bisque">
 <div th:replace="allheader::top_header"></div>
 <div th:replace="allheader::dictionary_subheader"></div>
-<h1 style="text-align: center; padding-top: 0px;">[[#{auth.dictionaries.h1}]]</h1>
+<h1 style="text-align: center; padding-top: 0px;">[[#{dictionaries.index.h1}]]</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto; font-size: 18px">
-        <p style="line-height: 1.5; text-align: justify">[[#{auth.dictionaries.welcome.message}]]</p>
+        <p style="line-height: 1.5; text-align: justify">[[#{dictionaries.index.welcome.message}]]</p>
 
         <form th:method="GET" th:action="@{/dictionary/show}" th:object="${request}">
-            <label for="word" >[[#{auth.dictionaries.word.label}]]</label>
+            <label for="word" >[[#{dictionaries.index.word.label}]]</label>
             <input style="width: 400px" type="text" th:field = "*{word}" id = "word"/>
-            <input type="submit" th:value="#{auth.dictionaries.submit.value}">
+            <input type="submit" th:value="#{dictionaries.index.submit.value}">
             <div style="color:red" th:if="${#fields.hasErrors('word')}" th:errors="*{word}"></div>
             <ul style="padding-left: 0px">
                 <li style="display: inline" th:each="type : ${types}">
@@ -26,36 +26,36 @@
             </ul>
             <input type="checkbox" th:field = "*{onlyFullMatch}"
                    style="vertical-align: middle; position: relative" id = "full"/>
-            <label for="full" th:text="#{auth.dictionaries.fullmatch}">  </label>
+            <label for="full" th:text="#{dictionaries.index.fullmatch}">  </label>
         </form>
         <br>
         <p style="line-height: 1.5">
-            [[#{auth.dictionaries.comment.1}]] <br>
+            [[#{dictionaries.index.comment.1}]] <br>
             <br>
-            <b>[[#{auth.dictionaries.comment.2}]]</b><br>
-            <i>[[#{auth.dictionaries.comment.3}]]</i> 病<br>
-            <i>[[#{auth.dictionaries.comment.4}]]</i> やまい<br>
-            <i>[[#{auth.dictionaries.comment.5}]]</i> болезнь, дурная привычка<br>
-            <i>[[#{auth.dictionaries.comment.6}]]</i> yamai <br>
-            [[#{auth.dictionaries.comment.7}]]
+            <b>[[#{dictionaries.index.comment.2}]]</b><br>
+            <i>[[#{dictionaries.index.comment.3}]]</i> 病<br>
+            <i>[[#{dictionaries.index.comment.4}]]</i> やまい<br>
+            <i>[[#{dictionaries.index.comment.5}]]</i> болезнь, дурная привычка<br>
+            <i>[[#{dictionaries.index.comment.6}]]</i> yamai <br>
+            [[#{dictionaries.index.comment.7}]]
         </p>
         <hr>
-        <p style="line-height: 1.5; padding-bottom: 6px;" >[[#{auth.dictionaries.comment.8}]]<br>
-            [[#{auth.dictionaries.comment.9}]]<br>
+        <p style="line-height: 1.5; padding-bottom: 6px;" >[[#{dictionaries.index.comment.8}]]<br>
+            [[#{dictionaries.index.comment.9}]]<br>
             <br>
-            [[#{auth.dictionaries.comment.10}]]<br>
-            [[#{auth.dictionaries.comment.11}]]<br>
-            [[#{auth.dictionaries.comment.12}]]<br>
-            [[#{auth.dictionaries.comment.13}]]<br>
-            [[#{auth.dictionaries.comment.14}]]<br>
+            [[#{dictionaries.index.comment.10}]]<br>
+            [[#{dictionaries.index.comment.11}]]<br>
+            [[#{dictionaries.index.comment.12}]]<br>
+            [[#{dictionaries.index.comment.13}]]<br>
+            [[#{dictionaries.index.comment.14}]]<br>
         </p>
         <hr>
-        <p style="line-height: 1.5; padding-bottom: 6px;"> [[#{auth.dictionaries.comment.15}]]<br>
-            [[#{auth.dictionaries.comment.16}]] <br>
+        <p style="line-height: 1.5; padding-bottom: 6px;"> [[#{dictionaries.index.comment.15}]]<br>
+            [[#{dictionaries.index.comment.16}]] <br>
             <br>
-            [[#{auth.dictionaries.comment.17}]]<br>
-            [[#{auth.dictionaries.comment.18}]] <br>
-            [[#{auth.dictionaries.comment.19}]]
+            [[#{dictionaries.index.comment.17}]]<br>
+            [[#{dictionaries.index.comment.18}]] <br>
+            [[#{dictionaries.index.comment.19}]]
         </p>
     </div>
 </div>

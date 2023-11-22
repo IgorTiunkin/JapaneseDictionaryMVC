@@ -7,17 +7,17 @@
 <body style="background: bisque">
 <div th:replace="allheader::top_header"></div>
 <div th:replace="allheader::dictionary_subheader"></div>
-<h1 style="text-align: center">Результат поиска</h1>
+<h1 style="text-align: center">[[#{dictionaries.multishow.h1}]]</h1>
 <div>
     <div style="width: 50%;  margin: 0 auto">
         <p th:if="${dictionaryReply.getFullMatchCount()==0 && dictionaryReply.getPartialMatchCount()==0}"
-           th:text="'В моей базе ничего не нашлось. Попробуйте другой запрос или фильтр.'"
+           th:text="#{dictionaries.multishow.notfound}"
             style="font-size: 18px; color: red" id = "absent"></p>
         <p th:if="${dictionaryReply.getFullMatchCount()>0}"
-           th:text = "'Число полных совпадений в моей базе - ' + ${dictionaryReply.getFullMatchCount()}"
+           th:text = "#{dictionaries.multishow.fullmatch} + ' ' + ${dictionaryReply.getFullMatchCount()}"
            style="font-size: 18px; color: blue" id = "fullPresent"><br></p>
         <p th:if="${dictionaryReply.getPartialMatchCount()>0}"
-           th:text = "'Число частичных совпадений в моей базе - ' + ${dictionaryReply.getPartialMatchCount()}"
+           th:text = "#{dictionaries.multishow.partmatch} + ' ' + ${dictionaryReply.getPartialMatchCount()}"
            style="font-size: 18px; color: blue" id = "partialPresent"></p>
         <table th:each="note : ${dictionaryReply.getNoteDTOS()}" id = "fullTable">
             <tbody >
@@ -40,19 +40,19 @@
         <div th:if="${dictionaryReply.getIndexOfLastPage() > 0}" style="font-size: 18px">
             <ul style="padding-left: 0px">
                 <li th:if="${currentPage > 0}" style="display: inline">
-                    <a th:href="@{/dictionary/show?page=0}" style="text-decoration: none">Первая</a> |
+                    <a th:href="@{/dictionary/show?page=0}" style="text-decoration: none">[[#{dictionaries.multishow.page.first}]]</a> |
                 </li>
                 <li th:if="${currentPage > 0}" style="display: inline">
                     <a th:href="@{/dictionary/show?page={previousPage}(previousPage=${currentPage.intValue()-1})}"
-                       style="text-decoration: none">Предыдущая</a> |
+                       style="text-decoration: none">[[#{dictionaries.multishow.page.previous}]]</a> |
                 </li>
                 <li th:if="${currentPage < dictionaryReply.getIndexOfLastPage()}" style="display: inline">
                     <a th:href="@{/dictionary/show?page={nextPage}(nextPage=${currentPage.intValue()+1})}"
-                       style="text-decoration: none">Следующая</a> |
+                       style="text-decoration: none">[[#{dictionaries.multishow.page.next}]]</a> |
                 </li>
                 <li th:if="${currentPage < dictionaryReply.getIndexOfLastPage()}" style="display: inline">
                     <a th:href="@{/dictionary/show?page={lastPage}(lastPage=${dictionaryReply.getIndexOfLastPage()})}"
-                       style="text-decoration: none">Последняя</a>
+                       style="text-decoration: none">[[#{dictionaries.multishow.page.last}]]</a>
                 </li>
             </ul>
         </div>
