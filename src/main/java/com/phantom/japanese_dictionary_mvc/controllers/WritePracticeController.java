@@ -23,7 +23,8 @@ import java.util.List;
 public class WritePracticeController {
     private final NoteService noteService;
     private final static Logger LOGGER = LoggerFactory.getLogger(WritePracticeController.class);
-    private final static List<RequestType> REQUEST_TYPE_LIST = List.of(RequestType.TRANSLATION, RequestType.SPELLING, RequestType.KANJI, RequestType.KANA);
+    private final static List<RequestType> REQUEST_TYPE_LIST =
+            List.of(RequestType.TRANSLATION, RequestType.SPELLING, RequestType.KANJI, RequestType.KANA);
 
 
     @Autowired

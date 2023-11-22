@@ -5,20 +5,21 @@
     <title>Auth</title>
 </head>
 <body style="background: bisque">
+
 <div>
     <div style="width: 50%;  margin: 0 auto; font-size: 18px; line-height: 1.5; text-align: justify" >
-        <p style="text-align: right">
-        <a th:href="@{?lang=ru}">
-            <img th:src="@{/images/ru.png}"/>
-        </a>
-        <a th:href="@{?lang=en}">
-            <img th:src="@{/images/en.png}"/>
-        </a>
-        <a th:href="@{?lang=ja}">
-            <img th:src="@{/images/ja.png}"/>
-        </a>
-        </p>
         <h1 style="text-align: center">[[#{auth.login.h1}]]</h1>
+        <p style="text-align: right">
+            <a th:href="@{?lang=ru}">
+                <img th:src="@{/images/ru.png}"/>
+            </a>
+            <a th:href="@{?lang=en}">
+                <img th:src="@{/images/en.png}"/>
+            </a>
+            <a th:href="@{?lang=ja}">
+                <img th:src="@{/images/ja.png}"/>
+            </a>
+        </p>
         <p>[[#{auth.login.welcome.message}]]</p>
      </div>
 </div>

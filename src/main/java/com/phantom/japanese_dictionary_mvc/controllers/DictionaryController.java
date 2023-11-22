@@ -16,6 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -25,6 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.io.IOException;
+import java.util.Locale;
 
 @Controller
 @RequestMapping("/dictionary")
@@ -42,6 +44,7 @@ public class DictionaryController {
 
     @GetMapping
     public String index (Model model) {
+        LocaleContextHolder.getLocale();
         model.addAttribute("request", new Request());
         model.addAttribute("types", RequestType.values());
         return "dictionaries/index";

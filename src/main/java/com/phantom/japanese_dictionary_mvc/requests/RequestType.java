@@ -1,15 +1,20 @@
 package com.phantom.japanese_dictionary_mvc.requests;
 
-public enum RequestType {
-    TRANSLATION ("Перевод"), SPELLING ("Транслитерация"), KANJI("Иероглифы"), KANA ("Кана"),
-     DEFAULT ("По умолчанию") ;
+import java.util.Map;
 
-    private final String text;
-    RequestType(String text) {
+public enum RequestType {
+    TRANSLATION (Map.of("ru", "Перевод", "en", "Translation", "ja", "翻訳")),
+    SPELLING (Map.of("ru", "Транслитерация", "en", "Spelling", "ja", "ローマ字")),
+    KANJI(Map.of("ru", "Иероглифы", "en", "Kanji", "ja", "漢字")),
+    KANA (Map.of("ru", "Кана", "en","Kana", "ja", "かな")),
+    DEFAULT (Map.of("ru", "По умолчанию", "en", "Default", "ja", "デフォルト"));
+
+    private final Map<String, String> text;
+    RequestType(Map<String, String> text) {
         this.text = text;
     }
 
-    public String getText() {
+    public Map<String, String> getText() {
         return text;
     }
 }

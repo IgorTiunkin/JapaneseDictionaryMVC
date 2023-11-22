@@ -22,9 +22,11 @@
             <div style="color:red" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></div>
             <ul style="padding-left: 0px">
                 <li style="display: inline" th:each="type : ${types}">
-                    <input type="radio"  th:checked="${writePracticeRequest.getRequestType()==type}" th:id = "${type.getText()}" name="type"
+                    <input type="radio"  th:checked="${writePracticeRequest.getRequestType()==type}"
+                           th:id = "${type.getText().get(#locale.getLanguage())}" name="type"
                            th:field="*{requestType}" th:value="${type}"/>
-                    <label th:for="${type.getText()}" th:text="${type.getText()}"></label>
+                    <label th:for="${type.getText().get(#locale.getLanguage())}"
+                           th:text="${type.getText().get(#locale.getLanguage())}"></label>
                 </li>
             </ul>
         </form>
