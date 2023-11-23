@@ -13,8 +13,7 @@ import javax.validation.constraints.Pattern;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GrammarRequest {
-    @NotBlank(message = "Поле должно быть заполнено")
-    @Pattern(regexp = "[^,.;:(){}\\[\\]]*", message = "В запросе не должно быть знаков препинания")
+    @NotBlank(message = "{grammarrequest.word.notblank}")
+    @Pattern(regexp = "[^,.;:(){}\\[\\]]*", message = "{grammarrequest.word.pattern}")
     private String word;
-
 }

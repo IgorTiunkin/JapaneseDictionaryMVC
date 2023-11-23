@@ -12,16 +12,17 @@ import javax.validation.constraints.NotNull;
 @Setter
 @AllArgsConstructor
 public class QuizRequest {
+
     private RequestType requestType;
 
-    @NotNull (message = "Поле должно быть заполнено")
-    @Min(value = 2, message = "Количество вариантов не может быть меньше двух")
-    @Max(value = 10, message = "Количество вариантов не может быть больше 10")
+    @NotNull (message = "{quizrequest.numberOfOptions.notnull}")
+    @Min(value = 2, message = "{quizrequest.numberOfOptions.min}")
+    @Max(value = 10, message = "{quizrequest.numberOfOptions.max}")
     private Integer numberOfOptions;
 
-    @NotNull (message = "Поле должно быть заполнено")
-    @Min(value = 1, message = "Количество заданий должно быть больше нуля. Вы же хотите хотя бы одно задание:)")
-    @Max(value = 20, message = "Количество заданий не может быть больше 20")
+    @NotNull (message = "{quizrequest.numberOfTasks.notnull}")
+    @Min(value = 1, message = "{quizrequest.numberOfTasks.min}")
+    @Max(value = 20, message = "{quizrequest.numberOfTasks.max}")
     private Integer numberOfTasks;
 
     public QuizRequest() {

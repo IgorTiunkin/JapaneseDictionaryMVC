@@ -12,8 +12,9 @@ import javax.validation.constraints.Pattern;
 @Getter
 @AllArgsConstructor
 public class Request {
-    @NotBlank (message = "Поле должно быть заполнено")
-    @Pattern(regexp = "[^,.;:(){}\\[\\]]*", message = "В запросе не должно быть знаков препинания")
+
+    @NotBlank (message = "{request.word.notblank}")
+    @Pattern(regexp = "[^,.;:(){}\\[\\]]*", message = "{request.word.pattern}")
     private String word;
     private RequestType requestType;
     private boolean onlyFullMatch;
