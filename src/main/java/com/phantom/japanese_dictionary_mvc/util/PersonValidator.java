@@ -3,20 +3,23 @@ package com.phantom.japanese_dictionary_mvc.util;
 import com.phantom.japanese_dictionary_mvc.dto.PersonDTO;
 import com.phantom.japanese_dictionary_mvc.models.Person;
 import com.phantom.japanese_dictionary_mvc.services.PeopleService;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import java.util.Optional;
-import java.util.Set;
 
 @Component
 public class PersonValidator implements Validator {
 
     private final PeopleService peopleService;
+    private final MessageSource messageSource;
 
-    public PersonValidator(PeopleService peopleService) {
+    public PersonValidator(PeopleService peopleService, MessageSource messageSource) {
         this.peopleService = peopleService;
+        this.messageSource = messageSource;
     }
 
     @Override
@@ -30,7 +33,9 @@ public class PersonValidator implements Validator {
         String currentUsername = user.getUsername();
         Optional <Person> dublicateUser = peopleService.getUserByUsername(currentUsername);
         if (dublicateUser.isPresent()) {
-            errors.rejectValue("username", "", "Пользователь с таким именем уже существует. Выберите другое.");
+            String errorMessage = messageSource.getMessage("personvalidator.username.duplicate", null,
+                    LocaleContextHolder.getLocale());
+            errors.rejectValue("username", "", errorMessage);
         }
 
     }

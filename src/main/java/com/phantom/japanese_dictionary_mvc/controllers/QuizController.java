@@ -1,6 +1,5 @@
 package com.phantom.japanese_dictionary_mvc.controllers;
 
-import com.phantom.japanese_dictionary_mvc.dto.FailedQuizTaskDTO;
 import com.phantom.japanese_dictionary_mvc.dto.QuizResultDTO;
 import com.phantom.japanese_dictionary_mvc.exceptions.FileIOException;
 import com.phantom.japanese_dictionary_mvc.mappers.QuizResultQuizResultDTOMapper;
@@ -12,11 +11,8 @@ import com.phantom.japanese_dictionary_mvc.security.PersonDetails;
 import com.phantom.japanese_dictionary_mvc.services.QuizResultsService;
 import com.phantom.japanese_dictionary_mvc.util.QuizConverter;
 import com.phantom.japanese_dictionary_mvc.util.QuizResultChecker;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
+import com.phantom.japanese_dictionary_mvc.util.QuizStatisticsExporter;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.hibernate.annotations.Fetch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -30,10 +26,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.IOException;
-import java.util.Hashtable;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 @Controller
@@ -44,17 +37,19 @@ public class QuizController {
     private final QuizResultChecker quizResultChecker;
     private final QuizResultsService quizResultsService;
     private final QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper;
+    private final QuizStatisticsExporter quizStatisticsExporter;
     private final static Logger LOGGER = LoggerFactory.getLogger(QuizController.class);
     private final static List<RequestType> REQUEST_TYPE_LIST = List.of(RequestType.KANJI, RequestType.TRANSLATION);
 
 
 
     public QuizController(QuizConverter quizConverter, QuizResultChecker quizResultChecker,
-                          QuizResultsService quizResultsService, QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper) {
+                          QuizResultsService quizResultsService, QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper, QuizStatisticsExporter quizStatisticsExporter) {
         this.quizConverter = quizConverter;
         this.quizResultChecker = quizResultChecker;
         this.quizResultsService = quizResultsService;
         this.quizResultQuizResultDTOMapper = quizResultQuizResultDTOMapper;
+        this.quizStatisticsExporter = quizStatisticsExporter;
     }
 
 
@@ -133,10 +128,9 @@ public class QuizController {
     @GetMapping ("/exportStatistics")
     public void exportStatistics(@ModelAttribute ("quizResultList") List <QuizResultDTO> quizResultDTOS,
                                    HttpServletResponse response) {
-        Workbook workbook = createXlsFile(quizResultDTOS);
+        Workbook workbook = quizStatisticsExporter.createXlsFile(quizResultDTOS);
         response.setContentType("application/vnd.ms-excel");
         response.setHeader("Content-Disposition", "attachment; filename=quiz results.xlsx");
-
 
         try (ServletOutputStream outputStream = response.getOutputStream()) {
             workbook.write(outputStream);
@@ -144,33 +138,6 @@ public class QuizController {
         } catch (IOException exception) {
             throw new FileIOException("Ошибка при выгрузке результатов квиза.");
         }
-    }
-
-    private Workbook createXlsFile(List<QuizResultDTO> quizResultDTOS) {
-        Workbook workbook = new XSSFWorkbook();
-        Sheet sheet = workbook.createSheet("Results");
-        Row headerRow = sheet.createRow(0);
-        headerRow.createCell(0).setCellValue("Дата квиза");
-        headerRow.createCell(1).setCellValue("Число правильных ответов");
-        headerRow.createCell(2).setCellValue("Число заданий");
-        headerRow.createCell(3).setCellValue("Задания с неправильным ответом");
-
-        int rowNum = 1;
-        if (quizResultDTOS !=null) {
-            for (QuizResultDTO quizResultDTO : quizResultDTOS) {
-                Row row = sheet.createRow(rowNum++);
-                row.createCell(0).setCellValue(quizResultDTO.getDateOfQuiz());
-                row.createCell(1).setCellValue(quizResultDTO.getNumberOfRightAnswers());
-                row.createCell(2).setCellValue(quizResultDTO.getNumberOfTasks());
-
-                StringBuilder stringBuilder = new StringBuilder();
-                for (FailedQuizTaskDTO failedQuizTask : quizResultDTO.getFailedQuizTasks()) {
-                     stringBuilder.append(failedQuizTask.getFailedQuestion()).append("; ");
-                }
-                row.createCell(3).setCellValue(stringBuilder.toString());
-            }
-        }
-        return workbook;
     }
 
 }
