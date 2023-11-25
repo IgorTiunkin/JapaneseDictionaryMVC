@@ -1,18 +1,12 @@
 package com.phantom.japanese_dictionary_mvc.controllers;
 
 import com.phantom.japanese_dictionary_mvc.exceptions.FileIOException;
-import com.phantom.japanese_dictionary_mvc.models.GrammarNote;
 import com.phantom.japanese_dictionary_mvc.requests.GrammarRequest;
-import com.phantom.japanese_dictionary_mvc.requests.Request;
-import com.phantom.japanese_dictionary_mvc.services.GrammarNoteService;
 import com.phantom.japanese_dictionary_mvc.replies.GrammarDictionaryReply;
+import com.phantom.japanese_dictionary_mvc.util.GrammarDictionaryExcelImporter;
 import com.phantom.japanese_dictionary_mvc.util.GrammarDictionaryReplyConverter;
 import org.apache.poi.EmptyFileException;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,14 +25,14 @@ import java.io.IOException;
 @SessionAttributes("request") //needed for view in different pages
 public class GrammarDictionaryController {
 
-    private final GrammarNoteService grammarNoteService;
     private final GrammarDictionaryReplyConverter grammarDictionaryReplyConverter;
+    private final GrammarDictionaryExcelImporter grammarDictionaryExcelImporter;
     private final static Logger LOGGER = LoggerFactory.getLogger(GrammarDictionaryController.class);
 
     @Autowired
-    public GrammarDictionaryController(GrammarNoteService grammarNoteService, GrammarDictionaryReplyConverter grammarDictionaryReplyConverter) {
-        this.grammarNoteService = grammarNoteService;
+    public GrammarDictionaryController(GrammarDictionaryReplyConverter grammarDictionaryReplyConverter, GrammarDictionaryExcelImporter grammarDictionaryExcelImporter) {
         this.grammarDictionaryReplyConverter = grammarDictionaryReplyConverter;
+        this.grammarDictionaryExcelImporter = grammarDictionaryExcelImporter;
     }
 
     @GetMapping
@@ -74,25 +68,7 @@ public class GrammarDictionaryController {
                                     RedirectAttributes redirectAttributes) {
 
         try (XSSFWorkbook workbook = new XSSFWorkbook(multipartFile.getInputStream())) {
-            XSSFSheet worksheet = workbook.getSheetAt(0);
-
-            for (int i = 1; i < worksheet.getPhysicalNumberOfRows(); i++) {
-                GrammarNote grammarNote = new GrammarNote();
-
-                XSSFRow row = worksheet.getRow(i);
-                if (row != null) {
-                    XSSFCell currentCell = row.getCell(0);
-                    if (currentCell != null) grammarNote.setSource(currentCell.getStringCellValue());
-                    currentCell = row.getCell(1);
-                    if (currentCell != null) grammarNote.setRule(currentCell.getStringCellValue());
-                    currentCell = row.getCell(2);
-                    if (currentCell != null) grammarNote.setExplanation(currentCell.getStringCellValue());
-                    currentCell = row.getCell(3);
-                    if (currentCell != null) grammarNote.setExample(currentCell.getStringCellValue());
-                    System.out.println(grammarNote);
-                    grammarNoteService.saveGrammarNote(grammarNote);
-                }
-            }
+            grammarDictionaryExcelImporter.importExcelToDB(workbook);
             return "redirect:/grammar";
         } catch (IOException exception) {
             throw new FileIOException("Ошибка при импорте грамматического словаря");
@@ -102,5 +78,7 @@ public class GrammarDictionaryController {
             return "redirect:/grammar/import";
         }
     }
+
+
 
 }

@@ -8,7 +8,9 @@ import com.phantom.japanese_dictionary_mvc.requests.GrammarRequest;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.GrammarNoteService;
+import com.phantom.japanese_dictionary_mvc.util.GrammarDictionaryExcelImporter;
 import com.phantom.japanese_dictionary_mvc.util.GrammarDictionaryReplyConverter;
+import org.apache.poi.EmptyFileException;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -29,12 +31,13 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.doReturn;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 class GrammarDictionaryControllerTest extends BaseControllerTest{
 
     @Mock
-    private GrammarNoteService grammarNoteService;
+    private GrammarDictionaryExcelImporter grammarDictionaryExcelImporter;
 
     @Mock
     private GrammarDictionaryReplyConverter grammarDictionaryReplyConverter;
@@ -108,6 +111,7 @@ class GrammarDictionaryControllerTest extends BaseControllerTest{
 
     @Test
     public void whenImportFile_thenImportFile() throws Exception {
+        doNothing().when(grammarDictionaryExcelImporter).importExcelToDB(any());
         mvc.perform(MockMvcRequestBuilders.get(PATH_TO_IMPORT).accept(MediaType.TEXT_HTML))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.view().name(IMPORT_VIEW_NAME));
@@ -124,6 +128,7 @@ class GrammarDictionaryControllerTest extends BaseControllerTest{
                 "".getBytes()
         );
 
+        doThrow(EmptyFileException.class).when(grammarDictionaryExcelImporter).importExcelToDB(any());
         mvc.perform(MockMvcRequestBuilders.multipart(PATH_TO_IMPORTING).file(file).accept(MediaType.TEXT_HTML))
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
                 .andExpect(MockMvcResultMatchers.view().name("redirect:" + PATH_TO_IMPORT));
@@ -156,6 +161,7 @@ class GrammarDictionaryControllerTest extends BaseControllerTest{
                 bytes
         );
 
+        doNothing().when(grammarDictionaryExcelImporter).importExcelToDB(any());
         mvc.perform(MockMvcRequestBuilders.multipart(PATH_TO_IMPORTING).file(file).accept(MediaType.TEXT_HTML))
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
                 .andExpect(MockMvcResultMatchers.view().name("redirect:" + BASE_PATH));
