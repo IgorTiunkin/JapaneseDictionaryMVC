@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LoginPage extends BasePage{
     private By usernameBy = By.id("username");
     private By passwordBy = By.id("password");
-    private By submitButtonBy = By.xpath("//input[@value='Login']");
+    private By submitButtonBy = By.xpath("//input[@value='Войти']");
 
 
     public LoginPage (WebDriver webDriver, WebDriverWait webDriverWait) {

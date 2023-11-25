@@ -14,6 +14,9 @@ import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.QuizResultsService;
 import com.phantom.japanese_dictionary_mvc.util.QuizConverter;
 import com.phantom.japanese_dictionary_mvc.util.QuizResultChecker;
+import com.phantom.japanese_dictionary_mvc.util.QuizStatisticsExporter;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -49,6 +52,9 @@ class QuizControllerTest extends BaseControllerTest{
 
     @Mock
     private QuizResultQuizResultDTOMapper quizResultQuizResultDTOMapper;
+
+    @Mock
+    private QuizStatisticsExporter quizStatisticsExporter;
 
     @InjectMocks
     private QuizController quizController;
@@ -181,6 +187,7 @@ class QuizControllerTest extends BaseControllerTest{
     public void whenExportStatistics_thenOk() {
         List <QuizResultDTO> quizResultDTOS = List.of(TEST_QUIZ_RESULT_DTO);
         HttpServletResponse httpServletResponse = new MockHttpServletResponse();
+        doReturn(new XSSFWorkbook()).when(quizStatisticsExporter).createXlsFile(quizResultDTOS);
         quizController.exportStatistics(quizResultDTOS, httpServletResponse);
         assertEquals("application/vnd.ms-excel", httpServletResponse.getContentType());
         assertEquals("attachment; filename=quiz results.xlsx",

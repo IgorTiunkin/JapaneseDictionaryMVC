@@ -5,7 +5,9 @@ import com.phantom.japanese_dictionary_mvc.replies.DictionaryReply;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
+import com.phantom.japanese_dictionary_mvc.util.DictionaryExcelImporter;
 import com.phantom.japanese_dictionary_mvc.util.DictionaryReplyConverter;
+import org.apache.poi.EmptyFileException;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -27,7 +29,8 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.doReturn;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 class DictionaryControllerTest extends BaseControllerTest{
 
@@ -35,7 +38,7 @@ class DictionaryControllerTest extends BaseControllerTest{
     private DictionaryReplyConverter dictionaryReplyConverter;
 
     @Mock
-    private NoteService noteService;
+    private DictionaryExcelImporter dictionaryExcelImporter;
 
     @InjectMocks
     private DictionaryController dictionaryController;
@@ -107,6 +110,7 @@ class DictionaryControllerTest extends BaseControllerTest{
 
     @Test
     public void whenImportFile_thenImportFile() throws Exception {
+        doNothing().when(dictionaryExcelImporter).importExcelToDB(any());
         mvc.perform(MockMvcRequestBuilders.get(PATH_TO_IMPORT).accept(MediaType.TEXT_HTML))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.view().name(IMPORT_VIEW_NAME));
@@ -122,7 +126,7 @@ class DictionaryControllerTest extends BaseControllerTest{
                 MediaType.TEXT_PLAIN_VALUE,
                 "".getBytes()
         );
-
+        doThrow(EmptyFileException.class).when(dictionaryExcelImporter).importExcelToDB(any());
         mvc.perform(MockMvcRequestBuilders.multipart(PATH_TO_IMPORTING).file(file).accept(MediaType.TEXT_HTML))
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
                 .andExpect(MockMvcResultMatchers.view().name("redirect:" + PATH_TO_IMPORT));
@@ -155,6 +159,7 @@ class DictionaryControllerTest extends BaseControllerTest{
                 bytes
         );
 
+        doNothing().when(dictionaryExcelImporter).importExcelToDB(any());
         mvc.perform(MockMvcRequestBuilders.multipart(PATH_TO_IMPORTING).file(file).accept(MediaType.TEXT_HTML))
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
                 .andExpect(MockMvcResultMatchers.view().name("redirect:" + BASE_PATH));
