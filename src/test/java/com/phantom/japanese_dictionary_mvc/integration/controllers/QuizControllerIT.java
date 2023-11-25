@@ -6,22 +6,14 @@ import com.phantom.japanese_dictionary_mvc.dto.FailedQuizTaskDTO;
 import com.phantom.japanese_dictionary_mvc.dto.QuizResultDTO;
 import com.phantom.japanese_dictionary_mvc.integration.BaseIT;
 import com.phantom.japanese_dictionary_mvc.models.Answer;
-import com.phantom.japanese_dictionary_mvc.models.Person;
 import com.phantom.japanese_dictionary_mvc.models.QuizResult;
-import com.phantom.japanese_dictionary_mvc.models.QuizTask;
+import com.phantom.japanese_dictionary_mvc.dto.QuizTask;
 import com.phantom.japanese_dictionary_mvc.requests.QuizRequest;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
-import com.phantom.japanese_dictionary_mvc.security.PersonDetails;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.security.authentication.TestingAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.test.context.support.WithAnonymousUser;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers;
@@ -33,7 +25,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 

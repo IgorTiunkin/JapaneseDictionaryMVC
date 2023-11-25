@@ -1,6 +1,7 @@
 package com.phantom.japanese_dictionary_mvc.controllers;
 
 import com.phantom.japanese_dictionary_mvc.dto.QuizResultDTO;
+import com.phantom.japanese_dictionary_mvc.dto.QuizTask;
 import com.phantom.japanese_dictionary_mvc.exceptions.FileIOException;
 import com.phantom.japanese_dictionary_mvc.mappers.QuizResultQuizResultDTOMapper;
 import com.phantom.japanese_dictionary_mvc.models.*;

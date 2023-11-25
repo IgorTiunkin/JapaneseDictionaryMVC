@@ -1,16 +1,17 @@
 package com.phantom.japanese_dictionary_mvc.controllers;
 
+import com.phantom.japanese_dictionary_mvc.dto.NoteDTO;
 import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.requests.WritePracticeRequest;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
+import com.phantom.japanese_dictionary_mvc.util.BaseGenericNoteConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,15 +22,18 @@ import java.util.List;
 @Controller
 @RequestMapping("/write-test")
 public class WritePracticeController {
+
     private final NoteService noteService;
+    private final BaseGenericNoteConverter baseGenericNoteConverter;
     private final static Logger LOGGER = LoggerFactory.getLogger(WritePracticeController.class);
     private final static List<RequestType> REQUEST_TYPE_LIST =
             List.of(RequestType.TRANSLATION, RequestType.SPELLING, RequestType.KANJI, RequestType.KANA);
 
 
     @Autowired
-    public WritePracticeController(NoteService noteService) {
+    public WritePracticeController(NoteService noteService, BaseGenericNoteConverter baseGenericNoteConverter) {
         this.noteService = noteService;
+        this.baseGenericNoteConverter = baseGenericNoteConverter;
     }
 
     @GetMapping
@@ -51,7 +55,8 @@ public class WritePracticeController {
         }
         int practiceRequestQuantity = writePracticeRequest.getQuantity();
         List<Note> writePracticeList = noteService.getRandomVariants(practiceRequestQuantity);
-        model.addAttribute("writePracticeList", writePracticeList);
+        List <NoteDTO> nodeDTOS = baseGenericNoteConverter.convertNoteToNoteDTO(writePracticeList, NoteDTO.class);
+        model.addAttribute("writePracticeList", nodeDTOS);
         return "writepractice/multishow";
     }
 

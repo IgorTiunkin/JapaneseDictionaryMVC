@@ -1,5 +1,6 @@
 package com.phantom.japanese_dictionary_mvc.util;
 
+import com.phantom.japanese_dictionary_mvc.dto.QuizTask;
 import com.phantom.japanese_dictionary_mvc.models.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

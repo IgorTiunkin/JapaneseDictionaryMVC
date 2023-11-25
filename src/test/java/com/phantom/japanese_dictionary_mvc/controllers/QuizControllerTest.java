@@ -6,16 +6,13 @@ import com.phantom.japanese_dictionary_mvc.dto.QuizResultDTO;
 import com.phantom.japanese_dictionary_mvc.mappers.QuizResultQuizResultDTOMapper;
 import com.phantom.japanese_dictionary_mvc.models.Answer;
 import com.phantom.japanese_dictionary_mvc.models.QuizResult;
-import com.phantom.japanese_dictionary_mvc.models.QuizTask;
-import com.phantom.japanese_dictionary_mvc.replies.GrammarDictionaryReply;
+import com.phantom.japanese_dictionary_mvc.dto.QuizTask;
 import com.phantom.japanese_dictionary_mvc.requests.QuizRequest;
-import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.QuizResultsService;
 import com.phantom.japanese_dictionary_mvc.util.QuizConverter;
 import com.phantom.japanese_dictionary_mvc.util.QuizResultChecker;
 import com.phantom.japanese_dictionary_mvc.util.QuizStatisticsExporter;
-import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,8 +27,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import javax.servlet.http.HttpServletResponse;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 

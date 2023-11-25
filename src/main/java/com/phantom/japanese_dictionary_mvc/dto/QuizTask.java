@@ -1,4 +1,4 @@
-package com.phantom.japanese_dictionary_mvc.models;
+package com.phantom.japanese_dictionary_mvc.dto;
 
 import lombok.*;
 

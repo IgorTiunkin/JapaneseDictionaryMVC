@@ -1,11 +1,13 @@
 package com.phantom.japanese_dictionary_mvc.controllers;
 
+import com.phantom.japanese_dictionary_mvc.dto.NoteDTO;
 import com.phantom.japanese_dictionary_mvc.models.Note;
 import com.phantom.japanese_dictionary_mvc.replies.GrammarDictionaryReply;
 import com.phantom.japanese_dictionary_mvc.requests.Request;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.requests.WritePracticeRequest;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
+import com.phantom.japanese_dictionary_mvc.util.BaseGenericNoteConverter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,6 +31,9 @@ class WritePracticeControllerTest extends BaseControllerTest{
     @Mock
     private NoteService noteService;
 
+    @Mock
+    private BaseGenericNoteConverter baseGenericNoteConverter;
+
     @InjectMocks
     private WritePracticeController writePracticeController;
 
@@ -50,7 +55,9 @@ class WritePracticeControllerTest extends BaseControllerTest{
     private final Note TEST_NOTE_JOUDAN = Note.builder()
             .id(2).translation("шутка").romadji("joudan").kanji("冗談").hiragana("じょうだん")
             .build();
-
+    private final NoteDTO TEST_NOTE_JOUDAN_DTO = NoteDTO.builder()
+            .translation("шутка").romadji("joudan").kanji("冗談").hiragana("じょうだん")
+            .build();
 
     @Test
     public void whenIndex_thenIndex() throws Exception {
@@ -65,7 +72,9 @@ class WritePracticeControllerTest extends BaseControllerTest{
     @Test
     public void whenCorrectRequest_thenCorrectShow() throws Exception {
         WritePracticeRequest request = new WritePracticeRequest();
-        Mockito.doReturn(List.of(TEST_NOTE_JOUDAN)).when(noteService).getRandomVariants(Mockito.anyInt());
+        doReturn(List.of(TEST_NOTE_JOUDAN)).when(noteService).getRandomVariants(anyInt());
+        doReturn(List.of(TEST_NOTE_JOUDAN_DTO)).when(baseGenericNoteConverter)
+                .convertNoteToNoteDTO(List.of(TEST_NOTE_JOUDAN), NoteDTO.class);
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(PATH_TO_SHOW).accept(MediaType.TEXT_HTML)
                 .flashAttr("writePracticeRequest", request))
                 .andExpect(MockMvcResultMatchers.status().isOk())
@@ -73,8 +82,8 @@ class WritePracticeControllerTest extends BaseControllerTest{
                 .andReturn();
 
         Map<String, Object> model = mvcResult.getModelAndView().getModel();
-        List<Note> noteList = (List<Note>) model.get("writePracticeList");
-        Assertions.assertEquals(TEST_NOTE_JOUDAN, noteList.get(0));
+        List<NoteDTO> noteList = (List<NoteDTO>) model.get("writePracticeList");
+        Assertions.assertEquals(TEST_NOTE_JOUDAN_DTO, noteList.get(0));
     }
 
     @Test

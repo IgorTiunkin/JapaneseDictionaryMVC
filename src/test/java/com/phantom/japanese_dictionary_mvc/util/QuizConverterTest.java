@@ -1,14 +1,13 @@
 package com.phantom.japanese_dictionary_mvc.util;
 
 import com.phantom.japanese_dictionary_mvc.models.Note;
-import com.phantom.japanese_dictionary_mvc.models.QuizTask;
+import com.phantom.japanese_dictionary_mvc.dto.QuizTask;
 import com.phantom.japanese_dictionary_mvc.requests.QuizRequest;
 import com.phantom.japanese_dictionary_mvc.requests.RequestType;
 import com.phantom.japanese_dictionary_mvc.services.NoteService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 

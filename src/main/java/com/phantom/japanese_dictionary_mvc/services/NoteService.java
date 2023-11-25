@@ -1,9 +1,7 @@
 package com.phantom.japanese_dictionary_mvc.services;
 
 import com.phantom.japanese_dictionary_mvc.models.Note;
-import com.phantom.japanese_dictionary_mvc.models.QuizTask;
 import com.phantom.japanese_dictionary_mvc.repositories.NoteRepository;
-import org.hamcrest.Matchers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
